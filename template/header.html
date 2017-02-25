@@ -1,0 +1,37 @@
+<div class="header-top">
+    <div class="header-top-left">
+        <ul>
+            <li><a href="">我的博物馆</a></li>
+            <li><a ui-sref="login">登录</a></li>
+            <li><a href="">注册</a></li>
+        </ul>
+    </div>
+    <div class="header-top-right">
+        <input type="text" id="search">
+        <ul>
+            <li>
+                <input type="file" style="width:21px;height:21px;opacity: 0;overflow: hidden;">
+            </li>
+            <li></li>
+        </ul>
+    </div>
+    <button>信息管理平台</button>
+</div>
+<div class="header-bottom">
+    <a href="">
+        <img src="img/logo.png" alt="">
+    </a>
+    <a href="" style="margin-left:14px;margin-top:10px;">
+        <img src="img/logo2.png" alt="">
+    </a>
+    <nav>
+        <ul>
+            <li><a ui-sref="home" ui-sref-active="mainactive">首页</a></li>
+            <li><a ui-sref="museum.museumMap" ui-sref-active="mainactive">博物馆</a></li>
+            <li><a ui-sref="display({museum:''})" ui-sref-active="mainactive">展览</a></li>
+            <li><a ui-sref="digitization" ui-sref-active="mainactive">数字展厅</a></li>
+            <li><a ui-sref="collection({museum:'',type:''})" ui-sref-active="mainactive">藏品</a></li>
+            <li><a ui-sref="Wiki" ui-sref-active="mainactive">文物百科</a></li>
+        </ul>
+    </nav>
+</div>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>上传12个弹出层</title>
+		<script type="text/javascript" src="jquery-1.7.2.js"></script>
+		<script type="text/javascript" src="layer/layer.js"></script>
+
+		<link rel="stylesheet" href="layer/skin/default/layer.css" type="text/css">
+
+		<style>
+			.box{
+				width:auto;
+				height:auto;
+			}
+			.small-box{
+				width:150px;
+				height:80px;
+				float:left;
+				border:1px solid #ccc;
+				text-align:center;
+				padding-top:70px;
+			}
+		</style>
+	</head>
+	<body>
+	<div class="box">
+		<div class="small-box">1</div>
+		<div class="small-box">2</div>
+		<div class="small-box">3</div>
+		<div class="small-box">4</div>
+		<div class="small-box">5</div>
+		<div class="small-box">6</div>
+		<div class="small-box">7</div>
+		<div class="small-box">8</div>
+		<div class="small-box">9</div>
+		<div class="small-box">10</div>
+		<div class="small-box">11</div>
+		<div class="small-box">12</div>
+	</div>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<span>
+		<font color="blue" size="20"><a href="../3d-141113221250/index.html" target="_blank">前往展厅>></a></font>
+	</span>
+    <script type="text/javascript">
+        var id = location.href.split("?")[1];
+				$('.box>.small-box').on('click', function(){
+					var index = $(this).html();
+					//console.log(index);
+					  layer.open({
+					  type: 2,
+					  title: '编辑我的相册',
+					  content: './tailor/index.html?id='+index,
+					  shadeClose: true, //点击遮罩关闭层
+					  area : ['800px' , '600px'],
+                      maxmin: true,
+					 });
+				});
+				
+				/*function getStr(params){
+					var arr = []
+					for(var item in params){
+						//item+"="+params[item]     uName=zhangsan
+						arr.push(item+"="+params[item])
+					}
+					var str = arr.join("&");
+					//key1=value1&key2=value2&key3=value3
+					return str;
+				}*/
+		</script> 
+	</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>上传12个弹出层</title>
+		<script type="text/javascript" src="jquery-1.7.2.js"></script>
+		<script type="text/javascript" src="layer/layer.js"></script>
+
+		<link rel="stylesheet" href="layer/skin/default/layer.css" type="text/css">
+
+		<style>
+			.box{
+				width:600px;
+				height:600px;
+			}
+			.small-box{
+				width:150px;
+				height:80px;
+				float:left;
+				border:1px solid #ccc;
+				text-align:center;
+				padding-top:70px;
+			}
+		</style>
+	</head>
+	<body>
+	<div class="box">
+		<div class="small-box">1</div>
+		<div class="small-box">2</div>
+		<div class="small-box">3</div>
+		<div class="small-box">4</div>
+		<div class="small-box">5</div>
+		<div class="small-box">6</div>
+		<div class="small-box">7</div>
+		<div class="small-box">8</div>
+		<div class="small-box">9</div>
+		<div class="small-box">10</div>
+		<div class="small-box">11</div>
+		<div class="small-box">12</div>
+	</div>
+    <script type="text/javascript">
+	
+				$('.box>.small-box').on('click', function(){
+					var index = $(this).index();
+					//console.log(index);
+					  layer.open({
+					  type: 2,
+					  title: 'h5 3d相册展示',
+					  maxmin: true,
+					  shadeClose: true, //点击遮罩关闭层
+					  area : ['800px' , '520px'],
+					  content: 'index.html',
+					  });
+				});
+		
+		</script> 
+	</body>
+</html>
+
+
+
+
+
+
+

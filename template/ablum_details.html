@@ -1,0 +1,42 @@
+<img src="img/museum-banner.png" alt="">
+<div class="ablum-details">
+    <p class="breadcrumb">
+        <a ui-sref="home">首页</a><u>&gt;&gt;</u><span>册展列表</span>
+    </p>
+    <div class="ablum-details-wrapper">
+        <h1>宋朝陶瓷文物展</h1>
+        <h6>今夕无痕</h6>
+        <div class="ablum-details-3d">
+            <iframe src="./upload/3d-141113221250/index.html" frameborder="0"></iframe>
+        </div>
+        <div class="ablum-details-fullscreen" ng-click="fullScreen()"></div>
+        <h2>展览简介</h2>
+        <div class="ablum-details-intro">
+            宋朝瓷器文物展示2016年在吉林出土的一批文物，再现了宋朝瓷器制作技艺的精髓宋朝瓷器文物展宋朝瓷器文物展示2016年在吉林出土的一批文物，再现了宋朝瓷器制作技艺的精髓宋朝瓷器文物展宋朝瓷器文物展示2016年在吉林出土的一批文物，再现了宋朝瓷器制作技艺的精髓宋朝瓷器文物展宋朝瓷器文物展示2016年在吉林出土的一批文物，再现了宋朝瓷器制作技艺的精髓宋朝瓷器文物展宋朝瓷器文物展示2016年在吉林出土的一批文物，再现了宋朝瓷器制作技艺的精髓宋朝瓷器文物展宋朝瓷器文物展示2016年在吉林出土的一批文物，再现了宋朝瓷器制作技艺的精髓宋朝瓷器文物展
+        </div>
+        <h2>评论区</h2>
+        <!--<div class="ablum-details-comment">-->
+            <!--<img src="img/user_head.png" width="40" height="40" style="border-radius: 50%" alt="">-->
+            <!--<textarea name="" id="" placeholder="请写下你的评论"></textarea>-->
+        <!--</div>-->
+        <!--<ul class="ablum-details-emoji">-->
+            <!--<li class="ablum-details-emoji-state">-->
+
+            <!--</li>-->
+            <!--<li class="ablum-details-emoji-submit">-->
+                <!--<button>添加评论</button>-->
+            <!--</li>-->
+        <!--</ul>-->
+        <div class="comment">
+            <div class="com_form">
+                <div id="show" contenteditable="true" ng-bind-html="saytext|filterQQface"></div>
+                <textarea class="input" id="saytext" name="saytext"></textarea>
+                <p>
+                    <input type="button" class="sub_btn" ng-click="showComment()" value="提交" >
+                    <span class="emotion">表情</span></p>
+            </div>
+        </div>
+    </div>
+
+
+</div>

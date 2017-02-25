@@ -1,0 +1,81 @@
+<img src="img/collection.png" alt="">
+<p class="breadcrumb" style="padding-left:18px;padding-bottom: 20px;">
+    <a ui-sref="home">首页</a><u>&gt;&gt;</u><a ui-sref="collection">藏品</a><u>&gt;&gt;</u><span ng-bind="data.mipOpenCulturalrelicInfo.name"></span>
+</p>
+<div class="collection-details">
+    <ul>
+        <li><span ng-bind="data.mipOpenCulturalrelicInfo.name"></span></li>
+    </ul>
+    <ul>
+        <li>
+            <button>3d展示</button>
+        </li>
+        <li>
+            <button>视频</button>
+        </li>
+        <li>
+            <button>百科</button>
+        </li>
+        <li style="padding-left:40px;">
+            <i ng-class="{active:data.isCollected}" ng-click="addCollection($event)"></i><u ng-bind="'收藏('+(data.mipOpenCulturalrelicInfo.selectCounts+num2)+')'"></u>
+        </li>
+
+    </ul>
+    <div class="collection-details-img">
+        <img width="542" height="361" ng-src="{{data.mipOpenCulturalrelicInfo.fpic}}" alt="{{data.mipOpenCulturalrelicInfo.name}}">
+    </div>
+    <div class="collection-details-msg">
+        <p>基本信息</p>
+        <table>
+            <tbody>
+            <tr>
+                <td>收藏单位：</td>
+                <td ng-bind="data.mipOpenCulturalrelicInfo.collectionUnit">山东省博物院</td>
+            </tr>
+            <tr>
+                <td>类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</td>
+                <td ng-bind="data.mipOpenCulturalrelicInfo.collectionsCategory"></td>
+            </tr>
+            <tr>
+                <td>朝&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;代：</td>
+                <td ng-bind="data.mipOpenCulturalrelicInfo.yearType"></td>
+            </tr>
+            <tr>
+                <td>级&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</td>
+                <td ng-bind="data.mipOpenCulturalrelicInfo.collectionLevel"></td>
+            </tr>
+            </tbody>
+        </table>
+        <p>藏品简介</p>
+        <div class="collection-details-infor">
+            <div class="content_1" ng-bind="data.mipOpenCulturalrelicInfo.description">
+            </div>
+        </div>
+    </div>
+    <div class="collection-details-correlation">
+        <p>本馆藏品</p>
+        <ol>
+            <li style="margin-right:20px;" ng-class="{hasmore:hasmoreleft}" ng-click="reducePage('relations')"></li>
+            <li ng-class="{hasmore:hasmoreright}" ng-click="addPage('relations')"></li>
+        </ol>
+        <ul>
+            <li ng-repeat="relation in correlation | limitTo:5">
+                <img ng-src="{{relation.fpic}}" width="191" height="129" alt="{{relation.name}}" data-id="{{relation.id}}">
+                <p ng-bind="relation.name"></p>
+            </li>
+        </ul>
+    </div>
+    <div class="collection-details-correlation">
+        <p>相关藏品</p>
+        <ol>
+            <li style="margin-right:20px;" ng-class="{hasmore:hasmoreleft1}" ng-click="reducePage('other')"></li>
+            <li ng-class="{hasmore:hasmoreright1}" ng-click="addPage('other')"></li>
+        </ol>
+        <ul>
+            <li ng-repeat="other in corother | limitTo:5">
+                <img ng-src="{{other.fpic}}" width="191" height="129" alt="{{other.name}}" data-id="{{other.id}}">
+                <p ng-bind="other.name"></p>
+            </li>
+        </ul>
+    </div>
+</div>

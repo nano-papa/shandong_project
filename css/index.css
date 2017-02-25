@@ -1,0 +1,128 @@
+.wrapper {
+  padding-bottom: 14px; }
+
+.section-title {
+  color: #008582;
+  margin-bottom: 22px;
+  height: 40px;
+  overflow: hidden;
+  background: url("../img/iocn_hehua.png") no-repeat; }
+  .section-title h3 {
+    float: left;
+    font-size: 18px;
+    font-weight: normal; }
+    .section-title h3 p {
+      font-size: 12px;
+      padding-top: 10px; }
+  .section-title > p {
+    float: right;
+    font-size: 12px;
+    margin-right: 76px;
+    line-height: 40px; }
+
+.section {
+  padding: 30px 56px 0 54px;
+  overflow: hidden; }
+  .section .section-layout-left {
+    float: left; }
+    .section .section-layout-left .section-content1 {
+      width: 678px; }
+      .section .section-layout-left .section-content1 ul li {
+        overflow: hidden;
+        margin-bottom: 14px; }
+        .section .section-layout-left .section-content1 ul li .new-img-content {
+          margin-top: 7px; }
+        .section .section-layout-left .section-content1 ul li div {
+          float: left; }
+          .section .section-layout-left .section-content1 ul li div strong {
+            font-weight: normal;
+            font-size: 14px; }
+            .section .section-layout-left .section-content1 ul li div strong a {
+              color: rgba(0, 0, 0, 0.8); }
+              .section .section-layout-left .section-content1 ul li div strong a:hover {
+                text-decoration: underline; }
+          .section .section-layout-left .section-content1 ul li div p {
+            margin-top: 10px;
+            font-style: italic;
+            color: #008582; }
+            .section .section-layout-left .section-content1 ul li div p small {
+              padding: 0 15px 0 11px; }
+          .section .section-layout-left .section-content1 ul li div h6 {
+            margin-top: 10px;
+            font-weight: normal;
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.6);
+            line-height: 1.52; }
+  .section .section-layout-right {
+    float: left;
+    position: relative; }
+    .section .section-layout-right > img {
+      position: absolute;
+      left: -5px;
+      top: 69px; }
+    .section .section-layout-right .section-content2 ul {
+      padding-left: 20px; }
+      .section .section-layout-right .section-content2 ul li {
+        margin-bottom: 12px;
+        overflow: hidden; }
+        .section .section-layout-right .section-content2 ul li div {
+          float: left; }
+          .section .section-layout-right .section-content2 ul li div h3 {
+            font-weight: normal;
+            font-size: 14px; }
+            .section .section-layout-right .section-content2 ul li div h3 a {
+              color: #000; }
+              .section .section-layout-right .section-content2 ul li div h3 a:hover {
+                text-decoration: underline; }
+          .section .section-layout-right .section-content2 ul li div p {
+            margin-top: 7px;
+            font-size: 12px;
+            line-height: 1.42;
+            color: rgba(0, 0, 0, 0.6); }
+          .section .section-layout-right .section-content2 ul li div button {
+            font-family: "Microsoft YaHei UI";
+            outline: none;
+            width: 60px;
+            height: 20px;
+            font-size: 12px;
+            margin-top: 7px;
+            border: 1px solid #ea703a;
+            border-radius: 4px;
+            color: #ea703a;
+            background: #fff;
+            padding: 0; }
+            .section .section-layout-right .section-content2 ul li div button:hover {
+              color: #fff;
+              background: #ea703a; }
+
+.virtual-enter {
+  font-family: "Microsoft YaHei UI";
+  outline: none;
+  width: 60px;
+  height: 20px;
+  font-size: 12px;
+  margin-top: 10px;
+  border: 1px solid #ea703a;
+  border-radius: 4px;
+  color: #ea703a;
+  background: #fff;
+  padding: 0; }
+  .virtual-enter:hover {
+    color: #fff;
+    background: #ea703a; }
+
+.swiper-container {
+  width: 1020px;
+  height: auto; }
+
+.swiper-button-prev {
+  width: 24px;
+  height: 39px;
+  background: url("../img/prev.png") no-repeat; }
+
+.swiper-button-next {
+  width: 24px;
+  height: 39px;
+  background: url("../img/next.png") no-repeat; }
+
+/*# sourceMappingURL=index.css.map */

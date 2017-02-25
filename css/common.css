@@ -1,0 +1,158 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Microsoft YaHei UI";
+  font-size: 16px;
+  vertical-align: bottom; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1;
+  background: #eee; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input {
+  outline: none; }
+
+button {
+  font-family: "Microsoft YaHei UI";
+  outline: none; }
+
+.wrapper {
+  width: 1200px;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.8); }
+
+a {
+  text-decoration: none;
+  color: #008582; }
+  a:hover, a.active {
+    color: #ea703a; }
+
+header {
+  width: 1100px;
+  height: 107px;
+  padding: 27px 70px 0 30px; }
+  header .header-top {
+    width: 100%;
+    overflow: hidden; }
+    header .header-top .header-top-left {
+      float: left; }
+      header .header-top .header-top-left ul {
+        overflow: hidden; }
+        header .header-top .header-top-left ul li {
+          float: left;
+          border-right: 1px solid #008582; }
+          header .header-top .header-top-left ul li a {
+            padding-left: 12px;
+            padding-right: 12px; }
+          header .header-top .header-top-left ul li:first-child a {
+            padding-left: 0; }
+          header .header-top .header-top-left ul li:last-child {
+            border: none; }
+    header .header-top .header-top-right {
+      float: right;
+      position: relative;
+      width: 317px;
+      height: 36px; }
+      header .header-top .header-top-right #search {
+        width: 305px;
+        height: 24px;
+        border-radius: 6px;
+        border: 1px solid #008582;
+        padding: 5px; }
+      header .header-top .header-top-right ul {
+        position: absolute;
+        overflow: hidden;
+        right: 11px;
+        top: 8px; }
+        header .header-top .header-top-right ul li {
+          float: left;
+          width: 21px;
+          height: 21px; }
+          header .header-top .header-top-right ul li:first-child {
+            padding-right: 10px;
+            border-right: 1px solid #008582;
+            background: url("../img/xj.png") no-repeat; }
+          header .header-top .header-top-right ul li:last-child {
+            margin-left: 10px;
+            background: url("../img/fdj.png") no-repeat; }
+  header .header-bottom {
+    margin-top: 23px; }
+    header .header-bottom a {
+      float: left; }
+    header .header-bottom nav {
+      float: right;
+      padding-top: 13px; }
+      header .header-bottom nav ul li {
+        float: left;
+        padding: 0 20px; }
+        header .header-bottom nav ul li a.active {
+          color: #008582;
+          padding-bottom: 10px;
+          border-bottom: 2px solid #ea703a; }
+
+footer {
+  width: 100%;
+  height: 212px;
+  background: #fff;
+  border-top: 2px solid #008582; }
+  footer p {
+    margin: auto;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 36px; }
+    footer p span {
+      line-height: 25px; }
+  footer ul {
+    overflow: hidden;
+    margin: auto;
+    width: 786px;
+    margin-top: 20px; }
+    footer ul li {
+      float: left;
+      border-right: 1px solid #000; }
+      footer ul li:last-child {
+        border: none; }
+      footer ul li a {
+        color: #000;
+        font-size: 12px;
+        padding: 0 20px; }
+
+/*# sourceMappingURL=common.css.map */

@@ -1,0 +1,256 @@
+<img src="img/museum-banner.png" alt="">
+<div class="display">
+    <div class="breadcrumb">
+        <a ui-sref="home">首页</a><u>&gt;&gt;</u><a ui-sref="display">展览</a>
+        <div class="tab-items">
+            <button style="margin-left:343px" ng-class="{active:tabpage===1}" ng-click="tabChange(1)" ng-hide="tabpage===1">省内</button>
+            <button style="margin-left:16px;" ng-class="{active:tabpage===2}" ng-click="tabChange(2)" ng-hide="tabpage===2">省外</button>
+            <button style="margin-left:16px;" ng-class="{active:tabpage===3}" ng-click="tabChange(3)" ng-hide="tabpage===3">国外</button>
+        </div>
+    </div>
+    <div class="display-content">
+        <div class="display_list_Pinner" ng-if="tabpage===1" ng-controller="Displaylist.Pinner">
+            <div class="slected-condition" ng-if="isSelected">
+                <ul>
+                    <li>
+                <span>
+                    全部结果>
+                </span>
+                    </li>
+                    <li ng-show="isA">
+                        <small>单位：</small>
+                        <u ng-bind="area"></u>
+                        <i ng-click="removeArea()" ng-show="remove">×</i>
+                    </li>
+                    <li ng-show="isK">
+                        <small>关键字：</small>
+                        <u ng-bind="value"></u>
+                        <i ng-click="hideKeyword()">×</i>
+                    </li>
+                </ul>
+            </div>
+            <div class="display-search">
+                <span>关键词：</span>
+                <input type="text" id="search_box">
+                <button ng-click="showKeyword()"></button>
+            </div>
+            <div class="condition">
+                <div class="condition-item" ng-if="isClassify">
+                    <p class="condition-title fontB">所在地区：</p>
+                    <ul class="condition-content">
+                        <li ng-repeat="s in conditionData">
+                            <span ng-click="getClassify($event)" ng-bind="s.city.shortname" data-index="{{$index}}"></span>
+                        </li>
+                    </ul>
+                    <div class="condition-more" ng-click="SlideDown($event)">更多<span>&gt;</span></div>
+                </div>
+                <div class="condition-item" ng-if="isArea">
+                    <p class="condition-title fontB">收藏单位：</p>
+                    <ul class="condition-content">
+                        <li ng-repeat="r in conditionData[index].museums">
+                            <span ng-click="getArea($event)" ng-bind="r.shortname"></span>
+                        </li>
+                    </ul>
+                    <div class="condition-more" ng-click="SlideDown($event)">更多<span>&gt;</span></div>
+                </div>
+            </div>
+            <div class="display-list-content">
+                <ul class="display-list-content-tab">
+                    <li ng-click="changeListTab(1)" ng-class="{active:tabsubpage===1}">
+                        正在展出
+                    </li>
+                    <li ng-click="changeListTab(0)" ng-class="{active:tabsubpage===0}" >
+                        往期回顾
+                    </li>
+                </ul>
+            </div>
+            <div class="display-list-content-inner">
+                <ul>
+                    <li ng-repeat='x in nDatalist'>
+                        <a ui-sref="displaydetails({type:'inner',id:2})" target="_blank">
+                            <img ng-src="{{x.picture}}" width="298" height="165" alt="{{x.headline}}">
+                        </a>
+                        <h1 ng-bind="x.headline"></h1>
+                        <h5 ng-if="x.beginTime"><i ng-class="{displaypermanent:!x.beginTime}"></i><span ng-show="x.beginTime"><s ng-bind="x.beginTime|date : 'yyyy/MM/dd'"></s>--<s ng-bind="x.endTime |date : 'yyyy/MM/dd'"></s></span><span ng-show="!x.beginTime">常设展览</span></h5>
+                        <h6><i class="displaytime"></i><span ng-bind="x.musExhibition"></span></h6>
+                        <p ng-bind="x.content">
+                        </p>
+                    </li>
+                </ul>
+                <div class="PagePlugs" style="margin-top:15px"></div>
+            </div>
+            <!--<div class="display-list-content-inner" ng-show="tabsubpage===0">-->
+                <!--<ul>-->
+                    <!--<li ng-repeat='x in pDatalist| filter:{}'>-->
+                        <!--<a ui-sref="displaydetails({type:'inner',id:2})" target="_blank">-->
+                            <!--<img ng-src="{{x.picture}}" width="298" height="165" alt="{{x.headline}}">-->
+                        <!--</a>-->
+                        <!--<h1 ng-bind="x.headline"></h1>-->
+                        <!--<h5 ng-if="x.beginTime"><i ng-class="{displaypermanent:!x.beginTime}"></i><span ng-show="x.beginTime"><s ng-bind="x.beginTime|date : 'yyyy/MM/dd'"></s>&#45;&#45;<s ng-bind="x.endTime |date : 'yyyy/MM/dd'"></s></span><span ng-show="!x.beginTime">常设展览</span></h5>-->
+                        <!--<h6><i class="displaytime"></i><span ng-bind="x.musExhibition"></span></h6>-->
+                        <!--<p ng-bind="x.content">-->
+                        <!--</p>-->
+                    <!--</li>-->
+                <!--</ul>-->
+                <!--<div class="PagePlugs" style="margin-top:15px"></div>-->
+            <!--</div>-->
+        </div>
+        <div class="display_list_Pouter" ng-if="tabpage===2" ng-controller="Displaylist.Pouter">
+            <div class="slected-condition" ng-if="isSelected">
+                <ul>
+                    <li>
+                <span>
+                    全部结果>
+                </span>
+                    </li>
+                    <li ng-show="isA">
+                        <small>单位：</small>
+                        <u ng-bind="area"></u>
+                        <i ng-click="removeArea()" ng-show="remove">×</i>
+                    </li>
+                    <li ng-show="isK">
+                        <small>关键字：</small>
+                        <u ng-bind="value"></u>
+                        <i ng-click="hideKeyword()">×</i>
+                    </li>
+                </ul>
+            </div>
+            <div class="display-search">
+                <span>关键词：</span>
+                <input type="text" id="search_box1">
+                <button ng-click="showKeyword()"></button>
+            </div>
+            <div class="condition">
+                <div class="condition-item" ng-if="isClassify">
+                    <p class="condition-title fontB">所在地区：</p>
+                    <ul class="condition-content">
+                        <li ng-repeat="s in conditionData">
+                            <span ng-click="getClassify($event)" ng-bind="s.city.shortname" data-index="{{$index}}"></span>
+                        </li>
+                    </ul>
+                    <div class="condition-more" ng-click="SlideDown($event)">更多<span>&gt;</span></div>
+                </div>
+                <div class="condition-item" ng-if="isArea">
+                    <p class="condition-title fontB">收藏单位：</p>
+                    <ul class="condition-content">
+                        <li ng-repeat="r in conditionData[index].museums">
+                            <span ng-click="getArea($event)" ng-bind="r.shortname"></span>
+                        </li>
+                    </ul>
+                    <div class="condition-more" ng-click="SlideDown($event)">更多<span>&gt;</span></div>
+                </div>
+            </div>
+            <div class="display-list-content">
+                <ul class="display-list-content-tab">
+                    <li ng-click="changeListTab(1)" ng-class="{active:tabsubpage===1}">
+                        正在展出
+                    </li>
+                    <li ng-click="changeListTab(0)" ng-class="{active:tabsubpage===0}" >
+                        往期回顾
+                    </li>
+                </ul>
+            </div>
+            <div class="display-list-content-inner">
+                <ul>
+                    <li ng-repeat='x in nDatalist'>
+                        <a ui-sref="displaydetails({type:'inner',id:2})" target="_blank">
+                            <img ng-src="{{x.picture}}" width="298" height="165" alt="{{x.headline}}">
+                        </a>
+                        <h1 ng-bind="x.headline"></h1>
+                        <h5 ng-if="x.beginTime"><i ng-class="{displaypermanent:!x.beginTime}"></i><span ng-show="x.beginTime"><s ng-bind="x.beginTime|date : 'yyyy/MM/dd'"></s>--<s ng-bind="x.endTime |date : 'yyyy/MM/dd'"></s></span><span ng-show="!x.beginTime">常设展览</span></h5>
+                        <h6><i class="displaytime"></i><span ng-bind="x.musExhibition"></span></h6>
+                        <p ng-bind="x.content">
+                        </p>
+                    </li>
+                </ul>
+                <div class="PagePlugs" style="margin-top:15px"></div>
+            </div>
+        </div>
+        <div class="display_list_Couter" ng-if="tabpage===3" ng-controller="Displaylist.Outer">
+            <div class="slected-condition" ng-if="isSelected">
+                <ul>
+                    <li>
+                <span>
+                    全部结果>
+                </span>
+                    </li>
+                    <li ng-show="isA">
+                        <small>单位：</small>
+                        <u ng-bind="area"></u>
+                        <i ng-click="removeArea()" ng-show="remove">×</i>
+                    </li>
+                    <li ng-show="isK">
+                        <small>关键字：</small>
+                        <u ng-bind="value"></u>
+                        <i ng-click="hideKeyword()">×</i>
+                    </li>
+                </ul>
+            </div>
+            <div class="display-search">
+                <span>关键词：</span>
+                <input type="text" id="search_box2">
+                <button ng-click="showKeyword()"></button>
+            </div>
+            <div class="condition">
+                <div class="condition-item" ng-if="isClassify">
+                    <p class="condition-title fontB">所在地区：</p>
+                    <ul class="condition-content">
+                        <li ng-repeat="s in conditionData">
+                            <span ng-click="getClassify($event)" ng-bind="s.city.shortname" data-index="{{$index}}"></span>
+                        </li>
+                    </ul>
+                    <div class="condition-more" ng-click="SlideDown($event)">更多<span>&gt;</span></div>
+                </div>
+                <div class="condition-item" ng-if="isArea">
+                    <p class="condition-title fontB">收藏单位：</p>
+                    <ul class="condition-content">
+                        <li ng-repeat="r in conditionData[index].museums">
+                            <span ng-click="getArea($event)" ng-bind="r.shortname"></span>
+                        </li>
+                    </ul>
+                    <div class="condition-more" ng-click="SlideDown($event)">更多<span>&gt;</span></div>
+                </div>
+            </div>
+            <div class="display-list-content">
+                <ul class="display-list-content-tab">
+                    <li ng-click="changeListTab(1)" ng-class="{active:tabsubpage===1}">
+                        正在展出
+                    </li>
+                    <li ng-click="changeListTab(0)" ng-class="{active:tabsubpage===0}" >
+                        往期回顾
+                    </li>
+                </ul>
+            </div>
+            <div class="display-list-content-inner" ng-show="tabsubpage===1">
+                <ul>
+                    <li ng-repeat='x in nDatalist'>
+                        <a ui-sref="displaydetails({type:'inner',id:2})" target="_blank">
+                            <img ng-src="{{x.picture}}" width="298" height="165" alt="{{x.headline}}">
+                        </a>
+                        <h1 ng-bind="x.headline"></h1>
+                        <h5 ng-if="x.beginTime"><i ng-class="{displaypermanent:!x.beginTime}"></i><span ng-show="x.beginTime"><s ng-bind="x.beginTime|date : 'yyyy/MM/dd'"></s>--<s ng-bind="x.endTime |date : 'yyyy/MM/dd'"></s></span><span ng-show="!x.beginTime">常设展览</span></h5>
+                        <h6><i class="displaytime"></i><span ng-bind="x.musExhibition"></span></h6>
+                        <p ng-bind="x.content">
+                        </p>
+                    </li>
+                </ul>
+                <div class="PagePlugs" style="margin-top:15px"></div>
+            </div>
+            <div class="display-list-content-inner" ng-show="tabsubpage===0">
+                <ul>
+                    <li ng-repeat='x in pDatalist| filter:{}'>
+                        <a ui-sref="displaydetails({type:'inner',id:2})" target="_blank">
+                            <img ng-src="{{x.picture}}" width="298" height="165" alt="{{x.headline}}">
+                        </a>
+                        <h1 ng-bind="x.headline"></h1>
+                        <h5 ng-if="x.beginTime"><i ng-class="{displaypermanent:!x.beginTime}"></i><span ng-show="x.beginTime"><s ng-bind="x.beginTime|date : 'yyyy/MM/dd'"></s>--<s ng-bind="x.endTime |date : 'yyyy/MM/dd'"></s></span><span ng-show="!x.beginTime">常设展览</span></h5>
+                        <h6><i class="displaytime"></i><span ng-bind="x.musExhibition"></span></h6>
+                        <p ng-bind="x.content">
+                        </p>
+                    </li>
+                </ul>
+                <div class="PagePlugs" style="margin-top:15px"></div>
+            </div>
+        </div>
+    </div>
+</div>

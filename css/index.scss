@@ -1,0 +1,173 @@
+$theme-color:#008582;
+$theme-color-active:#ea703a;
+.wrapper{
+  padding-bottom:14px;
+}
+.section-title{
+  color:$theme-color;
+  margin-bottom:22px;
+  height:40px;
+  overflow: hidden;
+  background:url("../img/iocn_hehua.png") no-repeat;
+  h3{
+    float:left;
+    font-size:18px;
+    font-weight:normal;
+    p{
+      font-size:12px;
+      padding-top:10px;
+    }
+  }
+  >p{
+    float:right;
+    font-size:12px;
+    margin-right:76px;
+    line-height: 40px;
+  }
+}
+.section{
+  padding:30px 56px 0 54px;
+  overflow: hidden;
+  .section-layout-left{
+      float:left;
+      .section-content1{
+        width:678px;
+        ul{
+          li{
+            overflow: hidden;
+            margin-bottom: 14px;
+            .new-img-content{
+              margin-top:7px;
+            }
+            div{
+              float:left;
+              strong{
+                font-weight:normal;
+                font-size:14px;
+                a{
+                  color:rgba(0,0,0,0.8);
+                  &:hover{
+                    text-decoration: underline;
+                  }
+                }
+              }
+              p{
+                margin-top:10px;
+                font-style: italic;
+                color:$theme-color;
+                small{
+                  padding:0 15px 0 11px;
+                }
+              }
+              h6{
+                margin-top:10px;
+                font-weight: normal;
+                font-size:12px;
+                color:rgba(0,0,0,0.6);
+                line-height: 1.52;
+              }
+            }
+          }
+        }
+      }
+  }
+  .section-layout-right{
+    float:left;
+    position:relative;
+    >img{
+      position:absolute;
+      left:-5px;
+      top:69px;
+    }
+    .section-content2{
+      ul{
+        padding-left:20px;
+        li{
+          margin-bottom:12px;
+          overflow: hidden;
+          div{
+            float:left;
+            h3{
+              font-weight:normal;
+              font-size:14px;
+              a{
+                color:#000;
+                &:hover{
+                  text-decoration: underline;
+                }
+              }
+            }
+            p{
+              margin-top:7px;
+              font-size:12px;
+              line-height:1.42;
+              color:rgba(0,0,0,.6);
+            }
+            button{
+              //margin-top:7px;
+              //border:none;
+              //color:$theme-color-active;
+              //background:transparent;
+              //outline:none;
+              //padding:0;
+              //margin-bottom: 6px;
+              //font-size:14px;
+              font-family: "Microsoft YaHei UI";
+              outline: none;
+              width:60px;
+              height:20px;
+              font-size:12px;
+              margin-top:7px;
+              border:1px solid $theme-color-active;
+              border-radius:4px;
+              color:$theme-color-active;
+              background:#fff;
+              padding:0;
+              &:hover{
+                color:#fff;
+                background:$theme-color-active
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.virtual-enter{
+  font-family: "Microsoft YaHei UI";
+  outline: none;
+  width:60px;
+  height:20px;
+  font-size:12px;
+  margin-top:10px;
+  border:1px solid $theme-color-active;
+  border-radius:4px;
+  color:$theme-color-active;
+  background:#fff;
+  padding:0;
+  &:hover{
+    color:#fff;
+    background:$theme-color-active
+  }
+}
+.swiper-container{
+  width:1020px;
+  height:auto;
+  //.swiper-wrapper{
+  //  margin-left:30px;
+  //}
+}
+.swiper-button-prev{
+  width:24px;
+  height:39px;
+  background:url("../img/prev.png") no-repeat;
+  //position:absolute;
+  //left:-100px;
+  //top:-100px;
+}
+.swiper-button-next{
+  width:24px;
+  height:39px;
+  background:url("../img/next.png") no-repeat;
+}

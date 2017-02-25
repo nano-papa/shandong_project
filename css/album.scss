@@ -1,0 +1,218 @@
+@import "common";
+@charset "utf-8";
+.ablum{
+  position:relative;
+  .ablum-tab{
+    padding: 0 0 0 88px;
+    margin-top:20px;
+    ul{
+      &:after{
+        display: block;
+        content: '';
+        clear: both;
+      }
+      li{
+        float:left;
+        height:20px;
+        color:$theme-color;
+        cursor:pointer;
+        color:#666;
+        font-size:18px;
+        &.active{
+          color:$theme-color-active;
+          border-bottom:2px solid $theme-color-active;
+        }
+        a{
+          font-weight: bold;
+        }
+        &:last-child{
+          margin-left:45px;
+        }
+      }
+    }
+  }
+  .ablum-data-list{
+    padding:0 83px;
+    ul{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-flow: row;
+          flex-flow: row;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      margin-top:20px;
+      li{
+        width:207px;
+        margin-bottom:20px;
+        &:not(:nth-child(4n)){
+        margin-right:64px;
+      }
+        h1{
+          font-weight:normal;
+          font-size:14px;
+          color:#333;
+          @include limitLine(1);
+          line-height:40px;
+        }
+        h5{
+          font-weight: normal;
+          font-size:14px;
+          color:$theme-color;
+          line-height:30px;
+        }
+        P{
+          font-size:14px;
+          color:#999;
+          line-height:20px;
+          @include limitLine(3);
+        }
+        .ablum-service{
+          display: flex;
+          width:207px;
+          div{
+            cursor: pointer;
+            padding:5px 0;
+          }
+          div i{
+            width:18px;
+            height:17px;
+            background:url('../img/album-service.png') no-repeat;
+          }
+          .msg{
+            background-position:-40px 0;
+          }
+          .port{
+            background-position:-20px 0;
+          }
+          div span{
+            color:#999;
+            padding:0 5px;
+          }
+        }
+      }
+    }
+  }
+  .ablum-want{
+    position:absolute;
+    left:219px;
+    top:22px;
+    button{
+      padding:0;
+      margin:0;
+      border-radius:14px;
+      width:70px;
+      height:29px;
+      background:$theme-color;
+      outline: none;
+      border:none;
+      font-size:14px;
+      color:#fff;
+      cursor: pointer;
+      &:hover{
+        background:$theme-color-active;
+      }
+    }
+  }
+  .ablum-how{
+    position:absolute;
+    right:180px;
+    top:0px;
+    button{
+      width:30px;
+      height:89px;
+      padding:0;
+      margin:0;
+      border-radius:0 0 14px 14px;
+      background:$theme-color;
+      outline: none;
+      border:none;
+      font-size:16px;
+      color:#fff;
+      cursor: pointer;
+      &:hover{
+        background:$theme-color-active;
+      }
+    }
+  }
+}
+.ablum-details{
+  .ablum-details-wrapper{
+    padding:0 83px;
+    position:relative;
+    h1{
+      font-weight:normal;
+      font-size:18px;
+      color:#0c0c0c;
+      margin-top:15px;
+    }
+    h6{
+      font-weight:normal;
+      font-size:12px;
+      color:$theme-color;
+      margin-top:15px;
+    }
+    .ablum-details-3d{
+      width:100%;
+      height:580px;
+      iframe{
+        width:100%;
+        height:100%;
+      }
+    }
+    h2{
+      font-size:18px;
+      color:$theme-color;
+      line-height: 22px;
+      margin-top:10px;
+    }
+    .ablum-details-intro{
+      width:639px;
+      font-size:12px;
+      line-height: 22px;
+      margin-top:15px;
+      padding-left:53px;
+    }
+    .ablum-details-fullscreen{
+      position:absolute;
+      cursor: pointer;
+      right:83px;
+      top:623px;
+      width:100px;
+      height:30px;
+      background:url('../img/fullscreen.png') no-repeat;
+    }
+    .ablum-details-comment{
+      display: flex;
+      flex-direction: row;
+      margin-top:20px;
+      textarea{
+        width:573px;
+        height:127px;
+        margin-left:15px;
+        resize: none;
+      }
+    }
+    .ablum-details-emoji{
+      display:flex;
+      justify-content: space-between;
+      margin-left:60px;
+      width:573px;
+      .ablum-details-emoji-state{
+        width:20px;
+        height:20px;
+        background:url('../img/emoji.png') no-repeat;
+        &.active{
+          background-position:-22px 0;
+        }
+      }
+      .ablum-details-emoji-submit{
+        button{
+
+        }
+      }
+
+    }
+  }
+
+}
