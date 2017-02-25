@@ -254,9 +254,19 @@
       height:300px;
       overflow: auto;
       li{
-        text-align: center;
         a{
           line-height:30px;
+          display: flex;
+          flex-flow: row;
+          span{
+            @include limitLine(1);
+            width:200px;
+            padding-left:20px;
+          }
+          u{
+            padding-left:10px;
+            text-decoration: none;
+          }
         }
       }
     }

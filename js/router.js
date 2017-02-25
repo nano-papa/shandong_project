@@ -45,7 +45,7 @@ angular.module("myApp.router", ["ui.router"])
                 controller: 'MuseumMap'
             })
             .state('museum.details', {
-                url: '/museumDetails',
+                url: '/museumDetails/:id',
                 templateUrl: 'template/museumDetails.html',
                 controller: 'MuseumDetails'
             })

@@ -1250,74 +1250,49 @@ angular.module('myApp.controllers', [])
     }])
     .controller('MuseumMap', ['$scope', '$http', '$rootScope', '$stateParams', '$window',function ($scope, $http, $rootScope,$stateParams,$window) {
         $rootScope.showIndex = true;
+        $scope.cityid={id:1};
+        $scope.colorRating=[
+            '#771b1b',
+            '#802f2f',
+            '#6a3939',
+            '#723f3f',
+            '#834d4d',
+            '#833e3e',
+            '#8d4040',
+            '#954848',
+            '#9c5656',
+            '#a56666',
+            '#b37777',
+            '#bc8b8b',
+            '#cb9696',
+            '#daa1a1',
+            '#f0b3b3',
+            '#ffc1c1',
+            '#fee0e0'
+        ]
+        $http({
+            method:"GET",
+            url:'data/data_map.json'
+        }).success(function(response){
+            console.log(response);
+            for(var i=0,len=response.length;i<len;i++){
+                var index=response[i].cityOrder;
+                $("#path"+(i+1)).attr('fill',$scope.colorRating[index-1])
+            }
+            $scope.cityData=response;
+        })
         angular.element($("path")).hover(function () {
             $scope.color = $(this).attr("fill");
-            $(this).css({
-                fill: '#323899',
-                cursor: 'pointer',
-                transition: 'all 1s'
-            })
-        }, function () {
-            $(this).css({
-                fill: $scope.color,
-                transition: 'all 1s',
-
-            })
-        })
-        $scope.colorRating=[
-            '#fee0e0',
-            '#ffc1c1',
-            '#f0b3b3',
-            '#daa1a1',
-            '#cb9696',
-            '#bc8b8b',
-            '#b37777',
-            '#a56666',
-            '#9c5656',
-            '#954848',
-            '#8d4040',
-            '#833e3e',
-            '#834d4d',
-            '#723f3f',
-            '#6a3939',
-            '#802f2f',
-            '#771b1b'
-        ]
-        for(var i=0;i<17;i++){
-            $("#path"+i).attr(
-                'fill',$scope.colorRating[i]
+            $(this).attr(
+                'fill','#323899'
             )
-        }
-        $scope.data=[
-            {name:'sdfs7'},
-            {name:'sdfs7'},
-            {name:'sdfs6'},
-            {name:'sdfs5'},
-            {name:'sdfs4'},
-            {name:'sdfs3'},
-            {name:'sdfs2'},
-            {name:'sdfs2'},
-            {name:'sdfs2'},
-            {name:'sdfs2'},
-            {name:'sdfs2'},
-            {name:'sdfs2'},
-            {name:'sdfs2'},
-            {name:'sdfs2'},
-            {name:'sdfs2'},
-            {name:'sdfs2'},
-            {name:'sdfs2'},
-            {name:'sdfs2'},
-            {name:'sdfs2'},
-            {name:'sdfs2'},
-            {name:'sdfs2'},
-            {name:'sdfs2'},
-            {name:'sdfs2'},
-            {name:'sdfs2'},
-            {name:'sdfs2'},
-            {name:'sdfs1'}
-        ]
-        $scope.scrollline=function(){
-          $(".museum-items-list").mCustomScrollbar();
+        }, function () {
+            $(this).attr(
+                "fill",$scope.color
+            )
+        })
+        $scope.changeCity=function(e){
+            $scope.cityid.id=angular.element(e.target)[0].id.slice(4)
         }
     }])
     .controller('MuseumDetails', ['$scope', '$rootScope', function ($scope, $rootScope) {
