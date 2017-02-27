@@ -290,18 +290,18 @@ span.emotion:hover {
 
 /* 设置滚动条的样式 */
 ::-webkit-scrollbar {
-  width: 5px; }
+  width: 2px; }
 
 /* 滚动槽 */
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  border-radius: 5px; }
+  border-radius: 2px; }
 
 /* 滚动条滑块 */
 ::-webkit-scrollbar-thumb {
-  border-radius: 5px;
+  border-radius: 2px;
   background: rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); }
+  -webkit-box-shadow: inset 0 0 6px #008582; }
 
 ::-webkit-scrollbar-thumb:window-inactive {
   background: #008582; }
@@ -509,17 +509,23 @@ span.emotion:hover {
       .museum-map .museum-items ul li a {
         line-height: 30px;
         display: flex;
-        flex-flow: row; }
+        flex-flow: row;
+        color: #000000;
+        font-size: 14px; }
+        .museum-map .museum-items ul li a:hover {
+          color: #008582; }
         .museum-map .museum-items ul li a span {
           display: -webkit-box;
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 1;
           overflow: hidden;
           width: 200px;
-          padding-left: 20px; }
+          padding-left: 20px;
+          font-size: 14px; }
         .museum-map .museum-items ul li a u {
           padding-left: 10px;
-          text-decoration: none; }
+          text-decoration: none;
+          font-size: 14px; }
 
 .museum-details-morecollection-title {
   padding: 10px 15px 0px 83px;

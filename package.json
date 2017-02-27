@@ -4,7 +4,7 @@
   "description": "shangdong-project",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --port 8088 --hot --inline --color"
+    "start": "webpack-dev-server --port 8088 --hot --inline --color --progress"
   },
   "author": "renakan",
   "license": "ISC",

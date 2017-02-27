@@ -63,8 +63,8 @@ angular.module('myApp.controllers', [])
             path: 'img/arclist/'	//表情存放的路径
 
         });
-        $scope.showComment=function(){
-            $scope.saytext= $("#saytext").val();
+        $scope.showComment = function () {
+            $scope.saytext = $("#saytext").val();
             // $("#show").html(replace_em(str));
         }
 
@@ -81,6 +81,16 @@ angular.module('myApp.controllers', [])
             paginationClickable: true,
             freeMode: true
         })
+        $scope.slides = [
+            {ur: 'img/banner.png'},
+            {ur: 'img/banner.png'},
+            {ur: 'img/banner.png'},
+            {ur: 'img/banner.png'},
+            {ur: 'img/banner.png'},
+            {ur: 'img/banner.png'}
+        ];
+        $scope.myInterval = 5000;
+        console.log($scope.slides);
 
     }])
     .controller('Collection', ['$scope', '$stateParams', '$rootScope', function ($scope, $stateParams, $rootScope) {
@@ -107,7 +117,7 @@ angular.module('myApp.controllers', [])
         }
     }])
     //藏品列表页
-    .controller('CollectionRelic', ['$scope', '$http', '$stateParams', '$rootScope', function ($scope, $http, $stateParams, $rootScope) {
+    .controller('CollectionRelic', ['$scope', '$http', '$stateParams', '$rootScope', '$window', function ($scope, $http, $stateParams, $rootScope, $window) {
         $rootScope.showIndex = true;
         $scope.remove = true;
         //筛选条件
@@ -119,6 +129,7 @@ angular.module('myApp.controllers', [])
         $scope.isUnitshow = false;
         $scope.iPage = 1;
         $scope.selectedcondition = {year: '', unit: '', classify: '', sort: '最新', keyword: '', iPage: 1};
+        $scope.selected = {year: '', unit: '', classify: '', sort: '最新', keyword: '', iPage: 1};
         $scope.arr = [];
         var oUl = document.getElementById('ul1');
         var aLi = oUl.getElementsByTagName('li');
@@ -175,7 +186,7 @@ angular.module('myApp.controllers', [])
 
         }
 
-        window.onscroll = function () {
+        $window.onscroll = function () {
 
             var _index = getShort();
             var oLi = aLi[_index];
@@ -219,11 +230,11 @@ angular.module('myApp.controllers', [])
         $scope.getDataList = function () {
             $http.get("../front/OCCollection/info.do?yearType="
                 + $scope.selectedcondition.year +
-                '&collectionUnit=' + $scope.selectedcondition.unit +
-                '&collectionsCategory=' + $scope.selectedcondition.classify +
-                '&order=' + $scope.selectedcondition.sort +
-                '&key=' + $scope.selectedcondition.keyword +
-                '&currentPage=' + $scope.selectedcondition.iPage)
+                '&collectionUnit=' + $scope.selected.unit +
+                '&collectionsCategory=' + $scope.selected.classify +
+                '&order=' + $scope.selected.sort +
+                '&key=' + $scope.selected.keyword +
+                '&currentPage=' + $scope.selected.iPage)
                 .success(function (response) {
                     $scope.data = response.data;
                     // $scope.showMorecondition();
@@ -238,7 +249,9 @@ angular.module('myApp.controllers', [])
         //显示筛选条件
         $scope.getConditions = function (condition, val, e) {
             $scope[condition] = !$scope[condition];
-            $scope.selectedcondition[val] = angular.element(e.target).html();
+            $scope.selectedcondition[val] = angular.element(e.target).attr('data-id');
+            console.log(angular.element(e.target).attr('data-id'));
+            $scope.selected[val] = angular.element(e.target).html();
             $scope.selectedcondition.iPage = 1;
             // }
             $scope.arr.push(1);
@@ -251,6 +264,7 @@ angular.module('myApp.controllers', [])
         $scope.removeCondition = function (iscondition, val) {
             $scope[iscondition] = !$scope[iscondition];
             $scope.selectedcondition[val] = '';
+            $scope.selected[val] = '';
             $scope.selectedcondition.iPage = 1;
             $scope.arr.pop();
             $scope.iPage = 1;
@@ -266,6 +280,7 @@ angular.module('myApp.controllers', [])
                 if ($scope.isKey) {
                     $scope[condition] = true;
                     $scope.selectedcondition.keyword = $scope.value;
+                    $scope.selected.keyword = $scope.value;
                     $scope.selectedcondition.iPage = 1;
                     $scope.iPage = 1;
                     $('#ul1 li').html(" ");
@@ -274,6 +289,7 @@ angular.module('myApp.controllers', [])
                 } else {
                     $scope[condition] = true;
                     $scope.selectedcondition.keyword = $scope.value;
+                    $scope.selected.keyword = $scope.value;
                     $scope.selectedcondition.iPage = 1;
                     $scope.iPage = 1;
                     $scope.arr.push(1);
@@ -290,6 +306,7 @@ angular.module('myApp.controllers', [])
         $scope.hideKeyword = function (iscondition, val) {
             $scope[iscondition] = !$scope[iscondition];
             $scope.selectedcondition.keyword = '';
+            $scope.selected.keyword = '';
             $scope.selectedcondition.iPage = 1;
             $scope.arr.pop();
             $scope.iPage = 1;
@@ -302,19 +319,17 @@ angular.module('myApp.controllers', [])
         //获取地区
         $scope.getArea = function (e) {
             $scope.id = angular.element(e.target).attr('data-id');
-            // $scope.selectedcondition.area=angular.element(e.target).html();
-            // $scope.isArea=true;
             if ($scope.isUnitshow == true) {
                 $scope.arr.pop();
             }
             $scope.isUnit = true;
             $scope.isUnitshow = false;
             $scope.checkCondition();
-            // $scope.getDataList();
         }
         //获取收藏单位
         $scope.getUnit = function (e) {
-            $scope.selectedcondition.unit = angular.element(e.target).html();
+            $scope.selectedcondition.unit = angular.element(e.target).attr('data-id2');
+            $scope.selected.unit = angular.element(e.target).html();
             $scope.isUnitshow = true;
             $scope.isUnit = false;
             $scope.arr.push(1);
@@ -326,6 +341,7 @@ angular.module('myApp.controllers', [])
         //移除收藏单位
         $scope.removeUnit = function () {
             $scope.selectedcondition.unit = '';
+            $scope.selected.unit = '';
             $scope.isUnit = false;
             $scope.isUnitshow = false;
             $scope.arr.pop();
@@ -345,17 +361,18 @@ angular.module('myApp.controllers', [])
             $scope.isActive = !$scope.isActive;
             $scope.selectedcondition.iPage = 1;
             $scope.selectedcondition.sort = angular.element(e.target).html();
+            $scope.selected.sort = angular.element(e.target).html();
+            ;
             $('#ul1 li').html(" ");
             $scope.iPage = 1;
             getList();
-            $scope.getDataList();
         }
-
         if ($stateParams.museum) {
             $scope.remove = false;
             $scope.isUnit = false;
             $scope.isArea = true;
-            $scope.selectedcondition.unit = $stateParams.museum;
+            $scope.selectedcondition.unit = $stateParams.id;
+            $scope.selected.unit = $stateParams.museum;
             $scope.isUnitshow = true;
             $scope.isUnit = false;
             $scope.arr.push(1);
@@ -363,13 +380,9 @@ angular.module('myApp.controllers', [])
             $('#ul1 li').html(" ");
             getList();
             $scope.checkCondition();
-
         }
-        console.log($scope.selectedcondition);
-        console.log($stateParams.type);
-        console.log($stateParams.museum);
     }])
-    .controller('CollectionSpecimen', ['$scope', '$http', '$stateParams', '$rootScope','$window', function ($scope, $http, $stateParams, $rootScope,$window) {
+    .controller('CollectionSpecimen', ['$scope', '$http', '$stateParams', '$rootScope', '$window', function ($scope, $http, $stateParams, $rootScope, $window) {
         $rootScope.showIndex = true;
         $scope.remove = true;
         //筛选条件
@@ -381,6 +394,7 @@ angular.module('myApp.controllers', [])
         $scope.isUnitshow = false;
         $scope.iPage = 1;
         $scope.selectedcondition = {year: '', unit: '', classify: '', sort: '最新', keyword: '', iPage: 1};
+        $scope.selected = {year: '', unit: '', classify: '', sort: '最新', keyword: '', iPage: 1};
         $scope.arr = [];
         var oUl = document.getElementById('ul2');
         var aLi = oUl.getElementsByTagName('li');
@@ -389,7 +403,6 @@ angular.module('myApp.controllers', [])
 
         //初始化数据处理
         getList();
-
         function getList() {
             $http.get("../front/OCFossil/info.do?yearType="
                 + $scope.selectedcondition.year +
@@ -503,7 +516,8 @@ angular.module('myApp.controllers', [])
         //显示筛选条件
         $scope.getConditions = function (condition, val, e) {
             $scope[condition] = !$scope[condition];
-            $scope.selectedcondition[val] = angular.element(e.target).html();
+            $scope.selectedcondition[val] = angular.element(e.target).attr('data-id');
+            $scope.selected[val] = angular.element(e.target).html();
             $scope.selectedcondition.iPage = 1;
             // }
             $scope.arr.push(1);
@@ -516,6 +530,7 @@ angular.module('myApp.controllers', [])
         $scope.removeCondition = function (iscondition, val) {
             $scope[iscondition] = !$scope[iscondition];
             $scope.selectedcondition[val] = '';
+            $scope.selected[val] = '';
             $scope.selectedcondition.iPage = 1;
             $scope.arr.pop();
             $scope.iPage = 1;
@@ -579,7 +594,8 @@ angular.module('myApp.controllers', [])
         }
         //获取收藏单位
         $scope.getUnit = function (e) {
-            $scope.selectedcondition.unit = angular.element(e.target).html();
+            $scope.selectedcondition.unit = angular.element(e.target).attr('data-id2');
+            $scope.selected.unit = angular.element(e.target).html();
             $scope.isUnitshow = true;
             $scope.isUnit = false;
             $scope.arr.push(1);
@@ -610,16 +626,18 @@ angular.module('myApp.controllers', [])
             $scope.isActive = !$scope.isActive;
             $scope.selectedcondition.iPage = 1;
             $scope.selectedcondition.sort = angular.element(e.target).html();
+            $scope.selected.sort = angular.element(e.target).html();
+            ;
             $('#ul1 li').html(" ");
             $scope.iPage = 1;
             getList();
-            $scope.getDataList();
         }
         if ($stateParams.museum) {
             $scope.remove = false;
             $scope.isUnit = false;
             $scope.isArea = true;
-            $scope.selectedcondition.unit = $stateParams.museum;
+            $scope.selectedcondition.unit = $stateParams.id;
+            $scope.selected.unit = $stateParams.museum;
             $scope.isUnitshow = true;
             $scope.isUnit = false;
             $scope.arr.push(1);
@@ -629,14 +647,10 @@ angular.module('myApp.controllers', [])
             $scope.checkCondition();
 
         }
-        console.log($scope.selectedcondition);
-        console.log($stateParams.type);
-        console.log($stateParams.museum);
-
 
     }])
     //展览列表父控制器
-    .controller('Displaylist', ['$scope','$rootScope', '$stateParams', function ($scope, $rootScope, $stateParams) {
+    .controller('Displaylist', ['$scope', '$rootScope', '$stateParams', function ($scope, $rootScope, $stateParams) {
         $rootScope.showIndex = true;
         $scope.tabpage = 1;
         $scope.tabChange = function (tabpage) {
@@ -694,7 +708,7 @@ angular.module('myApp.controllers', [])
                     response.page.totalPage = $scope.pages;
                 })
         }
-        $scope.getDataList()
+        // $scope.getDataList()
         //点击更多
         $scope.SlideDown = function (e) {
             angular.element(e.target).prev().toggleClass("slidedown");
@@ -723,11 +737,12 @@ angular.module('myApp.controllers', [])
         $scope.getArea = function (e) {
             $scope.arr.push(1);
             $scope.area = angular.element(e.target).html();
+
             $scope.isArea = false;
             $scope.isA = true;
             $scope.isClassify = false;
             $scope.conditions.currentPage = 1;
-            $scope.conditions.musExhibition = $scope.area;
+            $scope.conditions.musExhibition = angular.element(e.target).attr('data-id');
             $scope.checkCondition();
             $scope.laypage();
         }
@@ -798,7 +813,7 @@ angular.module('myApp.controllers', [])
             $scope.isA = true;
             $scope.isClassify = false;
             $scope.conditions.currentPage = 1;
-            $scope.conditions.musExhibition = $scope.area;
+            $scope.conditions.musExhibition = $stateParams.id;
             $scope.checkCondition();
             $scope.laypage();
         }
@@ -849,7 +864,6 @@ angular.module('myApp.controllers', [])
                     response.page.totalPage = $scope.pages;
                 })
         }
-        $scope.getDataList()
         //点击更多
         $scope.SlideDown = function (e) {
             angular.element(e.target).prev().toggleClass("slidedown");
@@ -882,7 +896,7 @@ angular.module('myApp.controllers', [])
             $scope.isA = true;
             $scope.isClassify = false;
             $scope.conditions.currentPage = 1;
-            $scope.conditions.musExhibition = $scope.area;
+            $scope.conditions.musExhibition = angular.element(e.target).attr('data-id');
             $scope.checkCondition();
             $scope.laypage();
         }
@@ -954,7 +968,7 @@ angular.module('myApp.controllers', [])
             $scope.isA = true;
             $scope.isClassify = false;
             $scope.conditions.currentPage = 1;
-            $scope.conditions.musExhibition = $scope.area;
+            $scope.conditions.musExhibition = $stateParams.id;
             $scope.checkCondition();
             $scope.laypage();
         }
@@ -1007,7 +1021,6 @@ angular.module('myApp.controllers', [])
                     response.page.totalPage = $scope.pages;
                 })
         }
-        $scope.getDataList()
         //点击更多
         $scope.SlideDown = function (e) {
             angular.element(e.target).prev().toggleClass("slidedown");
@@ -1040,7 +1053,7 @@ angular.module('myApp.controllers', [])
             $scope.isA = true;
             $scope.isClassify = false;
             $scope.conditions.currentPage = 1;
-            $scope.conditions.musExhibition = $scope.area;
+            $scope.conditions.musExhibition = angular.element(e.target).attr('data-id');
             $scope.checkCondition();
             $scope.laypage();
         }
@@ -1095,7 +1108,6 @@ angular.module('myApp.controllers', [])
                 skin: '#ea703a',
                 groups: 5, //连续显示分页数
                 jump: function (obj) { //触发分页后的回调
-                    // $scope.curr = obj.curr;
                     $scope.conditions.currentPage = obj.curr;
                     $scope.getDataList();
                     console.log($scope.pages);
@@ -1112,7 +1124,7 @@ angular.module('myApp.controllers', [])
             $scope.isA = true;
             $scope.isClassify = false;
             $scope.conditions.currentPage = 1;
-            $scope.conditions.musExhibition = $scope.area;
+            $scope.conditions.musExhibition = $stateParams.id;
             $scope.checkCondition();
             $scope.laypage();
         }
@@ -1137,7 +1149,7 @@ angular.module('myApp.controllers', [])
 
     }])
     .controller('CollectionDetails', ['$scope', '$http', '$stateParams', '$window', '$rootScope', function ($scope, $http, $stateParams, $window, $rootScope) {
-        $window.onload=function(){
+        $window.onload = function () {
             $(".content_1").mCustomScrollbar({
                 scrollButtons: {
                     enable: true
@@ -1248,10 +1260,10 @@ angular.module('myApp.controllers', [])
     .controller('Museum', ['$scope', '$scope', '$rootScope', '$stateParams', function ($scope, $stateParams, $rootScope) {
         $rootScope.showIndex = true;
     }])
-    .controller('MuseumMap', ['$scope', '$http', '$rootScope', '$stateParams', '$window',function ($scope, $http, $rootScope,$stateParams,$window) {
+    .controller('MuseumMap', ['$scope', '$http', '$rootScope', '$stateParams', '$window', function ($scope, $http, $rootScope, $stateParams, $window) {
         $rootScope.showIndex = true;
-        $scope.cityid={id:1};
-        $scope.colorRating=[
+        $scope.cityid = {id: 1};
+        $scope.colorRating = [
             '#771b1b',
             '#802f2f',
             '#6a3939',
@@ -1269,30 +1281,52 @@ angular.module('myApp.controllers', [])
             '#f0b3b3',
             '#ffc1c1',
             '#fee0e0'
-        ]
+        ];
+        // $scope.colorRating=[
+        //     '#133e60',
+        //     '#0c4571',
+        //     '#105185',
+        //     '#015796',
+        //     '#0277bd',
+        //     '#0288d1',
+        //     '#039be5',
+        //     '#0091ea',
+        //     '#03a9f4',
+        //     '#00b0ff',
+        //     '#29b6f6',
+        //     '#40c4ff',
+        //     '#4fc3f7',
+        //     '#81d4fa',
+        //     '#80d8ff',
+        //     '#b3e5fc',
+        //     '#e1f5fe'
+        // ]
         $http({
-            method:"GET",
-            url:'data/data_map.json'
-        }).success(function(response){
+            method: "GET",
+            url: 'data/data_map.json'
+        }).success(function (response) {
             console.log(response);
-            for(var i=0,len=response.length;i<len;i++){
-                var index=response[i].cityOrder;
-                $("#path"+(i+1)).attr('fill',$scope.colorRating[index-1])
+            for (var i = 0, len = response.length; i < len; i++) {
+                var index = response[i].cityOrder;
+                $("#path" + (i + 1)).attr('fill', $scope.colorRating[index - 1])
             }
-            $scope.cityData=response;
+            $scope.cityData = response;
         })
         angular.element($("path")).hover(function () {
             $scope.color = $(this).attr("fill");
-            $(this).attr(
-                'fill','#323899'
-            )
+            $(this).css({
+                cursor: 'pointer',
+                fill: '#ea703a',
+                transition: 'all .8s'
+            })
         }, function () {
-            $(this).attr(
-                "fill",$scope.color
+            $(this).css({
+                    fill: $scope.color
+                }
             )
         })
-        $scope.changeCity=function(e){
-            $scope.cityid.id=angular.element(e.target)[0].id.slice(4)
+        $scope.changeCity = function (e) {
+            $scope.cityid.id = angular.element(e.target)[0].id.slice(4)
         }
     }])
     .controller('MuseumDetails', ['$scope', '$rootScope', function ($scope, $rootScope) {
@@ -1359,19 +1393,22 @@ angular.module('myApp.controllers', [])
     //         }
     //     });
     // }])
-    .controller('Digization', ['$scope', "$http", '$rootScope', '$stateParams',function ($scope, $http, $rootScope,$stateParams) {
+    .controller('Digization', ['$scope', "$http", '$rootScope', '$stateParams', function ($scope, $http, $rootScope, $stateParams) {
         $rootScope.showIndex = true;
-        $scope.tabpage = 0;
-        $scope.page=1;
-        $scope.museum='';
-        $scope.conditions={
-            currentPage:$scope.page,
-            museum:$scope.museum
+        $scope.tabpage = 1;
+        $scope.page = 1;
+        $scope.museum = '';
+        $scope.conditions = {
+            currentPage: $scope.page,
+            flag: $scope.tabpage,
+            museum: $scope.museum,
+            size: '3'
         }
         $scope.changeTab = function (page) {
             $scope.tabpage = page;
+            $scope.conditions.flag = page;
+            $scope.getDataList();
         }
-        $scope.curr = 1;
         // // $http.get("../virtual/getPCVirtual.do?currentPage="+$scope.curr)
         // $http.get("data/v.json?currentPage=" + $scope.curr)
         //     .success(function (response) {
@@ -1379,8 +1416,9 @@ angular.module('myApp.controllers', [])
         //     });
         $scope.laypage = function () {
             $http({
-                method:"GET",
-                url:"data/v.json"
+                method: "GET",
+                url: "data/v.json",
+                params: $scope.conditions
             })
                 .success(function (response) {
                     $scope.pages = response.page.totalPage;
@@ -1397,23 +1435,22 @@ angular.module('myApp.controllers', [])
                             $scope.getDataList();
                         }
                     });
-                    // $scope.layerpage();
                 });
         }
         $scope.laypage();
-        $scope.getDataList=function(){
+        $scope.getDataList = function () {
             $http({
-                method:"GET",
-                url:"data/v.json",
-                params:$scope.conditions
+                method: "GET",
+                url: "data/v.json",
+                params: $scope.conditions
             })
                 .success(function (response) {
                     $scope.data = response.data;
                 });
         }
-        $scope.getDataList();
-        if($stateParams.museum){
-            $scope.conditions.museum=$stateParams.museum;
+        if ($stateParams.museum) {
+            $scope.conditions.museum = $stateParams.id;
+            $scope.museum = $stateParams.museum;
             $scope.getDataList();
         }
     }])

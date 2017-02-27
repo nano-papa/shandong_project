@@ -258,14 +258,21 @@
           line-height:30px;
           display: flex;
           flex-flow: row;
+          color:#000000;
+          font-size: 14px;
+          &:hover{
+            color:$theme-color;
+          }
           span{
             @include limitLine(1);
             width:200px;
             padding-left:20px;
+            font-size: 14px;
           }
           u{
             padding-left:10px;
             text-decoration: none;
+            font-size: 14px;
           }
         }
       }

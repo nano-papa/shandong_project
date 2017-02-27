@@ -1,11 +1,11 @@
 <div class="slider">
-    <ul>
-        <li>
+    <carousel interval="myInterval">
+        <slide ng-repeat="slide in slides" active="slide.active">
             <a href="">
-                <img src="img/banner.png" alt="">
+                <img ng-src="{{slide.ur}}" style="margin:auto;">
             </a>
-        </li>
-    </ul>
+        </slide>
+    </carousel>
 </div>
 <div class="section">
     <div class="section-layout-left">

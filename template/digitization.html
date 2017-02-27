@@ -1,15 +1,15 @@
 <div class="digization">
     <img src="img/collection.png" alt="">
     <p class="breadcrumb">
-        <a ui-sref="home">首页</a><u>&gt;&gt;</u><a ui-sref="digitization">数字展厅</a><u ng-show="conditions.museum">&gt;&gt;</u><span ng-show="conditions.museum" ng-bind="conditions.museum"></span>
+        <a ui-sref="home">首页</a><u>&gt;&gt;</u><a ui-sref="digitization">数字展厅</a><u ng-show="conditions.museum">&gt;&gt;</u><span ng-show="conditions.museum" ng-bind="museum"></span>
     </p>
     <div class="digization-tab">
         <ul>
-            <li ng-class="{active:tabpage==0}" ng-click="changeTab(0)">最新</li>
-            <li ng-class="{active:tabpage==1}" ng-click="changeTab(1)">最热</li>
+            <li ng-class="{active:tabpage==1}" ng-click="changeTab(1)">最新</li>
+            <li ng-class="{active:tabpage==2}" ng-click="changeTab(2)">最热</li>
         </ul>
     </div>
-    <ul class="digization-list" ng-show="tabpage==0">
+    <ul class="digization-list">
         <li class="digization-list-item" ng-repeat="item in data |limitTo: 3">
             <ul>
                 <li class="digization-list-item-img">
@@ -27,22 +27,22 @@
         </li>
         <div class="PagePlugs" style="margin:30px 0;"></div>
     </ul>
-    <ul class="digization-list" ng-show="tabpage==1">
-        <li class="digization-list-item" ng-repeat="item in data |limitTo: 3">
-            <ul>
-                <li class="digization-list-item-img">
-                    <a ng-href="{{item.viPCUrl}}">
-                        <img ng-src="{{item.viMasterMap}}" width="449" height="253" alt="{{item.viName}}">
-                    </a>
-                </li>
-                <li class="digization-list-item-infor">
-                    <div>
-                        <h1 ng-bind="item.viName"></h1>
-                        <p ng-bind="item.viIntro"></p>
-                    </div>
-                </li>
-            </ul>
-        </li>
-        <div class="PagePlugs" style="margin:30px 0;"></div>
-    </ul>
+    <!--<ul class="digization-list" ng-show="tabpage==1">-->
+        <!--<li class="digization-list-item" ng-repeat="item in data |limitTo: 3">-->
+            <!--<ul>-->
+                <!--<li class="digization-list-item-img">-->
+                    <!--<a ng-href="{{item.viPCUrl}}">-->
+                        <!--<img ng-src="{{item.viMasterMap}}" width="449" height="253" alt="{{item.viName}}">-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li class="digization-list-item-infor">-->
+                    <!--<div>-->
+                        <!--<h1 ng-bind="item.viName"></h1>-->
+                        <!--<p ng-bind="item.viIntro"></p>-->
+                    <!--</div>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</li>-->
+        <!--<div class="PagePlugs" style="margin:30px 0;"></div>-->
+    <!--</ul>-->
 </div>

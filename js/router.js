@@ -66,13 +66,13 @@ angular.module("myApp.router", ["ui.router"])
             })
             //数字博物馆
             .state('digitization', {
-                url: '/digitization/:museum',
+                url: '/digitization/:museum/:id',
                 templateUrl: 'template/digitization.html',
                 controller: 'Digization'
             })
             //藏品
             .state('collection', {
-                url: '/collection/:museum/:type',
+                url: '/collection/:museum/:type/:id',
                 views: {
                     '': {
                         templateUrl: 'template/collection.html',
@@ -95,7 +95,7 @@ angular.module("myApp.router", ["ui.router"])
                 templateUrl: 'template/Wiki.html'
             })
             .state('display', {
-                url: '/display/:museum',
+                url: '/display/:museum/:id',
                 templateUrl: 'template/display.html',
                 controller: 'Displaylist'
             })
