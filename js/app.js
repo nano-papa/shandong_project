@@ -6,11 +6,11 @@
 
 // Declare app level module which depends on filters, and services
 angular.module('myApp', [
-    'ui.bootstrap',
     'ngSanitize',
     'myApp.filters',
     'myApp.services',
     'myApp.directives',
     'myApp.controllers',
     'myApp.router'
-]);
+])
+;

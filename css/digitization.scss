@@ -76,7 +76,16 @@
               font-size: 14px;
               line-height: 22px;
               color:rgba(0,0,0,.7);
-              @include limitLine(8);
+              width: 543px;
+              height:200px;
+              &.hide{
+                @include limitLine(9);
+                padding-right:2px;
+              }
+              &.showmore{
+                overflow:auto;
+                padding-right:0px;
+              }
             }
 
           }

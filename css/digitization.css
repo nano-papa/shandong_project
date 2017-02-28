@@ -365,9 +365,16 @@ span.emotion:hover {
           font-size: 14px;
           line-height: 22px;
           color: rgba(0, 0, 0, 0.7);
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 8;
-          overflow: hidden; }
+          width: 543px;
+          height: 200px; }
+          .digization .digization-list .digization-list-item ul .digization-list-item-infor div p.hide {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 9;
+            overflow: hidden;
+            padding-right: 2px; }
+          .digization .digization-list .digization-list-item ul .digization-list-item-infor div p.showmore {
+            overflow: auto;
+            padding-right: 0px; }
 
 /*# sourceMappingURL=digitization.css.map */

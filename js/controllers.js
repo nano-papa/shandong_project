@@ -73,13 +73,27 @@ angular.module('myApp.controllers', [])
     .controller('index_parentControl', ['$scope', '$rootScope', function ($scope, $rootScope) {
         $rootScope.showIndex = true;
         $scope.msg = "hello word!";
+        $scope.slider=function(){
+            $('.slider').unslider({
+                autoplay:true,
+                infinite:true,
+                delay:3000,
+                arrows: {
+                    prev: '<a class="unslider-arrow prev"></a>',
+                    next: '<a class="unslider-arrow next"></a>',
+                }
+            });
+        }
         var mySwiper = new Swiper('.swiper-container', {
             loop: true,
             nextButton: '.swiper-button-next',
             prevButton: '.swiper-button-prev',
             slidesPerView: 4,
-            paginationClickable: true,
-            freeMode: true
+            // paginationClickable: true,
+            freeMode: true,
+            observer:true,
+            observeParents:true
+
         })
         $scope.slides = [
             {ur: 'img/banner.png'},
@@ -87,7 +101,19 @@ angular.module('myApp.controllers', [])
             {ur: 'img/banner.png'},
             {ur: 'img/banner.png'},
             {ur: 'img/banner.png'},
+            {ur: 'img/banner.png'},
+            {ur: 'img/banner.png'},
+            {ur: 'img/banner.png'},
             {ur: 'img/banner.png'}
+        ];
+        $scope.slidess = [
+            {ur: 'img/pic5.png'},
+            {ur: 'img/pic5.png'},
+            {ur: 'img/pic5.png'},
+            {ur: 'img/pic5.png'},
+            {ur: 'img/pic5.png'},
+            {ur: 'img/pic5.png'},
+            {ur: 'img/pic5.png'}
         ];
         $scope.myInterval = 5000;
         console.log($scope.slides);
@@ -1393,8 +1419,14 @@ angular.module('myApp.controllers', [])
     //         }
     //     });
     // }])
-    .controller('Digization', ['$scope', "$http", '$rootScope', '$stateParams', function ($scope, $http, $rootScope, $stateParams) {
+    .controller('Digization', ['$scope', "$http", '$rootScope', '$stateParams',function ($scope, $http, $rootScope, $stateParams) {
         $rootScope.showIndex = true;
+        $scope.showMore=function(e){
+            angular.element(e.target).addClass('showmore').removeClass('hide')
+        }
+        $scope.hide=function(e){
+            angular.element(e.target).removeClass('showmore').addClass('hide')
+        };
         $scope.tabpage = 1;
         $scope.page = 1;
         $scope.museum = '';
@@ -1453,5 +1485,6 @@ angular.module('myApp.controllers', [])
             $scope.museum = $stateParams.museum;
             $scope.getDataList();
         }
+
     }])
 ;

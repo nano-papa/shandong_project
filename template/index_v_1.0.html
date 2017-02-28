@@ -1,11 +1,11 @@
 <div class="slider">
-    <carousel interval="myInterval">
-        <slide ng-repeat="slide in slides" active="slide.active">
+    <ul>
+        <li ng-repeat="slide in slides" repeat-done="slider()">
             <a href="">
-                <img ng-src="{{slide.ur}}" style="margin:auto;">
+                <img ng-src="{{slide.ur}}" width="1200" style="margin:auto;">
             </a>
-        </slide>
-    </carousel>
+        </li>
+    </ul>
 </div>
 <div class="section">
     <div class="section-layout-left">
@@ -189,36 +189,36 @@
 <div style="position:relative">
     <div class="collection swiper-container">
         <ul class="swiper-wrapper">
-            <li class="swiper-slide">
+            <li class="swiper-slide" ng-repeat="i in slidess">
                 <a href="">
-                    <img src="img/pic5.png" alt="">
+                    <img ng-src="{{i.ur}}" alt="">
                 </a>
             </li>
-            <li class="swiper-slide">
-                <a href="">
-                    <img src="img/pic5.png" alt="">
-                </a>
-            </li>
-            <li class="swiper-slide">
-                <a href="">
-                    <img src="img/pic5.png" alt="">
-                </a>
-            </li>
-            <li class="swiper-slide">
-                <a href="">
-                    <img src="img/pic5.png" alt="">
-                </a>
-            </li>
-            <li class="swiper-slide">
-                <a href="">
-                    <img src="img/pic5.png" alt="">
-                </a>
-            </li>
-            <li class="swiper-slide">
-                <a href="">
-                    <img src="img/pic5.png" alt="">
-                </a>
-            </li>
+            <!--<li class="swiper-slide">-->
+                <!--<a href="">-->
+                    <!--<img src="img/pic5.png" alt="">-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="swiper-slide">-->
+                <!--<a href="">-->
+                    <!--<img src="img/pic5.png" alt="">-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="swiper-slide">-->
+                <!--<a href="">-->
+                    <!--<img src="img/pic5.png" alt="">-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="swiper-slide">-->
+                <!--<a href="">-->
+                    <!--<img src="img/pic5.png" alt="">-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="swiper-slide">-->
+                <!--<a href="">-->
+                    <!--<img src="img/pic5.png" alt="">-->
+                <!--</a>-->
+            <!--</li>-->
         </ul>
     </div>
     <div class="swiper-button-prev"
