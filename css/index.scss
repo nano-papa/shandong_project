@@ -1,11 +1,15 @@
+@import "common";
 $theme-color:#008582;
+
 $theme-color-active:#ea703a;
 .wrapper{
   padding-bottom:14px;
 }
 .slider{
   height:455px;
-
+}
+.swiper-slide{
+  text-align: center;
 }
 .section-title{
   color:$theme-color;
@@ -25,7 +29,7 @@ $theme-color-active:#ea703a;
   >p{
     float:right;
     font-size:12px;
-    margin-right:76px;
+    margin-right:27px;
     line-height: 40px;
   }
 }
@@ -35,7 +39,7 @@ $theme-color-active:#ea703a;
   .section-layout-left{
       float:left;
       .section-content1{
-        width:678px;
+        width:613px;
         ul{
           li{
             overflow: hidden;
@@ -56,7 +60,7 @@ $theme-color-active:#ea703a;
                 }
               }
               p{
-                margin-top:10px;
+                margin-top:15px;
                 font-style: italic;
                 color:$theme-color;
                 small{
@@ -70,13 +74,23 @@ $theme-color-active:#ea703a;
                 color:rgba(0,0,0,0.6);
                 line-height: 1.52;
               }
+              h5{
+                width:200px;
+                margin-top:10px;
+                font-weight: normal;
+                @include limitLine(3);
+                font-size:12px;
+                color:rgba(0,0,0,0.6);
+                line-height: 1.52;
+              }
             }
           }
         }
       }
   }
   .section-layout-right{
-    float:left;
+    float:right;
+    width:468px;
     position:relative;
     >img{
       position:absolute;
@@ -86,9 +100,12 @@ $theme-color-active:#ea703a;
     .section-content2{
       ul{
         padding-left:20px;
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
         li{
-          margin-bottom:12px;
           overflow: hidden;
+          margin:0 40px 38px 0;
           div{
             float:left;
             h3{
@@ -108,14 +125,6 @@ $theme-color-active:#ea703a;
               color:rgba(0,0,0,.6);
             }
             button{
-              //margin-top:7px;
-              //border:none;
-              //color:$theme-color-active;
-              //background:transparent;
-              //outline:none;
-              //padding:0;
-              //margin-bottom: 6px;
-              //font-size:14px;
               font-family: "Microsoft YaHei UI";
               outline: none;
               width:60px;
@@ -158,20 +167,22 @@ $theme-color-active:#ea703a;
 .swiper-container{
   width:1020px;
   height:auto;
-  //.swiper-wrapper{
-  //  margin-left:30px;
-  //}
 }
 .swiper-button-prev{
-  width:24px;
-  height:39px;
-  background:url("../img/prev.png") no-repeat;
-  //position:absolute;
-  //left:-100px;
-  //top:-100px;
+  width:40px;
+  height:40px;
+  margin-left:30px;
+  background:url('../img/slider.png') no-repeat;
+  &:hover{
+
+    background-position:0px -42px;
+  }
 }
 .swiper-button-next{
-  width:24px;
-  height:39px;
-  background:url("../img/next.png") no-repeat;
+  width:40px;
+  height:40px;
+  background:url('../img/slider.png') -42px 0 no-repeat;
+  &:hover{
+    background-position:-42px -42px;
+  }
 }

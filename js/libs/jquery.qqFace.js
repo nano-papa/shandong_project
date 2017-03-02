@@ -36,12 +36,14 @@
 			$('#'+id).css('top',top);
 			$('#'+id).css('left',offset.left);
 			$('#'+id).show();
+            $(this).addClass('active');
 			e.stopPropagation();
 		});
 
 		$(document).click(function(){
 			$('#'+id).hide();
 			$('#'+id).remove();
+            $('.emotion').removeClass('active');
 		});
 	};
 
@@ -73,8 +75,7 @@ jQuery.fn.extend({
 			} 
 		}); 
 	}, 
-
-	setCaret: function(){ 
+	setCaret: function(){
 		if(!$.support.msie) return;
 		var initSetCaret = function(){ 
 			var textObj = $(this).get(0); 
@@ -82,8 +83,7 @@ jQuery.fn.extend({
 		}; 
 		$(this).click(initSetCaret).select(initSetCaret).keyup(initSetCaret); 
 	}, 
-
-	insertAtCaret: function(textFeildValue){ 
+	insertAtCaret: function(textFeildValue){
 		var textObj = $(this).get(0); 
 		if(document.all && textObj.createTextRange && textObj.caretPos){ 
 			var caretPos=textObj.caretPos; 

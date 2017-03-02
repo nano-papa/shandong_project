@@ -53,7 +53,7 @@
           float: left;
         }
         .digization-list-item-img {
-          width: 449px;
+          width: 297px;
           p {
             font-size: 18px;
             line-height: 40px;
@@ -65,21 +65,24 @@
           height:253px;
           margin-left:54px;
           div {
-            padding-top:18px;
             h1{
               font-size:18px;
               line-height:22px;
+            }
+            h2{
+              font-size:12px;
+              line-height:20px;
+              color:$theme-color;
               font-weight:normal;
-              padding-bottom:18px;
             }
             p{
               font-size: 14px;
               line-height: 22px;
               color:rgba(0,0,0,.7);
               width: 543px;
-              height:200px;
+              height:130px;
               &.hide{
-                @include limitLine(9);
+                @include limitLine(6);
                 padding-right:2px;
               }
               &.showmore{

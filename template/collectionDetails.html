@@ -8,21 +8,20 @@
     </ul>
     <ul>
         <li>
-            <button>3d展示</button>
+            <button><a href="">3D</a></button>
         </li>
         <li>
-            <button>视频</button>
+            <button><a ui-sref="collectinodetailsvideo" target="_blank">视频</a></button>
         </li>
         <li>
-            <button>百科</button>
+            <button><a href="">百科</a></button>
         </li>
         <li style="padding-left:40px;">
             <i ng-class="{active:data.isCollected}" ng-click="addCollection($event)"></i><u ng-bind="'收藏('+(data.mipOpenCulturalrelicInfo.selectCounts+num2)+')'"></u>
         </li>
-
     </ul>
     <div class="collection-details-img">
-        <img width="542" height="361" ng-src="{{data.mipOpenCulturalrelicInfo.fpic}}" alt="{{data.mipOpenCulturalrelicInfo.name}}">
+        <img width="640" height="426" ng-src="{{data.mipOpenCulturalrelicInfo.fpic}}" alt="{{data.mipOpenCulturalrelicInfo.name}}">
     </div>
     <div class="collection-details-msg">
         <p>基本信息</p>

@@ -124,14 +124,14 @@
       padding:0;
       margin:0;
       border-radius:0 0 14px 14px;
-      background:$theme-color;
+      background:#bababa;
       outline: none;
       border:none;
       font-size:16px;
       color:#fff;
       cursor: pointer;
       &:hover{
-        background:$theme-color-active;
+        background:$theme-color;
       }
     }
   }
@@ -215,4 +215,97 @@
     }
   }
 
+}
+//表情样式
+
+.com_form {
+  width: 100%;
+  position: relative
+}
+
+.input {
+  width: 99%;
+  height: 60px;
+  border: 1px solid #ccc
+}
+
+.com_form p {
+  height: 28px;
+  line-height: 28px;
+  position: relative;
+  margin-top: 10px;
+}
+
+span.emotion {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+  background:url('../img/emoji.png') no-repeat;
+}
+
+span.emotion.active {
+  background-position:-22px 0;
+}
+
+.qqFace {
+  margin-top: 4px;
+  background: #fff;
+  padding: 2px;
+  border: 1px #dfe6f6 solid;
+}
+
+.qqFace table td {
+  padding: 0px;
+}
+
+.qqFace table td img {
+  cursor: pointer;
+  border: 1px #fff solid;
+}
+
+.qqFace table td img:hover {
+  border: 1px #0066cc solid;
+}
+
+#show {
+  width: 770px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #DDD;
+  vertical-align: top;
+}
+
+.sub_btn {
+  position: absolute;
+  right: 0px;
+  top: 0;
+  display: inline-block;
+  zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+  display: inline;
+  vertical-align: baseline;
+  margin: 0 2px;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  padding: .5em 2em .55em;
+  color: #666;
+  border:none;
+  background: #e6e6e6;
+}
+
+.sub_btn:hover {
+  color:#fff;
+  background: $theme-color-active;
+}
+.comment-count{
+  position:absolute;
+  right:8px;
+  bottom:45px;
+  &.warr{
+    color:red;
+  }
 }

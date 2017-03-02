@@ -1,19 +1,15 @@
-// require("../index.html");
 require("../css/reset.css");
+require("../css/swiper-3.4.1.min.css");
 require("../css/index.css");
 require("../css/common.css");
 require("../css/unslider.css");
 require("../css/unslider-dots.css");
-require("../css/swiper-3.4.1.min.css");
 require("../css/collection.css");
 require("../css/museum.css");
 require("../css/digitization.css");
 require("../css/display.css");
 require("../css/login.css");
 require('../css/album.css');
-
-
-var swiper=require("./libs/swiper-3.4.1.min");
 var app=require("./app");
 var controllr=require("./controllers");
 var directive=require("./directives");

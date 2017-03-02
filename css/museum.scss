@@ -13,11 +13,11 @@
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   .museum-details-img {
-    width: 617px;
-    height: 346px;
+    width: 640px;
+    height: 360px;
   }
   .museum-details-msg {
-    width: 383px;
+    width: 360px;
     padding: 53px 0 0 34px;
     .museum-details-msg-title {
       color: $theme-color;
@@ -155,8 +155,7 @@
   .museum-details-display {
     margin-top:30px;
     margin-bottom:30px;
-    width: 470px;
-    padding-right:45px;
+    width: 515px;
     .museum-details-display-content {
       margin-top:10px;
       display: -webkit-box;
@@ -170,7 +169,7 @@
           flex-wrap: wrap;
       div{
         margin-top:20px;
-        padding-left:20px;
+        margin-left:12px;
         h5{
           font-size:12px;
           font-weight:normal;
@@ -196,14 +195,14 @@
     }
   }
   .museum-details-digization{
-    padding-left:60px;
+    padding-left:50px;
     width:459px;
     margin-top:30px;
     margin-bottom:30px;
     position:relative;
     .line-clip{
       position:absolute;
-      left:-6px;
+      left:23px;
       top:0;
     }
     .museum-details-digization-content{

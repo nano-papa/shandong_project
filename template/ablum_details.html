@@ -27,15 +27,24 @@
                 <!--<button>添加评论</button>-->
             <!--</li>-->
         <!--</ul>-->
-        <div class="comment">
-            <div class="com_form">
-                <div id="show" contenteditable="true" ng-bind-html="saytext|filterQQface"></div>
-                <textarea class="input" id="saytext" name="saytext"></textarea>
-                <p>
-                    <input type="button" class="sub_btn" ng-click="showComment()" value="提交" >
-                    <span class="emotion">表情</span></p>
+        <div class="ablum-details-comment">
+            <div class="ablum-details-comment-head">
+                <img src="img/user_head.png" width="40" height="40" style="border-radius: 50%" alt="">
+            </div>
+            <div class="comment">
+                <div class="com_form">
+                    <!--<div id="show" contenteditable="true" ng-bind-html="saytext|filterQQface"></div>-->
+                    <textarea class="input" id="saytext" name="saytext" ng-change="check()" ng-model="msg" ng-maxlength="1000" ng-minlength="0" required></textarea>
+                    <p>
+                        <input type="button" class="sub_btn" ng-click="showComment()" value="添加评论" >
+                        <span class="emotion ablum-details-emoji-state"></span>
+                    </p>
+                    <div class="comment-count" ng-bind="num+len+'/1000'" ng-class="{warr:warr}">
+                    </div>
+                </div>
             </div>
         </div>
+
     </div>
 
 

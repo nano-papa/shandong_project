@@ -79,14 +79,22 @@ angular.module("myApp.router", ["ui.router"])
                         controller: "Collection"
                     }
                 }
-
             })
             .state('collectiondetails', {
-                url: '/collection/collectiondetails/:type/:id',
+                url: '/collectiondetails/:type/:id',
                 views: {
                     '': {
                         templateUrl: 'template/collectionDetails.html',
                         controller: "CollectionDetails"
+                    }
+                }
+            })
+            .state('collectinodetailsvideo',{
+                url:'/collectinodetailsvideo/:url',
+                views: {
+                    '': {
+                        templateUrl: 'template/collectionDetailsVideo.html',
+                        controller: "CollectionDetailsVideo"
                     }
                 }
             })

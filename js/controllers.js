@@ -19,7 +19,6 @@ angular.module('myApp.controllers', [])
     //策展列表页
     .controller('Album', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
         $rootScope.showIndex = true;
-        console.log($http);
         $scope.tabpage = 0;
         $scope.changeTab = function (page) {
             $scope.tabpage = page;
@@ -45,6 +44,9 @@ angular.module('myApp.controllers', [])
     //策展详情页
     .controller('AlbumDetails', ['$scope', '$http', '$rootScope', '$stateParams', function ($scope, $http, $rootScope, $stateParams) {
         $rootScope.showIndex = true;
+        $scope.num=0;
+        $scope.warr=false;
+        $scope.msg='';
         $scope.fullScreen = function () {
             var index = layer.open({
                 title: '北宋陶瓷展',
@@ -55,20 +57,20 @@ angular.module('myApp.controllers', [])
             layer.full(index);
         }
         $('.emotion').qqFace({
-
             id: 'facebox',
-
             assign: 'saytext',
-
-            path: 'img/arclist/'	//表情存放的路径
-
+            path: 'img/arclist/'//表情存放的路径
         });
         $scope.showComment = function () {
             $scope.saytext = $("#saytext").val();
             // $("#show").html(replace_em(str));
         }
-
-
+        $scope.check=function(){
+            $scope.len=($scope.msg)?$scope.msg.length:0;
+            (($scope.len+$scope.num)>=1000)?
+                ($scope.warr=true):($scope.warr=false);
+                console.log($scope.len);
+            }
     }])
     .controller('index_parentControl', ['$scope', '$rootScope', function ($scope, $rootScope) {
         $rootScope.showIndex = true;
@@ -76,12 +78,12 @@ angular.module('myApp.controllers', [])
         $scope.slider=function(){
             $('.slider').unslider({
                 autoplay:true,
-                infinite:true,
                 delay:3000,
                 arrows: {
                     prev: '<a class="unslider-arrow prev"></a>',
                     next: '<a class="unslider-arrow next"></a>',
-                }
+                },
+                animation:'fade'
             });
         }
         var mySwiper = new Swiper('.swiper-container', {
@@ -89,7 +91,7 @@ angular.module('myApp.controllers', [])
             nextButton: '.swiper-button-next',
             prevButton: '.swiper-button-prev',
             slidesPerView: 4,
-            // paginationClickable: true,
+            paginationClickable: true,
             freeMode: true,
             observer:true,
             observeParents:true
@@ -157,6 +159,23 @@ angular.module('myApp.controllers', [])
         $scope.selectedcondition = {year: '', unit: '', classify: '', sort: '最新', keyword: '', iPage: 1};
         $scope.selected = {year: '', unit: '', classify: '', sort: '最新', keyword: '', iPage: 1};
         $scope.arr = [];
+        //检测是否存在筛选条件
+        $scope.checkCondition = function () {
+            $scope.isSelected = ($scope.arr.length == 0) ? false : true;
+        }
+        if ($stateParams.museum) {
+            $scope.remove = false;
+            $scope.isUnit = false;
+            $scope.isArea = true;
+            $scope.selectedcondition.unit = $stateParams.id;
+            $scope.selected.unit = $stateParams.museum;
+            $scope.isUnitshow = true;
+            $scope.isUnit = false;
+            $scope.arr.push(1);
+            $scope.iPage = 1;
+            $('#ul1 li').html(" ");
+            $scope.checkCondition();
+        }
         var oUl = document.getElementById('ul1');
         var aLi = oUl.getElementsByTagName('li');
         var iLen = aLi.length;
@@ -164,7 +183,8 @@ angular.module('myApp.controllers', [])
         //初始化数据处理
         getList();
         function getList() {
-            $http.get("../front/OCCollection/info.do?yearType="
+            // $http.get("../front/OCCollection/info.do?yearType="
+            $http.get("data/collection_data1.json?yearType="
                 + $scope.selectedcondition.year +
                 '&collectionUnit=' + $scope.selectedcondition.unit +
                 '&collectionsCategory=' + $scope.selectedcondition.classify +
@@ -191,7 +211,7 @@ angular.module('myApp.controllers', [])
                         var ospan = document.createElement('span');
                         var oa = document.createElement('a');
                         $(oa).attr({
-                            'href': "#/collection/collectiondetails/Relic/" + data[i].mipOpenCulturalrelicInfo.id,
+                            'href': "#/collectiondetails/Relic/" + data[i].mipOpenCulturalrelicInfo.id,
                             'target': "_blank"
                         });
                         oImg.src = data[i].mipOpenCulturalrelicInfo.fpic;
@@ -254,13 +274,14 @@ angular.module('myApp.controllers', [])
 
         //选择条件除了地区和收藏单位数据
         $scope.getDataList = function () {
-            $http.get("../front/OCCollection/info.do?yearType="
+            // $http.get("../front/OCCollection/info.do?yearType="
+            $http.get("data/collection_data1.json?yearType="
                 + $scope.selectedcondition.year +
-                '&collectionUnit=' + $scope.selected.unit +
-                '&collectionsCategory=' + $scope.selected.classify +
-                '&order=' + $scope.selected.sort +
-                '&key=' + $scope.selected.keyword +
-                '&currentPage=' + $scope.selected.iPage)
+                '&collectionUnit=' + $scope.selectedcondition.unit +
+                '&collectionsCategory=' + $scope.selectedcondition.classify +
+                '&order=' + $scope.selectedcondition.sort +
+                '&key=' + $scope.selectedcondition.keyword +
+                '&currentPage=' + $scope.selectedcondition.iPage)
                 .success(function (response) {
                     $scope.data = response.data;
                     // $scope.showMorecondition();
@@ -268,10 +289,6 @@ angular.module('myApp.controllers', [])
         }
         $scope.getDataList();
 
-        //检测是否存在筛选条件
-        $scope.checkCondition = function () {
-            $scope.isSelected = ($scope.arr.length == 0) ? false : true;
-        }
         //显示筛选条件
         $scope.getConditions = function (condition, val, e) {
             $scope[condition] = !$scope[condition];
@@ -393,20 +410,7 @@ angular.module('myApp.controllers', [])
             $scope.iPage = 1;
             getList();
         }
-        if ($stateParams.museum) {
-            $scope.remove = false;
-            $scope.isUnit = false;
-            $scope.isArea = true;
-            $scope.selectedcondition.unit = $stateParams.id;
-            $scope.selected.unit = $stateParams.museum;
-            $scope.isUnitshow = true;
-            $scope.isUnit = false;
-            $scope.arr.push(1);
-            $scope.iPage = 1;
-            $('#ul1 li').html(" ");
-            getList();
-            $scope.checkCondition();
-        }
+
     }])
     .controller('CollectionSpecimen', ['$scope', '$http', '$stateParams', '$rootScope', '$window', function ($scope, $http, $stateParams, $rootScope, $window) {
         $rootScope.showIndex = true;
@@ -422,6 +426,24 @@ angular.module('myApp.controllers', [])
         $scope.selectedcondition = {year: '', unit: '', classify: '', sort: '最新', keyword: '', iPage: 1};
         $scope.selected = {year: '', unit: '', classify: '', sort: '最新', keyword: '', iPage: 1};
         $scope.arr = [];
+        //检测是否存在筛选条件
+        $scope.checkCondition = function () {
+            $scope.isSelected = ($scope.arr.length == 0) ? false : true;
+        }
+        if ($stateParams.museum) {
+            $scope.remove = false;
+            $scope.isUnit = false;
+            $scope.isArea = true;
+            $scope.selectedcondition.unit = $stateParams.id;
+            $scope.selected.unit = $stateParams.museum;
+            $scope.isUnitshow = true;
+            $scope.isUnit = false;
+            $scope.arr.push(1);
+            $scope.iPage = 1;
+            $('#ul1 li').html(" ");
+            $scope.checkCondition();
+
+        }
         var oUl = document.getElementById('ul2');
         var aLi = oUl.getElementsByTagName('li');
         var iLen = aLi.length;
@@ -430,7 +452,8 @@ angular.module('myApp.controllers', [])
         //初始化数据处理
         getList();
         function getList() {
-            $http.get("../front/OCFossil/info.do?yearType="
+            // $http.get("../front/OCFossil/info.do?yearType="
+            $http.get("data/collection_data2.json?yearType="
                 + $scope.selectedcondition.year +
                 '&collectionUnit=' + $scope.selectedcondition.unit +
                 '&collectionsCategory=' + $scope.selectedcondition.classify +
@@ -457,7 +480,7 @@ angular.module('myApp.controllers', [])
                         var ospan = document.createElement('span');
                         var oa = document.createElement('a');
                         $(oa).attr({
-                            'href': "#/collection/collectiondetails/Relic/" + data[i].mipOpenFossilInfo.id,
+                            'href': "#/collectiondetails/Relic/" + data[i].mipOpenFossilInfo.id,
                             'target': "_blank"
                         });
                         oImg.src = data[i].mipOpenFossilInfo.fpic;
@@ -521,7 +544,8 @@ angular.module('myApp.controllers', [])
 
         //选择条件除了地区和收藏单位数据
         $scope.getDataList = function () {
-            $http.get("../front/OCFossil/info.do?yearType="
+            // $http.get("../front/OCFossil/info.do?yearType="
+            $http.get("data/collection_data2.json?yearType="
                 + $scope.selectedcondition.year +
                 '&collectionUnit=' + $scope.selectedcondition.unit +
                 '&collectionsCategory=' + $scope.selectedcondition.classify +
@@ -535,10 +559,6 @@ angular.module('myApp.controllers', [])
         }
         $scope.getDataList();
 
-        //检测是否存在筛选条件
-        $scope.checkCondition = function () {
-            $scope.isSelected = ($scope.arr.length == 0) ? false : true;
-        }
         //显示筛选条件
         $scope.getConditions = function (condition, val, e) {
             $scope[condition] = !$scope[condition];
@@ -658,22 +678,120 @@ angular.module('myApp.controllers', [])
             $scope.iPage = 1;
             getList();
         }
-        if ($stateParams.museum) {
-            $scope.remove = false;
-            $scope.isUnit = false;
-            $scope.isArea = true;
-            $scope.selectedcondition.unit = $stateParams.id;
-            $scope.selected.unit = $stateParams.museum;
-            $scope.isUnitshow = true;
-            $scope.isUnit = false;
-            $scope.arr.push(1);
-            $scope.iPage = 1;
-            $('#ul1 li').html(" ");
-            getList();
-            $scope.checkCondition();
 
+    }])
+    .controller('CollectionDetails', ['$scope', '$http', '$stateParams', '$window', '$rootScope', '$state',function ($scope, $http, $stateParams, $window, $rootScope,$state) {
+        $rootScope.showIndex = true;
+        $scope.$parent.showbtn = false;
+        $scope.num = 0;
+        $scope.num1 = 0;
+        $scope.hasmoreleft = false;
+        $scope.hasmoreright = true;
+        $scope.hasmoreleft1 = false;
+        $scope.hasmoreright1 = true;
+        $scope.num2 = 0;
+        $scope.addCollection = function (e) {
+            var a = angular.element(e.target).hasClass('active');
+            if (!a) {
+                $scope.num2 += 1;
+                angular.element(e.target).addClass('active');
+                // $http.get("../front/Collected/doCollect.do?collectionType="
+                $http.get("data/collection_details.json?collectionType="
+                    + ($stateParams.type == 'Relic' ? 1 : 2) +
+                    '&id=' + $stateParams.id)
+                    .success(function (response) {
+                        console.log(response);
+                        // $scope.showMorecondition();
+                    });
+            } else {
+                return
+            }
         }
+        $scope.getDetail = function () {
+            // $http.get("../front/OCCollection/detail.do?id="
+            $http.get("data/collection_details.json?id="
+                + $stateParams.id)
+                .success(function (response) {
+                    $scope.data = response.data.mocid;
+                    // $scope.showMorecondition();
+                    $scope.correlation = response.data.relations
+                        .slice(0, 5);
+                    $scope.corother = response.data.otherMofiList.slice(0, 5);
+                    ;
+                    $scope.addPage = function (title) {
+                        if (title === 'relations') {
+                            if ($scope.num == 5) {
+                                $scope.hasmoreleft = true;
+                                $scope.hasmoreright = false;
+                            }
+                            if ($scope.num < 10) {
+                                $scope.num += 5;
+                                $scope.correlation = response.data[title]
+                                    .slice($scope.num, $scope.num + 5);
+                                return
+                            }
+                        } else {
+                            if ($scope.num1 == 5) {
+                                $scope.hasmoreleft1 = true;
+                                $scope.hasmoreright1 = false;
+                            }
+                            if ($scope.num1 < 10) {
+                                $scope.num1 += 5;
+                                $scope.corother = response.data.otherMofiList
+                                    .slice($scope.num1, $scope.num1 + 5);
+                                return
+                            }
+                        }
+                    }
+                    $scope.reducePage = function (title) {
+                        if (title === 'relations') {
+                            if ($scope.num == 5) {
+                                $scope.hasmoreleft = false;
+                                $scope.hasmoreright = true;
+                            }
+                            if ($scope.num > 0) {
+                                $scope.num -= 5;
+                                $scope.correlation = response.data[title]
+                                    .slice($scope.num, $scope.num + 5);
+                            }
+                            else {
+                                return;
+                            }
+                        } else {
+                            if ($scope.num1 == 5) {
+                                $scope.hasmoreleft1 = false;
+                                $scope.hasmoreright1 = true;
+                            }
+                            if ($scope.num1 > 0) {
+                                $scope.num1 -= 5;
+                                $scope.corother = response.data.otherMofiList
+                                    .slice($scope.num1, $scope.num1 + 5);
+                            }
+                            else {
+                                return;
+                            }
+                        }
 
+                    }
+
+                });
+        }
+        $scope.goVideo=function(e){
+            var url=angular.element(e.target).attr('data-url');
+            $state.go('collectinodetailsvideo');
+        }
+        $scope.getDetail();
+    }])
+    .controller('CollectionDetailsVideo', ['$scope', '$http', '$stateParams', '$window', '$rootScope', function ($scope, $http, $stateParams, $window, $rootScope){
+        $rootScope.showIndex = false;
+        $scope.video=function(){
+            var myPlayer = videojs('my-player');
+            videojs("my-player").ready(function(){
+                $('#my-player').css('width',$(document).width());
+                $('#my-player').css('height',$(document).height());
+            });
+        }
+        $scope.video();
     }])
     //展览列表父控制器
     .controller('Displaylist', ['$scope', '$rootScope', '$stateParams', function ($scope, $rootScope, $stateParams) {
@@ -1156,7 +1274,6 @@ angular.module('myApp.controllers', [])
         }
 
     }])
-
     //展览详情页
     .controller('Display.Details', ['$scope', '$http', '$stateParams', '$rootScope', function ($scope, $http, $stateParams, $rootScope) {
         $rootScope.showIndex = true;
@@ -1173,115 +1290,6 @@ angular.module('myApp.controllers', [])
                 })
         }
 
-    }])
-    .controller('CollectionDetails', ['$scope', '$http', '$stateParams', '$window', '$rootScope', function ($scope, $http, $stateParams, $window, $rootScope) {
-        $window.onload = function () {
-            $(".content_1").mCustomScrollbar({
-                scrollButtons: {
-                    enable: true
-                }
-            });
-        };
-        $rootScope.showIndex = true;
-        $(window).load(function () {
-            $(".content_1").mCustomScrollbar();
-            console.log(2131);
-        });
-        console.log(123);
-        console.log($stateParams.type);
-        $scope.$parent.showbtn = false;
-        $scope.num = 0;
-        $scope.num1 = 0;
-        $scope.hasmoreleft = false;
-        $scope.hasmoreright = true;
-        $scope.hasmoreleft1 = false;
-        $scope.hasmoreright1 = true;
-        $scope.num2 = 0;
-        $scope.addCollection = function (e) {
-            var a = angular.element(e.target).hasClass('active');
-            if (!a) {
-                $scope.num2 += 1;
-                angular.element(e.target).addClass('active');
-                $http.get("../front/Collected/doCollect.do?collectionType="
-                    + ($stateParams.type == 'Relic' ? 1 : 2) +
-                    '&id=' + $stateParams.id)
-                    .success(function (response) {
-                        console.log(response);
-                        // $scope.showMorecondition();
-                    });
-            } else {
-                return
-            }
-        }
-        $scope.getDetail = function () {
-            $http.get("../front/OCCollection/detail.do?id="
-                + $stateParams.id)
-                .success(function (response) {
-                    $scope.data = response.data.mocid;
-                    // $scope.showMorecondition();
-                    $scope.correlation = response.data.relations
-                        .slice(0, 5);
-                    $scope.corother = response.data.otherMofiList.slice(0, 5);
-                    ;
-                    $scope.addPage = function (title) {
-                        if (title === 'relations') {
-                            if ($scope.num == 5) {
-                                $scope.hasmoreleft = true;
-                                $scope.hasmoreright = false;
-                            }
-                            if ($scope.num < 10) {
-                                $scope.num += 5;
-                                $scope.correlation = response.data[title]
-                                    .slice($scope.num, $scope.num + 5);
-                                return
-                            }
-                        } else {
-                            if ($scope.num1 == 5) {
-                                $scope.hasmoreleft1 = true;
-                                $scope.hasmoreright1 = false;
-                            }
-                            if ($scope.num1 < 10) {
-                                $scope.num1 += 5;
-                                $scope.corother = response.data.otherMofiList
-                                    .slice($scope.num1, $scope.num1 + 5);
-                                return
-                            }
-                        }
-                    }
-                    $scope.reducePage = function (title) {
-                        if (title === 'relations') {
-                            if ($scope.num == 5) {
-                                $scope.hasmoreleft = false;
-                                $scope.hasmoreright = true;
-                            }
-                            if ($scope.num > 0) {
-                                $scope.num -= 5;
-                                $scope.correlation = response.data[title]
-                                    .slice($scope.num, $scope.num + 5);
-                            }
-                            else {
-                                return;
-                            }
-                        } else {
-                            if ($scope.num1 == 5) {
-                                $scope.hasmoreleft1 = false;
-                                $scope.hasmoreright1 = true;
-                            }
-                            if ($scope.num1 > 0) {
-                                $scope.num1 -= 5;
-                                $scope.corother = response.data.otherMofiList
-                                    .slice($scope.num1, $scope.num1 + 5);
-                            }
-                            else {
-                                return;
-                            }
-                        }
-
-                    }
-
-                });
-        }
-        $scope.getDetail();
     }])
     .controller('Museum', ['$scope', '$scope', '$rootScope', '$stateParams', function ($scope, $stateParams, $rootScope) {
         $rootScope.showIndex = true;
