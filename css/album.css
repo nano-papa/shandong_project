@@ -397,6 +397,14 @@ footer {
       background: url("../img/emoji.png") no-repeat; }
       .ablum-details .ablum-details-wrapper .ablum-details-emoji .ablum-details-emoji-state.active {
         background-position: -22px 0; }
+  .ablum-details .ablum-details-wrapper .ablum-details-comment-content-more {
+    width: 684px;
+    height: 30px;
+    text-align: center;
+    color: #008582;
+    background: #f7f7f7; }
+    .ablum-details .ablum-details-wrapper .ablum-details-comment-content-more span {
+      line-height: 30px; }
 
 .com_form {
   width: 100%;
@@ -477,5 +485,107 @@ span.emotion.active {
   bottom: 45px; }
   .comment-count.warr {
     color: red; }
+
+.ablum-details-comment-hot {
+  position: absolute;
+  right: 100px;
+  top: 669px;
+  width: 300px; }
+  .ablum-details-comment-hot ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row;
+    flex-flow: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 20px; }
+    .ablum-details-comment-hot ul li {
+      margin-bottom: 20px;
+      display: flex; }
+      .ablum-details-comment-hot ul li .ablum-details-comment-hot-inf {
+        margin-left: 10px; }
+        .ablum-details-comment-hot ul li .ablum-details-comment-hot-inf h1 {
+          font-weight: normal;
+          font-size: 16px;
+          color: #333;
+          width: 160px;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+          overflow: hidden;
+          line-height: 40px;
+          margin: 0; }
+        .ablum-details-comment-hot ul li .ablum-details-comment-hot-inf h5 {
+          font-weight: normal;
+          font-size: 14px;
+          color: #008582;
+          line-height: 30px; }
+        .ablum-details-comment-hot ul li .ablum-details-comment-hot-inf P {
+          font-size: 14px;
+          color: #999;
+          line-height: 20px;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          overflow: hidden; }
+      .ablum-details-comment-hot ul li .ablum-service {
+        display: flex;
+        width: 207px; }
+        .ablum-details-comment-hot ul li .ablum-service div {
+          cursor: pointer;
+          padding: 5px 0; }
+        .ablum-details-comment-hot ul li .ablum-service div i {
+          width: 18px;
+          height: 17px;
+          background: url("../img/album-service.png") no-repeat; }
+        .ablum-details-comment-hot ul li .ablum-service .msg {
+          background-position: -40px 0; }
+        .ablum-details-comment-hot ul li .ablum-service .port {
+          background-position: -20px 0; }
+        .ablum-details-comment-hot ul li .ablum-service div span {
+          color: #999;
+          padding: 0 5px; }
+
+.ablum-details-comment-first {
+  width: 680px;
+  padding-bottom: 10px;
+  margin-bottom: 15px; }
+  .ablum-details-comment-first .ablum-details-comment-first-top {
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    margin-top: 15px; }
+    .ablum-details-comment-first .ablum-details-comment-first-top span {
+      display: inline-block;
+      background: #f2fbf2;
+      width: 640px; }
+      .ablum-details-comment-first .ablum-details-comment-first-top span u {
+        line-height: 40px;
+        padding-left: 10px;
+        text-decoration: none;
+        font-size: 14px;
+        color: #008582; }
+      .ablum-details-comment-first .ablum-details-comment-first-top span i {
+        padding-left: 10px;
+        line-height: 40px;
+        font-size: 14px;
+        font-style: normal;
+        color: #ced2ce; }
+  .ablum-details-comment-first .ablum-details-comment-first-content {
+    width: 610px;
+    margin-left: 40px;
+    padding: 15px; }
+    .ablum-details-comment-first .ablum-details-comment-first-content p {
+      font-size: 12px;
+      line-height: 22px; }
+    .ablum-details-comment-first .ablum-details-comment-first-content a {
+      display: inline-block;
+      padding-top: 10px;
+      font-size: 12px;
+      color: #ea703a; }
+  .ablum-details-comment-first {
+    border-bottom: 1px dashed #8e8e8e; }
 
 /*# sourceMappingURL=album.css.map */

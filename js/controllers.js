@@ -833,8 +833,6 @@ angular.module('myApp.controllers', [])
             })
                 .success(function (response) {
                     $scope.conditionData = response.data.cityList;
-                    console.log($scope.conditionData)
-                    console.log(response)
                 })
         }
         $scope.getDataList = function () {
@@ -964,34 +962,11 @@ angular.module('myApp.controllers', [])
     }])
     .controller('Displaylist.Pouter', ['$scope', '$http', '$rootScope', '$stateParams', function ($scope, $http, $rootScope, $stateParams) {
         $rootScope.showIndex = true;
-        $scope.remove = true;
         $scope.curr = 1;
         $scope.pages = 5;
-        $scope.tabsubpage = 1;
-        $scope.keyword = '';
-        $scope.area = '';
-        $scope.isA = false;
-        $scope.isK = false;
         $scope.conditions = {
             currentPage: $scope.curr,
-            spreType: $scope.tabsubpage,
-            musExhibition: $scope.area,
-            content: $scope.keyword
-        }
-        $scope.arr = [];
-        $scope.isClassify = true;
-        $scope.isArea = false;
-        $scope.isSelected = false;
-        $scope.isunit = false;
-        $scope.getConditions = function () {
-            $http({
-                method: 'GET',
-                url: 'data/display.json',
-                params: $scope.conditions
-            })
-                .success(function (response) {
-                    $scope.conditionData = response.data.cityList;
-                })
+            type: 1
         }
         $scope.getDataList = function () {
             $http({
@@ -1008,85 +983,6 @@ angular.module('myApp.controllers', [])
                     response.page.totalPage = $scope.pages;
                 })
         }
-        //点击更多
-        $scope.SlideDown = function (e) {
-            angular.element(e.target).prev().toggleClass("slidedown");
-            var height = angular.element(e.target).prev().css("height");
-            angular.element(e.target).prev().prev().css("height", height);
-        }
-        $scope.getConditions();
-        //切换正在展览和往期回顾
-        $scope.changeListTab = function (tabpage) {
-            console.log(tabpage);
-            $scope.conditions.currentPage = 1;
-            $scope.tabsubpage = tabpage;
-            $scope.conditions.spreType = tabpage;
-            $scope.laypage();
-        }
-        //检测是否存在筛选条件
-        $scope.checkCondition = function () {
-            $scope.isSelected = ($scope.arr.length == 0) ? false : true;
-        }
-        //显示筛选条件
-        $scope.getClassify = function (e) {
-            $scope.index = angular.element(e.target).attr('data-index');
-            $scope.isArea = true;
-            console.log($scope.conditionData)
-        }
-        $scope.getArea = function (e) {
-            $scope.arr.push(1);
-            $scope.area = angular.element(e.target).html();
-            $scope.isArea = false;
-            $scope.isA = true;
-            $scope.isClassify = false;
-            $scope.conditions.currentPage = 1;
-            $scope.conditions.musExhibition = angular.element(e.target).attr('data-id');
-            $scope.checkCondition();
-            $scope.laypage();
-        }
-        $scope.removeArea = function () {
-            $scope.arr.pop();
-            $scope.conditions.musExhibition = '';
-            $scope.isArea = false;
-            $scope.isClassify = true;
-            $scope.isA = false;
-            $scope.conditions.currentPage = 1;
-            $scope.checkCondition();
-            $scope.laypage();
-        }
-        //显示关键字
-        $scope.showKeyword = function () {
-            $scope.value = $('#search_box1').val().trim();
-            console.log($scope.value);
-            if ($scope.value && $scope.value != $scope.conditions.content) {
-                console.log($scope.arr);
-                if ($scope.isK) {
-                    $scope.conditions.content = $scope.value;
-                    $scope.conditions.currentPage = 1;
-                    $scope.laypage();
-                    $scope.checkCondition();
-                } else {
-                    $scope.isK = true;
-                    $scope.conditions.content = $scope.value;
-                    $scope.conditions.currentPage = 1;
-                    $scope.laypage();
-                    $scope.arr.push(1);
-                    $scope.checkCondition();
-                }
-
-            } else {
-                return;
-            }
-        }
-        //隐藏关键字
-        $scope.hideKeyword = function () {
-            $scope.isK = false;
-            $scope.conditions.content = '';
-            $scope.conditions.currentPage = 1;
-            $scope.arr.pop();
-            $scope.getDataList();
-            $scope.checkCondition();
-        }
         $scope.laypage = function () {
             laypage({
                 cont: $('.PagePlugs'),
@@ -1102,8 +998,6 @@ angular.module('myApp.controllers', [])
             });
         }
         $scope.laypage();
-        console.log($stateParams);
-        console.log($stateParams.museum);
         if ($stateParams.museum) {
             $scope.remove = false;
             $scope.arr.push(1);
@@ -1119,25 +1013,12 @@ angular.module('myApp.controllers', [])
     }])
     .controller('Displaylist.Outer', ['$scope', '$http', '$rootScope', '$stateParams', function ($scope, $http, $rootScope, $stateParams) {
         $rootScope.showIndex = true;
-        $scope.remove = true;
         $scope.curr = 1;
         $scope.pages = 5;
-        $scope.tabsubpage = 1;
-        $scope.keyword = '';
-        $scope.area = '';
-        $scope.isA = false;
-        $scope.isK = false;
         $scope.conditions = {
             currentPage: $scope.curr,
-            spreType: $scope.tabsubpage,
-            musExhibition: $scope.area,
-            content: $scope.keyword
+            type:2
         }
-        $scope.arr = [];
-        $scope.isClassify = true;
-        $scope.isArea = false;
-        $scope.isSelected = false;
-        $scope.isunit = false;
         $scope.getConditions = function () {
             $http({
                 method: 'GET',
@@ -1165,85 +1046,6 @@ angular.module('myApp.controllers', [])
                     response.page.totalPage = $scope.pages;
                 })
         }
-        //点击更多
-        $scope.SlideDown = function (e) {
-            angular.element(e.target).prev().toggleClass("slidedown");
-            var height = angular.element(e.target).prev().css("height");
-            angular.element(e.target).prev().prev().css("height", height);
-        }
-        $scope.getConditions();
-        //切换正在展览和往期回顾
-        $scope.changeListTab = function (tabpage) {
-            console.log(tabpage);
-            $scope.conditions.currentPage = 1;
-            $scope.tabsubpage = tabpage;
-            $scope.conditions.spreType = tabpage;
-            $scope.laypage();
-        }
-        //检测是否存在筛选条件
-        $scope.checkCondition = function () {
-            $scope.isSelected = ($scope.arr.length == 0) ? false : true;
-        }
-        //显示筛选条件
-        $scope.getClassify = function (e) {
-            $scope.index = angular.element(e.target).attr('data-index');
-            $scope.isArea = true;
-            console.log($scope.conditionData)
-        }
-        $scope.getArea = function (e) {
-            $scope.arr.push(1);
-            $scope.area = angular.element(e.target).html();
-            $scope.isArea = false;
-            $scope.isA = true;
-            $scope.isClassify = false;
-            $scope.conditions.currentPage = 1;
-            $scope.conditions.musExhibition = angular.element(e.target).attr('data-id');
-            $scope.checkCondition();
-            $scope.laypage();
-        }
-        $scope.removeArea = function () {
-            $scope.arr.pop();
-            $scope.conditions.musExhibition = '';
-            $scope.isArea = false;
-            $scope.isClassify = true;
-            $scope.isA = false;
-            $scope.conditions.currentPage = 1;
-            $scope.checkCondition();
-            $scope.laypage();
-        }
-        //显示关键字
-        $scope.showKeyword = function () {
-            $scope.value = $('#search_box1').val().trim();
-            console.log($scope.value);
-            if ($scope.value && $scope.value != $scope.conditions.content) {
-                console.log($scope.arr);
-                if ($scope.isK) {
-                    $scope.conditions.content = $scope.value;
-                    $scope.conditions.currentPage = 1;
-                    $scope.laypage();
-                    $scope.checkCondition();
-                } else {
-                    $scope.isK = true;
-                    $scope.conditions.content = $scope.value;
-                    $scope.conditions.currentPage = 1;
-                    $scope.laypage();
-                    $scope.arr.push(1);
-                    $scope.checkCondition();
-                }
-
-            } else {
-                return;
-            }
-        }
-        //隐藏关键字
-        $scope.hideKeyword = function () {
-            $scope.isK = false;
-            $scope.conditions.content = '';
-            $scope.conditions.currentPage = 1;
-            $scope.arr.pop();
-            $scope.getDataList();
-            $scope.checkCondition();
-        }
         $scope.laypage = function () {
             laypage({
                 cont: $('.PagePlugs'),
@@ -1259,7 +1061,6 @@ angular.module('myApp.controllers', [])
             });
         }
         $scope.laypage();
-        console.log($stateParams);
         if ($stateParams.museum) {
             $scope.remove = false;
             $scope.arr.push(1);
@@ -1429,6 +1230,7 @@ angular.module('myApp.controllers', [])
     // }])
     .controller('Digization', ['$scope', "$http", '$rootScope', '$stateParams',function ($scope, $http, $rootScope, $stateParams) {
         $rootScope.showIndex = true;
+        $scope.showTab=true;
         $scope.showMore=function(e){
             angular.element(e.target).addClass('showmore').removeClass('hide')
         }
@@ -1489,6 +1291,7 @@ angular.module('myApp.controllers', [])
                 });
         }
         if ($stateParams.museum) {
+            $scope.showTab=false;
             $scope.conditions.museum = $stateParams.id;
             $scope.museum = $stateParams.museum;
             $scope.getDataList();

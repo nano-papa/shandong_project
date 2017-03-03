@@ -1,0 +1,13 @@
+<div class="ablum-details-comment-first">
+    <div class="ablum-details-comment-first-top">
+        <img ng-src="{{imgurl}}" style='border-radius:50%' alt="" >
+        <span>
+            <u ng-bind="username"></u>
+            <i ng-bind="time"></i>
+        </span>
+    </div>
+    <div class="ablum-details-comment-first-content">
+        <p ng-bind-html="content|filterQQface"></p>
+        <a href="">回复</a><a href="">·展开回复</a>
+    </div>
+</div>

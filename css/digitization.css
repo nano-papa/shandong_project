@@ -238,10 +238,15 @@ footer {
   .digization .digization-tab ul li {
     float: left;
     cursor: pointer;
+    width: 50px;
     height: 20px;
-    color: #008582; }
+    padding-bottom: 5px;
+    font-size: 18px;
+    color: #666;
+    font-weight: bold;
+    text-align: center; }
     .digization .digization-tab ul li.active {
-      color: #ea703a;
+      color: #008582;
       border-bottom: 2px solid #ea703a; }
     .digization .digization-tab ul li a {
       font-weight: bold; }
@@ -270,14 +275,16 @@ footer {
         text-align: center; }
     .digization .digization-list .digization-list-item ul .digization-list-item-infor {
       width: 543px;
-      height: 253px;
-      margin-left: 54px; }
+      height: 174px;
+      margin-left: 45px; }
       .digization .digization-list .digization-list-item ul .digization-list-item-infor div h1 {
         font-size: 18px;
-        line-height: 22px; }
+        line-height: 22px;
+        padding-bottom: 5px; }
       .digization .digization-list .digization-list-item ul .digization-list-item-infor div h2 {
         font-size: 12px;
         line-height: 20px;
+        padding-bottom: 5px;
         color: #008582;
         font-weight: normal; }
       .digization .digization-list .digization-list-item ul .digization-list-item-infor div p {
@@ -285,11 +292,11 @@ footer {
         line-height: 22px;
         color: rgba(0, 0, 0, 0.7);
         width: 543px;
-        height: 130px; }
+        height: 110px; }
         .digization .digization-list .digization-list-item ul .digization-list-item-infor div p.hide {
           display: -webkit-box;
           -webkit-box-orient: vertical;
-          -webkit-line-clamp: 6;
+          -webkit-line-clamp: 5;
           overflow: hidden;
           padding-right: 2px; }
         .digization .digization-list .digization-list-item ul .digization-list-item-infor div p.showmore {

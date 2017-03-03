@@ -18,10 +18,15 @@
       li{
         float:left;
         cursor:pointer;
+        width:50px;
         height:20px;
-        color:$theme-color;
+        padding-bottom:5px;
+        font-size:18px;
+        color:#666;
+        font-weight: bold;
+        text-align: center;
         &.active{
-          color:$theme-color-active;
+          color:$theme-color;
           border-bottom:2px solid $theme-color-active;
         }
         a{
@@ -62,16 +67,18 @@
         }
         .digization-list-item-infor {
           width:543px;
-          height:253px;
-          margin-left:54px;
+          height:174px;
+          margin-left:45px;
           div {
             h1{
               font-size:18px;
               line-height:22px;
+              padding-bottom: 5px;
             }
             h2{
               font-size:12px;
               line-height:20px;
+              padding-bottom: 5px;
               color:$theme-color;
               font-weight:normal;
             }
@@ -80,9 +87,9 @@
               line-height: 22px;
               color:rgba(0,0,0,.7);
               width: 543px;
-              height:130px;
+              height:110px;
               &.hide{
-                @include limitLine(6);
+                @include limitLine(5);
                 padding-right:2px;
               }
               &.showmore{

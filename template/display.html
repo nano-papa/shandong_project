@@ -39,7 +39,7 @@
                     <p class="condition-title fontB">所在地区：</p>
                     <ul class="condition-content">
                         <li ng-repeat="s in conditionData">
-                            <span ng-click="getClassify($event)" ng-bind="s.city.shortname" data-index="{{$index}}"></span>
+                            <span ng-click="getClassify($event)" ng-bind="s.cityName" data-index="{{$index}}"></span>
                         </li>
                     </ul>
                     <div class="condition-more" ng-click="SlideDown($event)">更多<span>&gt;</span></div>
@@ -47,8 +47,8 @@
                 <div class="condition-item" ng-if="isArea">
                     <p class="condition-title fontB">收藏单位：</p>
                     <ul class="condition-content">
-                        <li ng-repeat="r in conditionData[index].museums">
-                            <span ng-click="getArea($event)" ng-bind="r.shortname" data-id="{{r.id}}"></span>
+                        <li ng-repeat="r in conditionData[index].museum">
+                            <span ng-click="getArea($event)" ng-bind="r.name" data-id="{{r.id}}"></span>
                         </li>
                     </ul>
                     <div class="condition-more" ng-click="SlideDown($event)">更多<span>&gt;</span></div>
@@ -96,60 +96,63 @@
             <!--</div>-->
         </div>
         <div class="display_list_Pouter" ng-if="tabpage===2" ng-controller="Displaylist.Pouter">
-            <div class="slected-condition" ng-if="isSelected">
-                <ul>
-                    <li>
-                <span>
-                    全部结果>
-                </span>
-                    </li>
-                    <li ng-show="isA">
-                        <small>单位：</small>
-                        <u ng-bind="area"></u>
-                        <i ng-click="removeArea()" ng-show="remove">×</i>
-                    </li>
-                    <li ng-show="isK">
-                        <small>关键字：</small>
-                        <u ng-bind="value"></u>
-                        <i ng-click="hideKeyword()">×</i>
-                    </li>
-                </ul>
+            <div style="color:#008582;font-weight:bold;font-size:18px;line-height: 20px;padding-bottom:20px;">
+                省外
             </div>
-            <div class="display-search">
-                <span>关键词：</span>
-                <input type="text" id="search_box1">
-                <button ng-click="showKeyword()"></button>
-            </div>
-            <div class="condition">
-                <div class="condition-item" ng-if="isClassify">
-                    <p class="condition-title fontB">所在地区：</p>
-                    <ul class="condition-content">
-                        <li ng-repeat="s in conditionData">
-                            <span ng-click="getClassify($event)" ng-bind="s.city.shortname" data-index="{{$index}}"></span>
-                        </li>
-                    </ul>
-                    <div class="condition-more" ng-click="SlideDown($event)">更多<span>&gt;</span></div>
-                </div>
-                <div class="condition-item" ng-if="isArea">
-                    <p class="condition-title fontB">收藏单位：</p>
-                    <ul class="condition-content">
-                        <li ng-repeat="r in conditionData[index].museums">
-                            <span ng-click="getArea($event)" ng-bind="r.shortname"  data-id="{{r.id}}"></span>
-                        </li>
-                    </ul>
-                    <div class="condition-more" ng-click="SlideDown($event)">更多<span>&gt;</span></div>
-                </div>
-            </div>
-            <div class="display-list-content">
-                <ul class="display-list-content-tab">
-                    <li ng-click="changeListTab(1)" ng-class="{active:tabsubpage===1}">
-                        正在展出
-                    </li>
-                    <li ng-click="changeListTab(0)" ng-class="{active:tabsubpage===0}" >
-                        往期回顾
-                    </li>
-                </ul>
-            </div>
+            <!--<div class="slected-condition" ng-if="isSelected">-->
+                <!--<ul>-->
+                    <!--<li>-->
+                <!--<span>-->
+                    <!--全部结果>-->
+                <!--</span>-->
+                    <!--</li>-->
+                    <!--<li ng-show="isA">-->
+                        <!--<small>单位：</small>-->
+                        <!--<u ng-bind="area"></u>-->
+                        <!--<i ng-click="removeArea()" ng-show="remove">×</i>-->
+                    <!--</li>-->
+                    <!--<li ng-show="isK">-->
+                        <!--<small>关键字：</small>-->
+                        <!--<u ng-bind="value"></u>-->
+                        <!--<i ng-click="hideKeyword()">×</i>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+            <!--<div class="display-search">-->
+                <!--<span>关键词：</span>-->
+                <!--<input type="text" id="search_box1">-->
+                <!--<button ng-click="showKeyword()"></button>-->
+            <!--</div>-->
+            <!--<div class="condition">-->
+                <!--<div class="condition-item" ng-if="isClassify">-->
+                    <!--<p class="condition-title fontB">所在地区：</p>-->
+                    <!--<ul class="condition-content">-->
+                        <!--<li ng-repeat="s in conditionData">-->
+                            <!--<span ng-click="getClassify($event)" ng-bind="s.city.shortname" data-index="{{$index}}"></span>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                    <!--<div class="condition-more" ng-click="SlideDown($event)">更多<span>&gt;</span></div>-->
+                <!--</div>-->
+                <!--<div class="condition-item" ng-if="isArea">-->
+                    <!--<p class="condition-title fontB">收藏单位：</p>-->
+                    <!--<ul class="condition-content">-->
+                        <!--<li ng-repeat="r in conditionData[index].museums">-->
+                            <!--<span ng-click="getArea($event)" ng-bind="r.shortname"  data-id="{{r.id}}"></span>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                    <!--<div class="condition-more" ng-click="SlideDown($event)">更多<span>&gt;</span></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="display-list-content">-->
+                <!--<ul class="display-list-content-tab">-->
+                    <!--<li ng-click="changeListTab(1)" ng-class="{active:tabsubpage===1}">-->
+                        <!--正在展出-->
+                    <!--</li>-->
+                    <!--<li ng-click="changeListTab(0)" ng-class="{active:tabsubpage===0}" >-->
+                        <!--往期回顾-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
             <div class="display-list-content-inner">
                 <ul>
                     <li ng-repeat='x in nDatalist'>
@@ -167,60 +170,63 @@
             </div>
         </div>
         <div class="display_list_Couter" ng-if="tabpage===3" ng-controller="Displaylist.Outer">
-            <div class="slected-condition" ng-if="isSelected">
-                <ul>
-                    <li>
-                <span>
-                    全部结果>
-                </span>
-                    </li>
-                    <li ng-show="isA">
-                        <small>单位：</small>
-                        <u ng-bind="area"></u>
-                        <i ng-click="removeArea()" ng-show="remove">×</i>
-                    </li>
-                    <li ng-show="isK">
-                        <small>关键字：</small>
-                        <u ng-bind="value"></u>
-                        <i ng-click="hideKeyword()">×</i>
-                    </li>
-                </ul>
+            <div style="color:#008582;font-weight:bold;font-size:18px;line-height: 20px;padding-bottom:20px;">
+                国外
             </div>
-            <div class="display-search">
-                <span>关键词：</span>
-                <input type="text" id="search_box2">
-                <button ng-click="showKeyword()"></button>
-            </div>
-            <div class="condition">
-                <div class="condition-item" ng-if="isClassify">
-                    <p class="condition-title fontB">所在地区：</p>
-                    <ul class="condition-content">
-                        <li ng-repeat="s in conditionData">
-                            <span ng-click="getClassify($event)" ng-bind="s.city.shortname" data-index="{{$index}}"></span>
-                        </li>
-                    </ul>
-                    <div class="condition-more" ng-click="SlideDown($event)">更多<span>&gt;</span></div>
-                </div>
-                <div class="condition-item" ng-if="isArea">
-                    <p class="condition-title fontB">收藏单位：</p>
-                    <ul class="condition-content">
-                        <li ng-repeat="r in conditionData[index].museums">
-                            <span ng-click="getArea($event)" ng-bind="r.shortname" data-id="{{r.id}}"></span>
-                        </li>
-                    </ul>
-                    <div class="condition-more" ng-click="SlideDown($event)">更多<span>&gt;</span></div>
-                </div>
-            </div>
-            <div class="display-list-content">
-                <ul class="display-list-content-tab">
-                    <li ng-click="changeListTab(1)" ng-class="{active:tabsubpage===1}">
-                        正在展出
-                    </li>
-                    <li ng-click="changeListTab(0)" ng-class="{active:tabsubpage===0}" >
-                        往期回顾
-                    </li>
-                </ul>
-            </div>
+            <!--<div class="slected-condition" ng-if="isSelected">-->
+                <!--<ul>-->
+                    <!--<li>-->
+                <!--<span>-->
+                    <!--全部结果>-->
+                <!--</span>-->
+                    <!--</li>-->
+                    <!--<li ng-show="isA">-->
+                        <!--<small>单位：</small>-->
+                        <!--<u ng-bind="area"></u>-->
+                        <!--<i ng-click="removeArea()" ng-show="remove">×</i>-->
+                    <!--</li>-->
+                    <!--<li ng-show="isK">-->
+                        <!--<small>关键字：</small>-->
+                        <!--<u ng-bind="value"></u>-->
+                        <!--<i ng-click="hideKeyword()">×</i>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+            <!--<div class="display-search">-->
+                <!--<span>关键词：</span>-->
+                <!--<input type="text" id="search_box2">-->
+                <!--<button ng-click="showKeyword()"></button>-->
+            <!--</div>-->
+            <!--<div class="condition">-->
+                <!--<div class="condition-item" ng-if="isClassify">-->
+                    <!--<p class="condition-title fontB">所在地区：</p>-->
+                    <!--<ul class="condition-content">-->
+                        <!--<li ng-repeat="s in conditionData">-->
+                            <!--<span ng-click="getClassify($event)" ng-bind="s.city.shortname" data-index="{{$index}}"></span>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                    <!--<div class="condition-more" ng-click="SlideDown($event)">更多<span>&gt;</span></div>-->
+                <!--</div>-->
+                <!--<div class="condition-item" ng-if="isArea">-->
+                    <!--<p class="condition-title fontB">收藏单位：</p>-->
+                    <!--<ul class="condition-content">-->
+                        <!--<li ng-repeat="r in conditionData[index].museums">-->
+                            <!--<span ng-click="getArea($event)" ng-bind="r.shortname" data-id="{{r.id}}"></span>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                    <!--<div class="condition-more" ng-click="SlideDown($event)">更多<span>&gt;</span></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="display-list-content">-->
+                <!--<ul class="display-list-content-tab">-->
+                    <!--<li ng-click="changeListTab(1)" ng-class="{active:tabsubpage===1}">-->
+                        <!--正在展出-->
+                    <!--</li>-->
+                    <!--<li ng-click="changeListTab(0)" ng-class="{active:tabsubpage===0}" >-->
+                        <!--往期回顾-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
             <div class="display-list-content-inner">
                 <ul>
                     <li ng-repeat='x in nDatalist'>

@@ -376,7 +376,9 @@ footer {
 
 #ul1, #ul2 {
   width: 1160px;
-  margin-top: 20px; }
+  margin-top: 20px;
+  position: relative;
+  left: -18px; }
   #ul1:after, #ul2:after {
     content: '';
     display: block;

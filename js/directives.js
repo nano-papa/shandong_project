@@ -4,7 +4,8 @@
 'use strict';
 
 /* Directives */
-angular.module('myApp.directives', []).directive('PagePlugs', [function () {
+angular.module('myApp.directives', [])
+    .directive('PagePlugs', [function () {
     return {
         restrict: 'C',
         template: '<div><a href="" ng-click="getpage()"></a></div>',
@@ -22,6 +23,32 @@ angular.module('myApp.directives', []).directive('PagePlugs', [function () {
 
                     scope.$eval(attrs.repeatDone)    // 执行绑定的表达式
                 }
+            }
+        }
+    })
+    .directive('firstcomment',function(){
+        return{
+            restrict: 'ECMA',
+            templateUrl:'../directive/firstcomment.html',
+            replace: true,
+            link:function(scope,element,attrs){
+                scope.imgurl=attrs.imgurl;
+                scope.username=attrs.username;
+                scope.time=attrs.time;
+                scope.content=attrs.content;
+            }
+        }
+    })
+    .directive('otherscomments',function(){
+        return{
+            restrict: 'ECMA',
+            templateUrl:'../directive/firstcomment.html',
+            replace: true,
+            link:function(scope,element,attrs){
+                scope.imgurl=attrs.imgurl;
+                scope.username=attrs.username;
+                scope.time=attrs.time;
+                scope.content=attrs.content;
             }
         }
     })
