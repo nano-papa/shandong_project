@@ -4,4 +4,10 @@
 'use strict';
 
 /* Services */
-angular.module('myApp.services', [])
+angular.module('myApp.services', ['ngCookies'])
+    .service('loginService', function() {
+        var model={};
+
+
+
+    });

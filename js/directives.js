@@ -36,19 +36,34 @@ angular.module('myApp.directives', [])
                 scope.username=attrs.username;
                 scope.time=attrs.time;
                 scope.content=attrs.content;
+                scope.otherscommentsstatus=false;
+
             }
         }
     })
     .directive('otherscomments',function(){
         return{
             restrict: 'ECMA',
-            templateUrl:'../directive/firstcomment.html',
+            templateUrl:'../directive/othercomment.html',
             replace: true,
             link:function(scope,element,attrs){
                 scope.imgurl=attrs.imgurl;
                 scope.username=attrs.username;
                 scope.time=attrs.time;
                 scope.content=attrs.content;
+                scope.showOthersComment=function(e){
+                    e.preventDefault();
+                    console.log(123)
+                    var hasshow=angular.element(e.target).parent().next().hasClass("show");
+                    if(hasshow){
+                        angular.element(e.target).html('*展开回复∨');
+                        angular.element(e.target).parent().next().removeClass("show");
+                    }
+                    else{
+                        angular.element(e.target).html('*收起回复∧');
+                        angular.element(e.target).parent().next().addClass("show");
+                    }
+                }
             }
         }
     })

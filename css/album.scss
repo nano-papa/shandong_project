@@ -215,12 +215,15 @@
     }
     .ablum-details-comment-content-more{
       width:684px;
-      height:30px;
+      height:50px;
       text-align: center;
       color:$theme-color;
       background:#f7f7f7;
       span{
-        line-height:30px;
+        line-height:50px;
+      }
+      img{
+        margin-top: 10px;
       }
     }
   }
@@ -429,10 +432,71 @@ span.emotion.active {
       display: inline-block;
       padding-top:10px;
       font-size:12px;
+      cursor: pointer;
       color:$theme-color-active;
+    }
+  }
+  .ablum-details-comment-others-status{
+    width:640px;
+    margin-left:40px;
+    opacity: 0;
+    height:0;
+    overflow:hidden;
+    position:relative;
+    left:-120px;
+    top:0;
+    background-color:#fff;
+    &.show{
+      opacity:1;
+      height:auto;
+      left:0px;
+      background-color:#f7f7f7;
+      transition: opacity 0.8s, height 0.8s,left 1s,background 0.8s;
     }
   }
   &{
     border-bottom:1px dashed #8e8e8e;
+  }
+  .ablum-details-comment-others{
+    //margin-left:20px;
+    .ablum-details-comment-others-top{
+      display:flex;
+      flex-flow: row nowrap;
+      align-content: center;
+      padding-top:10px;
+      padding-left:28px;
+      span{
+        display: inline-block;
+        width:620px;
+        u{
+          line-height:40px;
+          padding-left:10px;
+          text-decoration: none;
+          font-size:14px;
+          color:$theme-color
+        }
+        i{
+          padding-left:10px;
+          line-height:40px;
+          font-size:14px;
+          font-style:normal;
+          color:#ced2ce;
+        }
+      }
+    }
+    .ablum-details-comment-others-content{
+      padding:10px 0 10px 70px;
+      p{
+        font-size:12px;
+        line-height:22px;
+        width:550px;
+      }
+      a{
+        display: inline-block;
+        padding-top:10px;
+        font-size:12px;
+        color:$theme-color-active;
+      }
+    }
   }
 }

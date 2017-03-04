@@ -7,7 +7,7 @@ module.exports = {
     module: {
         loaders: [
             {test: /\.css$/, loaders: ["style", "css","postcss"], exclude: './node_modules/'},
-            {test: /.(png)|(jpg)$/, loader: 'url?limit=1000000', exclude: './node_modules/'}
+            {test: /.(png)|(jpg)|(gif)$/, loader: 'url?limit=1000000', exclude: './node_modules/'}
         ]
     },
     postcss:[

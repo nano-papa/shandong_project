@@ -42,8 +42,9 @@ angular.module('myApp.controllers', [])
 
     }])
     //策展详情页
-    .controller('AlbumDetails', ['$scope', '$http', '$rootScope', '$stateParams', function ($scope, $http, $rootScope, $stateParams) {
+    .controller('AlbumDetails', ['$scope', '$http', '$rootScope', '$stateParams','$cookieStore', function ($scope, $http, $rootScope, $stateParams,$cookieStore) {
         $rootScope.showIndex = true;
+        $scope.loadingmore=true;
         $scope.num=0;
         $scope.warr=false;
         $scope.msg='';
@@ -71,6 +72,13 @@ angular.module('myApp.controllers', [])
                 ($scope.warr=true):($scope.warr=false);
                 console.log($scope.len);
             }
+        $scope.loadMore=function(){
+            $scope.loadingmore=false;
+        }
+
+        $cookieStore.put('xxx','123');
+        console.log($cookieStore.get('xxx'));
+
     }])
     .controller('index_parentControl', ['$scope', '$rootScope', function ($scope, $rootScope) {
         $rootScope.showIndex = true;

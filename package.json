@@ -9,6 +9,7 @@
   "author": "renakan",
   "license": "ISC",
   "devDependencies": {
+    "angular-cookies": "^1.3.0",
     "autoprefixer": "^6.7.3",
     "css-loader": "^0.26.1",
     "file-loader": "^0.9.0",
