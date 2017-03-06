@@ -242,7 +242,7 @@ footer {
     width: 800px; }
     .login .login_outer .login_box {
       width: 800px;
-      height: 470px;
+      min-height: 470px;
       margin: 0 auto;
       background: #f9f9f9; }
       .login .login_outer .login_box p {
@@ -322,7 +322,12 @@ footer {
         font-size: 12px;
         padding-left: 50px; }
         .login .login_outer .login_box .service span {
-          padding-left: 26px; }
+          padding-left: 82px;
+          font-size: 12px; }
+        .login .login_outer .login_box .service a {
+          font-size: 12px; }
+          .login .login_outer .login_box .service a u {
+            font-size: 12px; }
       .login .login_outer .login_box .third-party {
         margin-top: 38px; }
         .login .login_outer .login_box .third-party h6 {

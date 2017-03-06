@@ -8,13 +8,27 @@ angular.module('myApp.controllers', [])
     .controller('ParentControl', ['$scope', '$rootScope', function ($scope, $rootScope) {
         $rootScope.showIndex = true;
     }])
-    .controller('login', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
+    .controller('login', ['$scope', '$rootScope', '$http','$state','$cookieStore', 'locals',function ($scope, $rootScope, $http,$state,$cookieStore,locals) {
         $rootScope.showIndex = false;
-        console.log($http)
-        console.log($rootScope.showIndex);
         var height = $(window).height();
         $('.login').css('height', height);
 
+        $scope.showForm=function(){
+            // $rootScope.model=model;
+            console.log(123)
+            $http({
+                method:"GET",
+                url:"data/user.json",
+                params:{id:1},
+            }).success(function(response){
+                console.log(response);
+                locals.set("username",response.data.sessionAdminName);
+                locals.set("errorTimes",response.data.errorTimes);
+            })
+            $state.go('home');
+        }
+        // $cookieStore.put('xxx',123);
+        // console.log($cookieStore.get('xxx'));
     }])
     //策展列表页
     .controller('Album', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
@@ -75,10 +89,6 @@ angular.module('myApp.controllers', [])
         $scope.loadMore=function(){
             $scope.loadingmore=false;
         }
-
-        $cookieStore.put('xxx','123');
-        console.log($cookieStore.get('xxx'));
-
     }])
     .controller('index_parentControl', ['$scope', '$rootScope', function ($scope, $rootScope) {
         $rootScope.showIndex = true;
@@ -126,7 +136,7 @@ angular.module('myApp.controllers', [])
             {ur: 'img/pic5.png'}
         ];
         $scope.myInterval = 5000;
-        console.log($scope.slides);
+        // console.log($scope.slides);
 
     }])
     .controller('Collection', ['$scope', '$stateParams', '$rootScope', function ($scope, $stateParams, $rootScope) {
@@ -201,6 +211,7 @@ angular.module('myApp.controllers', [])
                 '&currentPage=' + $scope.selectedcondition.iPage)
                 .success(function (response) {
                     var data = response.data.mociList;
+                    console.log(response.data)
                     if ($scope.iPage == 5) {
                         //后续没有数据了
                         return;

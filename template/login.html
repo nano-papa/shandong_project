@@ -6,24 +6,26 @@
     </div>
     <div class="login_lin"></div>
     <div class="login_outer">
-        <div class="login_box">
+        <form name="myform" class="login_box">
             <p>使用手机号登录</p>
             <div class="login_user">
                 <label for="username"></label>
-                <input type="text" id="username" placeholder="请输入手机号码">
+                <input type="text" name="username" ng-model="username" id="username" placeholder="请输入手机号码">
                 <span>
                     <i></i><u>正确消息asdfasdf</u>
                 </span>
             </div>
             <div class="login_user">
                 <label for="userpwd" class="userpwdicon"></label>
-                <input type="text" id="userpwd" placeholder="请输入密码">
+                <input type="text" name="userpwd" ng-model="userpwd" id="userpwd" placeholder="请输入密码">
                 <span>
                     <i class="error"></i><u>错误消息</u>
                 </span>
             </div>
+            <div ng-show="">用户名或者密码错误，还有<span>2</span>次登录机会！</div>
+            <div ng-show="">验证码错误请重新输入！</div>
             <div class="login_btn">
-                <button>登录</button>
+                <button type="submit" ng-disabled="false" ng-click="showForm()">登录</button>
             </div>
             <div class="service">
                 <a href=""><u>忘记密码？</u></a>
@@ -38,6 +40,6 @@
                     <li></li>
                 </ul>
             </div>
-        </div>
+        </form>
     </div>
 </div>

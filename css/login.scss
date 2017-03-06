@@ -21,7 +21,7 @@
     width:800px;
     .login_box{
       width:800px;
-      height:470px;
+      min-height:470px;
       margin:0 auto;
       background:#f9f9f9;
       p{
@@ -113,7 +113,14 @@
         font-size:12px;
         padding-left:50px;
         span{
-          padding-left:26px;
+          padding-left:82px;
+          font-size:12px;
+        }
+        a{
+          font-size:12px;
+          u{
+            font-size:12px;
+          }
         }
       }
       .third-party{
