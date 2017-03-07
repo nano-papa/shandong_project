@@ -866,7 +866,7 @@
 
 
 	// module
-	exports.push([module.id, "@charset \"UTF-8\";\r\n/* http://meyerweb.com/eric/tools/css/reset/\r\n   v2.0 | 20110126\r\n   License: none (public domain)\r\n*/\r\nhtml, body, div, span, applet, object, iframe,\r\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\r\na, abbr, acronym, address, big, cite, code,\r\ndel, dfn, em, img, ins, kbd, q, s, samp,\r\nsmall, strike, strong, sub, sup, tt, var,\r\nb, u, i, center,\r\ndl, dt, dd, ol, ul, li,\r\nfieldset, form, label, legend,\r\ntable, caption, tbody, tfoot, thead, tr, th, td,\r\narticle, aside, canvas, details, embed,\r\nfigure, figcaption, footer, header, hgroup,\r\nmenu, nav, output, ruby, section, summary,\r\ntime, mark, audio, video {\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0;\r\n  font-family: \"Microsoft YaHei UI\";\r\n  font-size: 16px;\r\n  vertical-align: bottom; }\r\n\r\n/* HTML5 display-role reset for older browsers */\r\narticle, aside, details, figcaption, figure,\r\nfooter, header, hgroup, menu, nav, section {\r\n  display: block; }\r\n\r\nbody {\r\n  line-height: 1;\r\n  background: #eee; }\r\n\r\nol, ul {\r\n  list-style: none; }\r\n\r\nblockquote, q {\r\n  quotes: none; }\r\n\r\nblockquote:before, blockquote:after,\r\nq:before, q:after {\r\n  content: '';\r\n  content: none; }\r\n\r\ntable {\r\n  border-collapse: collapse;\r\n  border-spacing: 0; }\r\n\r\ninput {\r\n  outline: none; }\r\n\r\nbutton {\r\n  font-family: \"Microsoft YaHei UI\";\r\n  outline: none; }\r\n\r\n.wrapper {\r\n  width: 1200px;\r\n  margin: auto;\r\n  background: #fff;\r\n  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.8); }\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #008582; }\r\n  a:hover, a.active {\r\n    color: #ea703a; }\r\n\r\nheader {\r\n  width: 1100px;\r\n  height: 107px;\r\n  padding: 27px 70px 0 30px; }\r\n  header .header-top {\r\n    width: 100%;\r\n    overflow: hidden;\r\n    position: relative; }\r\n    header .header-top .header-top-left {\r\n      float: left; }\r\n      header .header-top .header-top-left ul {\r\n        overflow: hidden; }\r\n        header .header-top .header-top-left ul li {\r\n          float: left;\r\n          border-right: 1px solid #008582; }\r\n          header .header-top .header-top-left ul li a {\r\n            padding-left: 12px;\r\n            padding-right: 12px; }\r\n          header .header-top .header-top-left ul li:first-child a {\r\n            padding-left: 0; }\r\n          header .header-top .header-top-left ul li:last-child {\r\n            border: none; }\r\n    header .header-top .header-top-right {\r\n      float: right;\r\n      position: relative;\r\n      width: 317px;\r\n      height: 36px;\r\n      margin-right: 112px; }\r\n      header .header-top .header-top-right #search {\r\n        width: 305px;\r\n        height: 24px;\r\n        border-radius: 6px;\r\n        border: 1px solid #008582;\r\n        padding: 5px; }\r\n      header .header-top .header-top-right ul {\r\n        position: absolute;\r\n        overflow: hidden;\r\n        right: 11px;\r\n        top: 8px; }\r\n        header .header-top .header-top-right ul li {\r\n          float: left;\r\n          width: 21px;\r\n          height: 21px; }\r\n          header .header-top .header-top-right ul li:first-child {\r\n            padding-right: 10px;\r\n            border-right: 1px solid #008582;\r\n            background: url(" + __webpack_require__(9) + ") no-repeat; }\r\n          header .header-top .header-top-right ul li:last-child {\r\n            margin-left: 10px;\r\n            background: url(" + __webpack_require__(10) + ") no-repeat; }\r\n    header .header-top button {\r\n      position: absolute;\r\n      right: 0px;\r\n      top: 2px;\r\n      font-size: 12px;\r\n      background: #008582;\r\n      color: #fff;\r\n      outline: none;\r\n      border: none;\r\n      width: 93px;\r\n      height: 32px; }\r\n      header .header-top button:hover {\r\n        background: #ea703a; }\r\n  header .header-bottom {\r\n    margin-top: 23px; }\r\n    header .header-bottom a {\r\n      float: left; }\r\n    header .header-bottom nav {\r\n      float: right;\r\n      padding-top: 13px; }\r\n      header .header-bottom nav ul li {\r\n        float: left;\r\n        padding: 0 20px; }\r\n        header .header-bottom nav ul li a.mainactive {\r\n          color: #008582;\r\n          padding-bottom: 10px;\r\n          border-bottom: 2px solid #ea703a; }\r\n\r\nfooter {\r\n  width: 100%;\r\n  height: 212px;\r\n  background: #fff;\r\n  border-top: 2px solid #008582; }\r\n  footer p {\r\n    margin: auto;\r\n    font-size: 14px;\r\n    text-align: center;\r\n    padding-top: 36px; }\r\n    footer p span {\r\n      line-height: 25px; }\r\n  footer ul {\r\n    overflow: hidden;\r\n    margin: auto;\r\n    width: 786px;\r\n    margin-top: 20px; }\r\n    footer ul li {\r\n      float: left;\r\n      border-right: 1px solid #000; }\r\n      footer ul li:last-child {\r\n        border: none; }\r\n      footer ul li a {\r\n        color: #000;\r\n        font-size: 12px;\r\n        padding: 0 20px; }\r\n\r\n/*面包屑*/\r\n.breadcrumb {\r\n  font-size: 18px;\r\n  color: #008582;\r\n  padding: 20px 83px 0px 83px; }\r\n  .breadcrumb u {\r\n    text-decoration: none;\r\n    line-height: 30px; }\r\n  .breadcrumb a {\r\n    line-height: 30px; }\r\n  .breadcrumb span {\r\n    line-height: 30px; }\r\n  .breadcrumb .tab-items {\r\n    float: right; }\r\n    .breadcrumb .tab-items button {\r\n      border: none;\r\n      color: #666;\r\n      background: #f2f2f2;\r\n      padding: 5px 20px;\r\n      font-size: 14px;\r\n      font-weight: bold;\r\n      border-bottom: 2px solid #fff; }\r\n      .breadcrumb .tab-items button:hover {\r\n        color: #fff;\r\n        background: #666;\r\n        border-bottom: 2px solid #ea703a; }\r\n      .breadcrumb .tab-items button.active {\r\n        color: #fff;\r\n        background: #666;\r\n        border-bottom: 2px solid #ea703a; }\r\n\r\n.PagePlugs {\r\n  text-align: center; }\r\n\r\n/* 设置滚动条的样式 */\r\n::-webkit-scrollbar {\r\n  width: 2px;\r\n  height: 2px; }\r\n\r\n/* 滚动槽 */\r\n::-webkit-scrollbar-track {\r\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\r\n  border-radius: 2px; }\r\n\r\n/* 滚动条滑块 */\r\n::-webkit-scrollbar-thumb {\r\n  border-radius: 2px;\r\n  background: rgba(0, 0, 0, 0.1);\r\n  -webkit-box-shadow: inset 0 0 6px #008582; }\r\n\r\n::-webkit-scrollbar-thumb:window-inactive {\r\n  background: #008582; }\r\n\r\n.login {\r\n  width: 100%;\r\n  background: url(" + __webpack_require__(35) + ") 100% 100% no-repeat; }\r\n  .login .login_logo {\r\n    padding-top: 84px;\r\n    margin: 0 auto;\r\n    text-align: center; }\r\n  .login .login_lin {\r\n    margin: 0 auto;\r\n    margin-top: 63px;\r\n    width: 1118px;\r\n    border-bottom: 1px solid #008582; }\r\n  .login .login_outer {\r\n    margin: 0 auto;\r\n    margin-top: 63px;\r\n    width: 800px; }\r\n    .login .login_outer .login_box {\r\n      width: 800px;\r\n      height: 470px;\r\n      margin: 0 auto;\r\n      background: #f9f9f9; }\r\n      .login .login_outer .login_box p {\r\n        text-align: center;\r\n        font-size: 14px;\r\n        color: #999;\r\n        padding-top: 60px; }\r\n      .login .login_outer .login_box .login_user {\r\n        margin-top: 30px;\r\n        display: -webkit-box;\r\n        display: -ms-flexbox;\r\n        display: flex;\r\n        position: relative;\r\n        -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n        align-items: center;\r\n        -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n        justify-content: center; }\r\n        .login .login_outer .login_box .login_user label {\r\n          display: inline-block;\r\n          width: 26px;\r\n          height: 32px;\r\n          background: url(" + __webpack_require__(36) + ") 0 -2px no-repeat; }\r\n        .login .login_outer .login_box .login_user .userpwdicon {\r\n          background-position: -28px -0px; }\r\n        .login .login_outer .login_box .login_user input {\r\n          padding: 0px;\r\n          margin-left: 25px;\r\n          width: 254px;\r\n          height: 37px;\r\n          border: 1px solid #ddd;\r\n          outline: none;\r\n          font-size: 14px; }\r\n          .login .login_outer .login_box .login_user input:focus {\r\n            border: 1px solid #ea703a; }\r\n        .login .login_outer .login_box .login_user span {\r\n          position: absolute;\r\n          right: 106px;\r\n          top: 12px;\r\n          width: 134px; }\r\n          .login .login_outer .login_box .login_user span i {\r\n            display: inline-block;\r\n            width: 16px;\r\n            height: 16px;\r\n            background: url(" + __webpack_require__(37) + ") no-repeat; }\r\n          .login .login_outer .login_box .login_user span .error {\r\n            background-position: -18px 0; }\r\n          .login .login_outer .login_box .login_user span u {\r\n            padding-left: 8px;\r\n            text-decoration: none;\r\n            font-size: 12px; }\r\n      .login .login_outer .login_box .login_btn {\r\n        margin-top: 38px;\r\n        display: -webkit-box;\r\n        display: -ms-flexbox;\r\n        display: flex;\r\n        -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n        align-items: center;\r\n        -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n        justify-content: center; }\r\n        .login .login_outer .login_box .login_btn button {\r\n          margin-left: 50px;\r\n          outline: none;\r\n          border: none;\r\n          background: #ea703a;\r\n          width: 254px;\r\n          height: 38px;\r\n          color: #fff;\r\n          font-size: 20px; }\r\n      .login .login_outer .login_box .service {\r\n        margin: 0 auto;\r\n        margin-top: 8px;\r\n        width: 254px;\r\n        font-size: 12px;\r\n        padding-left: 50px; }\r\n        .login .login_outer .login_box .service span {\r\n          padding-left: 26px; }\r\n      .login .login_outer .login_box .third-party {\r\n        margin-top: 38px; }\r\n        .login .login_outer .login_box .third-party h6 {\r\n          text-align: center;\r\n          color: #999;\r\n          font-weight: normal;\r\n          font-size: 14px; }\r\n        .login .login_outer .login_box .third-party ul {\r\n          margin-top: 16px;\r\n          display: -webkit-box;\r\n          display: -ms-flexbox;\r\n          display: flex;\r\n          -webkit-box-pack: center;\r\n          -ms-flex-pack: center;\r\n          justify-content: center; }\r\n          .login .login_outer .login_box .third-party ul li {\r\n            width: 48px;\r\n            height: 48px;\r\n            background: url(" + __webpack_require__(38) + ") no-repeat;\r\n            margin-right: 10px; }\r\n            .login .login_outer .login_box .third-party ul li:last-child {\r\n              margin-right: 0px; }\r\n            .login .login_outer .login_box .third-party ul li:last-child {\r\n              background-position: -50px 0; }\r\n\r\n/*# sourceMappingURL=login.css.map */\r\n", ""]);
+	exports.push([module.id, "@charset \"UTF-8\";\r\n/* http://meyerweb.com/eric/tools/css/reset/\r\n   v2.0 | 20110126\r\n   License: none (public domain)\r\n*/\r\nhtml, body, div, span, applet, object, iframe,\r\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\r\na, abbr, acronym, address, big, cite, code,\r\ndel, dfn, em, img, ins, kbd, q, s, samp,\r\nsmall, strike, strong, sub, sup, tt, var,\r\nb, u, i, center,\r\ndl, dt, dd, ol, ul, li,\r\nfieldset, form, label, legend,\r\ntable, caption, tbody, tfoot, thead, tr, th, td,\r\narticle, aside, canvas, details, embed,\r\nfigure, figcaption, footer, header, hgroup,\r\nmenu, nav, output, ruby, section, summary,\r\ntime, mark, audio, video {\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0;\r\n  font-family: \"Microsoft YaHei UI\";\r\n  font-size: 16px;\r\n  vertical-align: bottom; }\r\n\r\n/* HTML5 display-role reset for older browsers */\r\narticle, aside, details, figcaption, figure,\r\nfooter, header, hgroup, menu, nav, section {\r\n  display: block; }\r\n\r\nbody {\r\n  line-height: 1;\r\n  background: #eee; }\r\n\r\nol, ul {\r\n  list-style: none; }\r\n\r\nblockquote, q {\r\n  quotes: none; }\r\n\r\nblockquote:before, blockquote:after,\r\nq:before, q:after {\r\n  content: '';\r\n  content: none; }\r\n\r\ntable {\r\n  border-collapse: collapse;\r\n  border-spacing: 0; }\r\n\r\ninput {\r\n  outline: none; }\r\n\r\nbutton {\r\n  font-family: \"Microsoft YaHei UI\";\r\n  outline: none; }\r\n\r\n.wrapper {\r\n  width: 1200px;\r\n  margin: auto;\r\n  background: #fff;\r\n  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.8); }\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #008582; }\r\n  a:hover, a.active {\r\n    color: #ea703a; }\r\n\r\nheader {\r\n  width: 1100px;\r\n  height: 107px;\r\n  padding: 27px 70px 0 30px; }\r\n  header .header-top {\r\n    width: 100%;\r\n    overflow: hidden;\r\n    position: relative; }\r\n    header .header-top .header-top-left {\r\n      float: left; }\r\n      header .header-top .header-top-left ul {\r\n        overflow: hidden; }\r\n        header .header-top .header-top-left ul li {\r\n          float: left;\r\n          border-right: 1px solid #008582; }\r\n          header .header-top .header-top-left ul li a {\r\n            padding-left: 12px;\r\n            padding-right: 12px; }\r\n          header .header-top .header-top-left ul li:first-child a {\r\n            padding-left: 0; }\r\n          header .header-top .header-top-left ul li:last-child {\r\n            border: none; }\r\n    header .header-top .header-top-right {\r\n      float: right;\r\n      position: relative;\r\n      width: 317px;\r\n      height: 36px;\r\n      margin-right: 112px; }\r\n      header .header-top .header-top-right #search {\r\n        width: 305px;\r\n        height: 24px;\r\n        border-radius: 6px;\r\n        border: 1px solid #008582;\r\n        padding: 5px; }\r\n      header .header-top .header-top-right ul {\r\n        position: absolute;\r\n        overflow: hidden;\r\n        right: 11px;\r\n        top: 8px; }\r\n        header .header-top .header-top-right ul li {\r\n          float: left;\r\n          width: 21px;\r\n          height: 21px; }\r\n          header .header-top .header-top-right ul li:first-child {\r\n            padding-right: 10px;\r\n            border-right: 1px solid #008582;\r\n            background: url(" + __webpack_require__(9) + ") no-repeat; }\r\n          header .header-top .header-top-right ul li:last-child {\r\n            margin-left: 10px;\r\n            background: url(" + __webpack_require__(10) + ") no-repeat; }\r\n    header .header-top button {\r\n      position: absolute;\r\n      right: 0px;\r\n      top: 2px;\r\n      font-size: 12px;\r\n      background: #008582;\r\n      color: #fff;\r\n      outline: none;\r\n      border: none;\r\n      width: 93px;\r\n      height: 32px; }\r\n      header .header-top button:hover {\r\n        background: #ea703a; }\r\n  header .header-bottom {\r\n    margin-top: 23px; }\r\n    header .header-bottom a {\r\n      float: left; }\r\n    header .header-bottom nav {\r\n      float: right;\r\n      padding-top: 13px; }\r\n      header .header-bottom nav ul li {\r\n        float: left;\r\n        padding: 0 20px; }\r\n        header .header-bottom nav ul li a.mainactive {\r\n          color: #008582;\r\n          padding-bottom: 10px;\r\n          border-bottom: 2px solid #ea703a; }\r\n\r\nfooter {\r\n  width: 100%;\r\n  height: 212px;\r\n  background: #fff;\r\n  border-top: 2px solid #008582; }\r\n  footer p {\r\n    margin: auto;\r\n    font-size: 14px;\r\n    text-align: center;\r\n    padding-top: 36px; }\r\n    footer p span {\r\n      line-height: 25px; }\r\n  footer ul {\r\n    overflow: hidden;\r\n    margin: auto;\r\n    width: 786px;\r\n    margin-top: 20px; }\r\n    footer ul li {\r\n      float: left;\r\n      border-right: 1px solid #000; }\r\n      footer ul li:last-child {\r\n        border: none; }\r\n      footer ul li a {\r\n        color: #000;\r\n        font-size: 12px;\r\n        padding: 0 20px; }\r\n\r\n/*面包屑*/\r\n.breadcrumb {\r\n  font-size: 18px;\r\n  color: #008582;\r\n  padding: 20px 83px 0px 83px; }\r\n  .breadcrumb u {\r\n    text-decoration: none;\r\n    line-height: 30px; }\r\n  .breadcrumb a {\r\n    line-height: 30px; }\r\n  .breadcrumb span {\r\n    line-height: 30px; }\r\n  .breadcrumb .tab-items {\r\n    float: right; }\r\n    .breadcrumb .tab-items button {\r\n      border: none;\r\n      color: #666;\r\n      background: #f2f2f2;\r\n      padding: 5px 20px;\r\n      font-size: 14px;\r\n      font-weight: bold;\r\n      border-bottom: 2px solid #fff; }\r\n      .breadcrumb .tab-items button:hover {\r\n        color: #fff;\r\n        background: #666;\r\n        border-bottom: 2px solid #ea703a; }\r\n      .breadcrumb .tab-items button.active {\r\n        color: #fff;\r\n        background: #666;\r\n        border-bottom: 2px solid #ea703a; }\r\n\r\n.PagePlugs {\r\n  text-align: center; }\r\n\r\n/* 设置滚动条的样式 */\r\n::-webkit-scrollbar {\r\n  width: 2px;\r\n  height: 2px; }\r\n\r\n/* 滚动槽 */\r\n::-webkit-scrollbar-track {\r\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\r\n  border-radius: 2px; }\r\n\r\n/* 滚动条滑块 */\r\n::-webkit-scrollbar-thumb {\r\n  border-radius: 2px;\r\n  background: rgba(0, 0, 0, 0.1);\r\n  -webkit-box-shadow: inset 0 0 6px #008582; }\r\n\r\n::-webkit-scrollbar-thumb:window-inactive {\r\n  background: #008582; }\r\n\r\n.login {\r\n  width: 100%;\r\n  background: url(" + __webpack_require__(35) + ") 100% 100% no-repeat; }\r\n  .login .login_logo {\r\n    padding-top: 84px;\r\n    margin: 0 auto;\r\n    text-align: center; }\r\n  .login .login_lin {\r\n    margin: 0 auto;\r\n    margin-top: 63px;\r\n    width: 1118px;\r\n    border-bottom: 1px solid #008582; }\r\n  .login .login_outer {\r\n    margin: 0 auto;\r\n    margin-top: 63px;\r\n    width: 800px; }\r\n    .login .login_outer .login_box {\r\n      width: 800px;\r\n      min-height: 470px;\r\n      margin: 0 auto;\r\n      background: #f9f9f9; }\r\n      .login .login_outer .login_box p {\r\n        text-align: center;\r\n        font-size: 14px;\r\n        color: #999;\r\n        padding-top: 60px; }\r\n      .login .login_outer .login_box .login_user {\r\n        margin-top: 30px;\r\n        display: -webkit-box;\r\n        display: -ms-flexbox;\r\n        display: flex;\r\n        position: relative;\r\n        -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n        align-items: center;\r\n        -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n        justify-content: center; }\r\n        .login .login_outer .login_box .login_user label {\r\n          display: inline-block;\r\n          width: 26px;\r\n          height: 32px;\r\n          background: url(" + __webpack_require__(36) + ") 0 -2px no-repeat; }\r\n        .login .login_outer .login_box .login_user .userpwdicon {\r\n          background-position: -28px -0px; }\r\n        .login .login_outer .login_box .login_user input {\r\n          padding: 0px;\r\n          margin-left: 25px;\r\n          width: 254px;\r\n          height: 37px;\r\n          border: 1px solid #ddd;\r\n          outline: none;\r\n          font-size: 14px; }\r\n          .login .login_outer .login_box .login_user input:focus {\r\n            border: 1px solid #ea703a; }\r\n        .login .login_outer .login_box .login_user span {\r\n          position: absolute;\r\n          right: 106px;\r\n          top: 12px;\r\n          width: 134px; }\r\n          .login .login_outer .login_box .login_user span i {\r\n            display: inline-block;\r\n            width: 16px;\r\n            height: 16px;\r\n            background: url(" + __webpack_require__(37) + ") no-repeat; }\r\n          .login .login_outer .login_box .login_user span .error {\r\n            background-position: -18px 0; }\r\n          .login .login_outer .login_box .login_user span u {\r\n            padding-left: 8px;\r\n            text-decoration: none;\r\n            font-size: 12px; }\r\n      .login .login_outer .login_box .login_btn {\r\n        margin-top: 38px;\r\n        display: -webkit-box;\r\n        display: -ms-flexbox;\r\n        display: flex;\r\n        -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n        align-items: center;\r\n        -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n        justify-content: center; }\r\n        .login .login_outer .login_box .login_btn button {\r\n          margin-left: 50px;\r\n          outline: none;\r\n          border: none;\r\n          background: #ea703a;\r\n          width: 254px;\r\n          height: 38px;\r\n          color: #fff;\r\n          font-size: 20px; }\r\n      .login .login_outer .login_box .service {\r\n        margin: 0 auto;\r\n        margin-top: 8px;\r\n        width: 254px;\r\n        font-size: 12px;\r\n        padding-left: 50px; }\r\n        .login .login_outer .login_box .service span {\r\n          padding-left: 82px;\r\n          font-size: 12px; }\r\n        .login .login_outer .login_box .service a {\r\n          font-size: 12px; }\r\n          .login .login_outer .login_box .service a u {\r\n            font-size: 12px; }\r\n      .login .login_outer .login_box .third-party {\r\n        margin-top: 38px; }\r\n        .login .login_outer .login_box .third-party h6 {\r\n          text-align: center;\r\n          color: #999;\r\n          font-weight: normal;\r\n          font-size: 14px; }\r\n        .login .login_outer .login_box .third-party ul {\r\n          margin-top: 16px;\r\n          display: -webkit-box;\r\n          display: -ms-flexbox;\r\n          display: flex;\r\n          -webkit-box-pack: center;\r\n          -ms-flex-pack: center;\r\n          justify-content: center; }\r\n          .login .login_outer .login_box .third-party ul li {\r\n            width: 48px;\r\n            height: 48px;\r\n            background: url(" + __webpack_require__(38) + ") no-repeat;\r\n            margin-right: 10px; }\r\n            .login .login_outer .login_box .third-party ul li:last-child {\r\n              margin-right: 0px; }\r\n            .login .login_outer .login_box .third-party ul li:last-child {\r\n              background-position: -50px 0; }\r\n\r\n/*# sourceMappingURL=login.css.map */\r\n", ""]);
 
 	// exports
 
@@ -930,7 +930,7 @@
 
 
 	// module
-	exports.push([module.id, "@charset \"UTF-8\";\r\n/* http://meyerweb.com/eric/tools/css/reset/\r\n   v2.0 | 20110126\r\n   License: none (public domain)\r\n*/\r\nhtml, body, div, span, applet, object, iframe,\r\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\r\na, abbr, acronym, address, big, cite, code,\r\ndel, dfn, em, img, ins, kbd, q, s, samp,\r\nsmall, strike, strong, sub, sup, tt, var,\r\nb, u, i, center,\r\ndl, dt, dd, ol, ul, li,\r\nfieldset, form, label, legend,\r\ntable, caption, tbody, tfoot, thead, tr, th, td,\r\narticle, aside, canvas, details, embed,\r\nfigure, figcaption, footer, header, hgroup,\r\nmenu, nav, output, ruby, section, summary,\r\ntime, mark, audio, video {\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0;\r\n  font-family: \"Microsoft YaHei UI\";\r\n  font-size: 16px;\r\n  vertical-align: bottom; }\r\n\r\n/* HTML5 display-role reset for older browsers */\r\narticle, aside, details, figcaption, figure,\r\nfooter, header, hgroup, menu, nav, section {\r\n  display: block; }\r\n\r\nbody {\r\n  line-height: 1;\r\n  background: #eee; }\r\n\r\nol, ul {\r\n  list-style: none; }\r\n\r\nblockquote, q {\r\n  quotes: none; }\r\n\r\nblockquote:before, blockquote:after,\r\nq:before, q:after {\r\n  content: '';\r\n  content: none; }\r\n\r\ntable {\r\n  border-collapse: collapse;\r\n  border-spacing: 0; }\r\n\r\ninput {\r\n  outline: none; }\r\n\r\nbutton {\r\n  font-family: \"Microsoft YaHei UI\";\r\n  outline: none; }\r\n\r\n.wrapper {\r\n  width: 1200px;\r\n  margin: auto;\r\n  background: #fff;\r\n  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.8); }\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #008582; }\r\n  a:hover, a.active {\r\n    color: #ea703a; }\r\n\r\nheader {\r\n  width: 1100px;\r\n  height: 107px;\r\n  padding: 27px 70px 0 30px; }\r\n  header .header-top {\r\n    width: 100%;\r\n    overflow: hidden;\r\n    position: relative; }\r\n    header .header-top .header-top-left {\r\n      float: left; }\r\n      header .header-top .header-top-left ul {\r\n        overflow: hidden; }\r\n        header .header-top .header-top-left ul li {\r\n          float: left;\r\n          border-right: 1px solid #008582; }\r\n          header .header-top .header-top-left ul li a {\r\n            padding-left: 12px;\r\n            padding-right: 12px; }\r\n          header .header-top .header-top-left ul li:first-child a {\r\n            padding-left: 0; }\r\n          header .header-top .header-top-left ul li:last-child {\r\n            border: none; }\r\n    header .header-top .header-top-right {\r\n      float: right;\r\n      position: relative;\r\n      width: 317px;\r\n      height: 36px;\r\n      margin-right: 112px; }\r\n      header .header-top .header-top-right #search {\r\n        width: 305px;\r\n        height: 24px;\r\n        border-radius: 6px;\r\n        border: 1px solid #008582;\r\n        padding: 5px; }\r\n      header .header-top .header-top-right ul {\r\n        position: absolute;\r\n        overflow: hidden;\r\n        right: 11px;\r\n        top: 8px; }\r\n        header .header-top .header-top-right ul li {\r\n          float: left;\r\n          width: 21px;\r\n          height: 21px; }\r\n          header .header-top .header-top-right ul li:first-child {\r\n            padding-right: 10px;\r\n            border-right: 1px solid #008582;\r\n            background: url(" + __webpack_require__(9) + ") no-repeat; }\r\n          header .header-top .header-top-right ul li:last-child {\r\n            margin-left: 10px;\r\n            background: url(" + __webpack_require__(10) + ") no-repeat; }\r\n    header .header-top button {\r\n      position: absolute;\r\n      right: 0px;\r\n      top: 2px;\r\n      font-size: 12px;\r\n      background: #008582;\r\n      color: #fff;\r\n      outline: none;\r\n      border: none;\r\n      width: 93px;\r\n      height: 32px; }\r\n      header .header-top button:hover {\r\n        background: #ea703a; }\r\n  header .header-bottom {\r\n    margin-top: 23px; }\r\n    header .header-bottom a {\r\n      float: left; }\r\n    header .header-bottom nav {\r\n      float: right;\r\n      padding-top: 13px; }\r\n      header .header-bottom nav ul li {\r\n        float: left;\r\n        padding: 0 20px; }\r\n        header .header-bottom nav ul li a.mainactive {\r\n          color: #008582;\r\n          padding-bottom: 10px;\r\n          border-bottom: 2px solid #ea703a; }\r\n\r\nfooter {\r\n  width: 100%;\r\n  height: 212px;\r\n  background: #fff;\r\n  border-top: 2px solid #008582; }\r\n  footer p {\r\n    margin: auto;\r\n    font-size: 14px;\r\n    text-align: center;\r\n    padding-top: 36px; }\r\n    footer p span {\r\n      line-height: 25px; }\r\n  footer ul {\r\n    overflow: hidden;\r\n    margin: auto;\r\n    width: 786px;\r\n    margin-top: 20px; }\r\n    footer ul li {\r\n      float: left;\r\n      border-right: 1px solid #000; }\r\n      footer ul li:last-child {\r\n        border: none; }\r\n      footer ul li a {\r\n        color: #000;\r\n        font-size: 12px;\r\n        padding: 0 20px; }\r\n\r\n/*面包屑*/\r\n.breadcrumb {\r\n  font-size: 18px;\r\n  color: #008582;\r\n  padding: 20px 83px 0px 83px; }\r\n  .breadcrumb u {\r\n    text-decoration: none;\r\n    line-height: 30px; }\r\n  .breadcrumb a {\r\n    line-height: 30px; }\r\n  .breadcrumb span {\r\n    line-height: 30px; }\r\n  .breadcrumb .tab-items {\r\n    float: right; }\r\n    .breadcrumb .tab-items button {\r\n      border: none;\r\n      color: #666;\r\n      background: #f2f2f2;\r\n      padding: 5px 20px;\r\n      font-size: 14px;\r\n      font-weight: bold;\r\n      border-bottom: 2px solid #fff; }\r\n      .breadcrumb .tab-items button:hover {\r\n        color: #fff;\r\n        background: #666;\r\n        border-bottom: 2px solid #ea703a; }\r\n      .breadcrumb .tab-items button.active {\r\n        color: #fff;\r\n        background: #666;\r\n        border-bottom: 2px solid #ea703a; }\r\n\r\n.PagePlugs {\r\n  text-align: center; }\r\n\r\n/* 设置滚动条的样式 */\r\n::-webkit-scrollbar {\r\n  width: 2px;\r\n  height: 2px; }\r\n\r\n/* 滚动槽 */\r\n::-webkit-scrollbar-track {\r\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\r\n  border-radius: 2px; }\r\n\r\n/* 滚动条滑块 */\r\n::-webkit-scrollbar-thumb {\r\n  border-radius: 2px;\r\n  background: rgba(0, 0, 0, 0.1);\r\n  -webkit-box-shadow: inset 0 0 6px #008582; }\r\n\r\n::-webkit-scrollbar-thumb:window-inactive {\r\n  background: #008582; }\r\n\r\n.ablum {\r\n  position: relative; }\r\n  .ablum .ablum-tab {\r\n    padding: 0 0 0 88px;\r\n    margin-top: 20px; }\r\n    .ablum .ablum-tab ul:after {\r\n      display: block;\r\n      content: '';\r\n      clear: both; }\r\n    .ablum .ablum-tab ul li {\r\n      float: left;\r\n      height: 20px;\r\n      color: #008582;\r\n      cursor: pointer;\r\n      color: #666;\r\n      font-size: 18px; }\r\n      .ablum .ablum-tab ul li.active {\r\n        color: #ea703a;\r\n        border-bottom: 2px solid #ea703a; }\r\n      .ablum .ablum-tab ul li a {\r\n        font-weight: bold; }\r\n      .ablum .ablum-tab ul li:last-child {\r\n        margin-left: 45px; }\r\n  .ablum .ablum-data-list {\r\n    padding: 0 83px; }\r\n    .ablum .ablum-data-list ul {\r\n      display: -webkit-box;\r\n      display: -ms-flexbox;\r\n      display: flex;\r\n      -ms-flex-flow: row;\r\n      -webkit-box-orient: horizontal;\r\n      -webkit-box-direction: normal;\r\n              flex-flow: row;\r\n      -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n      margin-top: 20px; }\r\n      .ablum .ablum-data-list ul li {\r\n        width: 207px;\r\n        margin-bottom: 20px; }\r\n        .ablum .ablum-data-list ul li:not(:nth-child(4n)) {\r\n          margin-right: 64px; }\r\n        .ablum .ablum-data-list ul li h1 {\r\n          font-weight: normal;\r\n          font-size: 14px;\r\n          color: #333;\r\n          display: -webkit-box;\r\n          -webkit-box-orient: vertical;\r\n          -webkit-line-clamp: 1;\r\n          overflow: hidden;\r\n          line-height: 40px; }\r\n        .ablum .ablum-data-list ul li h5 {\r\n          font-weight: normal;\r\n          font-size: 14px;\r\n          color: #008582;\r\n          line-height: 30px; }\r\n        .ablum .ablum-data-list ul li P {\r\n          font-size: 14px;\r\n          color: #999;\r\n          line-height: 20px;\r\n          display: -webkit-box;\r\n          -webkit-box-orient: vertical;\r\n          -webkit-line-clamp: 3;\r\n          overflow: hidden; }\r\n        .ablum .ablum-data-list ul li .ablum-service {\r\n          display: -webkit-box;\r\n          display: -ms-flexbox;\r\n          display: flex;\r\n          width: 207px; }\r\n          .ablum .ablum-data-list ul li .ablum-service div {\r\n            cursor: pointer;\r\n            padding: 5px 0; }\r\n          .ablum .ablum-data-list ul li .ablum-service div i {\r\n            width: 18px;\r\n            height: 17px;\r\n            background: url(" + __webpack_require__(41) + ") no-repeat; }\r\n          .ablum .ablum-data-list ul li .ablum-service .msg {\r\n            background-position: -40px 0; }\r\n          .ablum .ablum-data-list ul li .ablum-service .port {\r\n            background-position: -20px 0; }\r\n          .ablum .ablum-data-list ul li .ablum-service div span {\r\n            color: #999;\r\n            padding: 0 5px; }\r\n  .ablum .ablum-want {\r\n    position: absolute;\r\n    left: 219px;\r\n    top: 22px; }\r\n    .ablum .ablum-want button {\r\n      padding: 0;\r\n      margin: 0;\r\n      border-radius: 14px;\r\n      width: 70px;\r\n      height: 29px;\r\n      background: #008582;\r\n      outline: none;\r\n      border: none;\r\n      font-size: 14px;\r\n      color: #fff;\r\n      cursor: pointer; }\r\n      .ablum .ablum-want button:hover {\r\n        background: #ea703a; }\r\n  .ablum .ablum-how {\r\n    position: absolute;\r\n    right: 180px;\r\n    top: 0px; }\r\n    .ablum .ablum-how button {\r\n      width: 30px;\r\n      height: 89px;\r\n      padding: 0;\r\n      margin: 0;\r\n      border-radius: 0 0 14px 14px;\r\n      background: #bababa;\r\n      outline: none;\r\n      border: none;\r\n      font-size: 16px;\r\n      color: #fff;\r\n      cursor: pointer; }\r\n      .ablum .ablum-how button:hover {\r\n        background: #008582; }\r\n\r\n.ablum-details .ablum-details-wrapper {\r\n  padding: 0 83px;\r\n  position: relative; }\r\n  .ablum-details .ablum-details-wrapper h1 {\r\n    font-weight: normal;\r\n    font-size: 18px;\r\n    color: #0c0c0c;\r\n    margin-top: 15px; }\r\n  .ablum-details .ablum-details-wrapper h6 {\r\n    font-weight: normal;\r\n    font-size: 12px;\r\n    color: #008582;\r\n    margin-top: 15px; }\r\n  .ablum-details .ablum-details-wrapper .ablum-details-3d {\r\n    width: 100%;\r\n    height: 580px; }\r\n    .ablum-details .ablum-details-wrapper .ablum-details-3d iframe {\r\n      width: 100%;\r\n      height: 100%; }\r\n  .ablum-details .ablum-details-wrapper h2 {\r\n    font-size: 18px;\r\n    color: #008582;\r\n    line-height: 22px;\r\n    margin-top: 10px; }\r\n  .ablum-details .ablum-details-wrapper .ablum-details-intro {\r\n    width: 639px;\r\n    font-size: 12px;\r\n    line-height: 22px;\r\n    margin-top: 15px;\r\n    padding-left: 53px; }\r\n  .ablum-details .ablum-details-wrapper .ablum-details-fullscreen {\r\n    position: absolute;\r\n    cursor: pointer;\r\n    right: 83px;\r\n    top: 623px;\r\n    width: 100px;\r\n    height: 30px;\r\n    background: url(" + __webpack_require__(42) + ") no-repeat; }\r\n  .ablum-details .ablum-details-wrapper .ablum-details-comment {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: row;\r\n            flex-direction: row;\r\n    margin-top: 20px; }\r\n    .ablum-details .ablum-details-wrapper .ablum-details-comment textarea {\r\n      width: 573px;\r\n      height: 127px;\r\n      margin-left: 15px;\r\n      resize: none; }\r\n  .ablum-details .ablum-details-wrapper .ablum-details-emoji {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    margin-left: 60px;\r\n    width: 573px; }\r\n    .ablum-details .ablum-details-wrapper .ablum-details-emoji .ablum-details-emoji-state {\r\n      width: 20px;\r\n      height: 20px;\r\n      background: url(" + __webpack_require__(43) + ") no-repeat; }\r\n      .ablum-details .ablum-details-wrapper .ablum-details-emoji .ablum-details-emoji-state.active {\r\n        background-position: -22px 0; }\r\n  .ablum-details .ablum-details-wrapper .ablum-details-comment-content-more {\r\n    width: 684px;\r\n    height: 30px;\r\n    text-align: center;\r\n    color: #008582;\r\n    background: #f7f7f7; }\r\n    .ablum-details .ablum-details-wrapper .ablum-details-comment-content-more span {\r\n      line-height: 30px; }\r\n\r\n.com_form {\r\n  width: 100%;\r\n  position: relative; }\r\n\r\n.input {\r\n  width: 99%;\r\n  height: 60px;\r\n  border: 1px solid #ccc; }\r\n\r\n.com_form p {\r\n  height: 28px;\r\n  line-height: 28px;\r\n  position: relative;\r\n  margin-top: 10px; }\r\n\r\nspan.emotion {\r\n  display: inline-block;\r\n  width: 20px;\r\n  height: 20px;\r\n  margin-left: 20px;\r\n  cursor: pointer;\r\n  background: url(" + __webpack_require__(43) + ") no-repeat; }\r\n\r\nspan.emotion.active {\r\n  background-position: -22px 0; }\r\n\r\n.qqFace {\r\n  margin-top: 4px;\r\n  background: #fff;\r\n  padding: 2px;\r\n  border: 1px #dfe6f6 solid; }\r\n\r\n.qqFace table td {\r\n  padding: 0px; }\r\n\r\n.qqFace table td img {\r\n  cursor: pointer;\r\n  border: 1px #fff solid; }\r\n\r\n.qqFace table td img:hover {\r\n  border: 1px #0066cc solid; }\r\n\r\n#show {\r\n  width: 770px;\r\n  margin: 20px auto;\r\n  background: #fff;\r\n  padding: 5px;\r\n  border: 1px solid #DDD;\r\n  vertical-align: top; }\r\n\r\n.sub_btn {\r\n  position: absolute;\r\n  right: 0px;\r\n  top: 0;\r\n  display: inline-block;\r\n  zoom: 1;\r\n  /* zoom and *display = ie7 hack for display:inline-block */\r\n  display: inline;\r\n  vertical-align: baseline;\r\n  margin: 0 2px;\r\n  outline: none;\r\n  cursor: pointer;\r\n  text-align: center;\r\n  font-size: 14px;\r\n  padding: .5em 2em .55em;\r\n  color: #666;\r\n  border: none;\r\n  background: #e6e6e6; }\r\n\r\n.sub_btn:hover {\r\n  color: #fff;\r\n  background: #ea703a; }\r\n\r\n.comment-count {\r\n  position: absolute;\r\n  right: 8px;\r\n  bottom: 45px; }\r\n  .comment-count.warr {\r\n    color: red; }\r\n\r\n.ablum-details-comment-hot {\r\n  position: absolute;\r\n  right: 100px;\r\n  top: 669px;\r\n  width: 300px; }\r\n  .ablum-details-comment-hot ul {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -ms-flex-flow: row;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: normal;\r\n            flex-flow: row;\r\n    -ms-flex-wrap: wrap;\r\n    flex-wrap: wrap;\r\n    -ms-flex-direction: column;\r\n        flex-direction: column;\r\n    margin-top: 20px; }\r\n    .ablum-details-comment-hot ul li {\r\n      margin-bottom: 20px;\r\n      display: -webkit-box;\r\n      display: -ms-flexbox;\r\n      display: flex; }\r\n      .ablum-details-comment-hot ul li .ablum-details-comment-hot-inf {\r\n        margin-left: 10px; }\r\n        .ablum-details-comment-hot ul li .ablum-details-comment-hot-inf h1 {\r\n          font-weight: normal;\r\n          font-size: 16px;\r\n          color: #333;\r\n          width: 160px;\r\n          display: -webkit-box;\r\n          -webkit-box-orient: vertical;\r\n          -webkit-line-clamp: 1;\r\n          overflow: hidden;\r\n          line-height: 40px;\r\n          margin: 0; }\r\n        .ablum-details-comment-hot ul li .ablum-details-comment-hot-inf h5 {\r\n          font-weight: normal;\r\n          font-size: 14px;\r\n          color: #008582;\r\n          line-height: 30px; }\r\n        .ablum-details-comment-hot ul li .ablum-details-comment-hot-inf P {\r\n          font-size: 14px;\r\n          color: #999;\r\n          line-height: 20px;\r\n          display: -webkit-box;\r\n          -webkit-box-orient: vertical;\r\n          -webkit-line-clamp: 3;\r\n          overflow: hidden; }\r\n      .ablum-details-comment-hot ul li .ablum-service {\r\n        display: -webkit-box;\r\n        display: -ms-flexbox;\r\n        display: flex;\r\n        width: 207px; }\r\n        .ablum-details-comment-hot ul li .ablum-service div {\r\n          cursor: pointer;\r\n          padding: 5px 0; }\r\n        .ablum-details-comment-hot ul li .ablum-service div i {\r\n          width: 18px;\r\n          height: 17px;\r\n          background: url(" + __webpack_require__(41) + ") no-repeat; }\r\n        .ablum-details-comment-hot ul li .ablum-service .msg {\r\n          background-position: -40px 0; }\r\n        .ablum-details-comment-hot ul li .ablum-service .port {\r\n          background-position: -20px 0; }\r\n        .ablum-details-comment-hot ul li .ablum-service div span {\r\n          color: #999;\r\n          padding: 0 5px; }\r\n\r\n.ablum-details-comment-first {\r\n  width: 680px;\r\n  padding-bottom: 10px;\r\n  margin-bottom: 15px; }\r\n  .ablum-details-comment-first .ablum-details-comment-first-top {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: row nowrap;\r\n            flex-flow: row nowrap;\r\n    -ms-flex-line-pack: center;\r\n        align-content: center;\r\n    margin-top: 15px; }\r\n    .ablum-details-comment-first .ablum-details-comment-first-top span {\r\n      display: inline-block;\r\n      background: #f2fbf2;\r\n      width: 640px; }\r\n      .ablum-details-comment-first .ablum-details-comment-first-top span u {\r\n        line-height: 40px;\r\n        padding-left: 10px;\r\n        text-decoration: none;\r\n        font-size: 14px;\r\n        color: #008582; }\r\n      .ablum-details-comment-first .ablum-details-comment-first-top span i {\r\n        padding-left: 10px;\r\n        line-height: 40px;\r\n        font-size: 14px;\r\n        font-style: normal;\r\n        color: #ced2ce; }\r\n  .ablum-details-comment-first .ablum-details-comment-first-content {\r\n    width: 610px;\r\n    margin-left: 40px;\r\n    padding: 15px; }\r\n    .ablum-details-comment-first .ablum-details-comment-first-content p {\r\n      font-size: 12px;\r\n      line-height: 22px; }\r\n    .ablum-details-comment-first .ablum-details-comment-first-content a {\r\n      display: inline-block;\r\n      padding-top: 10px;\r\n      font-size: 12px;\r\n      color: #ea703a; }\r\n  .ablum-details-comment-first {\r\n    border-bottom: 1px dashed #8e8e8e; }\r\n  .ablum-details-comment-first .ablum-details-comment-others {\r\n    background: #f7f7f7;\r\n    margin-left: 20px; }\r\n    .ablum-details-comment-first .ablum-details-comment-others .ablum-details-comment-others-top {\r\n      display: -webkit-box;\r\n      display: -ms-flexbox;\r\n      display: flex;\r\n      -webkit-box-orient: horizontal;\r\n      -webkit-box-direction: normal;\r\n          -ms-flex-flow: row nowrap;\r\n              flex-flow: row nowrap;\r\n      -ms-flex-line-pack: center;\r\n          align-content: center;\r\n      padding-top: 10px;\r\n      padding-left: 28px; }\r\n      .ablum-details-comment-first .ablum-details-comment-others .ablum-details-comment-others-top span {\r\n        display: inline-block;\r\n        width: 620px; }\r\n        .ablum-details-comment-first .ablum-details-comment-others .ablum-details-comment-others-top span u {\r\n          line-height: 40px;\r\n          padding-left: 10px;\r\n          text-decoration: none;\r\n          font-size: 14px;\r\n          color: #008582; }\r\n        .ablum-details-comment-first .ablum-details-comment-others .ablum-details-comment-others-top span i {\r\n          padding-left: 10px;\r\n          line-height: 40px;\r\n          font-size: 14px;\r\n          font-style: normal;\r\n          color: #ced2ce; }\r\n    .ablum-details-comment-first .ablum-details-comment-others .ablum-details-comment-others-content {\r\n      width: 590px;\r\n      margin-left: 40px;\r\n      padding: 15px;\r\n      opacity: 0; }\r\n      .ablum-details-comment-first .ablum-details-comment-others .ablum-details-comment-others-content.show {\r\n        opacity: 1;\r\n        -webkit-transition: opacity .8s;\r\n        transition: opacity .8s; }\r\n      .ablum-details-comment-first .ablum-details-comment-others .ablum-details-comment-others-content p {\r\n        font-size: 12px;\r\n        line-height: 22px; }\r\n      .ablum-details-comment-first .ablum-details-comment-others .ablum-details-comment-others-content a {\r\n        display: inline-block;\r\n        padding-top: 10px;\r\n        font-size: 12px;\r\n        color: #ea703a; }\r\n\r\n/*# sourceMappingURL=album.css.map */\r\n", ""]);
+	exports.push([module.id, "@charset \"UTF-8\";\r\n/* http://meyerweb.com/eric/tools/css/reset/\r\n   v2.0 | 20110126\r\n   License: none (public domain)\r\n*/\r\nhtml, body, div, span, applet, object, iframe,\r\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\r\na, abbr, acronym, address, big, cite, code,\r\ndel, dfn, em, img, ins, kbd, q, s, samp,\r\nsmall, strike, strong, sub, sup, tt, var,\r\nb, u, i, center,\r\ndl, dt, dd, ol, ul, li,\r\nfieldset, form, label, legend,\r\ntable, caption, tbody, tfoot, thead, tr, th, td,\r\narticle, aside, canvas, details, embed,\r\nfigure, figcaption, footer, header, hgroup,\r\nmenu, nav, output, ruby, section, summary,\r\ntime, mark, audio, video {\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0;\r\n  font-family: \"Microsoft YaHei UI\";\r\n  font-size: 16px;\r\n  vertical-align: bottom; }\r\n\r\n/* HTML5 display-role reset for older browsers */\r\narticle, aside, details, figcaption, figure,\r\nfooter, header, hgroup, menu, nav, section {\r\n  display: block; }\r\n\r\nbody {\r\n  line-height: 1;\r\n  background: #eee; }\r\n\r\nol, ul {\r\n  list-style: none; }\r\n\r\nblockquote, q {\r\n  quotes: none; }\r\n\r\nblockquote:before, blockquote:after,\r\nq:before, q:after {\r\n  content: '';\r\n  content: none; }\r\n\r\ntable {\r\n  border-collapse: collapse;\r\n  border-spacing: 0; }\r\n\r\ninput {\r\n  outline: none; }\r\n\r\nbutton {\r\n  font-family: \"Microsoft YaHei UI\";\r\n  outline: none; }\r\n\r\n.wrapper {\r\n  width: 1200px;\r\n  margin: auto;\r\n  background: #fff;\r\n  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.8); }\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #008582; }\r\n  a:hover, a.active {\r\n    color: #ea703a; }\r\n\r\nheader {\r\n  width: 1100px;\r\n  height: 107px;\r\n  padding: 27px 70px 0 30px; }\r\n  header .header-top {\r\n    width: 100%;\r\n    overflow: hidden;\r\n    position: relative; }\r\n    header .header-top .header-top-left {\r\n      float: left; }\r\n      header .header-top .header-top-left ul {\r\n        overflow: hidden; }\r\n        header .header-top .header-top-left ul li {\r\n          float: left;\r\n          border-right: 1px solid #008582; }\r\n          header .header-top .header-top-left ul li a {\r\n            padding-left: 12px;\r\n            padding-right: 12px; }\r\n          header .header-top .header-top-left ul li:first-child a {\r\n            padding-left: 0; }\r\n          header .header-top .header-top-left ul li:last-child {\r\n            border: none; }\r\n    header .header-top .header-top-right {\r\n      float: right;\r\n      position: relative;\r\n      width: 317px;\r\n      height: 36px;\r\n      margin-right: 112px; }\r\n      header .header-top .header-top-right #search {\r\n        width: 305px;\r\n        height: 24px;\r\n        border-radius: 6px;\r\n        border: 1px solid #008582;\r\n        padding: 5px; }\r\n      header .header-top .header-top-right ul {\r\n        position: absolute;\r\n        overflow: hidden;\r\n        right: 11px;\r\n        top: 8px; }\r\n        header .header-top .header-top-right ul li {\r\n          float: left;\r\n          width: 21px;\r\n          height: 21px; }\r\n          header .header-top .header-top-right ul li:first-child {\r\n            padding-right: 10px;\r\n            border-right: 1px solid #008582;\r\n            background: url(" + __webpack_require__(9) + ") no-repeat; }\r\n          header .header-top .header-top-right ul li:last-child {\r\n            margin-left: 10px;\r\n            background: url(" + __webpack_require__(10) + ") no-repeat; }\r\n    header .header-top button {\r\n      position: absolute;\r\n      right: 0px;\r\n      top: 2px;\r\n      font-size: 12px;\r\n      background: #008582;\r\n      color: #fff;\r\n      outline: none;\r\n      border: none;\r\n      width: 93px;\r\n      height: 32px; }\r\n      header .header-top button:hover {\r\n        background: #ea703a; }\r\n  header .header-bottom {\r\n    margin-top: 23px; }\r\n    header .header-bottom a {\r\n      float: left; }\r\n    header .header-bottom nav {\r\n      float: right;\r\n      padding-top: 13px; }\r\n      header .header-bottom nav ul li {\r\n        float: left;\r\n        padding: 0 20px; }\r\n        header .header-bottom nav ul li a.mainactive {\r\n          color: #008582;\r\n          padding-bottom: 10px;\r\n          border-bottom: 2px solid #ea703a; }\r\n\r\nfooter {\r\n  width: 100%;\r\n  height: 212px;\r\n  background: #fff;\r\n  border-top: 2px solid #008582; }\r\n  footer p {\r\n    margin: auto;\r\n    font-size: 14px;\r\n    text-align: center;\r\n    padding-top: 36px; }\r\n    footer p span {\r\n      line-height: 25px; }\r\n  footer ul {\r\n    overflow: hidden;\r\n    margin: auto;\r\n    width: 786px;\r\n    margin-top: 20px; }\r\n    footer ul li {\r\n      float: left;\r\n      border-right: 1px solid #000; }\r\n      footer ul li:last-child {\r\n        border: none; }\r\n      footer ul li a {\r\n        color: #000;\r\n        font-size: 12px;\r\n        padding: 0 20px; }\r\n\r\n/*面包屑*/\r\n.breadcrumb {\r\n  font-size: 18px;\r\n  color: #008582;\r\n  padding: 20px 83px 0px 83px; }\r\n  .breadcrumb u {\r\n    text-decoration: none;\r\n    line-height: 30px; }\r\n  .breadcrumb a {\r\n    line-height: 30px; }\r\n  .breadcrumb span {\r\n    line-height: 30px; }\r\n  .breadcrumb .tab-items {\r\n    float: right; }\r\n    .breadcrumb .tab-items button {\r\n      border: none;\r\n      color: #666;\r\n      background: #f2f2f2;\r\n      padding: 5px 20px;\r\n      font-size: 14px;\r\n      font-weight: bold;\r\n      border-bottom: 2px solid #fff; }\r\n      .breadcrumb .tab-items button:hover {\r\n        color: #fff;\r\n        background: #666;\r\n        border-bottom: 2px solid #ea703a; }\r\n      .breadcrumb .tab-items button.active {\r\n        color: #fff;\r\n        background: #666;\r\n        border-bottom: 2px solid #ea703a; }\r\n\r\n.PagePlugs {\r\n  text-align: center; }\r\n\r\n/* 设置滚动条的样式 */\r\n::-webkit-scrollbar {\r\n  width: 2px;\r\n  height: 2px; }\r\n\r\n/* 滚动槽 */\r\n::-webkit-scrollbar-track {\r\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\r\n  border-radius: 2px; }\r\n\r\n/* 滚动条滑块 */\r\n::-webkit-scrollbar-thumb {\r\n  border-radius: 2px;\r\n  background: rgba(0, 0, 0, 0.1);\r\n  -webkit-box-shadow: inset 0 0 6px #008582; }\r\n\r\n::-webkit-scrollbar-thumb:window-inactive {\r\n  background: #008582; }\r\n\r\n.ablum {\r\n  position: relative; }\r\n  .ablum .ablum-tab {\r\n    padding: 0 0 0 88px;\r\n    margin-top: 20px; }\r\n    .ablum .ablum-tab ul:after {\r\n      display: block;\r\n      content: '';\r\n      clear: both; }\r\n    .ablum .ablum-tab ul li {\r\n      float: left;\r\n      height: 20px;\r\n      color: #008582;\r\n      cursor: pointer;\r\n      color: #666;\r\n      font-size: 18px; }\r\n      .ablum .ablum-tab ul li.active {\r\n        color: #ea703a;\r\n        border-bottom: 2px solid #ea703a; }\r\n      .ablum .ablum-tab ul li a {\r\n        font-weight: bold; }\r\n      .ablum .ablum-tab ul li:last-child {\r\n        margin-left: 45px; }\r\n  .ablum .ablum-data-list {\r\n    padding: 0 83px; }\r\n    .ablum .ablum-data-list ul {\r\n      display: -webkit-box;\r\n      display: -ms-flexbox;\r\n      display: flex;\r\n      -ms-flex-flow: row;\r\n      -webkit-box-orient: horizontal;\r\n      -webkit-box-direction: normal;\r\n              flex-flow: row;\r\n      -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n      margin-top: 20px; }\r\n      .ablum .ablum-data-list ul li {\r\n        width: 207px;\r\n        margin-bottom: 20px; }\r\n        .ablum .ablum-data-list ul li:not(:nth-child(4n)) {\r\n          margin-right: 64px; }\r\n        .ablum .ablum-data-list ul li h1 {\r\n          font-weight: normal;\r\n          font-size: 14px;\r\n          color: #333;\r\n          display: -webkit-box;\r\n          -webkit-box-orient: vertical;\r\n          -webkit-line-clamp: 1;\r\n          overflow: hidden;\r\n          line-height: 40px; }\r\n        .ablum .ablum-data-list ul li h5 {\r\n          font-weight: normal;\r\n          font-size: 14px;\r\n          color: #008582;\r\n          line-height: 30px; }\r\n        .ablum .ablum-data-list ul li P {\r\n          font-size: 14px;\r\n          color: #999;\r\n          line-height: 20px;\r\n          display: -webkit-box;\r\n          -webkit-box-orient: vertical;\r\n          -webkit-line-clamp: 3;\r\n          overflow: hidden; }\r\n        .ablum .ablum-data-list ul li .ablum-service {\r\n          display: -webkit-box;\r\n          display: -ms-flexbox;\r\n          display: flex;\r\n          width: 207px; }\r\n          .ablum .ablum-data-list ul li .ablum-service div {\r\n            cursor: pointer;\r\n            padding: 5px 0; }\r\n          .ablum .ablum-data-list ul li .ablum-service div i {\r\n            width: 18px;\r\n            height: 17px;\r\n            background: url(" + __webpack_require__(41) + ") no-repeat; }\r\n          .ablum .ablum-data-list ul li .ablum-service .msg {\r\n            background-position: -40px 0; }\r\n          .ablum .ablum-data-list ul li .ablum-service .port {\r\n            background-position: -20px 0; }\r\n          .ablum .ablum-data-list ul li .ablum-service div span {\r\n            color: #999;\r\n            padding: 0 5px; }\r\n  .ablum .ablum-want {\r\n    position: absolute;\r\n    left: 219px;\r\n    top: 22px; }\r\n    .ablum .ablum-want button {\r\n      padding: 0;\r\n      margin: 0;\r\n      border-radius: 14px;\r\n      width: 70px;\r\n      height: 29px;\r\n      background: #008582;\r\n      outline: none;\r\n      border: none;\r\n      font-size: 14px;\r\n      color: #fff;\r\n      cursor: pointer; }\r\n      .ablum .ablum-want button:hover {\r\n        background: #ea703a; }\r\n  .ablum .ablum-how {\r\n    position: absolute;\r\n    right: 180px;\r\n    top: 0px; }\r\n    .ablum .ablum-how button {\r\n      width: 30px;\r\n      height: 89px;\r\n      padding: 0;\r\n      margin: 0;\r\n      border-radius: 0 0 14px 14px;\r\n      background: #bababa;\r\n      outline: none;\r\n      border: none;\r\n      font-size: 16px;\r\n      color: #fff;\r\n      cursor: pointer; }\r\n      .ablum .ablum-how button:hover {\r\n        background: #008582; }\r\n\r\n.ablum-details .ablum-details-wrapper {\r\n  padding: 0 83px;\r\n  position: relative; }\r\n  .ablum-details .ablum-details-wrapper h1 {\r\n    font-weight: normal;\r\n    font-size: 18px;\r\n    color: #0c0c0c;\r\n    margin-top: 15px; }\r\n  .ablum-details .ablum-details-wrapper h6 {\r\n    font-weight: normal;\r\n    font-size: 12px;\r\n    color: #008582;\r\n    margin-top: 15px; }\r\n  .ablum-details .ablum-details-wrapper .ablum-details-3d {\r\n    width: 100%;\r\n    height: 580px; }\r\n    .ablum-details .ablum-details-wrapper .ablum-details-3d iframe {\r\n      width: 100%;\r\n      height: 100%; }\r\n  .ablum-details .ablum-details-wrapper h2 {\r\n    font-size: 18px;\r\n    color: #008582;\r\n    line-height: 22px;\r\n    margin-top: 10px; }\r\n  .ablum-details .ablum-details-wrapper .ablum-details-intro {\r\n    width: 639px;\r\n    font-size: 12px;\r\n    line-height: 22px;\r\n    margin-top: 15px;\r\n    padding-left: 53px; }\r\n  .ablum-details .ablum-details-wrapper .ablum-details-fullscreen {\r\n    position: absolute;\r\n    cursor: pointer;\r\n    right: 83px;\r\n    top: 623px;\r\n    width: 100px;\r\n    height: 30px;\r\n    background: url(" + __webpack_require__(42) + ") no-repeat; }\r\n  .ablum-details .ablum-details-wrapper .ablum-details-comment {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: row;\r\n            flex-direction: row;\r\n    margin-top: 20px; }\r\n    .ablum-details .ablum-details-wrapper .ablum-details-comment textarea {\r\n      width: 573px;\r\n      height: 127px;\r\n      margin-left: 15px;\r\n      resize: none; }\r\n  .ablum-details .ablum-details-wrapper .ablum-details-emoji {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    margin-left: 60px;\r\n    width: 573px; }\r\n    .ablum-details .ablum-details-wrapper .ablum-details-emoji .ablum-details-emoji-state {\r\n      width: 20px;\r\n      height: 20px;\r\n      background: url(" + __webpack_require__(43) + ") no-repeat; }\r\n      .ablum-details .ablum-details-wrapper .ablum-details-emoji .ablum-details-emoji-state.active {\r\n        background-position: -22px 0; }\r\n  .ablum-details .ablum-details-wrapper .ablum-details-comment-content-more {\r\n    width: 684px;\r\n    height: 50px;\r\n    text-align: center;\r\n    color: #008582;\r\n    background: #f7f7f7; }\r\n    .ablum-details .ablum-details-wrapper .ablum-details-comment-content-more span {\r\n      line-height: 50px; }\r\n    .ablum-details .ablum-details-wrapper .ablum-details-comment-content-more img {\r\n      margin-top: 10px; }\r\n\r\n.com_form {\r\n  width: 100%;\r\n  position: relative; }\r\n\r\n.input {\r\n  width: 99%;\r\n  height: 60px;\r\n  border: 1px solid #ccc; }\r\n\r\n.com_form p {\r\n  height: 28px;\r\n  line-height: 28px;\r\n  position: relative;\r\n  margin-top: 10px; }\r\n\r\nspan.emotion {\r\n  display: inline-block;\r\n  width: 20px;\r\n  height: 20px;\r\n  margin-left: 20px;\r\n  cursor: pointer;\r\n  background: url(" + __webpack_require__(43) + ") no-repeat; }\r\n\r\nspan.emotion.active {\r\n  background-position: -22px 0; }\r\n\r\n.qqFace {\r\n  margin-top: 4px;\r\n  background: #fff;\r\n  padding: 2px;\r\n  border: 1px #dfe6f6 solid; }\r\n\r\n.qqFace table td {\r\n  padding: 0px; }\r\n\r\n.qqFace table td img {\r\n  cursor: pointer;\r\n  border: 1px #fff solid; }\r\n\r\n.qqFace table td img:hover {\r\n  border: 1px #0066cc solid; }\r\n\r\n#show {\r\n  width: 770px;\r\n  margin: 20px auto;\r\n  background: #fff;\r\n  padding: 5px;\r\n  border: 1px solid #DDD;\r\n  vertical-align: top; }\r\n\r\n.sub_btn {\r\n  position: absolute;\r\n  right: 0px;\r\n  top: 0;\r\n  display: inline-block;\r\n  zoom: 1;\r\n  /* zoom and *display = ie7 hack for display:inline-block */\r\n  display: inline;\r\n  vertical-align: baseline;\r\n  margin: 0 2px;\r\n  outline: none;\r\n  cursor: pointer;\r\n  text-align: center;\r\n  font-size: 14px;\r\n  padding: .5em 2em .55em;\r\n  color: #666;\r\n  border: none;\r\n  background: #e6e6e6; }\r\n\r\n.sub_btn:hover {\r\n  color: #fff;\r\n  background: #ea703a; }\r\n\r\n.comment-count {\r\n  position: absolute;\r\n  right: 8px;\r\n  bottom: 45px; }\r\n  .comment-count.warr {\r\n    color: red; }\r\n\r\n.ablum-details-comment-hot {\r\n  position: absolute;\r\n  right: 100px;\r\n  top: 669px;\r\n  width: 300px; }\r\n  .ablum-details-comment-hot ul {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -ms-flex-flow: row;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: normal;\r\n            flex-flow: row;\r\n    -ms-flex-wrap: wrap;\r\n    flex-wrap: wrap;\r\n    -ms-flex-direction: column;\r\n        flex-direction: column;\r\n    margin-top: 20px; }\r\n    .ablum-details-comment-hot ul li {\r\n      margin-bottom: 20px;\r\n      display: -webkit-box;\r\n      display: -ms-flexbox;\r\n      display: flex; }\r\n      .ablum-details-comment-hot ul li .ablum-details-comment-hot-inf {\r\n        margin-left: 10px; }\r\n        .ablum-details-comment-hot ul li .ablum-details-comment-hot-inf h1 {\r\n          font-weight: normal;\r\n          font-size: 16px;\r\n          color: #333;\r\n          width: 160px;\r\n          display: -webkit-box;\r\n          -webkit-box-orient: vertical;\r\n          -webkit-line-clamp: 1;\r\n          overflow: hidden;\r\n          line-height: 40px;\r\n          margin: 0; }\r\n        .ablum-details-comment-hot ul li .ablum-details-comment-hot-inf h5 {\r\n          font-weight: normal;\r\n          font-size: 14px;\r\n          color: #008582;\r\n          line-height: 30px; }\r\n        .ablum-details-comment-hot ul li .ablum-details-comment-hot-inf P {\r\n          font-size: 14px;\r\n          color: #999;\r\n          line-height: 20px;\r\n          display: -webkit-box;\r\n          -webkit-box-orient: vertical;\r\n          -webkit-line-clamp: 3;\r\n          overflow: hidden; }\r\n      .ablum-details-comment-hot ul li .ablum-service {\r\n        display: -webkit-box;\r\n        display: -ms-flexbox;\r\n        display: flex;\r\n        width: 207px; }\r\n        .ablum-details-comment-hot ul li .ablum-service div {\r\n          cursor: pointer;\r\n          padding: 5px 0; }\r\n        .ablum-details-comment-hot ul li .ablum-service div i {\r\n          width: 18px;\r\n          height: 17px;\r\n          background: url(" + __webpack_require__(41) + ") no-repeat; }\r\n        .ablum-details-comment-hot ul li .ablum-service .msg {\r\n          background-position: -40px 0; }\r\n        .ablum-details-comment-hot ul li .ablum-service .port {\r\n          background-position: -20px 0; }\r\n        .ablum-details-comment-hot ul li .ablum-service div span {\r\n          color: #999;\r\n          padding: 0 5px; }\r\n\r\n.ablum-details-comment-first {\r\n  width: 680px;\r\n  padding-bottom: 10px;\r\n  margin-bottom: 15px; }\r\n  .ablum-details-comment-first .ablum-details-comment-first-top {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: row nowrap;\r\n            flex-flow: row nowrap;\r\n    -ms-flex-line-pack: center;\r\n        align-content: center;\r\n    margin-top: 15px; }\r\n    .ablum-details-comment-first .ablum-details-comment-first-top span {\r\n      display: inline-block;\r\n      background: #f2fbf2;\r\n      width: 640px; }\r\n      .ablum-details-comment-first .ablum-details-comment-first-top span u {\r\n        line-height: 40px;\r\n        padding-left: 10px;\r\n        text-decoration: none;\r\n        font-size: 14px;\r\n        color: #008582; }\r\n      .ablum-details-comment-first .ablum-details-comment-first-top span i {\r\n        padding-left: 10px;\r\n        line-height: 40px;\r\n        font-size: 14px;\r\n        font-style: normal;\r\n        color: #ced2ce; }\r\n  .ablum-details-comment-first .ablum-details-comment-first-content {\r\n    width: 610px;\r\n    margin-left: 40px;\r\n    padding: 15px; }\r\n    .ablum-details-comment-first .ablum-details-comment-first-content p {\r\n      font-size: 12px;\r\n      line-height: 22px; }\r\n    .ablum-details-comment-first .ablum-details-comment-first-content a {\r\n      display: inline-block;\r\n      padding-top: 10px;\r\n      font-size: 12px;\r\n      cursor: pointer;\r\n      color: #ea703a; }\r\n  .ablum-details-comment-first .ablum-details-comment-others-status {\r\n    width: 640px;\r\n    margin-left: 40px;\r\n    opacity: 0;\r\n    height: 0;\r\n    overflow: hidden;\r\n    position: relative;\r\n    left: -120px;\r\n    top: 0;\r\n    background-color: #fff; }\r\n    .ablum-details-comment-first .ablum-details-comment-others-status.show {\r\n      opacity: 1;\r\n      height: auto;\r\n      left: 0px;\r\n      background-color: #f7f7f7;\r\n      -webkit-transition: opacity 0.8s, height 0.8s,left 1s,background 0.8s;\r\n      transition: opacity 0.8s, height 0.8s,left 1s,background 0.8s; }\r\n  .ablum-details-comment-first {\r\n    border-bottom: 1px dashed #8e8e8e; }\r\n  .ablum-details-comment-first .ablum-details-comment-others .ablum-details-comment-others-top {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: row nowrap;\r\n            flex-flow: row nowrap;\r\n    -ms-flex-line-pack: center;\r\n        align-content: center;\r\n    padding-top: 10px;\r\n    padding-left: 28px; }\r\n    .ablum-details-comment-first .ablum-details-comment-others .ablum-details-comment-others-top span {\r\n      display: inline-block;\r\n      width: 620px; }\r\n      .ablum-details-comment-first .ablum-details-comment-others .ablum-details-comment-others-top span u {\r\n        line-height: 40px;\r\n        padding-left: 10px;\r\n        text-decoration: none;\r\n        font-size: 14px;\r\n        color: #008582; }\r\n      .ablum-details-comment-first .ablum-details-comment-others .ablum-details-comment-others-top span i {\r\n        padding-left: 10px;\r\n        line-height: 40px;\r\n        font-size: 14px;\r\n        font-style: normal;\r\n        color: #ced2ce; }\r\n  .ablum-details-comment-first .ablum-details-comment-others .ablum-details-comment-others-content {\r\n    padding: 10px 0 10px 70px; }\r\n    .ablum-details-comment-first .ablum-details-comment-others .ablum-details-comment-others-content p {\r\n      font-size: 12px;\r\n      line-height: 22px;\r\n      width: 550px; }\r\n    .ablum-details-comment-first .ablum-details-comment-others .ablum-details-comment-others-content a {\r\n      display: inline-block;\r\n      padding-top: 10px;\r\n      font-size: 12px;\r\n      color: #ea703a; }\r\n\r\n/*# sourceMappingURL=album.css.map */\r\n", ""]);
 
 	// exports
 
@@ -965,6 +965,7 @@
 
 	// Declare app level module which depends on filters, and services
 	angular.module('myApp', [
+	    'ngCookies',
 	    'ngSanitize',
 	    'myApp.filters',
 	    'myApp.services',
@@ -985,16 +986,46 @@
 
 	/* Controllers */
 	angular.module('myApp.controllers', [])
-	    .controller('ParentControl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+	    .controller('ParentControl', ['$scope', '$rootScope','$state', function ($scope, $rootScope,$state) {
 	        $rootScope.showIndex = true;
 	    }])
-	    .controller('login', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
+	    .controller('login', ['$scope', '$rootScope', '$http', '$state', '$cookieStore', 'locals', function ($scope, $rootScope, $http, $state, $cookieStore, locals) {
 	        $rootScope.showIndex = false;
-	        console.log($http)
-	        console.log($rootScope.showIndex);
 	        var height = $(window).height();
 	        $('.login').css('height', height);
-
+	        if(locals.get("username").sessionAdminName){
+	            console.log(locals.get("username").sessionAdminName);
+	            $state.go('home');
+	        }
+	        $scope.showForm = function () {
+	            // $rootScope.model=model;
+	            $http({
+	                method: "POST",
+	                url: "../frontLogin.do",
+	                data:{phone:$scope.username,password:$scope.userpwd},
+	                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+	                transformRequest: function (obj) {
+	                    var str = [];
+	                    for (var s in obj) {
+	                        str.push(encodeURIComponent(s) + "=" + encodeURIComponent(obj[s]));
+	                    }
+	                    return str.join("&");
+	                }
+	            }).success(function (response) {
+	                console.log(response);
+	                $rootScope.username={
+	                    sessionAdminName:response.data.sessionAdminName,
+	                    errorTimes:response.data.errorTimes
+	                }
+	                locals.set("username", {
+	                    sessionAdminName:response.data.sessionAdminName,
+	                    errorTimes:response.data.errorTimes
+	                });
+	            })
+	            $state.go('home');
+	        }
+	        // $cookieStore.put('xxx',123);
+	        // console.log($cookieStore.get('xxx'));
 	    }])
 	    //策展列表页
 	    .controller('Album', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
@@ -1022,11 +1053,12 @@
 
 	    }])
 	    //策展详情页
-	    .controller('AlbumDetails', ['$scope', '$http', '$rootScope', '$stateParams', function ($scope, $http, $rootScope, $stateParams) {
+	    .controller('AlbumDetails', ['$scope', '$http', '$rootScope', '$stateParams', '$cookieStore', function ($scope, $http, $rootScope, $stateParams, $cookieStore) {
 	        $rootScope.showIndex = true;
-	        $scope.num=0;
-	        $scope.warr=false;
-	        $scope.msg='';
+	        $scope.loadingmore = true;
+	        $scope.num = 0;
+	        $scope.warr = false;
+	        $scope.msg = '';
 	        $scope.fullScreen = function () {
 	            var index = layer.open({
 	                title: '北宋陶瓷展',
@@ -1045,25 +1077,28 @@
 	            $scope.saytext = $("#saytext").val();
 	            // $("#show").html(replace_em(str));
 	        }
-	        $scope.check=function(){
-	            $scope.len=($scope.msg)?$scope.msg.length:0;
-	            (($scope.len+$scope.num)>=1000)?
-	                ($scope.warr=true):($scope.warr=false);
-	                console.log($scope.len);
-	            }
+	        $scope.check = function () {
+	            $scope.len = ($scope.msg) ? $scope.msg.length : 0;
+	            (($scope.len + $scope.num) >= 1000) ?
+	                ($scope.warr = true) : ($scope.warr = false);
+	            console.log($scope.len);
+	        }
+	        $scope.loadMore = function () {
+	            $scope.loadingmore = false;
+	        }
 	    }])
 	    .controller('index_parentControl', ['$scope', '$rootScope', function ($scope, $rootScope) {
 	        $rootScope.showIndex = true;
 	        $scope.msg = "hello word!";
-	        $scope.slider=function(){
+	        $scope.slider = function () {
 	            $('.slider').unslider({
-	                autoplay:true,
-	                delay:3000,
+	                autoplay: true,
+	                delay: 3000,
 	                arrows: {
 	                    prev: '<a class="unslider-arrow prev"></a>',
 	                    next: '<a class="unslider-arrow next"></a>',
 	                },
-	                animation:'fade'
+	                animation: 'fade'
 	            });
 	        }
 	        var mySwiper = new Swiper('.swiper-container', {
@@ -1073,8 +1108,8 @@
 	            slidesPerView: 4,
 	            paginationClickable: true,
 	            freeMode: true,
-	            observer:true,
-	            observeParents:true
+	            observer: true,
+	            observeParents: true
 
 	        })
 	        $scope.slides = [
@@ -1098,7 +1133,7 @@
 	            {ur: 'img/pic5.png'}
 	        ];
 	        $scope.myInterval = 5000;
-	        console.log($scope.slides);
+	        // console.log($scope.slides);
 
 	    }])
 	    .controller('Collection', ['$scope', '$stateParams', '$rootScope', function ($scope, $stateParams, $rootScope) {
@@ -1136,7 +1171,7 @@
 	        $scope.hasmore = false;
 	        $scope.isUnitshow = false;
 	        $scope.iPage = 1;
-	        $scope.selectedcondition = {year: '', unit: '', classify: '', sort: '最新', keyword: '', iPage: 1};
+	        $scope.selectedcondition = {year: '', unit: '', classify: '', sort: 1, keyword: '', iPage: 1};
 	        $scope.selected = {year: '', unit: '', classify: '', sort: '最新', keyword: '', iPage: 1};
 	        $scope.arr = [];
 	        //检测是否存在筛选条件
@@ -1163,8 +1198,8 @@
 	        //初始化数据处理
 	        getList();
 	        function getList() {
-	            // $http.get("../front/OCCollection/info.do?yearType="
-	            $http.get("data/collection_data1.json?yearType="
+	            $http.get("../front/OCCollection/info.do?yearType="
+	            // $http.get("data/collection_data1.json?yearType="
 	                + $scope.selectedcondition.year +
 	                '&collectionUnit=' + $scope.selectedcondition.unit +
 	                '&collectionsCategory=' + $scope.selectedcondition.classify +
@@ -1173,6 +1208,7 @@
 	                '&currentPage=' + $scope.selectedcondition.iPage)
 	                .success(function (response) {
 	                    var data = response.data.mociList;
+	                    console.log(response.data)
 	                    if ($scope.iPage == 5) {
 	                        //后续没有数据了
 	                        return;
@@ -1254,8 +1290,8 @@
 
 	        //选择条件除了地区和收藏单位数据
 	        $scope.getDataList = function () {
-	            // $http.get("../front/OCCollection/info.do?yearType="
-	            $http.get("data/collection_data1.json?yearType="
+	            $http.get("../front/OCCollection/info.do?yearType="
+	            // $http.get("data/collection_data1.json?yearType="
 	                + $scope.selectedcondition.year +
 	                '&collectionUnit=' + $scope.selectedcondition.unit +
 	                '&collectionsCategory=' + $scope.selectedcondition.classify +
@@ -1383,7 +1419,7 @@
 	        $scope.changeBtn = function (e) {
 	            $scope.isActive = !$scope.isActive;
 	            $scope.selectedcondition.iPage = 1;
-	            $scope.selectedcondition.sort = angular.element(e.target).html();
+	            $scope.selectedcondition.sort = angular.element(e.target).attr('data-status');
 	            $scope.selected.sort = angular.element(e.target).html();
 	            ;
 	            $('#ul1 li').html(" ");
@@ -1403,7 +1439,7 @@
 	        $scope.hasmore = false;
 	        $scope.isUnitshow = false;
 	        $scope.iPage = 1;
-	        $scope.selectedcondition = {year: '', unit: '', classify: '', sort: '最新', keyword: '', iPage: 1};
+	        $scope.selectedcondition = {year: '', unit: '', classify: '', sort: 1, keyword: '', iPage: 1};
 	        $scope.selected = {year: '', unit: '', classify: '', sort: '最新', keyword: '', iPage: 1};
 	        $scope.arr = [];
 	        //检测是否存在筛选条件
@@ -1432,8 +1468,8 @@
 	        //初始化数据处理
 	        getList();
 	        function getList() {
-	            // $http.get("../front/OCFossil/info.do?yearType="
-	            $http.get("data/collection_data2.json?yearType="
+	            $http.get("../front/OCFossil/info.do?yearType="
+	            // $http.get("data/collection_data2.json?yearType="
 	                + $scope.selectedcondition.year +
 	                '&collectionUnit=' + $scope.selectedcondition.unit +
 	                '&collectionsCategory=' + $scope.selectedcondition.classify +
@@ -1524,8 +1560,8 @@
 
 	        //选择条件除了地区和收藏单位数据
 	        $scope.getDataList = function () {
-	            // $http.get("../front/OCFossil/info.do?yearType="
-	            $http.get("data/collection_data2.json?yearType="
+	            $http.get("../front/OCFossil/info.do?yearType="
+	            // $http.get("data/collection_data2.json?yearType="
 	                + $scope.selectedcondition.year +
 	                '&collectionUnit=' + $scope.selectedcondition.unit +
 	                '&collectionsCategory=' + $scope.selectedcondition.classify +
@@ -1651,7 +1687,7 @@
 	        $scope.changeBtn = function (e) {
 	            $scope.isActive = !$scope.isActive;
 	            $scope.selectedcondition.iPage = 1;
-	            $scope.selectedcondition.sort = angular.element(e.target).html();
+	            $scope.selectedcondition.sort = angular.element(e.target).attr('data-status');
 	            $scope.selected.sort = angular.element(e.target).html();
 	            ;
 	            $('#ul1 li').html(" ");
@@ -1660,7 +1696,7 @@
 	        }
 
 	    }])
-	    .controller('CollectionDetails', ['$scope', '$http', '$stateParams', '$window', '$rootScope', '$state',function ($scope, $http, $stateParams, $window, $rootScope,$state) {
+	    .controller('CollectionDetails', ['$scope', '$http', '$stateParams', '$window', '$rootScope', '$state', function ($scope, $http, $stateParams, $window, $rootScope, $state) {
 	        $rootScope.showIndex = true;
 	        $scope.$parent.showbtn = false;
 	        $scope.num = 0;
@@ -1688,8 +1724,8 @@
 	            }
 	        }
 	        $scope.getDetail = function () {
-	            // $http.get("../front/OCCollection/detail.do?id="
-	            $http.get("data/collection_details.json?id="
+	            $http.get("../front/OCCollection/detail.do?id="
+	            // $http.get("data/collection_details.json?id="
 	                + $stateParams.id)
 	                .success(function (response) {
 	                    $scope.data = response.data.mocid;
@@ -1756,19 +1792,19 @@
 
 	                });
 	        }
-	        $scope.goVideo=function(e){
-	            var url=angular.element(e.target).attr('data-url');
+	        $scope.goVideo = function (e) {
+	            var url = angular.element(e.target).attr('data-url');
 	            $state.go('collectinodetailsvideo');
 	        }
 	        $scope.getDetail();
 	    }])
-	    .controller('CollectionDetailsVideo', ['$scope', '$http', '$stateParams', '$window', '$rootScope', function ($scope, $http, $stateParams, $window, $rootScope){
+	    .controller('CollectionDetailsVideo', ['$scope', '$http', '$stateParams', '$window', '$rootScope', function ($scope, $http, $stateParams, $window, $rootScope) {
 	        $rootScope.showIndex = false;
-	        $scope.video=function(){
+	        $scope.video = function () {
 	            var myPlayer = videojs('my-player');
-	            videojs("my-player").ready(function(){
-	                $('#my-player').css('width',$(document).width());
-	                $('#my-player').css('height',$(document).height());
+	            videojs("my-player").ready(function () {
+	                $('#my-player').css('width', $(document).width());
+	                $('#my-player').css('height', $(document).height());
 	            });
 	        }
 	        $scope.video();
@@ -1788,7 +1824,7 @@
 	        $rootScope.showIndex = true;
 	        $scope.remove = true;
 	        $scope.curr = 1;
-	        $scope.pages = 5;
+	        // $scope.pages = 5;
 	        $scope.tabsubpage = 1;
 	        $scope.keyword = '';
 	        $scope.area = '';
@@ -1797,7 +1833,7 @@
 	        $scope.conditions = {
 	            currentPage: $scope.curr,
 	            spreType: $scope.tabsubpage,
-	            musExhibition: $scope.area,
+	            cityId: $scope.area,
 	            content: $scope.keyword
 	        }
 	        $scope.arr = [];
@@ -1808,7 +1844,7 @@
 	        $scope.getConditions = function () {
 	            $http({
 	                method: 'GET',
-	                url: 'data/display.json',
+	                url: '../spreadtrum/getPCSpreadtrum.do',
 	                params: $scope.conditions
 	            })
 	                .success(function (response) {
@@ -1818,14 +1854,14 @@
 	        $scope.getDataList = function () {
 	            $http({
 	                method: 'GET',
-	                url: 'data/display.json',
+	                url: '../spreadtrum/getPCSpreadtrum.do',
 	                params: $scope.conditions
 	            })
 	                .success(function (response) {
 	                    if (response.data.newSpreList) {
 	                        $scope.nDatalist = response.data.newSpreList;
 	                    } else {
-	                        $scope.pDatalist = response.data.pastSpreList;
+	                        $scope.nDatalist = response.data.pastSpreList;
 	                    }
 	                    response.page.totalPage = $scope.pages;
 	                })
@@ -1864,13 +1900,13 @@
 	            $scope.isA = true;
 	            $scope.isClassify = false;
 	            $scope.conditions.currentPage = 1;
-	            $scope.conditions.musExhibition = angular.element(e.target).attr('data-id');
+	            $scope.conditions.cityId = angular.element(e.target).attr('data-id');
 	            $scope.checkCondition();
 	            $scope.laypage();
 	        }
 	        $scope.removeArea = function () {
 	            $scope.arr.pop();
-	            $scope.conditions.musExhibition = '';
+	            $scope.conditions.cityId = '';
 	            $scope.isArea = false;
 	            $scope.isClassify = true;
 	            $scope.isA = false;
@@ -1912,19 +1948,25 @@
 	            $scope.checkCondition();
 	        }
 	        $scope.laypage = function () {
-	            laypage({
-	                cont: $('.PagePlugs'),
-	                pages: $scope.pages, //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
-	                curr: 1,
-	                skin: '#ea703a',
-	                groups: 5, //连续显示分页数
-	                jump: function (obj) { //触发分页后的回调
-	                    // $scope.curr = obj.curr;
-	                    $scope.conditions.currentPage = obj.curr;
-	                    $scope.getDataList();
-	                    console.log($scope.pages);
-	                }
-	            });
+	            $http({
+	                method: 'GET',
+	                url: '../spreadtrum/getPCSpreadtrum.do',
+	                params: $scope.conditions
+	            })
+	                .success(function (response) {
+	                    $scope.pages=response.page.totalPage;
+	                    laypage({
+	                        cont: $('.PagePlugs'),
+	                        pages: $scope.pages, //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
+	                        curr: 1,
+	                        skin: '#ea703a',
+	                        groups: 5, //连续显示分页数
+	                        jump: function (obj) { //触发分页后的回调
+	                            $scope.conditions.currentPage = obj.curr;
+	                            $scope.getDataList();
+	                        }
+	                    });
+	                })
 	        }
 	        $scope.laypage();
 	        if ($stateParams.museum) {
@@ -1943,7 +1985,7 @@
 	    .controller('Displaylist.Pouter', ['$scope', '$http', '$rootScope', '$stateParams', function ($scope, $http, $rootScope, $stateParams) {
 	        $rootScope.showIndex = true;
 	        $scope.curr = 1;
-	        $scope.pages = 5;
+	        // $scope.pages = 5;
 	        $scope.conditions = {
 	            currentPage: $scope.curr,
 	            type: 1
@@ -1951,109 +1993,90 @@
 	        $scope.getDataList = function () {
 	            $http({
 	                method: 'GET',
-	                url: 'data/display.json',
+	                // url: 'data/display.json',
+	                url: '../otherSpreadtrum/getReceptionSpreadtrum.do',
 	                params: $scope.conditions
 	            })
 	                .success(function (response) {
-	                    if (response.data.newSpreList) {
-	                        $scope.nDatalist = response.data.newSpreList;
-	                    } else {
-	                        $scope.pDatalist = response.data.pastSpreList;
-	                    }
+	                    $scope.nDatalist = response.data;
 	                    response.page.totalPage = $scope.pages;
 	                })
 	        }
 	        $scope.laypage = function () {
-	            laypage({
-	                cont: $('.PagePlugs'),
-	                pages: $scope.pages, //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
-	                curr: 1,
-	                skin: '#ea703a',
-	                groups: 5, //连续显示分页数
-	                jump: function (obj) { //触发分页后的回调
-	                    // $scope.curr = obj.curr;
-	                    $scope.conditions.currentPage = obj.curr;
-	                    $scope.getDataList();
-	                }
-	            });
+	            $http({
+	                method: 'GET',
+	                // url: 'data/display.json',
+	                url: '../otherSpreadtrum/getReceptionSpreadtrum.do',
+	                params: $scope.conditions
+	            })
+	                .success(function (response) {
+	                    console.log(123);
+	                    $scope.nDatalist = response.data;
+	                    $scope.pages=response.page.totalPage;
+	                    laypage({
+	                        cont: $('.PagePlugs'),
+	                        pages: $scope.pages, //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
+	                        curr: 1,
+	                        skin: '#ea703a',
+	                        groups: 5, //连续显示分页数
+	                        jump: function (obj) { //触发分页后的回调
+	                            // $scope.curr = obj.curr;
+	                            $scope.conditions.currentPage = obj.curr;
+	                            $scope.getDataList();
+	                        }
+	                    });
+	                })
+
 	        }
 	        $scope.laypage();
-	        if ($stateParams.museum) {
-	            $scope.remove = false;
-	            $scope.arr.push(1);
-	            $scope.area = $stateParams.museum;
-	            $scope.isArea = false;
-	            $scope.isA = true;
-	            $scope.isClassify = false;
-	            $scope.conditions.currentPage = 1;
-	            $scope.conditions.musExhibition = $stateParams.id;
-	            $scope.checkCondition();
-	            $scope.laypage();
-	        }
 	    }])
 	    .controller('Displaylist.Outer', ['$scope', '$http', '$rootScope', '$stateParams', function ($scope, $http, $rootScope, $stateParams) {
 	        $rootScope.showIndex = true;
 	        $scope.curr = 1;
-	        $scope.pages = 5;
+	        // $scope.pages = 5;
 	        $scope.conditions = {
 	            currentPage: $scope.curr,
-	            type:2
-	        }
-	        $scope.getConditions = function () {
-	            $http({
-	                method: 'GET',
-	                url: 'data/display.json',
-	                params: $scope.conditions
-	            })
-	                .success(function (response) {
-	                    $scope.conditionData = response.data.cityList;
-	                    console.log($scope.conditionData)
-	                    console.log(response)
-	                })
+	            type: 2
 	        }
 	        $scope.getDataList = function () {
 	            $http({
 	                method: 'GET',
-	                url: 'data/display.json',
+	                // url: 'data/display.json',
+	                url: '../otherSpreadtrum/getReceptionSpreadtrum.do',
 	                params: $scope.conditions
 	            })
 	                .success(function (response) {
-	                    if (response.data.newSpreList) {
-	                        $scope.nDatalist = response.data.newSpreList;
-	                    } else {
-	                        $scope.pDatalist = response.data.pastSpreList;
-	                    }
+	                    $scope.nDatalist = response.data;
 	                    response.page.totalPage = $scope.pages;
 	                })
 	        }
 	        $scope.laypage = function () {
-	            laypage({
-	                cont: $('.PagePlugs'),
-	                pages: $scope.pages, //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
-	                curr: 1,
-	                skin: '#ea703a',
-	                groups: 5, //连续显示分页数
-	                jump: function (obj) { //触发分页后的回调
-	                    $scope.conditions.currentPage = obj.curr;
-	                    $scope.getDataList();
-	                    console.log($scope.pages);
-	                }
-	            });
+	            $http({
+	                method: 'GET',
+	                // url: 'data/display.json',
+	                url: '../otherSpreadtrum/getReceptionSpreadtrum.do',
+	                params: $scope.conditions
+	            })
+	                .success(function (response) {
+	                    console.log(123);
+	                    $scope.nDatalist = response.data;
+	                    $scope.pages=response.page.totalPage;
+	                    laypage({
+	                        cont: $('.PagePlugs'),
+	                        pages: $scope.pages, //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
+	                        curr: 1,
+	                        skin: '#ea703a',
+	                        groups: 5, //连续显示分页数
+	                        jump: function (obj) { //触发分页后的回调
+	                            // $scope.curr = obj.curr;
+	                            $scope.conditions.currentPage = obj.curr;
+	                            $scope.getDataList();
+	                        }
+	                    });
+	                })
+
 	        }
 	        $scope.laypage();
-	        if ($stateParams.museum) {
-	            $scope.remove = false;
-	            $scope.arr.push(1);
-	            $scope.area = $stateParams.museum;
-	            $scope.isArea = false;
-	            $scope.isA = true;
-	            $scope.isClassify = false;
-	            $scope.conditions.currentPage = 1;
-	            $scope.conditions.musExhibition = $stateParams.id;
-	            $scope.checkCondition();
-	            $scope.laypage();
-	        }
-
 	    }])
 	    //展览详情页
 	    .controller('Display.Details', ['$scope', '$http', '$stateParams', '$rootScope', function ($scope, $http, $stateParams, $rootScope) {
@@ -2063,14 +2086,14 @@
 	        if ($stateParams.type == 'inner') {
 	            $http({
 	                method: 'GET',
-	                url: 'data/display-details.json',
+	                // url: 'data/display-details.json',
+	                url: '../spreadtrum/getOneSpreadtrum.do',
 	                params: {id: $stateParams.id}
 	            })
 	                .success(function (response) {
 	                    $scope.detailsData = response.data;
 	                })
 	        }
-
 	    }])
 	    .controller('Museum', ['$scope', '$scope', '$rootScope', '$stateParams', function ($scope, $stateParams, $rootScope) {
 	        $rootScope.showIndex = true;
@@ -2118,7 +2141,8 @@
 	        // ]
 	        $http({
 	            method: "GET",
-	            url: 'data/data_map.json'
+	            // url: 'data/data_map.json',
+	            url: '../area/getAreaList.do'
 	        }).success(function (response) {
 	            console.log(response);
 	            for (var i = 0, len = response.length; i < len; i++) {
@@ -2208,13 +2232,13 @@
 	    //         }
 	    //     });
 	    // }])
-	    .controller('Digization', ['$scope', "$http", '$rootScope', '$stateParams',function ($scope, $http, $rootScope, $stateParams) {
+	    .controller('Digization', ['$scope', "$http", '$rootScope', '$stateParams', function ($scope, $http, $rootScope, $stateParams) {
 	        $rootScope.showIndex = true;
-	        $scope.showTab=true;
-	        $scope.showMore=function(e){
+	        $scope.showTab = true;
+	        $scope.showMore = function (e) {
 	            angular.element(e.target).addClass('showmore').removeClass('hide')
 	        }
-	        $scope.hide=function(e){
+	        $scope.hide = function (e) {
 	            angular.element(e.target).removeClass('showmore').addClass('hide')
 	        };
 	        $scope.tabpage = 1;
@@ -2229,7 +2253,7 @@
 	        $scope.changeTab = function (page) {
 	            $scope.tabpage = page;
 	            $scope.conditions.flag = page;
-	            $scope.getDataList();
+	            $scope.laypage();
 	        }
 	        // // $http.get("../virtual/getPCVirtual.do?currentPage="+$scope.curr)
 	        // $http.get("data/v.json?currentPage=" + $scope.curr)
@@ -2239,7 +2263,8 @@
 	        $scope.laypage = function () {
 	            $http({
 	                method: "GET",
-	                url: "data/v.json",
+	                url:'../virtual/getPCVirtual.do',
+	                // url: "data/v.json",
 	                params: $scope.conditions
 	            })
 	                .success(function (response) {
@@ -2263,7 +2288,8 @@
 	        $scope.getDataList = function () {
 	            $http({
 	                method: "GET",
-	                url: "data/v.json",
+	                url:'../virtual/getPCVirtual.do',
+	                // url: "data/v.json",
 	                params: $scope.conditions
 	            })
 	                .success(function (response) {
@@ -2271,7 +2297,7 @@
 	                });
 	        }
 	        if ($stateParams.museum) {
-	            $scope.showTab=false;
+	            $scope.showTab = false;
 	            $scope.conditions.museum = $stateParams.id;
 	            $scope.museum = $stateParams.museum;
 	            $scope.getDataList();
@@ -2324,10 +2350,7 @@
 	                scope.time=attrs.time;
 	                scope.content=attrs.content;
 	                scope.otherscommentsstatus=false;
-	                scope.tip='展开回复';
-	                scope.showOthersComment=function(){
-	                    scope.tip='收起回复';
-	                }
+
 	            }
 	        }
 	    })
@@ -2341,6 +2364,19 @@
 	                scope.username=attrs.username;
 	                scope.time=attrs.time;
 	                scope.content=attrs.content;
+	                scope.showOthersComment=function(e){
+	                    e.preventDefault();
+	                    console.log(123)
+	                    var hasshow=angular.element(e.target).parent().next().hasClass("show");
+	                    if(hasshow){
+	                        angular.element(e.target).html('*展开回复∨');
+	                        angular.element(e.target).parent().next().removeClass("show");
+	                    }
+	                    else{
+	                        angular.element(e.target).html('*收起回复∧');
+	                        angular.element(e.target).parent().next().addClass("show");
+	                    }
+	                }
 	            }
 	        }
 	    })
@@ -2539,6 +2575,31 @@
 
 	/* Services */
 	angular.module('myApp.services', [])
+	    .service('loginService',function() {
+	        this.model={};
+	        this.getmodel=function(model){
+	            this.model=model;
+	        }
+	        return this
+	    })
+	    .factory('locals',['$window',function($window){
+	        return{        //存储单个属性
+	            set :function(key,value){
+	                $window.localStorage[key]=value;
+	            },        //读取单个属性
+	            get:function(key,defaultValue){
+	                return  $window.localStorage[key] || defaultValue;
+	            },        //存储对象，以JSON格式存储
+	            setObject:function(key,value){
+	                $window.localStorage[key]=JSON.stringify(value);
+	            },        //读取对象
+	            getObject: function (key) {
+	                return JSON.parse($window.localStorage[key] || '{}');
+	            }
+
+	        }
+	    }]);
+	;
 
 /***/ }
 /******/ ]);

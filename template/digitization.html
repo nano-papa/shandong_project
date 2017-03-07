@@ -13,8 +13,8 @@
         <li class="digization-list-item" ng-repeat="item in data |limitTo: 3">
             <ul>
                 <li class="digization-list-item-img">
-                    <a ng-href="{{item.viPCUrl}}">
-                        <img ng-src="{{item.viMasterMap}}" width="297" height="167" alt="{{item.viName}}">
+                    <a ng-href="{{'../'+item.viPCUrl}}" target="_blank">
+                        <img ng-src="{{item.viAddress}}" width="297" height="167" alt="{{item.viName}}">
                     </a>
                 </li>
                 <li class="digization-list-item-infor">

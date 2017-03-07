@@ -5,25 +5,41 @@
 
 /* Controllers */
 angular.module('myApp.controllers', [])
-    .controller('ParentControl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+    .controller('ParentControl', ['$scope', '$rootScope','$state', function ($scope, $rootScope,$state) {
         $rootScope.showIndex = true;
     }])
-    .controller('login', ['$scope', '$rootScope', '$http','$state','$cookieStore', 'locals',function ($scope, $rootScope, $http,$state,$cookieStore,locals) {
+    .controller('login', ['$scope', '$rootScope', '$http', '$state', '$cookieStore', 'locals', function ($scope, $rootScope, $http, $state, $cookieStore, locals) {
         $rootScope.showIndex = false;
         var height = $(window).height();
         $('.login').css('height', height);
-
-        $scope.showForm=function(){
+        if(locals.get("username").sessionAdminName){
+            console.log(locals.get("username").sessionAdminName);
+            $state.go('home');
+        }
+        $scope.showForm = function () {
             // $rootScope.model=model;
-            console.log(123)
             $http({
-                method:"GET",
-                url:"data/user.json",
-                params:{id:1},
-            }).success(function(response){
+                method: "POST",
+                url: "../frontLogin.do",
+                data:{phone:$scope.username,password:$scope.userpwd},
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                transformRequest: function (obj) {
+                    var str = [];
+                    for (var s in obj) {
+                        str.push(encodeURIComponent(s) + "=" + encodeURIComponent(obj[s]));
+                    }
+                    return str.join("&");
+                }
+            }).success(function (response) {
                 console.log(response);
-                locals.set("username",response.data.sessionAdminName);
-                locals.set("errorTimes",response.data.errorTimes);
+                $rootScope.username={
+                    sessionAdminName:response.data.sessionAdminName,
+                    errorTimes:response.data.errorTimes
+                }
+                locals.set("username", {
+                    sessionAdminName:response.data.sessionAdminName,
+                    errorTimes:response.data.errorTimes
+                });
             })
             $state.go('home');
         }
@@ -56,12 +72,12 @@ angular.module('myApp.controllers', [])
 
     }])
     //策展详情页
-    .controller('AlbumDetails', ['$scope', '$http', '$rootScope', '$stateParams','$cookieStore', function ($scope, $http, $rootScope, $stateParams,$cookieStore) {
+    .controller('AlbumDetails', ['$scope', '$http', '$rootScope', '$stateParams', '$cookieStore', function ($scope, $http, $rootScope, $stateParams, $cookieStore) {
         $rootScope.showIndex = true;
-        $scope.loadingmore=true;
-        $scope.num=0;
-        $scope.warr=false;
-        $scope.msg='';
+        $scope.loadingmore = true;
+        $scope.num = 0;
+        $scope.warr = false;
+        $scope.msg = '';
         $scope.fullScreen = function () {
             var index = layer.open({
                 title: '北宋陶瓷展',
@@ -80,28 +96,28 @@ angular.module('myApp.controllers', [])
             $scope.saytext = $("#saytext").val();
             // $("#show").html(replace_em(str));
         }
-        $scope.check=function(){
-            $scope.len=($scope.msg)?$scope.msg.length:0;
-            (($scope.len+$scope.num)>=1000)?
-                ($scope.warr=true):($scope.warr=false);
-                console.log($scope.len);
-            }
-        $scope.loadMore=function(){
-            $scope.loadingmore=false;
+        $scope.check = function () {
+            $scope.len = ($scope.msg) ? $scope.msg.length : 0;
+            (($scope.len + $scope.num) >= 1000) ?
+                ($scope.warr = true) : ($scope.warr = false);
+            console.log($scope.len);
+        }
+        $scope.loadMore = function () {
+            $scope.loadingmore = false;
         }
     }])
     .controller('index_parentControl', ['$scope', '$rootScope', function ($scope, $rootScope) {
         $rootScope.showIndex = true;
         $scope.msg = "hello word!";
-        $scope.slider=function(){
+        $scope.slider = function () {
             $('.slider').unslider({
-                autoplay:true,
-                delay:3000,
+                autoplay: true,
+                delay: 3000,
                 arrows: {
                     prev: '<a class="unslider-arrow prev"></a>',
                     next: '<a class="unslider-arrow next"></a>',
                 },
-                animation:'fade'
+                animation: 'fade'
             });
         }
         var mySwiper = new Swiper('.swiper-container', {
@@ -111,8 +127,8 @@ angular.module('myApp.controllers', [])
             slidesPerView: 4,
             paginationClickable: true,
             freeMode: true,
-            observer:true,
-            observeParents:true
+            observer: true,
+            observeParents: true
 
         })
         $scope.slides = [
@@ -174,7 +190,7 @@ angular.module('myApp.controllers', [])
         $scope.hasmore = false;
         $scope.isUnitshow = false;
         $scope.iPage = 1;
-        $scope.selectedcondition = {year: '', unit: '', classify: '', sort: '最新', keyword: '', iPage: 1};
+        $scope.selectedcondition = {year: '', unit: '', classify: '', sort: 1, keyword: '', iPage: 1};
         $scope.selected = {year: '', unit: '', classify: '', sort: '最新', keyword: '', iPage: 1};
         $scope.arr = [];
         //检测是否存在筛选条件
@@ -201,8 +217,8 @@ angular.module('myApp.controllers', [])
         //初始化数据处理
         getList();
         function getList() {
-            // $http.get("../front/OCCollection/info.do?yearType="
-            $http.get("data/collection_data1.json?yearType="
+            $http.get("../front/OCCollection/info.do?yearType="
+            // $http.get("data/collection_data1.json?yearType="
                 + $scope.selectedcondition.year +
                 '&collectionUnit=' + $scope.selectedcondition.unit +
                 '&collectionsCategory=' + $scope.selectedcondition.classify +
@@ -293,8 +309,8 @@ angular.module('myApp.controllers', [])
 
         //选择条件除了地区和收藏单位数据
         $scope.getDataList = function () {
-            // $http.get("../front/OCCollection/info.do?yearType="
-            $http.get("data/collection_data1.json?yearType="
+            $http.get("../front/OCCollection/info.do?yearType="
+            // $http.get("data/collection_data1.json?yearType="
                 + $scope.selectedcondition.year +
                 '&collectionUnit=' + $scope.selectedcondition.unit +
                 '&collectionsCategory=' + $scope.selectedcondition.classify +
@@ -422,7 +438,7 @@ angular.module('myApp.controllers', [])
         $scope.changeBtn = function (e) {
             $scope.isActive = !$scope.isActive;
             $scope.selectedcondition.iPage = 1;
-            $scope.selectedcondition.sort = angular.element(e.target).html();
+            $scope.selectedcondition.sort = angular.element(e.target).attr('data-status');
             $scope.selected.sort = angular.element(e.target).html();
             ;
             $('#ul1 li').html(" ");
@@ -442,7 +458,7 @@ angular.module('myApp.controllers', [])
         $scope.hasmore = false;
         $scope.isUnitshow = false;
         $scope.iPage = 1;
-        $scope.selectedcondition = {year: '', unit: '', classify: '', sort: '最新', keyword: '', iPage: 1};
+        $scope.selectedcondition = {year: '', unit: '', classify: '', sort: 1, keyword: '', iPage: 1};
         $scope.selected = {year: '', unit: '', classify: '', sort: '最新', keyword: '', iPage: 1};
         $scope.arr = [];
         //检测是否存在筛选条件
@@ -471,8 +487,8 @@ angular.module('myApp.controllers', [])
         //初始化数据处理
         getList();
         function getList() {
-            // $http.get("../front/OCFossil/info.do?yearType="
-            $http.get("data/collection_data2.json?yearType="
+            $http.get("../front/OCFossil/info.do?yearType="
+            // $http.get("data/collection_data2.json?yearType="
                 + $scope.selectedcondition.year +
                 '&collectionUnit=' + $scope.selectedcondition.unit +
                 '&collectionsCategory=' + $scope.selectedcondition.classify +
@@ -563,8 +579,8 @@ angular.module('myApp.controllers', [])
 
         //选择条件除了地区和收藏单位数据
         $scope.getDataList = function () {
-            // $http.get("../front/OCFossil/info.do?yearType="
-            $http.get("data/collection_data2.json?yearType="
+            $http.get("../front/OCFossil/info.do?yearType="
+            // $http.get("data/collection_data2.json?yearType="
                 + $scope.selectedcondition.year +
                 '&collectionUnit=' + $scope.selectedcondition.unit +
                 '&collectionsCategory=' + $scope.selectedcondition.classify +
@@ -690,7 +706,7 @@ angular.module('myApp.controllers', [])
         $scope.changeBtn = function (e) {
             $scope.isActive = !$scope.isActive;
             $scope.selectedcondition.iPage = 1;
-            $scope.selectedcondition.sort = angular.element(e.target).html();
+            $scope.selectedcondition.sort = angular.element(e.target).attr('data-status');
             $scope.selected.sort = angular.element(e.target).html();
             ;
             $('#ul1 li').html(" ");
@@ -699,7 +715,7 @@ angular.module('myApp.controllers', [])
         }
 
     }])
-    .controller('CollectionDetails', ['$scope', '$http', '$stateParams', '$window', '$rootScope', '$state',function ($scope, $http, $stateParams, $window, $rootScope,$state) {
+    .controller('CollectionDetails', ['$scope', '$http', '$stateParams', '$window', '$rootScope', '$state', function ($scope, $http, $stateParams, $window, $rootScope, $state) {
         $rootScope.showIndex = true;
         $scope.$parent.showbtn = false;
         $scope.num = 0;
@@ -727,8 +743,8 @@ angular.module('myApp.controllers', [])
             }
         }
         $scope.getDetail = function () {
-            // $http.get("../front/OCCollection/detail.do?id="
-            $http.get("data/collection_details.json?id="
+            $http.get("../front/OCCollection/detail.do?id="
+            // $http.get("data/collection_details.json?id="
                 + $stateParams.id)
                 .success(function (response) {
                     $scope.data = response.data.mocid;
@@ -795,19 +811,19 @@ angular.module('myApp.controllers', [])
 
                 });
         }
-        $scope.goVideo=function(e){
-            var url=angular.element(e.target).attr('data-url');
+        $scope.goVideo = function (e) {
+            var url = angular.element(e.target).attr('data-url');
             $state.go('collectinodetailsvideo');
         }
         $scope.getDetail();
     }])
-    .controller('CollectionDetailsVideo', ['$scope', '$http', '$stateParams', '$window', '$rootScope', function ($scope, $http, $stateParams, $window, $rootScope){
+    .controller('CollectionDetailsVideo', ['$scope', '$http', '$stateParams', '$window', '$rootScope', function ($scope, $http, $stateParams, $window, $rootScope) {
         $rootScope.showIndex = false;
-        $scope.video=function(){
+        $scope.video = function () {
             var myPlayer = videojs('my-player');
-            videojs("my-player").ready(function(){
-                $('#my-player').css('width',$(document).width());
-                $('#my-player').css('height',$(document).height());
+            videojs("my-player").ready(function () {
+                $('#my-player').css('width', $(document).width());
+                $('#my-player').css('height', $(document).height());
             });
         }
         $scope.video();
@@ -827,7 +843,7 @@ angular.module('myApp.controllers', [])
         $rootScope.showIndex = true;
         $scope.remove = true;
         $scope.curr = 1;
-        $scope.pages = 5;
+        // $scope.pages = 5;
         $scope.tabsubpage = 1;
         $scope.keyword = '';
         $scope.area = '';
@@ -836,7 +852,7 @@ angular.module('myApp.controllers', [])
         $scope.conditions = {
             currentPage: $scope.curr,
             spreType: $scope.tabsubpage,
-            musExhibition: $scope.area,
+            cityId: $scope.area,
             content: $scope.keyword
         }
         $scope.arr = [];
@@ -847,7 +863,7 @@ angular.module('myApp.controllers', [])
         $scope.getConditions = function () {
             $http({
                 method: 'GET',
-                url: 'data/display.json',
+                url: '../spreadtrum/getPCSpreadtrum.do',
                 params: $scope.conditions
             })
                 .success(function (response) {
@@ -857,14 +873,14 @@ angular.module('myApp.controllers', [])
         $scope.getDataList = function () {
             $http({
                 method: 'GET',
-                url: 'data/display.json',
+                url: '../spreadtrum/getPCSpreadtrum.do',
                 params: $scope.conditions
             })
                 .success(function (response) {
                     if (response.data.newSpreList) {
                         $scope.nDatalist = response.data.newSpreList;
                     } else {
-                        $scope.pDatalist = response.data.pastSpreList;
+                        $scope.nDatalist = response.data.pastSpreList;
                     }
                     response.page.totalPage = $scope.pages;
                 })
@@ -903,13 +919,13 @@ angular.module('myApp.controllers', [])
             $scope.isA = true;
             $scope.isClassify = false;
             $scope.conditions.currentPage = 1;
-            $scope.conditions.musExhibition = angular.element(e.target).attr('data-id');
+            $scope.conditions.cityId = angular.element(e.target).attr('data-id');
             $scope.checkCondition();
             $scope.laypage();
         }
         $scope.removeArea = function () {
             $scope.arr.pop();
-            $scope.conditions.musExhibition = '';
+            $scope.conditions.cityId = '';
             $scope.isArea = false;
             $scope.isClassify = true;
             $scope.isA = false;
@@ -951,19 +967,25 @@ angular.module('myApp.controllers', [])
             $scope.checkCondition();
         }
         $scope.laypage = function () {
-            laypage({
-                cont: $('.PagePlugs'),
-                pages: $scope.pages, //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
-                curr: 1,
-                skin: '#ea703a',
-                groups: 5, //连续显示分页数
-                jump: function (obj) { //触发分页后的回调
-                    // $scope.curr = obj.curr;
-                    $scope.conditions.currentPage = obj.curr;
-                    $scope.getDataList();
-                    console.log($scope.pages);
-                }
-            });
+            $http({
+                method: 'GET',
+                url: '../spreadtrum/getPCSpreadtrum.do',
+                params: $scope.conditions
+            })
+                .success(function (response) {
+                    $scope.pages=response.page.totalPage;
+                    laypage({
+                        cont: $('.PagePlugs'),
+                        pages: $scope.pages, //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
+                        curr: 1,
+                        skin: '#ea703a',
+                        groups: 5, //连续显示分页数
+                        jump: function (obj) { //触发分页后的回调
+                            $scope.conditions.currentPage = obj.curr;
+                            $scope.getDataList();
+                        }
+                    });
+                })
         }
         $scope.laypage();
         if ($stateParams.museum) {
@@ -982,7 +1004,7 @@ angular.module('myApp.controllers', [])
     .controller('Displaylist.Pouter', ['$scope', '$http', '$rootScope', '$stateParams', function ($scope, $http, $rootScope, $stateParams) {
         $rootScope.showIndex = true;
         $scope.curr = 1;
-        $scope.pages = 5;
+        // $scope.pages = 5;
         $scope.conditions = {
             currentPage: $scope.curr,
             type: 1
@@ -990,109 +1012,90 @@ angular.module('myApp.controllers', [])
         $scope.getDataList = function () {
             $http({
                 method: 'GET',
-                url: 'data/display.json',
+                // url: 'data/display.json',
+                url: '../otherSpreadtrum/getReceptionSpreadtrum.do',
                 params: $scope.conditions
             })
                 .success(function (response) {
-                    if (response.data.newSpreList) {
-                        $scope.nDatalist = response.data.newSpreList;
-                    } else {
-                        $scope.pDatalist = response.data.pastSpreList;
-                    }
+                    $scope.nDatalist = response.data;
                     response.page.totalPage = $scope.pages;
                 })
         }
         $scope.laypage = function () {
-            laypage({
-                cont: $('.PagePlugs'),
-                pages: $scope.pages, //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
-                curr: 1,
-                skin: '#ea703a',
-                groups: 5, //连续显示分页数
-                jump: function (obj) { //触发分页后的回调
-                    // $scope.curr = obj.curr;
-                    $scope.conditions.currentPage = obj.curr;
-                    $scope.getDataList();
-                }
-            });
+            $http({
+                method: 'GET',
+                // url: 'data/display.json',
+                url: '../otherSpreadtrum/getReceptionSpreadtrum.do',
+                params: $scope.conditions
+            })
+                .success(function (response) {
+                    console.log(123);
+                    $scope.nDatalist = response.data;
+                    $scope.pages=response.page.totalPage;
+                    laypage({
+                        cont: $('.PagePlugs'),
+                        pages: $scope.pages, //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
+                        curr: 1,
+                        skin: '#ea703a',
+                        groups: 5, //连续显示分页数
+                        jump: function (obj) { //触发分页后的回调
+                            // $scope.curr = obj.curr;
+                            $scope.conditions.currentPage = obj.curr;
+                            $scope.getDataList();
+                        }
+                    });
+                })
+
         }
         $scope.laypage();
-        if ($stateParams.museum) {
-            $scope.remove = false;
-            $scope.arr.push(1);
-            $scope.area = $stateParams.museum;
-            $scope.isArea = false;
-            $scope.isA = true;
-            $scope.isClassify = false;
-            $scope.conditions.currentPage = 1;
-            $scope.conditions.musExhibition = $stateParams.id;
-            $scope.checkCondition();
-            $scope.laypage();
-        }
     }])
     .controller('Displaylist.Outer', ['$scope', '$http', '$rootScope', '$stateParams', function ($scope, $http, $rootScope, $stateParams) {
         $rootScope.showIndex = true;
         $scope.curr = 1;
-        $scope.pages = 5;
+        // $scope.pages = 5;
         $scope.conditions = {
             currentPage: $scope.curr,
-            type:2
-        }
-        $scope.getConditions = function () {
-            $http({
-                method: 'GET',
-                url: 'data/display.json',
-                params: $scope.conditions
-            })
-                .success(function (response) {
-                    $scope.conditionData = response.data.cityList;
-                    console.log($scope.conditionData)
-                    console.log(response)
-                })
+            type: 2
         }
         $scope.getDataList = function () {
             $http({
                 method: 'GET',
-                url: 'data/display.json',
+                // url: 'data/display.json',
+                url: '../otherSpreadtrum/getReceptionSpreadtrum.do',
                 params: $scope.conditions
             })
                 .success(function (response) {
-                    if (response.data.newSpreList) {
-                        $scope.nDatalist = response.data.newSpreList;
-                    } else {
-                        $scope.pDatalist = response.data.pastSpreList;
-                    }
+                    $scope.nDatalist = response.data;
                     response.page.totalPage = $scope.pages;
                 })
         }
         $scope.laypage = function () {
-            laypage({
-                cont: $('.PagePlugs'),
-                pages: $scope.pages, //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
-                curr: 1,
-                skin: '#ea703a',
-                groups: 5, //连续显示分页数
-                jump: function (obj) { //触发分页后的回调
-                    $scope.conditions.currentPage = obj.curr;
-                    $scope.getDataList();
-                    console.log($scope.pages);
-                }
-            });
+            $http({
+                method: 'GET',
+                // url: 'data/display.json',
+                url: '../otherSpreadtrum/getReceptionSpreadtrum.do',
+                params: $scope.conditions
+            })
+                .success(function (response) {
+                    console.log(123);
+                    $scope.nDatalist = response.data;
+                    $scope.pages=response.page.totalPage;
+                    laypage({
+                        cont: $('.PagePlugs'),
+                        pages: $scope.pages, //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
+                        curr: 1,
+                        skin: '#ea703a',
+                        groups: 5, //连续显示分页数
+                        jump: function (obj) { //触发分页后的回调
+                            // $scope.curr = obj.curr;
+                            $scope.conditions.currentPage = obj.curr;
+                            $scope.getDataList();
+                        }
+                    });
+                })
+
         }
         $scope.laypage();
-        if ($stateParams.museum) {
-            $scope.remove = false;
-            $scope.arr.push(1);
-            $scope.area = $stateParams.museum;
-            $scope.isArea = false;
-            $scope.isA = true;
-            $scope.isClassify = false;
-            $scope.conditions.currentPage = 1;
-            $scope.conditions.musExhibition = $stateParams.id;
-            $scope.checkCondition();
-            $scope.laypage();
-        }
-
     }])
     //展览详情页
     .controller('Display.Details', ['$scope', '$http', '$stateParams', '$rootScope', function ($scope, $http, $stateParams, $rootScope) {
@@ -1102,14 +1105,14 @@ angular.module('myApp.controllers', [])
         if ($stateParams.type == 'inner') {
             $http({
                 method: 'GET',
-                url: 'data/display-details.json',
+                // url: 'data/display-details.json',
+                url: '../spreadtrum/getOneSpreadtrum.do',
                 params: {id: $stateParams.id}
             })
                 .success(function (response) {
                     $scope.detailsData = response.data;
                 })
         }
-
     }])
     .controller('Museum', ['$scope', '$scope', '$rootScope', '$stateParams', function ($scope, $stateParams, $rootScope) {
         $rootScope.showIndex = true;
@@ -1157,7 +1160,8 @@ angular.module('myApp.controllers', [])
         // ]
         $http({
             method: "GET",
-            url: 'data/data_map.json'
+            // url: 'data/data_map.json',
+            url: '../area/getAreaList.do'
         }).success(function (response) {
             console.log(response);
             for (var i = 0, len = response.length; i < len; i++) {
@@ -1247,13 +1251,13 @@ angular.module('myApp.controllers', [])
     //         }
     //     });
     // }])
-    .controller('Digization', ['$scope', "$http", '$rootScope', '$stateParams',function ($scope, $http, $rootScope, $stateParams) {
+    .controller('Digization', ['$scope', "$http", '$rootScope', '$stateParams', function ($scope, $http, $rootScope, $stateParams) {
         $rootScope.showIndex = true;
-        $scope.showTab=true;
-        $scope.showMore=function(e){
+        $scope.showTab = true;
+        $scope.showMore = function (e) {
             angular.element(e.target).addClass('showmore').removeClass('hide')
         }
-        $scope.hide=function(e){
+        $scope.hide = function (e) {
             angular.element(e.target).removeClass('showmore').addClass('hide')
         };
         $scope.tabpage = 1;
@@ -1268,7 +1272,7 @@ angular.module('myApp.controllers', [])
         $scope.changeTab = function (page) {
             $scope.tabpage = page;
             $scope.conditions.flag = page;
-            $scope.getDataList();
+            $scope.laypage();
         }
         // // $http.get("../virtual/getPCVirtual.do?currentPage="+$scope.curr)
         // $http.get("data/v.json?currentPage=" + $scope.curr)
@@ -1278,7 +1282,8 @@ angular.module('myApp.controllers', [])
         $scope.laypage = function () {
             $http({
                 method: "GET",
-                url: "data/v.json",
+                url:'../virtual/getPCVirtual.do',
+                // url: "data/v.json",
                 params: $scope.conditions
             })
                 .success(function (response) {
@@ -1302,7 +1307,8 @@ angular.module('myApp.controllers', [])
         $scope.getDataList = function () {
             $http({
                 method: "GET",
-                url: "data/v.json",
+                url:'../virtual/getPCVirtual.do',
+                // url: "data/v.json",
                 params: $scope.conditions
             })
                 .success(function (response) {
@@ -1310,7 +1316,7 @@ angular.module('myApp.controllers', [])
                 });
         }
         if ($stateParams.museum) {
-            $scope.showTab=false;
+            $scope.showTab = false;
             $scope.conditions.museum = $stateParams.id;
             $scope.museum = $stateParams.museum;
             $scope.getDataList();

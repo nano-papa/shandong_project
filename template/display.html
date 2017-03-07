@@ -48,7 +48,7 @@
                     <p class="condition-title fontB">收藏单位：</p>
                     <ul class="condition-content">
                         <li ng-repeat="r in conditionData[index].museum">
-                            <span ng-click="getArea($event)" ng-bind="r.name" data-id="{{r.id}}"></span>
+                            <span ng-click="getArea($event)" ng-bind="r.name" data-id="{{r.cityId}}"></span>
                         </li>
                     </ul>
                     <div class="condition-more" ng-click="SlideDown($event)">更多<span>&gt;</span></div>
@@ -67,7 +67,7 @@
             <div class="display-list-content-inner">
                 <ul>
                     <li ng-repeat='x in nDatalist'>
-                        <a ui-sref="displaydetails({type:'inner',id:2})" target="_blank">
+                        <a ui-sref="displaydetails({type:'inner',id:x.id})" target="_blank">
                             <img ng-src="{{x.picture}}" width="298" height="165" alt="{{x.headline}}">
                         </a>
                         <h1 ng-bind="x.headline"></h1>
@@ -156,7 +156,7 @@
             <div class="display-list-content-inner">
                 <ul>
                     <li ng-repeat='x in nDatalist'>
-                        <a ui-sref="displaydetails({type:'inner',id:2})" target="_blank">
+                        <a ui-sref="displaydetails({type:'inner',id:x.id})" target="_blank">
                             <img ng-src="{{x.picture}}" width="298" height="165" alt="{{x.headline}}">
                         </a>
                         <h1 ng-bind="x.headline"></h1>
@@ -230,7 +230,7 @@
             <div class="display-list-content-inner">
                 <ul>
                     <li ng-repeat='x in nDatalist'>
-                        <a ui-sref="displaydetails({type:'inner',id:2})" target="_blank">
+                        <a ui-sref="displaydetails({type:'inner',id:x.id})" target="_blank">
                             <img ng-src="{{x.picture}}" width="297" height="167" alt="{{x.headline}}">
                         </a>
                         <h1 ng-bind="x.headline"></h1>
