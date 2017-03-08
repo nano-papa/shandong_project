@@ -1,9 +1,12 @@
 <div class="header-top">
     <div class="header-top-left">
-        <ul>
-            <li><a href="">我的博物馆</a></li>
+        <ul ng-if="!userinfor">
             <li><a ui-sref="login">登录</a></li>
             <li><a href="">注册</a></li>
+        </ul>
+        <ul ng-if="userinfor">
+            <li>欢迎<a href="" ng-bind="userinfor.sessionAdminName"></a></li>
+            <li><a ng-click="logout($event)">退出</a></li>
         </ul>
     </div>
     <div class="header-top-right">

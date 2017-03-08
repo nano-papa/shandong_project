@@ -5,19 +5,20 @@
 
 /* Controllers */
 angular.module('myApp.controllers', [])
-    .controller('ParentControl', ['$scope', '$rootScope','$state', function ($scope, $rootScope,$state) {
+    .controller('ParentControl', ['$scope', '$rootScope','$state', 'ipCookie',function ($scope, $rootScope,$state,ipCookie) {
         $rootScope.showIndex = true;
+        $rootScope.userinfor=ipCookie('userinfor');
+        $scope.logout=function(e){
+            e.preventDefault();
+            ipCookie('userinfor','');
+            $rootScope.userinfor='';
+        }
     }])
-    .controller('login', ['$scope', '$rootScope', '$http', '$state', '$cookieStore', 'locals', function ($scope, $rootScope, $http, $state, $cookieStore, locals) {
+    .controller('login', ['$scope', '$rootScope', '$http', '$state','locals','ipCookie', function ($scope, $rootScope, $http, $state,locals,ipCookie) {
         $rootScope.showIndex = false;
         var height = $(window).height();
         $('.login').css('height', height);
-        if(locals.get("username").sessionAdminName){
-            console.log(locals.get("username").sessionAdminName);
-            $state.go('home');
-        }
         $scope.showForm = function () {
-            // $rootScope.model=model;
             $http({
                 method: "POST",
                 url: "../frontLogin.do",
@@ -32,19 +33,18 @@ angular.module('myApp.controllers', [])
                 }
             }).success(function (response) {
                 console.log(response);
-                $rootScope.username={
-                    sessionAdminName:response.data.sessionAdminName,
-                    errorTimes:response.data.errorTimes
+                if(response.data.sessionAdminName){
+                    var expires={expires:7}
+                    ipCookie('userinfor',response.data,expires);
+                    $rootScope.userinfor=response.data;
+                    $state.go('home');
                 }
-                locals.set("username", {
-                    sessionAdminName:response.data.sessionAdminName,
-                    errorTimes:response.data.errorTimes
-                });
             })
-            $state.go('home');
+
         }
-        // $cookieStore.put('xxx',123);
-        // console.log($cookieStore.get('xxx'));
+        $scope.changeimg=function(e){
+               angular.element(e.target).attr('src','../getImgCode.do?'+Math.random());
+        }
     }])
     //策展列表页
     .controller('Album', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
@@ -108,7 +108,6 @@ angular.module('myApp.controllers', [])
     }])
     .controller('index_parentControl', ['$scope', '$rootScope', function ($scope, $rootScope) {
         $rootScope.showIndex = true;
-        $scope.msg = "hello word!";
         $scope.slider = function () {
             $('.slider').unslider({
                 autoplay: true,

@@ -84,8 +84,26 @@
           }
         }
       }
+      .login_code{
+        margin-top:20px;
+        display: flex;
+        width:800px;
+        align-items: center;
+        justify-content: center;
+        input{
+          padding:0px;
+          margin-left:51px;
+          width:254px;
+          height:37px;
+          border:1px solid #ddd;
+          outline:none;
+          font-size:14px;
+          &:focus{
+            border:1px solid $theme-color-active;
+          }
+      }
       .login_btn{
-        margin-top:38px;
+        margin-top:20px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
