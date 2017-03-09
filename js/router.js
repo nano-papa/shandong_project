@@ -49,21 +49,7 @@ angular.module("myApp.router", ["ui.router"])
                 templateUrl: 'template/museumDetails.html',
                 controller: 'MuseumDetails'
             })
-            .state('museum.morecollection', {
-                url: '/Mcollection',
-                templateUrl: 'template/museumDetails_moreCollection.html',
-                controller: 'MuseumDetailsMoreCollection'
-            })
-            .state('museum.moredisplay', {
-                url: '/Mdisplay',
-                templateUrl: 'template/museumDetails_moreDisplay.html',
-                controller: 'MuseumDetailsMoreDisplay'
-            })
-            .state('museum.moredigization', {
-                url: '/Mdigization',
-                templateUrl: 'template/museumDetails_moreDigization.html',
-                controller: 'MuseumDetailsMoreDigization'
-            })
+
             //数字博物馆
             .state('digitization', {
                 url: '/digitization/:museum/:id',

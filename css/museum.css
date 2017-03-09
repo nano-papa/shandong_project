@@ -321,22 +321,35 @@ footer {
         clear: both; }
       .museum-details .museum-details-collection ul li {
         float: left;
-        width: 207px;
+        width: 192px;
         margin-right: 23px; }
         .museum-details .museum-details-collection ul li:nth-child(3), .museum-details .museum-details-collection ul li:last-child {
           margin: 0; }
         .museum-details .museum-details-collection ul li a p {
+          width: 100%;
           text-align: center;
-          padding: 10px 0;
           color: #666;
-          font-size: 14px; }
+          font-size: 14px;
+          line-height: 40px;
+          height: 40px;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+          overflow: hidden; }
   .museum-details .museum-details-map {
     margin-left: 54px; }
     .museum-details .museum-details-map div p {
       width: 308px;
       font-size: 14px;
+      height: 35px;
+      overflow: hidden;
       color: #666;
-      line-height: 35px; }
+      line-height: 35px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      overflow: hidden; }
   .museum-details .museum-details-display {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -371,7 +384,11 @@ footer {
           width: 206px;
           font-size: 12px;
           color: #666;
-          line-height: 17px; }
+          line-height: 17px;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 5;
+          overflow: hidden; }
   .museum-details .museum-details-digization {
     padding-left: 50px;
     width: 459px;

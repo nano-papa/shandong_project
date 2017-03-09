@@ -278,17 +278,22 @@ footer {
             font-style: italic;
             color: #008582; }
             .section .section-layout-left .section-content1 ul li div p small {
-              padding: 0 15px 0 11px; }
+              padding: 0 15px 0 0; }
           .section .section-layout-left .section-content1 ul li div h6 {
             margin-top: 10px;
             font-weight: normal;
             font-size: 12px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
             color: rgba(0, 0, 0, 0.6);
             line-height: 1.52; }
           .section .section-layout-left .section-content1 ul li div h5 {
             width: 200px;
             margin-top: 10px;
             font-weight: normal;
+            height: 52px;
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 3;

@@ -22,11 +22,12 @@
                     <i class="error"></i><u>错误消息</u>
                 </span>
             </div>
-            <div ng-show="">用户名或者密码错误，还有<span>2</span>次登录机会！</div>
-            <div ng-show="">验证码错误请重新输入！</div>
-            <div class="login_code">
-                <input type="text">
-                <img src="../getImgCode.do" ng-click="changeimg($event)" alt="">
+            <div class="login_code" ng-show="error>0">
+                <input type="text" ng-model="verificationcode">
+                <img src="../getImgCode.do" width="80" height="30" ng-click="changeimg($event)" alt="">
+            </div>
+            <div class="login_msg" ng-show="error>0">
+                <p ng-bind="tip"></p>
             </div>
             <div class="login_btn">
                 <button type="submit" ng-disabled="false" ng-click="showForm()">登录</button>

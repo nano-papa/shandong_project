@@ -11,49 +11,20 @@
     <div class="section-layout-left">
         <div class="section-title">
             <h3>最新展览 <p>New</p></h3>
-            <p><a href="">更多>></a></p>
+            <p><a ui-sref="display">更多>></a></p>
         </div>
         <div class="section-content1">
             <ul>
-                <li>
+                <li ng-repeat="d in data.spreList">
                     <div class="new-img-content">
-                        <a href=""><img src="img/pic1.png" alt=""></a>
+                        <a ui-sref="displaydetails({id:d.id})"><img ng-src="{{d.pictureThumb}}" width="136" height="76" alt=""></a>
                     </div>
                     <div style="padding-left:34px;width:436px">
-                        <strong><a href="">山东博物馆藏扬州画派的作品系统、完整品系统...</a></strong>
-                        <p><span>来自</span>
-                            <small>山东省博物馆</small>
-                            <span>[2016.1.9]</span></p>
-                        <h6>
-                            此次展览共展出金农、郑燮、李鱓、黄慎、李方膺、罗聘，此次展览共展出金农、此次展览共展出金农、郑燮、李鱓、黄慎、李方膺、罗
-                        </h6>
-                    </div>
-                </li>
-                <li>
-                    <div class="new-img-content">
-                        <a href=""><img src="img/pic1.png" alt=""></a>
-                    </div>
-                    <div style="padding-left:34px;width:436px">
-                        <strong><a href="">山东博物馆藏扬州画派的作品系统、完整品系统...</a></strong>
+                        <a ui-sref="displaydetails({id:d.id})" ng-bind="d.headline"><strong></strong></a>
                         <p>
-                            <span>来自</span>
-                            <small>山东省博物馆</small>
-                            <span>[2016.1.9]</span>
-                        </p>
-                        <h6>此次展览共展出金农、郑燮、李鱓、黄慎、李方膺、罗聘，此次展览共展出金农、此次展览共展出金农、郑燮、李鱓、黄慎、李方膺、罗</h6>
-                    </div>
-                </li>
-                <li>
-                    <div class="new-img-content">
-                        <a href=""><img src="img/pic1.png" alt=""></a>
-                    </div>
-                    <div style="padding-left:34px;width:436px">
-                        <strong><a href="">山东博物馆藏扬州画派的作品系统、完整品系统...</a></strong>
-                        <p><span>来自</span>
-                            <small>山东省博物馆</small>
-                            <span>[2016.1.9]</span></p>
-                        <h6>
-                            此次展览共展出金农、郑燮、李鱓、黄慎、李方膺、罗聘，此次展览共展出金农、此次展览共展出金农、郑燮、李鱓、黄慎、李方膺、罗
+                            <small ng-bind="d.musExhibition"></small>
+                            <span ng-bind="'['+d.staTime+']-['+d.overTime+']'"></span></p>
+                        <h6 ng-bind="d.content">
                         </h6>
                     </div>
                 </li>
@@ -106,32 +77,20 @@
     <div class="section-layout-left">
         <div class="section-title">
             <h3>虚拟展厅 <p>Virtual Exhibition</p></h3>
-            <p><a href="">更多>></a></p>
+            <p><a ui-sref="digitization">更多>></a></p>
         </div>
         <div class="section-content1">
             <ul>
-                <li>
+                <li ng-repeat="r in data.virtualList|limitTo:2">
                     <div>
-                        <a href=""><img src="img/pic3.png" width="297" height="167" alt=""></a>
+                        <a href="{{r.viAddress}}"><img ng-src="{{}}" width="297" height="167" alt=""></a>
                     </div>
                     <div style="padding-left:34px;width:259px;margin-top:15px;">
-                        <strong style="font-size: 16px;font-style:italic;font-weight: normal"><a href="">山东省博物馆虚拟展厅</a></strong>
-                        <p style="color:#008582;font-size:12px;font-style: normal;font-weight: normal">
-                            山东省博物馆</p>
-                        <h5>汉代画像石是汉代地下墓室、墓地祠堂、地下墓室室、和庙阙等建筑上雕刻画画像的建汉代画像石是汉代地下墓室、墓地祠堂、地下墓室室、和庙阙等建筑上雕刻画画像的建汉代画像石是汉代地下墓室、墓地祠堂、地下墓室室、和庙阙等建筑上雕刻画画像的建汉代画像石是汉代地下墓室、墓地祠堂、地下墓室室、和庙阙等建筑上雕刻画画像的建</h5>
-                        <button class="virtual-enter">点击进入</button>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <a href=""><img src="img/pic3.png" width="297" height="167" alt=""></a>
-                    </div>
-                    <div style="padding-left:34px;width:259px;margin-top:15px;">
-                        <strong style="font-size: 16px;font-style:italic;font-weight: normal"><a href="">山东省博物馆虚拟展厅</a></strong>
-                        <p style="color:#008582;font-size:12px;font-style: normal;font-weight: normal">
-                            山东省博物馆</p>
-                        <h5>汉代画像石是汉代地下墓室、墓地祠堂、地下墓室室、和庙阙等建筑上雕刻画画像的建...</h5>
-                        <button class="virtual-enter">点击进入</button>
+                        <a href="" ><strong style="font-size: 16px;font-style:italic;font-weight: normal" ng-bind="r.viName"></strong></a>
+                        <p style="color:#008582;font-size:12px;font-style: normal;font-weight: normal" ng-bind="r.musExhibition">
+                            </p>
+                        <h5 ng-bind="r.viIntro"></h5>
+                        <a class="virtual-enter">点击进入</a>
                     </div>
                 </li>
             </ul>

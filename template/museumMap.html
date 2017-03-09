@@ -602,10 +602,10 @@
 </svg>
     <div class="museum-items">
         <p ng-bind="cityData[cityid.id-1].cityName+'博物馆导览'"></p>
-        <ul class="museum-items-list" >
+        <ul class="museum-items-list">
             <li ng-repeat="i in cityData[cityid.id-1].museum">
 				<!--repeat-done="scrollline()"-->
-                <a ui-sref="museum.details({id:i.id})"><span ng-bind="i.name"> </span><u ng-bind="i.number"></u></a>
+                <a ui-sref="museum.details({id:i.cityId})"><span ng-bind="i.name"> </span><u ng-bind="i.number"></u></a>
             </li>
         </ul>
     </div>

@@ -5,24 +5,38 @@
 
 /* Controllers */
 angular.module('myApp.controllers', [])
-    .controller('ParentControl', ['$scope', '$rootScope','$state', 'ipCookie',function ($scope, $rootScope,$state,ipCookie) {
+    .controller('ParentControl', ['$scope', '$rootScope','$state','$http', 'ipCookie','$animate',function ($scope, $rootScope,$state,$http,ipCookie,$animate) {
         $rootScope.showIndex = true;
         $rootScope.userinfor=ipCookie('userinfor');
         $scope.logout=function(e){
             e.preventDefault();
             ipCookie('userinfor','');
             $rootScope.userinfor='';
+            $http({
+                method:'GET',
+                url:'../front/loginOut.do'
+            })
+                .success(function(){
+                    console.log('登出成功！');
+                })
         }
     }])
     .controller('login', ['$scope', '$rootScope', '$http', '$state','locals','ipCookie', function ($scope, $rootScope, $http, $state,locals,ipCookie) {
         $rootScope.showIndex = false;
         var height = $(window).height();
         $('.login').css('height', height);
+        $scope.error=ipCookie('error');
+        console.log( $scope.error);
+
         $scope.showForm = function () {
             $http({
                 method: "POST",
                 url: "../frontLogin.do",
-                data:{phone:$scope.username,password:$scope.userpwd},
+                data:{
+                    phone:$scope.username,
+                    password:$scope.userpwd,
+                    verificationCode:$scope.verificationcode
+                },
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 transformRequest: function (obj) {
                     var str = [];
@@ -33,6 +47,9 @@ angular.module('myApp.controllers', [])
                 }
             }).success(function (response) {
                 console.log(response);
+                $scope.error=response.data.errorTimes;
+                ipCookie('error',response.data.errorTimes);
+                $scope.tip=response.data.tipMessage;
                 if(response.data.sessionAdminName){
                     var expires={expires:7}
                     ipCookie('userinfor',response.data,expires);
@@ -106,8 +123,16 @@ angular.module('myApp.controllers', [])
             $scope.loadingmore = false;
         }
     }])
-    .controller('index_parentControl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+    .controller('index_parentControl', ['$scope', '$rootScope','$http', function ($scope, $rootScope,$http) {
         $rootScope.showIndex = true;
+        $http({
+            method:'GET',
+            // url:'../homePage/getHomePage.do',
+            url:'data/index.json'
+        })
+            .success(function(response){
+                $scope.data=response.data;
+            })
         $scope.slider = function () {
             $('.slider').unslider({
                 autoplay: true,
@@ -1159,8 +1184,8 @@ angular.module('myApp.controllers', [])
         // ]
         $http({
             method: "GET",
-            // url: 'data/data_map.json',
-            url: '../area/getAreaList.do'
+            url: 'data/data_map.json',
+            // url: '../area/getAreaList.do'
         }).success(function (response) {
             console.log(response);
             for (var i = 0, len = response.length; i < len; i++) {
@@ -1186,8 +1211,17 @@ angular.module('myApp.controllers', [])
             $scope.cityid.id = angular.element(e.target)[0].id.slice(4)
         }
     }])
-    .controller('MuseumDetails', ['$scope', '$rootScope', function ($scope, $rootScope) {
-
+    .controller('MuseumDetails', ['$scope', '$rootScope','$http','$stateParams', function ($scope, $rootScope,$http,$stateParams) {
+        $http({
+            method:"GET",
+            // url:'../museuminfo/getMuseum.do',
+            url:'data/museumDetails.json',
+            params:{orgId:$stateParams.id}
+        })
+            .success(function(response){
+                $scope.data=response.data;
+                console.log(response.data);
+            })
         $scope.changeTab = function (e) {
             angular.element(e.target).addClass("active").siblings().removeClass("active");
             var index = angular.element(e.target).index();

@@ -66,7 +66,7 @@ angular.module('myApp.directives', [])
                 }
             }
         }
-    })
+    });
     // .directive('scrollbar',function(){
     //     return{
     //         restrict:'EAMC',
@@ -86,4 +86,3 @@ angular.module('myApp.directives', [])
     //         }
     //     }
     // })
-;

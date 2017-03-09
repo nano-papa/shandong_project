@@ -124,17 +124,21 @@
       }
       li {
         float: left;
-        width: 207px;
+        width: 192px;
         margin-right: 23px;
         &:nth-child(3), &:last-child {
           margin: 0;
         }
         a {
           p {
+            width:100%;
             text-align: center;
-            padding: 10px 0;
             color: #666;
             font-size: 14px;
+            line-height:40px;
+            height:40px;
+            overflow: hidden;
+            @include limitLine(1);
           }
         }
       }
@@ -146,8 +150,11 @@
       p {
         width: 308px;
         font-size: 14px;
+        height:35px;
+        overflow:hidden;
         color: #666;
         line-height: 35px;
+        @include limitLine(1)
       }
     }
 
@@ -190,6 +197,7 @@
           font-size:12px;
           color:#666;
           line-height:17px;
+          @include limitLine(5);
         }
       }
     }

@@ -301,6 +301,31 @@ footer {
         width: 800px;
         align-items: center;
         justify-content: center; }
+        .login .login_outer .login_box .login_code input {
+          padding: 0px;
+          margin-left: 28px;
+          width: 150px;
+          height: 37px;
+          border: 1px solid #ddd;
+          outline: none;
+          font-size: 14px; }
+          .login .login_outer .login_box .login_code input:focus {
+            border: 1px solid #ea703a; }
+      .login .login_outer .login_box .login_msg {
+        margin-top: 20px;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center; }
+        .login .login_outer .login_box .login_msg p {
+          padding: 10px;
+          margin-left: 74px;
+          font-size: 12px;
+          width: 256px;
+          color: #a94442;
+          min-height: 20px;
+          border: 1px solid #a94442;
+          background: #f2dede; }
       .login .login_outer .login_box .login_btn {
         margin-top: 20px;
         display: -webkit-box;
@@ -335,7 +360,8 @@ footer {
           .login .login_outer .login_box .service a u {
             font-size: 12px; }
       .login .login_outer .login_box .third-party {
-        margin-top: 38px; }
+        margin-top: 38px;
+        padding-bottom: 35px; }
         .login .login_outer .login_box .third-party h6 {
           text-align: center;
           color: #999;

@@ -1,6 +1,5 @@
 @import "common";
 @charset "utf-8";
-
 .login{
   width:100%;
   background:url('../img/login_bg.png') 100% 100% no-repeat;
@@ -92,8 +91,8 @@
         justify-content: center;
         input{
           padding:0px;
-          margin-left:51px;
-          width:254px;
+          margin-left:28px;
+          width:150px;
           height:37px;
           border:1px solid #ddd;
           outline:none;
@@ -101,6 +100,24 @@
           &:focus{
             border:1px solid $theme-color-active;
           }
+      }
+      }
+      .login_msg{
+        margin-top:20px;
+        display:flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        p{
+          padding:10px;
+          margin-left:74px;
+          font-size:12px;
+          width:256px;
+          color:#a94442;
+          min-height:20px;
+          border:1px solid #a94442;
+          background:#f2dede;
+        }
       }
       .login_btn{
         margin-top:20px;
@@ -143,6 +160,7 @@
       }
       .third-party{
         margin-top:38px;
+        padding-bottom:35px;
         h6{
           text-align: center;
           color:#999;
