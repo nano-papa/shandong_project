@@ -2,7 +2,7 @@
     <div class="header-top-left">
         <ul ng-if="!userinfor">
             <li><a ui-sref="login">登录</a></li>
-            <li><a href="">注册</a></li>
+            <li><a ui-sref="register">注册</a></li>
         </ul>
         <ul ng-if="userinfor">
             <li>欢迎<a href="" ng-bind="userinfor.sessionAdminName"></a></li>

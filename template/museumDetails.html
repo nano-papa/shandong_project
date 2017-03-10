@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <td>地区：</td>
-                <td ng-bind="data.cityList[0].name"></td>
+                <td ng-bind="'山东省 '+data.cityList[0].name"></td>
             </tr>
             <tr>
                 <td>门票：</td>
@@ -76,9 +76,9 @@
         </p>
         <ul>
             <li ng-repeat="x in data.culList">
-                <a ui-sref="collectiondetails({id:x.id})" target="_blank">
-                    <img ng-src="{{x.fpic}}" width="192" height="128" alt="">
-                    <p ng-bind="x.name"></p>
+                <a ui-sref="collectiondetails({id:x.mipOpenCulturalrelicInfo.id})" target="_blank">
+                    <img ng-src="{{'../'+x.picture.thumb3}}" width="192" height="128" alt="">
+                    <p ng-bind="x.mipOpenCulturalrelicInfo.name"></p>
                 </a>
             </li>
         </ul>
@@ -88,7 +88,9 @@
             地理信息
         </p>
         <div style="margin-top:8px;">
-            <img src="img/map.png" alt="">
+            <div class="museum-details-map-url" >
+                <iframe id="map" width="308"  height="314" frameborder="0"></iframe>
+            </div>
             <p ng-bind="data.museumInfo.address">
             </p>
         </div>
@@ -98,7 +100,7 @@
             展览 <a ui-sref="display({museum:data.museumInfo.museumName,id:data.museumInfo.id})">更多 &Gt;</a>
         </p>
         <div class="museum-details-display-content">
-            <a ui-sref="displaydetails({id:data.spreList.id})"><img ng-src="{{data.spreList.pictureThumb}}" width="297" height="167px" alt=""></a>
+            <a ui-sref="displaydetails({id:data.spreList.id})"><img ng-src="{{'../'+data.spreList.pictureThumb}}" width="297" height="167px" alt=""></a>
             <div>
                 <h6><a ui-sref="displaydetails({id:data.spreList.id})" ng-bind="data.spreList.headline"></a></h6>
                 <h5 ng-show="data.spreList.staTime">展期：<span ng-bind="data.spreList.staTime+'-'+data.spreList.overTime"></span></h5>

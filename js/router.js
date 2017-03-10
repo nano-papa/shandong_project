@@ -18,14 +18,19 @@ angular.module("myApp.router", ["ui.router"])
                 templateUrl: "template/login.html",
                 controller: 'login'
             })
+            //注册
+            .state('register',{
+                url:'/register',
+                templateUrl:'template/register.html',
+                controller:'register'
+
+            })
             //策展列表
             .state('ablum',{
                 url:'/ablum',
                 templateUrl:'template/album.html',
                 controller:'Album'
                 }
-
-
             )
             //策展详情
             .state('ablumdetails',{

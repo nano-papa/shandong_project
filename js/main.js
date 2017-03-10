@@ -10,6 +10,7 @@ require("../css/digitization.css");
 require("../css/display.css");
 require("../css/login.css");
 require('../css/album.css');
+require('../css/register.css');
 var app=require("./app");
 var controllr=require("./controllers");
 var directive=require("./directives");

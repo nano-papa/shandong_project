@@ -1,0 +1,292 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Microsoft YaHei UI";
+  font-size: 16px;
+  vertical-align: bottom; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1;
+  background: #eee; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input {
+  outline: none; }
+
+button {
+  font-family: "Microsoft YaHei UI";
+  outline: none; }
+
+.wrapper {
+  width: 1200px;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.8); }
+
+a {
+  text-decoration: none;
+  color: #008582; }
+  a:hover, a.active {
+    color: #ea703a; }
+
+header {
+  width: 1100px;
+  height: 107px;
+  padding: 27px 70px 0 30px; }
+  header .header-top {
+    width: 100%;
+    overflow: hidden;
+    position: relative; }
+    header .header-top .header-top-left {
+      float: left; }
+      header .header-top .header-top-left ul {
+        overflow: hidden; }
+        header .header-top .header-top-left ul li {
+          float: left;
+          border-right: 1px solid #008582; }
+          header .header-top .header-top-left ul li a {
+            padding-left: 12px;
+            padding-right: 12px; }
+          header .header-top .header-top-left ul li:first-child a {
+            padding-left: 0; }
+          header .header-top .header-top-left ul li:last-child {
+            border: none; }
+    header .header-top .header-top-right {
+      float: right;
+      position: relative;
+      width: 317px;
+      height: 36px;
+      margin-right: 112px; }
+      header .header-top .header-top-right #search {
+        width: 305px;
+        height: 24px;
+        border-radius: 6px;
+        border: 1px solid #008582;
+        padding: 5px; }
+      header .header-top .header-top-right ul {
+        position: absolute;
+        overflow: hidden;
+        right: 11px;
+        top: 8px; }
+        header .header-top .header-top-right ul li {
+          float: left;
+          width: 21px;
+          height: 21px; }
+          header .header-top .header-top-right ul li:first-child {
+            padding-right: 10px;
+            border-right: 1px solid #008582;
+            background: url("../img/xj.png") no-repeat; }
+          header .header-top .header-top-right ul li:last-child {
+            margin-left: 10px;
+            background: url("../img/fdj.png") no-repeat; }
+    header .header-top button {
+      position: absolute;
+      right: 0px;
+      top: 2px;
+      font-size: 12px;
+      background: #008582;
+      color: #fff;
+      outline: none;
+      border: none;
+      width: 93px;
+      height: 32px; }
+      header .header-top button:hover {
+        background: #ea703a; }
+  header .header-bottom {
+    margin-top: 23px; }
+    header .header-bottom a {
+      float: left; }
+    header .header-bottom nav {
+      float: right;
+      padding-top: 13px; }
+      header .header-bottom nav ul li {
+        float: left;
+        padding: 0 20px; }
+        header .header-bottom nav ul li a.mainactive {
+          color: #008582;
+          padding-bottom: 10px;
+          border-bottom: 2px solid #ea703a; }
+
+footer {
+  width: 100%;
+  height: 212px;
+  background: #fff;
+  border-top: 2px solid #008582; }
+  footer p {
+    margin: auto;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 36px; }
+    footer p span {
+      line-height: 25px; }
+  footer ul {
+    overflow: hidden;
+    margin: auto;
+    width: 786px;
+    margin-top: 20px; }
+    footer ul li {
+      float: left;
+      border-right: 1px solid #000; }
+      footer ul li:last-child {
+        border: none; }
+      footer ul li a {
+        color: #000;
+        font-size: 12px;
+        padding: 0 20px; }
+
+/*面包屑*/
+.breadcrumb {
+  font-size: 18px;
+  color: #008582;
+  padding: 20px 83px 0px 83px; }
+  .breadcrumb u {
+    text-decoration: none;
+    line-height: 30px; }
+  .breadcrumb a {
+    line-height: 30px; }
+  .breadcrumb span {
+    line-height: 30px; }
+  .breadcrumb .tab-items {
+    float: right; }
+    .breadcrumb .tab-items button {
+      border: none;
+      color: #666;
+      background: #f2f2f2;
+      padding: 5px 20px;
+      font-size: 14px;
+      font-weight: bold;
+      border-bottom: 2px solid #fff; }
+      .breadcrumb .tab-items button:hover {
+        color: #fff;
+        background: #666;
+        border-bottom: 2px solid #ea703a; }
+      .breadcrumb .tab-items button.active {
+        color: #fff;
+        background: #666;
+        border-bottom: 2px solid #ea703a; }
+
+.PagePlugs {
+  text-align: center; }
+
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px; }
+
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 2px; }
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 0 6px #008582; }
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #008582; }
+
+.register {
+  position: relative;
+  padding: 0px 84px; }
+  .register .register-guide {
+    position: absolute;
+    left: 300px;
+    top: 20px; }
+    .register .register-guide ul {
+      display: flex;
+      flex-flow: row; }
+      .register .register-guide ul li {
+        width: 215px;
+        height: 32px;
+        text-align: center;
+        border: 1px solid #000;
+        background: #ea703a; }
+        .register .register-guide ul li span {
+          font-size: 12px;
+          line-height: 32px;
+          color: #fff; }
+          .register .register-guide ul li span.active {
+            color: #666; }
+  .register .register-form {
+    margin: 0 auto;
+    margin-bottom: 50px;
+    text-align: center; }
+    .register .register-form table {
+      margin: 0 auto; }
+      .register .register-form table tbody tr {
+        line-height: 60px; }
+        .register .register-form table tbody tr td {
+          margin-bottom: 20px;
+          text-align: left; }
+          .register .register-form table tbody tr td label {
+            line-height: 60px;
+            color: #666; }
+          .register .register-form table tbody tr td .register-msn {
+            width: 92px;
+            height: 32px;
+            border: none;
+            background: #ea703a;
+            color: #fff; }
+            .register .register-form table tbody tr td .register-msn.send {
+              background: #eee;
+              color: #999; }
+          .register .register-form table tbody tr td input {
+            width: 321px;
+            height: 22px;
+            border: 1px solid #e6e6e6;
+            background: #fcfcfc;
+            font-size: 16px;
+            padding: 5px; }
+            .register .register-form table tbody tr td input:focus {
+              border-color: #008582;
+              background: #fff; }
+          .register .register-form table tbody tr td:nth-child(1) {
+            text-align: right; }
+    .register .register-form .register-submit {
+      width: 254px;
+      height: 38px;
+      background: #ea703a;
+      border: none;
+      font-size: 20px;
+      color: #fff; }
+
+/*# sourceMappingURL=register.css.map */

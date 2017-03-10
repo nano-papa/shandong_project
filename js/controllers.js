@@ -21,13 +21,13 @@ angular.module('myApp.controllers', [])
                 })
         }
     }])
-    .controller('login', ['$scope', '$rootScope', '$http', '$state','locals','ipCookie', function ($scope, $rootScope, $http, $state,locals,ipCookie) {
+    //登录
+    .controller('login', ['$scope', '$rootScope', '$http', '$state','locals','ipCookie','$window', function ($scope, $rootScope, $http, $state,locals,ipCookie,$window) {
         $rootScope.showIndex = false;
         var height = $(window).height();
         $('.login').css('height', height);
         $scope.error=ipCookie('error');
-        console.log( $scope.error);
-
+        // console.log( $scope.error);
         $scope.showForm = function () {
             $http({
                 method: "POST",
@@ -50,6 +50,7 @@ angular.module('myApp.controllers', [])
                 $scope.error=response.data.errorTimes;
                 ipCookie('error',response.data.errorTimes);
                 $scope.tip=response.data.tipMessage;
+                $scope.errormsg=true;
                 if(response.data.sessionAdminName){
                     var expires={expires:7}
                     ipCookie('userinfor',response.data,expires);
@@ -62,6 +63,10 @@ angular.module('myApp.controllers', [])
         $scope.changeimg=function(e){
                angular.element(e.target).attr('src','../getImgCode.do?'+Math.random());
         }
+    }])
+    //注册
+    .controller('register',['$scope','$rootScope',function($scope,$rootScope){
+
     }])
     //策展列表页
     .controller('Album', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
@@ -89,7 +94,7 @@ angular.module('myApp.controllers', [])
 
     }])
     //策展详情页
-    .controller('AlbumDetails', ['$scope', '$http', '$rootScope', '$stateParams', '$cookieStore', function ($scope, $http, $rootScope, $stateParams, $cookieStore) {
+    .controller('AlbumDetails', ['$scope', '$http', '$rootScope', '$stateParams', function ($scope, $http, $rootScope, $stateParams) {
         $rootScope.showIndex = true;
         $scope.loadingmore = true;
         $scope.num = 0;
@@ -123,6 +128,7 @@ angular.module('myApp.controllers', [])
             $scope.loadingmore = false;
         }
     }])
+    //首页
     .controller('index_parentControl', ['$scope', '$rootScope','$http', function ($scope, $rootScope,$http) {
         $rootScope.showIndex = true;
         $http({
@@ -179,6 +185,7 @@ angular.module('myApp.controllers', [])
         // console.log($scope.slides);
 
     }])
+    //藏品主控制器
     .controller('Collection', ['$scope', '$stateParams', '$rootScope', function ($scope, $stateParams, $rootScope) {
         $rootScope.showIndex = true;
         $scope.tabisShow = true;
@@ -202,7 +209,7 @@ angular.module('myApp.controllers', [])
             }
         }
     }])
-    //藏品列表页
+    //文物藏品列表页
     .controller('CollectionRelic', ['$scope', '$http', '$stateParams', '$rootScope', '$window', function ($scope, $http, $stateParams, $rootScope, $window) {
         $rootScope.showIndex = true;
         $scope.remove = true;
@@ -273,9 +280,9 @@ angular.module('myApp.controllers', [])
                             'href': "#/collectiondetails/Relic/" + data[i].mipOpenCulturalrelicInfo.id,
                             'target': "_blank"
                         });
-                        oImg.src = data[i].mipOpenCulturalrelicInfo.fpic;
+                        oImg.src ='../'+ data[i].picture.thumb2;
                         oImg.style.width = '278px';
-                        oImg.style.height = data[i].mipOpenCulturalrelicInfo.height * ( 278 / data[i].mipOpenCulturalrelicInfo.fpicHeight ) + 'px';
+                        oImg.style.height = data[i].picture.thumb2Height + 'px';
                         oa.appendChild(oImg);
                         var oP = document.createElement('p');
                         ospan.innerHTML = data[i].mipOpenCulturalrelicInfo.name;
@@ -471,6 +478,7 @@ angular.module('myApp.controllers', [])
         }
 
     }])
+    //文物标本列表
     .controller('CollectionSpecimen', ['$scope', '$http', '$stateParams', '$rootScope', '$window', function ($scope, $http, $stateParams, $rootScope, $window) {
         $rootScope.showIndex = true;
         $scope.remove = true;
@@ -539,12 +547,12 @@ angular.module('myApp.controllers', [])
                         var ospan = document.createElement('span');
                         var oa = document.createElement('a');
                         $(oa).attr({
-                            'href': "#/collectiondetails/Relic/" + data[i].mipOpenFossilInfo.id,
+                            'href': "#/collectiondetails/Specimen/" + data[i].mipOpenFossilInfo.id,
                             'target': "_blank"
                         });
-                        oImg.src = data[i].mipOpenFossilInfo.fpic;
+                        oImg.src = '../'+data[i].picture.thumb2;
                         oImg.style.width = '278px';
-                        oImg.style.height = data[i].mipOpenFossilInfo.height * ( 278 / data[i].mipOpenFossilInfo.fpicHeight ) + 'px';
+                        oImg.style.height = data[i].picture.thumb2Height + 'px';
                         oa.appendChild(oImg);
                         var oP = document.createElement('p');
                         ospan.innerHTML = data[i].mipOpenFossilInfo.name;
@@ -739,6 +747,7 @@ angular.module('myApp.controllers', [])
         }
 
     }])
+    //藏品详情页
     .controller('CollectionDetails', ['$scope', '$http', '$stateParams', '$window', '$rootScope', '$state', function ($scope, $http, $stateParams, $window, $rootScope, $state) {
         $rootScope.showIndex = true;
         $scope.$parent.showbtn = false;
@@ -754,8 +763,8 @@ angular.module('myApp.controllers', [])
             if (!a) {
                 $scope.num2 += 1;
                 angular.element(e.target).addClass('active');
-                // $http.get("../front/Collected/doCollect.do?collectionType="
-                $http.get("data/collection_details.json?collectionType="
+                $http.get("../front/Collected/doCollect.do?collectionType="
+                // $http.get("data/collection_details.json?collectionType="
                     + ($stateParams.type == 'Relic' ? 1 : 2) +
                     '&id=' + $stateParams.id)
                     .success(function (response) {
@@ -767,7 +776,9 @@ angular.module('myApp.controllers', [])
             }
         }
         $scope.getDetail = function () {
-            $http.get("../front/OCCollection/detail.do?id="
+            $stateParams.type == 'Relic' ? $scope.url= "../front/OCCollection/detail.do?id=":$scope.url='../front/OCFossil/detail.do?id='
+                console.log($scope.url);
+                $http.get($scope.url
             // $http.get("data/collection_details.json?id="
                 + $stateParams.id)
                 .success(function (response) {
@@ -841,6 +852,7 @@ angular.module('myApp.controllers', [])
         }
         $scope.getDetail();
     }])
+    //藏品视频
     .controller('CollectionDetailsVideo', ['$scope', '$http', '$stateParams', '$window', '$rootScope', function ($scope, $http, $stateParams, $window, $rootScope) {
         $rootScope.showIndex = false;
         $scope.video = function () {
@@ -1025,6 +1037,7 @@ angular.module('myApp.controllers', [])
             $scope.laypage();
         }
     }])
+    //省外展览
     .controller('Displaylist.Pouter', ['$scope', '$http', '$rootScope', '$stateParams', function ($scope, $http, $rootScope, $stateParams) {
         $rootScope.showIndex = true;
         $scope.curr = 1;
@@ -1073,6 +1086,7 @@ angular.module('myApp.controllers', [])
         }
         $scope.laypage();
     }])
+    //国外展览
     .controller('Displaylist.Outer', ['$scope', '$http', '$rootScope', '$stateParams', function ($scope, $http, $rootScope, $stateParams) {
         $rootScope.showIndex = true;
         $scope.curr = 1;
@@ -1138,9 +1152,11 @@ angular.module('myApp.controllers', [])
                 })
         }
     }])
+    //博物馆主控制器
     .controller('Museum', ['$scope', '$scope', '$rootScope', '$stateParams', function ($scope, $stateParams, $rootScope) {
         $rootScope.showIndex = true;
     }])
+    //博物馆地图
     .controller('MuseumMap', ['$scope', '$http', '$rootScope', '$stateParams', '$window', function ($scope, $http, $rootScope, $stateParams, $window) {
         $rootScope.showIndex = true;
         $scope.cityid = {id: 1};
@@ -1184,8 +1200,8 @@ angular.module('myApp.controllers', [])
         // ]
         $http({
             method: "GET",
-            url: 'data/data_map.json',
-            // url: '../area/getAreaList.do'
+            // url: 'data/data_map.json',
+            url: '../area/getAreaList.do'
         }).success(function (response) {
             console.log(response);
             for (var i = 0, len = response.length; i < len; i++) {
@@ -1211,16 +1227,20 @@ angular.module('myApp.controllers', [])
             $scope.cityid.id = angular.element(e.target)[0].id.slice(4)
         }
     }])
+    //博物馆详情页
     .controller('MuseumDetails', ['$scope', '$rootScope','$http','$stateParams', function ($scope, $rootScope,$http,$stateParams) {
+        console.log($stateParams.id);
         $http({
             method:"GET",
-            // url:'../museuminfo/getMuseum.do',
-            url:'data/museumDetails.json',
+            url:'../museuminfo/getMuseum.do',
+            // url:'data/museumDetails.json',
             params:{orgId:$stateParams.id}
         })
             .success(function(response){
                 $scope.data=response.data;
                 console.log(response.data);
+                var map=''+response.data.museumInfo.geography;
+                angular.element('#map').attr("src",map);
             })
         $scope.changeTab = function (e) {
             angular.element(e.target).addClass("active").siblings().removeClass("active");
@@ -1236,54 +1256,7 @@ angular.module('myApp.controllers', [])
             $scope.btn = ($scope.btn === "查看全部") ? '收起' : "查看全部";
         }
     }])
-    // .controller('MuseumDetailsMoreCollection', ['$scope', '$rootScope', function ($scope, $rootScope) {
-    //     $rootScope.showIndex = true;
-    //     $scope.curr = 1;
-    //     $scope.pages = 5;
-    //     laypage({
-    //         cont: $('.PagePlugs'),
-    //         pages: $scope.pages, //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
-    //         curr: $scope.curr,
-    //         skin: '#ea703a',
-    //         groups: 3, //连续显示分页数
-    //         jump: function (obj) { //触发分页后的回调
-    //             $scope.curr = obj.curr;
-    //             // $scope.getDataList();
-    //         }
-    //     });
-    // }])
-    // .controller('MuseumDetailsMoreDisplay', ['$scope', '$rootScope', function ($scope, $rootScope) {
-    //     $rootScope.showIndex = true;
-    //     $scope.curr = 1;
-    //     $scope.pages = 5;
-    //     laypage({
-    //         cont: $('.PagePlugs'),
-    //         pages: $scope.pages, //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
-    //         curr: $scope.curr,
-    //         skin: '#ea703a',
-    //         groups: 3, //连续显示分页数
-    //         jump: function (obj) { //触发分页后的回调
-    //             $scope.curr = obj.curr;
-    //             // $scope.getDataList();
-    //         }
-    //     });
-    // }])
-    // .controller('MuseumDetailsMoreDigization', ['$scope', function ($scope, $rootScope) {
-    //     $rootScope.showIndex = true;
-    //     $scope.curr = 1;
-    //     $scope.pages = 5;
-    //     laypage({
-    //         cont: $('.PagePlugs'),
-    //         pages: $scope.pages, //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
-    //         curr: $scope.curr,
-    //         skin: '#ea703a',
-    //         groups: 3, //连续显示分页数
-    //         jump: function (obj) { //触发分页后的回调
-    //             $scope.curr = obj.curr;
-    //             // $scope.getDataList();
-    //         }
-    //     });
-    // }])
+    //数字展厅
     .controller('Digization', ['$scope', "$http", '$rootScope', '$stateParams', function ($scope, $http, $rootScope, $stateParams) {
         $rootScope.showIndex = true;
         $scope.showTab = true;
@@ -1355,5 +1328,4 @@ angular.module('myApp.controllers', [])
             $scope.getDataList();
         }
 
-    }])
-;
+    }]);

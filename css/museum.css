@@ -339,6 +339,9 @@ footer {
           overflow: hidden; }
   .museum-details .museum-details-map {
     margin-left: 54px; }
+    .museum-details .museum-details-map div .museum-details-map-url {
+      width: 308px;
+      height: 314px; }
     .museum-details .museum-details-map div p {
       width: 308px;
       font-size: 14px;
