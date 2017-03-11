@@ -10,12 +10,24 @@
     ul{
       display: flex;
       flex-flow: row;
+      background:url("../img/register1.png") no-repeat;
+      &.secend{
+        background:url("../img/register2.png") no-repeat;
+        li{
+          span{
+            font-size:12px;
+            line-height:32px;
+            color:#666;
+            &.active{
+              color:#fff;
+            }
+          }
+        }
+      }
       li{
         width:215px;
         height:32px;
         text-align: center;
-        border:1px solid #000;
-        background:$theme-color-active;
         span{
           font-size:12px;
           line-height:32px;
@@ -76,10 +88,90 @@
     .register-submit{
         width:254px;
         height:38px;
-        background:$theme-color-active;
+        background:#aaa;
         border:none;
         font-size:20px;
+        color:#eee;
+      &.active{
+        background:$theme-color-active;
         color:#fff;
+      }
     }
+    .register-tips{
+      position:absolute;
+      right:0px;
+      top:0px;
+      span {
+        i{
+          display: inline-block;
+          width:16px;
+          height:16px;
+          background:url('../img/remind.png') no-repeat;
+        }
+        .error{
+          background-position:-18px 0;
+        }
+        u{
+          padding-left:8px;
+          text-decoration: none;
+          font-size:12px;
+        }
+      }
+    }
+    .register-tips-nikename{
+      right:261px;
+      top:92px;
+    }
+    .register-tips-phone{
+      right:261px;
+      top:152px;
+    }
+    .register-tips-piccode{
+      right:261px;
+      top:212px;
+    }
+    .register-tips-msg{
+      right:261px;
+      top:353px;
+    }
+    .register-tips-password{
+      right:261px;
+      top:413px;
+    }
+    .register-tips-rpassword{
+      right:261px;
+      top:473px;
+    }
+  }
+  .register-secend{
+    height:606px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div{
+
+      h1{
+        color:$theme-color;
+        font-weight:normal;
+        font-size:24px;
+        line-height:50px;
+      }
+      p{
+        color:#666;
+        font-size:18px;
+        line-height:50px;
+      }
+      button{
+        width:251px;
+        height:78px;
+        border:none;
+        background:$theme-color-active;
+        color:#fff;
+        font-size:22px;
+        line-height:50px;
+      }
+    }
+
   }
 }

@@ -7,11 +7,12 @@ angular.module("myApp.router", ["ui.router"])
         $urlRouterProvider.otherwise('/home');
         //一级栏目
         //首页
-        $stateProvider.state("home", {
+        $stateProvider
+            .state("home", {
             url: '/home',
             templateUrl: 'template/index_v_1.0.html',
             controller: "index_parentControl"
-        })
+            })
             //登录
             .state('login', {
                 url: '/loginPage',
@@ -19,11 +20,10 @@ angular.module("myApp.router", ["ui.router"])
                 controller: 'login'
             })
             //注册
-            .state('register',{
-                url:'/register',
+            .state('Register',{
+                url:'/Register',
                 templateUrl:'template/register.html',
-                controller:'register'
-
+                controller:'Register'
             })
             //策展列表
             .state('ablum',{

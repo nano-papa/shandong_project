@@ -233,13 +233,20 @@ footer {
     top: 20px; }
     .register .register-guide ul {
       display: flex;
-      flex-flow: row; }
+      flex-flow: row;
+      background: url("../img/register1.png") no-repeat; }
+      .register .register-guide ul.secend {
+        background: url("../img/register2.png") no-repeat; }
+        .register .register-guide ul.secend li span {
+          font-size: 12px;
+          line-height: 32px;
+          color: #666; }
+          .register .register-guide ul.secend li span.active {
+            color: #fff; }
       .register .register-guide ul li {
         width: 215px;
         height: 32px;
-        text-align: center;
-        border: 1px solid #000;
-        background: #ea703a; }
+        text-align: center; }
         .register .register-guide ul li span {
           font-size: 12px;
           line-height: 32px;
@@ -284,9 +291,68 @@ footer {
     .register .register-form .register-submit {
       width: 254px;
       height: 38px;
-      background: #ea703a;
+      background: #aaa;
       border: none;
       font-size: 20px;
-      color: #fff; }
+      color: #eee; }
+      .register .register-form .register-submit.active {
+        background: #ea703a;
+        color: #fff; }
+    .register .register-form .register-tips {
+      position: absolute;
+      right: 0px;
+      top: 0px; }
+      .register .register-form .register-tips span i {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: url("../img/remind.png") no-repeat; }
+      .register .register-form .register-tips span .error {
+        background-position: -18px 0; }
+      .register .register-form .register-tips span u {
+        padding-left: 8px;
+        text-decoration: none;
+        font-size: 12px; }
+    .register .register-form .register-tips-nikename {
+      right: 261px;
+      top: 92px; }
+    .register .register-form .register-tips-phone {
+      right: 261px;
+      top: 152px; }
+    .register .register-form .register-tips-piccode {
+      right: 261px;
+      top: 212px; }
+    .register .register-form .register-tips-msg {
+      right: 261px;
+      top: 353px; }
+    .register .register-form .register-tips-password {
+      right: 261px;
+      top: 413px; }
+    .register .register-form .register-tips-rpassword {
+      right: 261px;
+      top: 473px; }
+  .register .register-secend {
+    height: 606px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .register .register-secend div h1 {
+      color: #008582;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 50px; }
+    .register .register-secend div p {
+      color: #666;
+      font-size: 18px;
+      line-height: 50px; }
+    .register .register-secend div button {
+      width: 251px;
+      height: 78px;
+      border: none;
+      background: #ea703a;
+      color: #fff;
+      font-size: 22px;
+      line-height: 50px; }
 
 /*# sourceMappingURL=register.css.map */
