@@ -7,14 +7,17 @@
         <li><span ng-bind="data.mipOpenCulturalrelicInfo.name"></span></li>
     </ul>
     <ul>
-        <li>
+        <li ng-if="data.mipOpenCulturalrelicInfo.threeDimensionalCollection">
             <button><a href="">3D</a></button>
         </li>
-        <li>
+        <li ng-if="data.mipOpenCulturalrelicInfo.fVideo">
             <button><a ui-sref="collectinodetailsvideo" target="_blank">视频</a></button>
         </li>
         <li>
             <button><a href="">百科</a></button>
+        </li>
+        <li ng-if="data.mipOpenCulturalrelicInfo.fAudio">
+            <button><a href="">音频</a></button>
         </li>
         <li style="padding-left:40px;">
             <i ng-class="{active:data.isCollected}" ng-click="addCollection($event)"></i><u ng-bind="'收藏('+(data.mipOpenCulturalrelicInfo.selectCounts+num2)+')'"></u>

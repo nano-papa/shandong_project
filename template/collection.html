@@ -76,7 +76,7 @@
                     <p class="condition-title fontB">收藏单位：</p>
                     <ul class="condition-content">
                         <li ng-repeat="a in data.orgList[id].museum">
-                            <span ng-click="getUnit($event)" ng-bind="a.name" data-id2="{{a.id}}"></span>
+                            <span ng-click="getUnit($event)" ng-bind="a.name" data-id2="{{a.cityId}}"></span>
                         </li>
                     </ul>
                     <div class="condition-more" ng-click="SlideDown($event)">更多<span>&gt;</span></div>
@@ -182,7 +182,7 @@
                     <p class="condition-title fontB">收藏单位：</p>
                     <ul class="condition-content">
                         <li ng-repeat="a in data.orgList[id].museum">
-                            <span ng-click="getUnit($event)" ng-bind="a.name" data-id2="{{a.id}}"></span>
+                            <span ng-click="getUnit($event)" ng-bind="a.name" data-id2="{{a.cityId}}"></span>
                         </li>
                     </ul>
                     <div class="condition-more" ng-click="SlideDown($event)">更多<span>&gt;</span></div>

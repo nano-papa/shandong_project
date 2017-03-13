@@ -120,13 +120,17 @@ header {
       position: absolute;
       right: 0px;
       top: 2px;
-      font-size: 12px;
-      background: #008582;
-      color: #fff;
       outline: none;
+      display: block;
+      background: #008582;
       border: none;
       width: 93px;
       height: 32px; }
+      header .header-top button a {
+        font-size: 12px;
+        line-height: 32px;
+        color: #fff;
+        padding: 5px 0; }
       header .header-top button:hover {
         background: #ea703a; }
   header .header-bottom {
@@ -299,9 +303,11 @@ footer {
         background: #ea703a;
         color: #fff; }
     .register .register-form .register-tips {
+      width: 230px;
       position: absolute;
       right: 0px;
-      top: 0px; }
+      top: 0px;
+      text-align: left; }
       .register .register-form .register-tips span i {
         display: inline-block;
         width: 16px;
@@ -314,22 +320,22 @@ footer {
         text-decoration: none;
         font-size: 12px; }
     .register .register-form .register-tips-nikename {
-      right: 261px;
+      right: 131px;
       top: 92px; }
     .register .register-form .register-tips-phone {
-      right: 261px;
+      right: 131px;
       top: 152px; }
     .register .register-form .register-tips-piccode {
-      right: 261px;
+      right: 131px;
       top: 212px; }
     .register .register-form .register-tips-msg {
-      right: 261px;
+      right: 131px;
       top: 353px; }
     .register .register-form .register-tips-password {
-      right: 261px;
+      right: 131px;
       top: 413px; }
     .register .register-form .register-tips-rpassword {
-      right: 261px;
+      right: 131px;
       top: 473px; }
   .register .register-secend {
     height: 606px;
@@ -346,13 +352,14 @@ footer {
       color: #666;
       font-size: 18px;
       line-height: 50px; }
-    .register .register-secend div button {
+    .register .register-secend div a {
+      display: block;
       width: 251px;
       height: 78px;
       border: none;
+      line-height: 78px;
       background: #ea703a;
       color: #fff;
-      font-size: 22px;
-      line-height: 50px; }
+      font-size: 22px; }
 
 /*# sourceMappingURL=register.css.map */

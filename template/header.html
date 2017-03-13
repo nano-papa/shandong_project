@@ -6,7 +6,7 @@
         </ul>
         <ul ng-if="userinfor">
             <li>欢迎<a href="" ng-bind="userinfor.sessionAdminName"></a></li>
-            <li><a ng-click="logout($event)">退出</a></li>
+            <li><a ng-click="logout($event)" style="cursor: pointer">退出</a></li>
         </ul>
     </div>
     <div class="header-top-right">
@@ -18,7 +18,7 @@
             <li></li>
         </ul>
     </div>
-    <button>信息管理平台</button>
+    <button><a href="../toLogin.do">信息管理平台</a></button >
 </div>
 <div class="header-bottom">
     <a href="">

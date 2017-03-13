@@ -29,7 +29,7 @@ angular.module('myApp.directives', [])
     .directive('firstcomment',function(){
         return{
             restrict: 'ECMA',
-            templateUrl:'../directive/firstcomment.html',
+            templateUrl:'directive/firstcomment.html',
             replace: true,
             link:function(scope,element,attrs){
                 scope.imgurl=attrs.imgurl;
@@ -44,7 +44,7 @@ angular.module('myApp.directives', [])
     .directive('otherscomments',function(){
         return{
             restrict: 'ECMA',
-            templateUrl:'../directive/othercomment.html',
+            templateUrl:'directive/othercomment.html',
             replace: true,
             link:function(scope,element,attrs){
                 scope.imgurl=attrs.imgurl;
@@ -66,7 +66,24 @@ angular.module('myApp.directives', [])
                 }
             }
         }
-    });
+    })
+    .directive('reply',function(){
+        return{
+            restrict:'EAMC',
+            templateUrl:'directive/reply.html',
+            scope:true,
+            replace:true,
+            link:function(scope,element,attrs){
+                $('.emotionsmall').qqFace({
+                    id: 'facebox',
+                    assign: 'saytext',
+                    path: 'img/arclist/'//表情存放的路径
+                });
+            }
+        }
+    })
+;
+
     // .directive('scrollbar',function(){
     //     return{
     //         restrict:'EAMC',

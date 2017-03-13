@@ -120,13 +120,17 @@ header {
       position: absolute;
       right: 0px;
       top: 2px;
-      font-size: 12px;
-      background: #008582;
-      color: #fff;
       outline: none;
+      display: block;
+      background: #008582;
       border: none;
       width: 93px;
       height: 32px; }
+      header .header-top button a {
+        font-size: 12px;
+        line-height: 32px;
+        color: #fff;
+        padding: 5px 0; }
       header .header-top button:hover {
         background: #ea703a; }
   header .header-bottom {
@@ -553,7 +557,9 @@ span.emotion.active {
 .ablum-details-comment-first {
   width: 680px;
   padding-bottom: 10px;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  opacity: 1;
+  transition: opacity 1s; }
   .ablum-details-comment-first .ablum-details-comment-first-top {
     display: flex;
     flex-flow: row nowrap;
@@ -638,5 +644,26 @@ span.emotion.active {
       padding-top: 10px;
       font-size: 12px;
       color: #ea703a; }
+  .ablum-details-comment-first .ablum-details-comment-others .ablum-details-comment-others-reply {
+    width: 548px;
+    height: 43px;
+    margin-left: 72px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc; }
+    .ablum-details-comment-first .ablum-details-comment-others .ablum-details-comment-others-reply input {
+      width: 428px;
+      height: 42px;
+      border: none;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      padding-left: 10px;
+      vertical-align: top; }
+    .ablum-details-comment-first .ablum-details-comment-others .ablum-details-comment-others-reply button {
+      border: none;
+      width: 110px;
+      height: 43px;
+      background: #e6e6e6;
+      color: #999; }
 
 /*# sourceMappingURL=album.css.map */

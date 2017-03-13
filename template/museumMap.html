@@ -605,7 +605,7 @@
         <ul class="museum-items-list">
             <li ng-repeat="i in cityData[cityid.id-1].museum">
 				<!--repeat-done="scrollline()"-->
-                <a ui-sref="museum.details({id:i.cityId})"><span ng-bind="i.name"> </span><u ng-bind="i.number"></u></a>
+                <a ui-sref="museum.details({id:i.cityId})"><span ng-bind="i.name"> </span><u ng-bind="i.number+'件'"></u></a>
             </li>
         </ul>
     </div>

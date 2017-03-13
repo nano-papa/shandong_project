@@ -81,13 +81,18 @@ header {
       position: absolute;
       right: 0px;
       top: 2px;
-      font-size: 12px;
-      background: $theme-color;
-      color: #fff;
       outline: none;
+      display:block;
+      background:$theme-color;
       border: none;
       width: 93px;
       height: 32px;
+      a{
+        font-size: 12px;
+        line-height:32px;
+        color: #fff;
+        padding:5px 0;
+      }
       &:hover {
         background: $theme-color-active;
       }

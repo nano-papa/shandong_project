@@ -65,41 +65,44 @@ angular.module('myApp.controllers', [])
         }
     }])
     //注册
-    .controller('Register',['$scope','$rootScope','$http','$interval',function($scope,$rootScope,$http,$interval){
+    .controller('Register',['$scope','$rootScope','$http','$interval','$state','ipCookie',function($scope,$rootScope,$http,$interval,$state,ipCookie){
         $rootScope.showIndex = true;
         $scope.status='获取验证码';
         $scope.send=true;
         $scope.first=true;
         $scope.secend=false;
         $scope.countdown=function () {
-            $scope.count=59;
-            $scope.send=false;
-            $scope.status=$scope.count+'s可重发';
-            var interval=$interval(function(){
-                $scope.status=($scope.count-1)+'s可重发';
-                $scope.count--;
-                if($scope.count<0){
-                    $scope.count=59;
-                    $scope.status='获取验证码';
-                    $scope.send=true;
-                    $interval.cancel(interval);
-                }
-            },1000)
-            $http({
-                method:"GET",
-                url:'../userExist.do',
-                params:{phone:$scope.phone}
-            })
-                .success(function(response){
-                    console.log(response.success)
+            if(!$scope.phone){
+                layer.alert("请输入手机号",{icon:2});
+                return;
+            }else if(!$scope.piccode){
+                layer.alert("请输入图形验证码",{icon:2});
+                return;
+            }
+            else{
+                $scope.count=59;
+                $scope.send=false;
+                $scope.status=$scope.count+'s可重发';
+                var interval=$interval(function(){
+                    $scope.status=($scope.count-1)+'s可重发';
+                    $scope.count--;
+                    if($scope.count<0){
+                        $scope.count=59;
+                        $scope.status='获取验证码';
+                        $scope.send=true;
+                        $interval.cancel(interval);
+                    }
+                },1000)
+                $http({
+                    method:"GET",
+                    url:'../sendSecretCode.do',
+                    params:{phone:$scope.phone,verificationCode:$scope.piccode}
                 })
-        }
-        $scope.formData={
-            phone:$scope.phone,
-            password:$scope.password,
-            verificationCode:$scope.piccode,
-            nickName:$scope.nikename,
-            secretCode:$scope.secretCode
+                    .success(function(response){
+                        console.log(response.success)
+                    })
+            }
+
         }
         $scope.openmsg=function(){
             layer.open({
@@ -123,8 +126,15 @@ angular.module('myApp.controllers', [])
             });
         }
         $scope.submitFun=function(){
-            $scope.first=false;
-            $scope.secend=true;
+            // $scope.first=false;
+            // $scope.secend=true;
+            $scope.formData={
+                phone:$scope.phone,
+                password:$scope.password,
+                verificationCode:$scope.piccode,
+                nickName:$scope.nikename,
+                secretCode:$scope.secretCode
+            }
             $http({
                 method:"POST",
                 url:'../front/register.do',
@@ -138,21 +148,26 @@ angular.module('myApp.controllers', [])
                     return str.join("&");
                 }
             }).success(function(response){
+                if(response.success==1){
+                    ipCookie('error','');
                     $scope.first=false;
                     $scope.secend=false;
-                //     $scope.count=4;
-                //     $scope.send=false;
-                //     $scope.status=$scope.count+'s可重发';
-                // var interval=$interval(function(){
-                //     $scope.status=($scope.count-1)+'s可重发';
-                //     $scope.count--;
-                //     if($scope.count<0){
-                //         $scope.count=5;
-                //         $scope.status='获取验证码';
-                //         $scope.send=true;
-                //         $interval.cancel(interval);
-                //     }
-                // },1000)
+                    $scope.count2=5;
+                        $scope.status2=$scope.count2+'s自动跳转到登录页';
+                    var interval2=$interval(function(){
+                        $scope.status2=($scope.count2-1)+'s自动跳转到登录页';
+                        $scope.count2--;
+                        if($scope.count2<0){
+                            $scope.count2=5;
+                            $scope.send=true;
+                            $interval.cancel(interval2);
+                            $state.go('login');
+                        }
+                    },1000)
+                }
+                else{
+                    layer.alert(""+response.data.tipMessage,{icon:2});
+                }
             })
         }
         $scope.changeimg=function(){
@@ -313,7 +328,7 @@ angular.module('myApp.controllers', [])
         $scope.isUnitshow = false;
         $scope.iPage = 1;
         $scope.selectedcondition = {year: '', unit: '', classify: '', sort: 1, keyword: '', iPage: 1};
-        $scope.selected = {year: '', unit: '', classify: '', sort: '最新', keyword: '', iPage: 1};
+        $scope.selected = {year: '', unit: '', classify: '', keyword: ''};
         $scope.arr = [];
         //检测是否存在筛选条件
         $scope.checkCondition = function () {
@@ -349,8 +364,7 @@ angular.module('myApp.controllers', [])
                 '&currentPage=' + $scope.selectedcondition.iPage)
                 .success(function (response) {
                     var data = response.data.mociList;
-                    console.log(response.data)
-                    if ($scope.iPage == 5) {
+                    if ($scope.iPage == 6) {
                         //后续没有数据了
                         return;
                     }
@@ -371,9 +385,9 @@ angular.module('myApp.controllers', [])
                             'href': "#/collectiondetails/Relic/" + data[i].mipOpenCulturalrelicInfo.id,
                             'target': "_blank"
                         });
-                        oImg.src ='../'+ data[i].picture.thumb2;
+                        oImg.src =data[i].picture.thumb2;
                         oImg.style.width = '278px';
-                        oImg.style.height = data[i].picture.thumb2Height + 'px';
+                        oImg.style.height = data[i].picture.thumb2Height*(278/data[i].picture.thumb2Width) + 'px';
                         oa.appendChild(oImg);
                         var oP = document.createElement('p');
                         ospan.innerHTML = data[i].mipOpenCulturalrelicInfo.name;
@@ -598,7 +612,7 @@ angular.module('myApp.controllers', [])
             $scope.isUnit = false;
             $scope.arr.push(1);
             $scope.iPage = 1;
-            $('#ul1 li').html(" ");
+            $('#ul2 li').html(" ");
             $scope.checkCondition();
 
         }
@@ -620,7 +634,8 @@ angular.module('myApp.controllers', [])
                 '&currentPage=' + $scope.selectedcondition.iPage)
                 .success(function (response) {
                     var data = response.data.mociList;
-                    if ($scope.iPage == 5) {
+                    console.log(data);
+                    if ($scope.iPage == 6) {
                         //后续没有数据了
                         return;
                     }
@@ -641,9 +656,9 @@ angular.module('myApp.controllers', [])
                             'href': "#/collectiondetails/Specimen/" + data[i].mipOpenFossilInfo.id,
                             'target': "_blank"
                         });
-                        oImg.src = '../'+data[i].picture.thumb2;
+                        oImg.src = data[i].picture.thumb2;
                         oImg.style.width = '278px';
-                        oImg.style.height = data[i].picture.thumb2Height + 'px';
+                        oImg.style.height = data[i].picture.thumb2Height*(278/data[i].picture.thumb2Width) + 'px';
                         oa.appendChild(oImg);
                         var oP = document.createElement('p');
                         ospan.innerHTML = data[i].mipOpenFossilInfo.name;
@@ -804,7 +819,7 @@ angular.module('myApp.controllers', [])
             $scope.isUnit = false;
             $scope.arr.push(1);
             $scope.iPage = 1;
-            $('#ul1 li').html(" ");
+            $('#ul2 li').html(" ");
             getList();
             $scope.checkCondition();
         }
@@ -815,7 +830,7 @@ angular.module('myApp.controllers', [])
             $scope.isUnitshow = false;
             $scope.arr.pop();
             $scope.iPage = 1;
-            $('#ul1 li').html(" ");
+            $('#ul2 li').html(" ");
             getList();
             $scope.checkCondition();
         }
@@ -832,7 +847,7 @@ angular.module('myApp.controllers', [])
             $scope.selectedcondition.sort = angular.element(e.target).attr('data-status');
             $scope.selected.sort = angular.element(e.target).html();
             ;
-            $('#ul1 li').html(" ");
+            $('#ul2 li').html(" ");
             $scope.iPage = 1;
             getList();
         }
@@ -960,10 +975,8 @@ angular.module('myApp.controllers', [])
         $rootScope.showIndex = true;
         $scope.tabpage = 1;
         $scope.tabChange = function (tabpage) {
-            console.log(tabpage);
             $scope.tabpage = tabpage;
         }
-        console.log($stateParams);
     }])
     //省内展览
     .controller('Displaylist.Pinner', ['$scope', '$http', '$rootScope', '$stateParams', function ($scope, $http, $rootScope, $stateParams) {

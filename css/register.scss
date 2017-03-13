@@ -98,9 +98,11 @@
       }
     }
     .register-tips{
+      width:230px;
       position:absolute;
       right:0px;
       top:0px;
+      text-align: left;
       span {
         i{
           display: inline-block;
@@ -119,27 +121,27 @@
       }
     }
     .register-tips-nikename{
-      right:261px;
+      right:131px;
       top:92px;
     }
     .register-tips-phone{
-      right:261px;
+      right:131px;
       top:152px;
     }
     .register-tips-piccode{
-      right:261px;
+      right:131px;
       top:212px;
     }
     .register-tips-msg{
-      right:261px;
+      right:131px;
       top:353px;
     }
     .register-tips-password{
-      right:261px;
+      right:131px;
       top:413px;
     }
     .register-tips-rpassword{
-      right:261px;
+      right:131px;
       top:473px;
     }
   }
@@ -162,14 +164,15 @@
         font-size:18px;
         line-height:50px;
       }
-      button{
+      a{
+        display:block;
         width:251px;
         height:78px;
         border:none;
+        line-height:78px;
         background:$theme-color-active;
         color:#fff;
         font-size:22px;
-        line-height:50px;
       }
     }
 
