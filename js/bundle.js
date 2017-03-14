@@ -1396,10 +1396,11 @@
 	                    '&currentPage=' + $scope.selectedcondition.iPage)
 	                    .success(function (response) {
 	                        var data = response.data.mociList;
-	                        if ($scope.iPage > 6) {
-	                            //后续没有数据了
-	                            return;
-	                        }
+	                        $scope.hasMore=(response.page.allRow>($scope.selectedcondition.iPage*20));
+	                        // if ($scope.iPage > 6) {
+	                        //     //后续没有数据了
+	                        //     return;
+	                        // }
 	                        for (var i = 0; i < data.length; i++) {
 	                            //获取高度最短的li
 	                            var _index = getShort();
@@ -1450,7 +1451,9 @@
 	                    b = false;
 	                    $scope.iPage++;
 	                    $scope.selectedcondition.iPage = $scope.iPage;
-	                    getList();
+	                    if($scope.hasMore){
+	                        getList();
+	                    }
 	                }
 
 	            }
@@ -1669,11 +1672,12 @@
 	                    '&currentPage=' + $scope.selectedcondition.iPage)
 	                    .success(function (response) {
 	                        var data = response.data.mociList;
+	                        $scope.hasMore=(response.page.allRow>($scope.selectedcondition.iPage*20));
 	                        console.log(data);
-	                        if ($scope.iPage > 6) {
-	                            //后续没有数据了
-	                            return;
-	                        }
+	                        // if ($scope.iPage > 6) {
+	                        //     //后续没有数据了
+	                        //     return;
+	                        // }
 	                        for (var i = 0; i < data.length; i++) {
 	                            //获取高度最短的li
 	                            var _index = getShort();
@@ -1726,7 +1730,9 @@
 	                    b = false;
 	                    $scope.iPage++;
 	                    $scope.selectedcondition.iPage = $scope.iPage;
-	                    getList();
+	                    if($scope.hasMore){
+	                        getList();
+	                    }
 	                }
 
 	            }
