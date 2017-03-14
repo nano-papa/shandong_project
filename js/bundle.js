@@ -487,7 +487,7 @@
 
 
 	// module
-	exports.push([module.id, "@charset \"UTF-8\";\r\n/* http://meyerweb.com/eric/tools/css/reset/\r\n   v2.0 | 20110126\r\n   License: none (public domain)\r\n*/\r\nhtml, body, div, span, applet, object, iframe,\r\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\r\na, abbr, acronym, address, big, cite, code,\r\ndel, dfn, em, img, ins, kbd, q, s, samp,\r\nsmall, strike, strong, sub, sup, tt, var,\r\nb, u, i, center,\r\ndl, dt, dd, ol, ul, li,\r\nfieldset, form, label, legend,\r\ntable, caption, tbody, tfoot, thead, tr, th, td,\r\narticle, aside, canvas, details, embed,\r\nfigure, figcaption, footer, header, hgroup,\r\nmenu, nav, output, ruby, section, summary,\r\ntime, mark, audio, video {\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0;\r\n  font-family: \"Microsoft YaHei UI\";\r\n  font-size: 16px;\r\n  vertical-align: bottom; }\r\n\r\n/* HTML5 display-role reset for older browsers */\r\narticle, aside, details, figcaption, figure,\r\nfooter, header, hgroup, menu, nav, section {\r\n  display: block; }\r\n\r\nbody {\r\n  line-height: 1;\r\n  background: #eee; }\r\n\r\nol, ul {\r\n  list-style: none; }\r\n\r\nblockquote, q {\r\n  quotes: none; }\r\n\r\nblockquote:before, blockquote:after,\r\nq:before, q:after {\r\n  content: '';\r\n  content: none; }\r\n\r\ntable {\r\n  border-collapse: collapse;\r\n  border-spacing: 0; }\r\n\r\ninput {\r\n  outline: none; }\r\n\r\nbutton {\r\n  font-family: \"Microsoft YaHei UI\";\r\n  outline: none; }\r\n\r\n.wrapper {\r\n  width: 1200px;\r\n  margin: auto;\r\n  background: #fff;\r\n  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.8); }\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #008582; }\r\n  a:hover, a.active {\r\n    color: #ea703a; }\r\n\r\nheader {\r\n  width: 1100px;\r\n  height: 107px;\r\n  padding: 27px 70px 0 30px; }\r\n  header .header-top {\r\n    width: 100%;\r\n    overflow: hidden;\r\n    position: relative; }\r\n    header .header-top .header-top-left {\r\n      float: left; }\r\n      header .header-top .header-top-left ul {\r\n        overflow: hidden; }\r\n        header .header-top .header-top-left ul li {\r\n          float: left;\r\n          border-right: 1px solid #008582; }\r\n          header .header-top .header-top-left ul li a {\r\n            padding-left: 12px;\r\n            padding-right: 12px; }\r\n          header .header-top .header-top-left ul li:first-child a {\r\n            padding-left: 0; }\r\n          header .header-top .header-top-left ul li:last-child {\r\n            border: none; }\r\n    header .header-top .header-top-right {\r\n      float: right;\r\n      position: relative;\r\n      width: 317px;\r\n      height: 36px;\r\n      margin-right: 112px; }\r\n      header .header-top .header-top-right #search {\r\n        width: 305px;\r\n        height: 24px;\r\n        border-radius: 6px;\r\n        border: 1px solid #008582;\r\n        padding: 5px; }\r\n      header .header-top .header-top-right ul {\r\n        position: absolute;\r\n        overflow: hidden;\r\n        right: 11px;\r\n        top: 8px; }\r\n        header .header-top .header-top-right ul li {\r\n          float: left;\r\n          width: 21px;\r\n          height: 21px; }\r\n          header .header-top .header-top-right ul li:first-child {\r\n            padding-right: 10px;\r\n            border-right: 1px solid #008582;\r\n            background: url(" + __webpack_require__(9) + ") no-repeat; }\r\n          header .header-top .header-top-right ul li:last-child {\r\n            margin-left: 10px;\r\n            background: url(" + __webpack_require__(10) + ") no-repeat; }\r\n    header .header-top button {\r\n      position: absolute;\r\n      right: 0px;\r\n      top: 2px;\r\n      outline: none;\r\n      display: block;\r\n      background: #008582;\r\n      border: none;\r\n      width: 93px;\r\n      height: 32px; }\r\n      header .header-top button a {\r\n        font-size: 12px;\r\n        line-height: 32px;\r\n        color: #fff;\r\n        padding: 5px 0; }\r\n      header .header-top button:hover {\r\n        background: #ea703a; }\r\n  header .header-bottom {\r\n    margin-top: 23px; }\r\n    header .header-bottom a {\r\n      float: left; }\r\n    header .header-bottom nav {\r\n      float: right;\r\n      padding-top: 13px; }\r\n      header .header-bottom nav ul li {\r\n        float: left;\r\n        padding: 0 20px; }\r\n        header .header-bottom nav ul li a.mainactive {\r\n          color: #008582;\r\n          padding-bottom: 10px;\r\n          border-bottom: 2px solid #ea703a; }\r\n\r\nfooter {\r\n  width: 100%;\r\n  height: 212px;\r\n  background: #fff;\r\n  border-top: 2px solid #008582; }\r\n  footer p {\r\n    margin: auto;\r\n    font-size: 14px;\r\n    text-align: center;\r\n    padding-top: 36px; }\r\n    footer p span {\r\n      line-height: 25px; }\r\n  footer ul {\r\n    overflow: hidden;\r\n    margin: auto;\r\n    width: 786px;\r\n    margin-top: 20px; }\r\n    footer ul li {\r\n      float: left;\r\n      border-right: 1px solid #000; }\r\n      footer ul li:last-child {\r\n        border: none; }\r\n      footer ul li a {\r\n        color: #000;\r\n        font-size: 12px;\r\n        padding: 0 20px; }\r\n\r\n/*面包屑*/\r\n.breadcrumb {\r\n  font-size: 18px;\r\n  color: #008582;\r\n  padding: 20px 83px 0px 83px; }\r\n  .breadcrumb u {\r\n    text-decoration: none;\r\n    line-height: 30px; }\r\n  .breadcrumb a {\r\n    line-height: 30px; }\r\n  .breadcrumb span {\r\n    line-height: 30px; }\r\n  .breadcrumb .tab-items {\r\n    float: right; }\r\n    .breadcrumb .tab-items button {\r\n      border: none;\r\n      color: #666;\r\n      background: #f2f2f2;\r\n      padding: 5px 20px;\r\n      font-size: 14px;\r\n      font-weight: bold;\r\n      border-bottom: 2px solid #fff; }\r\n      .breadcrumb .tab-items button:hover {\r\n        color: #fff;\r\n        background: #666;\r\n        border-bottom: 2px solid #ea703a; }\r\n      .breadcrumb .tab-items button.active {\r\n        color: #fff;\r\n        background: #666;\r\n        border-bottom: 2px solid #ea703a; }\r\n\r\n.PagePlugs {\r\n  text-align: center; }\r\n\r\n/* 设置滚动条的样式 */\r\n::-webkit-scrollbar {\r\n  width: 2px;\r\n  height: 2px; }\r\n\r\n/* 滚动槽 */\r\n::-webkit-scrollbar-track {\r\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\r\n  border-radius: 2px; }\r\n\r\n/* 滚动条滑块 */\r\n::-webkit-scrollbar-thumb {\r\n  border-radius: 2px;\r\n  background: rgba(0, 0, 0, 0.1);\r\n  -webkit-box-shadow: inset 0 0 6px #008582; }\r\n\r\n::-webkit-scrollbar-thumb:window-inactive {\r\n  background: #008582; }\r\n\r\n.wrapper {\r\n  padding-bottom: 14px; }\r\n\r\n.slider {\r\n  height: 455px; }\r\n\r\n.swiper-slide {\r\n  text-align: center; }\r\n\r\n.section-title {\r\n  color: #008582;\r\n  margin-bottom: 22px;\r\n  height: 40px;\r\n  overflow: hidden;\r\n  background: url(" + __webpack_require__(11) + ") no-repeat; }\r\n  .section-title h3 {\r\n    float: left;\r\n    font-size: 18px;\r\n    font-weight: normal; }\r\n    .section-title h3 p {\r\n      font-size: 12px;\r\n      padding-top: 10px; }\r\n  .section-title > p {\r\n    float: right;\r\n    font-size: 12px;\r\n    margin-right: 27px;\r\n    line-height: 40px; }\r\n\r\n.section {\r\n  padding: 30px 56px 0 54px;\r\n  overflow: hidden; }\r\n  .section .section-layout-left {\r\n    float: left; }\r\n    .section .section-layout-left .section-content1 {\r\n      width: 613px; }\r\n      .section .section-layout-left .section-content1 ul li {\r\n        overflow: hidden;\r\n        margin-bottom: 14px; }\r\n        .section .section-layout-left .section-content1 ul li .new-img-content {\r\n          margin-top: 7px; }\r\n        .section .section-layout-left .section-content1 ul li div {\r\n          float: left; }\r\n          .section .section-layout-left .section-content1 ul li div strong {\r\n            font-weight: normal;\r\n            font-size: 14px; }\r\n            .section .section-layout-left .section-content1 ul li div strong a {\r\n              color: rgba(0, 0, 0, 0.8); }\r\n              .section .section-layout-left .section-content1 ul li div strong a:hover {\r\n                text-decoration: underline; }\r\n          .section .section-layout-left .section-content1 ul li div p {\r\n            margin-top: 15px;\r\n            font-style: italic;\r\n            color: #008582; }\r\n            .section .section-layout-left .section-content1 ul li div p small {\r\n              padding: 0 15px 0 0; }\r\n          .section .section-layout-left .section-content1 ul li div h6 {\r\n            margin-top: 10px;\r\n            font-weight: normal;\r\n            font-size: 12px;\r\n            display: -webkit-box;\r\n            -webkit-box-orient: vertical;\r\n            -webkit-line-clamp: 2;\r\n            overflow: hidden;\r\n            color: rgba(0, 0, 0, 0.6);\r\n            line-height: 1.52; }\r\n          .section .section-layout-left .section-content1 ul li div h5 {\r\n            width: 200px;\r\n            margin-top: 10px;\r\n            font-weight: normal;\r\n            height: 52px;\r\n            display: -webkit-box;\r\n            -webkit-box-orient: vertical;\r\n            -webkit-line-clamp: 3;\r\n            overflow: hidden;\r\n            font-size: 12px;\r\n            color: rgba(0, 0, 0, 0.6);\r\n            line-height: 1.52; }\r\n  .section .section-layout-right {\r\n    float: right;\r\n    width: 468px;\r\n    position: relative; }\r\n    .section .section-layout-right > img {\r\n      position: absolute;\r\n      left: -5px;\r\n      top: 69px; }\r\n    .section .section-layout-right .section-content2 ul {\r\n      padding-left: 20px;\r\n      display: -webkit-box;\r\n      display: -ms-flexbox;\r\n      display: flex;\r\n      -webkit-box-orient: horizontal;\r\n      -webkit-box-direction: normal;\r\n          -ms-flex-flow: row;\r\n              flex-flow: row;\r\n      -ms-flex-wrap: wrap;\r\n          flex-wrap: wrap; }\r\n      .section .section-layout-right .section-content2 ul li {\r\n        overflow: hidden;\r\n        margin: 0 40px 38px 0; }\r\n        .section .section-layout-right .section-content2 ul li div {\r\n          float: left; }\r\n          .section .section-layout-right .section-content2 ul li div h3 {\r\n            font-weight: normal;\r\n            font-size: 14px; }\r\n            .section .section-layout-right .section-content2 ul li div h3 a {\r\n              color: #000; }\r\n              .section .section-layout-right .section-content2 ul li div h3 a:hover {\r\n                text-decoration: underline; }\r\n          .section .section-layout-right .section-content2 ul li div p {\r\n            margin-top: 7px;\r\n            font-size: 12px;\r\n            line-height: 1.42;\r\n            color: rgba(0, 0, 0, 0.6); }\r\n          .section .section-layout-right .section-content2 ul li div button {\r\n            font-family: \"Microsoft YaHei UI\";\r\n            outline: none;\r\n            width: 60px;\r\n            height: 20px;\r\n            font-size: 12px;\r\n            margin-top: 7px;\r\n            border: 1px solid #ea703a;\r\n            border-radius: 4px;\r\n            color: #ea703a;\r\n            background: #fff;\r\n            padding: 0; }\r\n            .section .section-layout-right .section-content2 ul li div button:hover {\r\n              color: #fff;\r\n              background: #ea703a; }\r\n\r\n.virtual-enter {\r\n  font-family: \"Microsoft YaHei UI\";\r\n  outline: none;\r\n  width: 60px;\r\n  height: 20px;\r\n  font-size: 12px;\r\n  margin-top: 10px;\r\n  border: 1px solid #ea703a;\r\n  border-radius: 4px;\r\n  color: #ea703a;\r\n  background: #fff;\r\n  padding: 0; }\r\n  .virtual-enter:hover {\r\n    color: #fff;\r\n    background: #ea703a; }\r\n\r\n.swiper-container {\r\n  width: 1020px;\r\n  height: auto; }\r\n\r\n.swiper-button-prev {\r\n  width: 40px;\r\n  height: 40px;\r\n  margin-left: 30px;\r\n  background: url(" + __webpack_require__(12) + ") no-repeat; }\r\n  .swiper-button-prev:hover {\r\n    background-position: 0px -42px; }\r\n\r\n.swiper-button-next {\r\n  width: 40px;\r\n  height: 40px;\r\n  background: url(" + __webpack_require__(12) + ") -42px 0 no-repeat; }\r\n  .swiper-button-next:hover {\r\n    background-position: -42px -42px; }\r\n\r\n/*# sourceMappingURL=index.css.map */\r\n", ""]);
+	exports.push([module.id, "@charset \"UTF-8\";\r\n/* http://meyerweb.com/eric/tools/css/reset/\r\n   v2.0 | 20110126\r\n   License: none (public domain)\r\n*/\r\nhtml, body, div, span, applet, object, iframe,\r\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\r\na, abbr, acronym, address, big, cite, code,\r\ndel, dfn, em, img, ins, kbd, q, s, samp,\r\nsmall, strike, strong, sub, sup, tt, var,\r\nb, u, i, center,\r\ndl, dt, dd, ol, ul, li,\r\nfieldset, form, label, legend,\r\ntable, caption, tbody, tfoot, thead, tr, th, td,\r\narticle, aside, canvas, details, embed,\r\nfigure, figcaption, footer, header, hgroup,\r\nmenu, nav, output, ruby, section, summary,\r\ntime, mark, audio, video {\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0;\r\n  font-family: \"Microsoft YaHei UI\";\r\n  font-size: 16px;\r\n  vertical-align: bottom; }\r\n\r\n/* HTML5 display-role reset for older browsers */\r\narticle, aside, details, figcaption, figure,\r\nfooter, header, hgroup, menu, nav, section {\r\n  display: block; }\r\n\r\nbody {\r\n  line-height: 1;\r\n  background: #eee; }\r\n\r\nol, ul {\r\n  list-style: none; }\r\n\r\nblockquote, q {\r\n  quotes: none; }\r\n\r\nblockquote:before, blockquote:after,\r\nq:before, q:after {\r\n  content: '';\r\n  content: none; }\r\n\r\ntable {\r\n  border-collapse: collapse;\r\n  border-spacing: 0; }\r\n\r\ninput {\r\n  outline: none; }\r\n\r\nbutton {\r\n  font-family: \"Microsoft YaHei UI\";\r\n  outline: none; }\r\n\r\n.wrapper {\r\n  width: 1200px;\r\n  margin: auto;\r\n  background: #fff;\r\n  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.8); }\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #008582; }\r\n  a:hover, a.active {\r\n    color: #ea703a; }\r\n\r\nheader {\r\n  width: 1100px;\r\n  height: 107px;\r\n  padding: 27px 70px 0 30px; }\r\n  header .header-top {\r\n    width: 100%;\r\n    overflow: hidden;\r\n    position: relative; }\r\n    header .header-top .header-top-left {\r\n      float: left; }\r\n      header .header-top .header-top-left ul {\r\n        overflow: hidden; }\r\n        header .header-top .header-top-left ul li {\r\n          float: left;\r\n          border-right: 1px solid #008582; }\r\n          header .header-top .header-top-left ul li a {\r\n            padding-left: 12px;\r\n            padding-right: 12px; }\r\n          header .header-top .header-top-left ul li:first-child a {\r\n            padding-left: 0; }\r\n          header .header-top .header-top-left ul li:last-child {\r\n            border: none; }\r\n    header .header-top .header-top-right {\r\n      float: right;\r\n      position: relative;\r\n      width: 317px;\r\n      height: 36px;\r\n      margin-right: 112px; }\r\n      header .header-top .header-top-right #search {\r\n        width: 305px;\r\n        height: 24px;\r\n        border-radius: 6px;\r\n        border: 1px solid #008582;\r\n        padding: 5px; }\r\n      header .header-top .header-top-right ul {\r\n        position: absolute;\r\n        overflow: hidden;\r\n        right: 11px;\r\n        top: 8px; }\r\n        header .header-top .header-top-right ul li {\r\n          float: left;\r\n          width: 21px;\r\n          height: 21px; }\r\n          header .header-top .header-top-right ul li:first-child {\r\n            padding-right: 10px;\r\n            border-right: 1px solid #008582;\r\n            background: url(" + __webpack_require__(9) + ") no-repeat; }\r\n          header .header-top .header-top-right ul li:last-child {\r\n            margin-left: 10px;\r\n            background: url(" + __webpack_require__(10) + ") no-repeat; }\r\n    header .header-top button {\r\n      position: absolute;\r\n      right: 0px;\r\n      top: 2px;\r\n      outline: none;\r\n      display: block;\r\n      background: #008582;\r\n      border: none;\r\n      width: 93px;\r\n      height: 32px; }\r\n      header .header-top button a {\r\n        font-size: 12px;\r\n        line-height: 32px;\r\n        color: #fff;\r\n        padding: 5px 0; }\r\n      header .header-top button:hover {\r\n        background: #ea703a; }\r\n  header .header-bottom {\r\n    margin-top: 23px; }\r\n    header .header-bottom a {\r\n      float: left; }\r\n    header .header-bottom nav {\r\n      float: right;\r\n      padding-top: 13px; }\r\n      header .header-bottom nav ul li {\r\n        float: left;\r\n        padding: 0 20px; }\r\n        header .header-bottom nav ul li a.mainactive {\r\n          color: #008582;\r\n          padding-bottom: 10px;\r\n          border-bottom: 2px solid #ea703a; }\r\n\r\nfooter {\r\n  width: 100%;\r\n  height: 212px;\r\n  background: #fff;\r\n  border-top: 2px solid #008582; }\r\n  footer p {\r\n    margin: auto;\r\n    font-size: 14px;\r\n    text-align: center;\r\n    padding-top: 36px; }\r\n    footer p span {\r\n      line-height: 25px; }\r\n  footer ul {\r\n    overflow: hidden;\r\n    margin: auto;\r\n    width: 786px;\r\n    margin-top: 20px; }\r\n    footer ul li {\r\n      float: left;\r\n      border-right: 1px solid #000; }\r\n      footer ul li:last-child {\r\n        border: none; }\r\n      footer ul li a {\r\n        color: #000;\r\n        font-size: 12px;\r\n        padding: 0 20px; }\r\n\r\n/*面包屑*/\r\n.breadcrumb {\r\n  font-size: 18px;\r\n  color: #008582;\r\n  padding: 20px 83px 0px 83px; }\r\n  .breadcrumb u {\r\n    text-decoration: none;\r\n    line-height: 30px; }\r\n  .breadcrumb a {\r\n    line-height: 30px; }\r\n  .breadcrumb span {\r\n    line-height: 30px; }\r\n  .breadcrumb .tab-items {\r\n    float: right; }\r\n    .breadcrumb .tab-items button {\r\n      border: none;\r\n      color: #666;\r\n      background: #f2f2f2;\r\n      padding: 5px 20px;\r\n      font-size: 14px;\r\n      font-weight: bold;\r\n      border-bottom: 2px solid #fff; }\r\n      .breadcrumb .tab-items button:hover {\r\n        color: #fff;\r\n        background: #666;\r\n        border-bottom: 2px solid #ea703a; }\r\n      .breadcrumb .tab-items button.active {\r\n        color: #fff;\r\n        background: #666;\r\n        border-bottom: 2px solid #ea703a; }\r\n\r\n.PagePlugs {\r\n  text-align: center; }\r\n\r\n/* 设置滚动条的样式 */\r\n::-webkit-scrollbar {\r\n  width: 2px;\r\n  height: 2px; }\r\n\r\n/* 滚动槽 */\r\n::-webkit-scrollbar-track {\r\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\r\n  border-radius: 2px; }\r\n\r\n/* 滚动条滑块 */\r\n::-webkit-scrollbar-thumb {\r\n  border-radius: 2px;\r\n  background: rgba(0, 0, 0, 0.1);\r\n  -webkit-box-shadow: inset 0 0 6px #008582; }\r\n\r\n::-webkit-scrollbar-thumb:window-inactive {\r\n  background: #008582; }\r\n\r\n.wrapper {\r\n  padding-bottom: 14px; }\r\n\r\n.slider {\r\n  height: 455px; }\r\n\r\n.swiper-slide {\r\n  text-align: center; }\r\n\r\n.section-title {\r\n  color: #008582;\r\n  margin-bottom: 22px;\r\n  height: 40px;\r\n  overflow: hidden;\r\n  background: url(" + __webpack_require__(11) + ") no-repeat; }\r\n  .section-title h3 {\r\n    float: left;\r\n    font-size: 18px;\r\n    font-weight: normal; }\r\n    .section-title h3 p {\r\n      font-size: 12px;\r\n      padding-top: 10px; }\r\n  .section-title > p {\r\n    float: right;\r\n    font-size: 12px;\r\n    margin-right: 27px;\r\n    line-height: 40px; }\r\n\r\n.section {\r\n  padding: 30px 56px 0 54px;\r\n  overflow: hidden; }\r\n  .section .section-layout-left {\r\n    float: left; }\r\n    .section .section-layout-left .section-content1 {\r\n      width: 613px; }\r\n      .section .section-layout-left .section-content1 ul li {\r\n        overflow: hidden;\r\n        margin-bottom: 14px; }\r\n        .section .section-layout-left .section-content1 ul li .new-img-content {\r\n          margin-top: 7px; }\r\n        .section .section-layout-left .section-content1 ul li div {\r\n          float: left; }\r\n          .section .section-layout-left .section-content1 ul li div strong {\r\n            font-weight: normal;\r\n            font-size: 14px; }\r\n            .section .section-layout-left .section-content1 ul li div strong a {\r\n              color: rgba(0, 0, 0, 0.8); }\r\n              .section .section-layout-left .section-content1 ul li div strong a:hover {\r\n                text-decoration: underline; }\r\n          .section .section-layout-left .section-content1 ul li div p {\r\n            margin-top: 15px;\r\n            font-style: italic;\r\n            color: #008582; }\r\n            .section .section-layout-left .section-content1 ul li div p small {\r\n              padding: 0 15px 0 0; }\r\n          .section .section-layout-left .section-content1 ul li div h6 {\r\n            margin-top: 10px;\r\n            font-weight: normal;\r\n            font-size: 12px;\r\n            display: -webkit-box;\r\n            -webkit-box-orient: vertical;\r\n            -webkit-line-clamp: 2;\r\n            overflow: hidden;\r\n            color: rgba(0, 0, 0, 0.6);\r\n            line-height: 1.52; }\r\n          .section .section-layout-left .section-content1 ul li div h5 {\r\n            width: 200px;\r\n            margin-top: 10px;\r\n            font-weight: normal;\r\n            height: 52px;\r\n            display: -webkit-box;\r\n            -webkit-box-orient: vertical;\r\n            -webkit-line-clamp: 3;\r\n            overflow: hidden;\r\n            font-size: 12px;\r\n            color: rgba(0, 0, 0, 0.6);\r\n            line-height: 1.52; }\r\n  .section .section-layout-right {\r\n    float: right;\r\n    width: 468px;\r\n    position: relative; }\r\n    .section .section-layout-right > img {\r\n      position: absolute;\r\n      left: -5px;\r\n      top: 69px; }\r\n    .section .section-layout-right .section-content2 ul {\r\n      padding-left: 20px;\r\n      display: -webkit-box;\r\n      display: -ms-flexbox;\r\n      display: flex;\r\n      -webkit-box-orient: horizontal;\r\n      -webkit-box-direction: normal;\r\n          -ms-flex-flow: row;\r\n              flex-flow: row;\r\n      -ms-flex-wrap: wrap;\r\n          flex-wrap: wrap; }\r\n      .section .section-layout-right .section-content2 ul li {\r\n        overflow: hidden;\r\n        margin: 0 40px 38px 0; }\r\n        .section .section-layout-right .section-content2 ul li div {\r\n          float: left; }\r\n          .section .section-layout-right .section-content2 ul li div h3 {\r\n            font-weight: normal;\r\n            font-size: 14px; }\r\n            .section .section-layout-right .section-content2 ul li div h3 a {\r\n              color: #000; }\r\n              .section .section-layout-right .section-content2 ul li div h3 a:hover {\r\n                text-decoration: underline; }\r\n          .section .section-layout-right .section-content2 ul li div p {\r\n            margin-top: 7px;\r\n            font-size: 12px;\r\n            line-height: 1.42;\r\n            color: rgba(0, 0, 0, 0.6); }\r\n          .section .section-layout-right .section-content2 ul li div button {\r\n            font-family: \"Microsoft YaHei UI\";\r\n            outline: none;\r\n            width: 60px;\r\n            height: 20px;\r\n            font-size: 12px;\r\n            margin-top: 7px;\r\n            border: 1px solid #ea703a;\r\n            border-radius: 4px;\r\n            color: #ea703a;\r\n            background: #fff;\r\n            padding: 0; }\r\n            .section .section-layout-right .section-content2 ul li div button:hover {\r\n              color: #fff;\r\n              background: #ea703a; }\r\n\r\n.virtual-enter {\r\n  font-family: \"Microsoft YaHei UI\";\r\n  outline: none;\r\n  width: 60px;\r\n  height: 20px;\r\n  font-size: 12px;\r\n  margin-top: 10px;\r\n  border: 1px solid #ea703a;\r\n  border-radius: 4px;\r\n  color: #ea703a;\r\n  background: #fff;\r\n  padding: 0; }\r\n  .virtual-enter:hover {\r\n    color: #fff;\r\n    background: #ea703a; }\r\n\r\n.swiper-container {\r\n  width: 1020px;\r\n  height: auto; }\r\n\r\n.swiper-button-prev {\r\n  width: 40px;\r\n  height: 40px;\r\n  margin-left: 30px;\r\n  background: url(" + __webpack_require__(12) + ") no-repeat; }\r\n  .swiper-button-prev:hover {\r\n    background-position: 0px -42px; }\r\n\r\n.swiper-button-next {\r\n  width: 40px;\r\n  height: 40px;\r\n  background: url(" + __webpack_require__(12) + ") -42px 0 no-repeat; }\r\n  .swiper-button-next:hover {\r\n    background-position: -42px -42px; }\r\n\r\n.goAlbum {\r\n  width: 63px;\r\n  height: 21px;\r\n  background: #ea703a;\r\n  border-radius: 11.5px;\r\n  color: #fff;\r\n  border: none; }\r\n\r\n/*# sourceMappingURL=index.css.map */\r\n", ""]);
 
 	// exports
 
@@ -671,7 +671,7 @@
 
 
 	// module
-	exports.push([module.id, "@charset \"UTF-8\";\r\n/* http://meyerweb.com/eric/tools/css/reset/\r\n   v2.0 | 20110126\r\n   License: none (public domain)\r\n*/\r\nhtml, body, div, span, applet, object, iframe,\r\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\r\na, abbr, acronym, address, big, cite, code,\r\ndel, dfn, em, img, ins, kbd, q, s, samp,\r\nsmall, strike, strong, sub, sup, tt, var,\r\nb, u, i, center,\r\ndl, dt, dd, ol, ul, li,\r\nfieldset, form, label, legend,\r\ntable, caption, tbody, tfoot, thead, tr, th, td,\r\narticle, aside, canvas, details, embed,\r\nfigure, figcaption, footer, header, hgroup,\r\nmenu, nav, output, ruby, section, summary,\r\ntime, mark, audio, video {\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0;\r\n  font-family: \"Microsoft YaHei UI\";\r\n  font-size: 16px;\r\n  vertical-align: bottom; }\r\n\r\n/* HTML5 display-role reset for older browsers */\r\narticle, aside, details, figcaption, figure,\r\nfooter, header, hgroup, menu, nav, section {\r\n  display: block; }\r\n\r\nbody {\r\n  line-height: 1;\r\n  background: #eee; }\r\n\r\nol, ul {\r\n  list-style: none; }\r\n\r\nblockquote, q {\r\n  quotes: none; }\r\n\r\nblockquote:before, blockquote:after,\r\nq:before, q:after {\r\n  content: '';\r\n  content: none; }\r\n\r\ntable {\r\n  border-collapse: collapse;\r\n  border-spacing: 0; }\r\n\r\ninput {\r\n  outline: none; }\r\n\r\nbutton {\r\n  font-family: \"Microsoft YaHei UI\";\r\n  outline: none; }\r\n\r\n.wrapper {\r\n  width: 1200px;\r\n  margin: auto;\r\n  background: #fff;\r\n  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.8); }\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #008582; }\r\n  a:hover, a.active {\r\n    color: #ea703a; }\r\n\r\nheader {\r\n  width: 1100px;\r\n  height: 107px;\r\n  padding: 27px 70px 0 30px; }\r\n  header .header-top {\r\n    width: 100%;\r\n    overflow: hidden;\r\n    position: relative; }\r\n    header .header-top .header-top-left {\r\n      float: left; }\r\n      header .header-top .header-top-left ul {\r\n        overflow: hidden; }\r\n        header .header-top .header-top-left ul li {\r\n          float: left;\r\n          border-right: 1px solid #008582; }\r\n          header .header-top .header-top-left ul li a {\r\n            padding-left: 12px;\r\n            padding-right: 12px; }\r\n          header .header-top .header-top-left ul li:first-child a {\r\n            padding-left: 0; }\r\n          header .header-top .header-top-left ul li:last-child {\r\n            border: none; }\r\n    header .header-top .header-top-right {\r\n      float: right;\r\n      position: relative;\r\n      width: 317px;\r\n      height: 36px;\r\n      margin-right: 112px; }\r\n      header .header-top .header-top-right #search {\r\n        width: 305px;\r\n        height: 24px;\r\n        border-radius: 6px;\r\n        border: 1px solid #008582;\r\n        padding: 5px; }\r\n      header .header-top .header-top-right ul {\r\n        position: absolute;\r\n        overflow: hidden;\r\n        right: 11px;\r\n        top: 8px; }\r\n        header .header-top .header-top-right ul li {\r\n          float: left;\r\n          width: 21px;\r\n          height: 21px; }\r\n          header .header-top .header-top-right ul li:first-child {\r\n            padding-right: 10px;\r\n            border-right: 1px solid #008582;\r\n            background: url(" + __webpack_require__(9) + ") no-repeat; }\r\n          header .header-top .header-top-right ul li:last-child {\r\n            margin-left: 10px;\r\n            background: url(" + __webpack_require__(10) + ") no-repeat; }\r\n    header .header-top button {\r\n      position: absolute;\r\n      right: 0px;\r\n      top: 2px;\r\n      outline: none;\r\n      display: block;\r\n      background: #008582;\r\n      border: none;\r\n      width: 93px;\r\n      height: 32px; }\r\n      header .header-top button a {\r\n        font-size: 12px;\r\n        line-height: 32px;\r\n        color: #fff;\r\n        padding: 5px 0; }\r\n      header .header-top button:hover {\r\n        background: #ea703a; }\r\n  header .header-bottom {\r\n    margin-top: 23px; }\r\n    header .header-bottom a {\r\n      float: left; }\r\n    header .header-bottom nav {\r\n      float: right;\r\n      padding-top: 13px; }\r\n      header .header-bottom nav ul li {\r\n        float: left;\r\n        padding: 0 20px; }\r\n        header .header-bottom nav ul li a.mainactive {\r\n          color: #008582;\r\n          padding-bottom: 10px;\r\n          border-bottom: 2px solid #ea703a; }\r\n\r\nfooter {\r\n  width: 100%;\r\n  height: 212px;\r\n  background: #fff;\r\n  border-top: 2px solid #008582; }\r\n  footer p {\r\n    margin: auto;\r\n    font-size: 14px;\r\n    text-align: center;\r\n    padding-top: 36px; }\r\n    footer p span {\r\n      line-height: 25px; }\r\n  footer ul {\r\n    overflow: hidden;\r\n    margin: auto;\r\n    width: 786px;\r\n    margin-top: 20px; }\r\n    footer ul li {\r\n      float: left;\r\n      border-right: 1px solid #000; }\r\n      footer ul li:last-child {\r\n        border: none; }\r\n      footer ul li a {\r\n        color: #000;\r\n        font-size: 12px;\r\n        padding: 0 20px; }\r\n\r\n/*面包屑*/\r\n.breadcrumb {\r\n  font-size: 18px;\r\n  color: #008582;\r\n  padding: 20px 83px 0px 83px; }\r\n  .breadcrumb u {\r\n    text-decoration: none;\r\n    line-height: 30px; }\r\n  .breadcrumb a {\r\n    line-height: 30px; }\r\n  .breadcrumb span {\r\n    line-height: 30px; }\r\n  .breadcrumb .tab-items {\r\n    float: right; }\r\n    .breadcrumb .tab-items button {\r\n      border: none;\r\n      color: #666;\r\n      background: #f2f2f2;\r\n      padding: 5px 20px;\r\n      font-size: 14px;\r\n      font-weight: bold;\r\n      border-bottom: 2px solid #fff; }\r\n      .breadcrumb .tab-items button:hover {\r\n        color: #fff;\r\n        background: #666;\r\n        border-bottom: 2px solid #ea703a; }\r\n      .breadcrumb .tab-items button.active {\r\n        color: #fff;\r\n        background: #666;\r\n        border-bottom: 2px solid #ea703a; }\r\n\r\n.PagePlugs {\r\n  text-align: center; }\r\n\r\n/* 设置滚动条的样式 */\r\n::-webkit-scrollbar {\r\n  width: 2px;\r\n  height: 2px; }\r\n\r\n/* 滚动槽 */\r\n::-webkit-scrollbar-track {\r\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\r\n  border-radius: 2px; }\r\n\r\n/* 滚动条滑块 */\r\n::-webkit-scrollbar-thumb {\r\n  border-radius: 2px;\r\n  background: rgba(0, 0, 0, 0.1);\r\n  -webkit-box-shadow: inset 0 0 6px #008582; }\r\n\r\n::-webkit-scrollbar-thumb:window-inactive {\r\n  background: #008582; }\r\n\r\n.collection-wraper {\r\n  padding: 0 20px 0;\r\n  /*筛选条件*/\r\n  /*排序状态*/ }\r\n  .collection-wraper .slected-condition:after {\r\n    display: block;\r\n    content: \"\";\r\n    clear: both; }\r\n  .collection-wraper .slected-condition ul {\r\n    float: left;\r\n    overflow: hidden; }\r\n    .collection-wraper .slected-condition ul li {\r\n      float: left;\r\n      height: 24px;\r\n      background: #f3f3f3;\r\n      border: 1px solid #ddd;\r\n      text-align: center;\r\n      margin-left: 10px; }\r\n      .collection-wraper .slected-condition ul li small {\r\n        font-size: 12px;\r\n        line-height: 24px;\r\n        padding-left: 10px; }\r\n      .collection-wraper .slected-condition ul li u {\r\n        font-size: 12px;\r\n        text-decoration: none;\r\n        line-height: 24px;\r\n        color: #ea703a; }\r\n      .collection-wraper .slected-condition ul li i {\r\n        font-size: 16px;\r\n        font-style: normal;\r\n        line-height: 24px;\r\n        padding-left: 10px;\r\n        padding-right: 10px; }\r\n        .collection-wraper .slected-condition ul li i:hover {\r\n          color: #ea703a;\r\n          cursor: pointer; }\r\n      .collection-wraper .slected-condition ul li:first-child {\r\n        width: 80px;\r\n        border: none;\r\n        background: transparent;\r\n        margin: 0; }\r\n        .collection-wraper .slected-condition ul li:first-child span {\r\n          line-height: 24px; }\r\n  .collection-wraper .slected-condition .key-words-value {\r\n    float: left;\r\n    color: #666;\r\n    line-height: 26px; }\r\n    .collection-wraper .slected-condition .key-words-value span {\r\n      font-size: 12px;\r\n      line-height: 26px; }\r\n  .collection-wraper .key-words {\r\n    position: relative;\r\n    height: 36px;\r\n    margin-top: 15px;\r\n    /*关键字搜索*/ }\r\n    .collection-wraper .key-words .collection-search {\r\n      width: 218px;\r\n      height: 15px;\r\n      border: 1px solid #008582;\r\n      padding: 5px;\r\n      margin-bottom: 5px; }\r\n      .collection-wraper .key-words .collection-search:focus {\r\n        border-color: #ea703a; }\r\n    .collection-wraper .key-words ul {\r\n      position: absolute;\r\n      overflow: hidden;\r\n      left: 223px;\r\n      top: 7px; }\r\n      .collection-wraper .key-words ul li {\r\n        float: left;\r\n        width: 21px;\r\n        height: 21px; }\r\n        .collection-wraper .key-words ul li:first-child {\r\n          padding-right: 10px;\r\n          border-right: 1px solid #008582;\r\n          background: url(" + __webpack_require__(9) + ") no-repeat; }\r\n        .collection-wraper .key-words ul li:last-child {\r\n          margin-left: 10px;\r\n          background: url(" + __webpack_require__(10) + ") no-repeat; }\r\n    .collection-wraper .key-words .hot-keywords {\r\n      position: absolute;\r\n      left: 321px;\r\n      top: 8px; }\r\n      .collection-wraper .key-words .hot-keywords span, .collection-wraper .key-words .hot-keywords a {\r\n        font-size: 14px;\r\n        color: rgba(0, 0, 0, 0.4); }\r\n      .collection-wraper .key-words .hot-keywords a:hover {\r\n        color: #ea703a; }\r\n  .collection-wraper .condition {\r\n    margin-top: 15px; }\r\n    .collection-wraper .condition .condition-item {\r\n      overflow: hidden;\r\n      border-top: 1px solid #e5e5e5; }\r\n      .collection-wraper .condition .condition-item .condition-title {\r\n        float: left;\r\n        display: block;\r\n        line-height: 40px;\r\n        background: #f3f3f3;\r\n        padding: 0 10px; }\r\n        .collection-wraper .condition .condition-item .condition-title.slidedown {\r\n          height: auto; }\r\n      .collection-wraper .condition .condition-item .condition-content {\r\n        float: left;\r\n        overflow: hidden;\r\n        height: 40px;\r\n        padding-left: 15px;\r\n        width: 850px; }\r\n        .collection-wraper .condition .condition-item .condition-content.slidedown {\r\n          height: auto; }\r\n        .collection-wraper .condition .condition-item .condition-content li {\r\n          float: left;\r\n          margin: 0 15px; }\r\n          .collection-wraper .condition .condition-item .condition-content li span {\r\n            cursor: pointer;\r\n            line-height: 40px;\r\n            font-size: 12px;\r\n            color: #008582; }\r\n            .collection-wraper .condition .condition-item .condition-content li span:hover {\r\n              color: #ea703a; }\r\n      .collection-wraper .condition .condition-item .condition-more {\r\n        float: left;\r\n        cursor: pointer;\r\n        font-size: 12px;\r\n        line-height: 40px;\r\n        color: #ea703a; }\r\n        .collection-wraper .condition .condition-item .condition-more span {\r\n          line-height: 40px; }\r\n  .collection-wraper .sort-state ul:after {\r\n    content: '';\r\n    display: block;\r\n    clear: both; }\r\n  .collection-wraper .sort-state ul li {\r\n    float: left; }\r\n    .collection-wraper .sort-state ul li ul li button {\r\n      margin-top: 10px;\r\n      padding: 0 15px;\r\n      line-height: 35px;\r\n      border: 1px solid #ea703a;\r\n      outline: none;\r\n      color: #ea703a;\r\n      background: #fff; }\r\n      .collection-wraper .sort-state ul li ul li button:hover, .collection-wraper .sort-state ul li ul li button.active {\r\n        color: #fff;\r\n        background: #ea703a; }\r\n\r\n/*字体加粗*/\r\n.fontB {\r\n  font-weight: bold;\r\n  color: #666;\r\n  font-size: 14px; }\r\n\r\n#ul1, #ul2 {\r\n  width: 1160px;\r\n  margin-top: 20px;\r\n  position: relative;\r\n  left: -18px; }\r\n  #ul1:after, #ul2:after {\r\n    content: '';\r\n    display: block;\r\n    clear: both; }\r\n  #ul1 li, #ul2 li {\r\n    width: 278px;\r\n    list-style: none;\r\n    float: left;\r\n    margin-right: 16px; }\r\n    #ul1 li:last-child, #ul2 li:last-child {\r\n      margin-right: 0px; }\r\n    #ul1 li div, #ul2 li div {\r\n      margin-bottom: 20px;\r\n      position: relative;\r\n      border-radius: 4px;\r\n      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); }\r\n      #ul1 li div a, #ul2 li div a {\r\n        position: relative;\r\n        display: block; }\r\n        #ul1 li div a img, #ul2 li div a img {\r\n          width: 225px;\r\n          display: block; }\r\n      #ul1 li div p, #ul2 li div p {\r\n        margin: auto;\r\n        text-align: center;\r\n        padding: 10px 0;\r\n        width: 240px; }\r\n        #ul1 li div p:after, #ul2 li div p:after {\r\n          content: '';\r\n          display: block;\r\n          clear: both; }\r\n        #ul1 li div p span, #ul2 li div p span {\r\n          float: left;\r\n          width: 100%;\r\n          display: block;\r\n          white-space: nowrap;\r\n          overflow: hidden;\r\n          text-overflow: ellipsis;\r\n          text-align: center;\r\n          font-size: 12px;\r\n          color: rgba(0, 0, 0, 0.7); }\r\n      #ul1 li div i, #ul2 li div i {\r\n        display: inline-block;\r\n        position: absolute;\r\n        right: 3px;\r\n        bottom: 9px;\r\n        float: right;\r\n        width: 15px;\r\n        height: 15px;\r\n        background: url(" + __webpack_require__(21) + ") no-repeat -17px 0; }\r\n        #ul1 li div i.active, #ul1 li div i:hover, #ul2 li div i.active, #ul2 li div i:hover {\r\n          cursor: pointer;\r\n          background-position: 0 0; }\r\n      #ul1 li div u, #ul2 li div u {\r\n        position: absolute;\r\n        display: none;\r\n        left: 0px;\r\n        top: 0px;\r\n        float: right;\r\n        width: 37px;\r\n        height: 30px;\r\n        background: url(" + __webpack_require__(22) + ") no-repeat; }\r\n        #ul1 li div u.is3d, #ul2 li div u.is3d {\r\n          display: inline-block; }\r\n\r\n/*藏品详情页*/\r\n.collection-details {\r\n  padding: 0 65px; }\r\n  .collection-details > ul {\r\n    line-height: 28px;\r\n    height: 28px;\r\n    margin-bottom: 22px; }\r\n    .collection-details > ul:after {\r\n      display: block;\r\n      content: \"\";\r\n      clear: both; }\r\n    .collection-details > ul li {\r\n      float: left;\r\n      position: relative; }\r\n      .collection-details > ul li span {\r\n        font-size: 24px; }\r\n      .collection-details > ul li i {\r\n        display: inline-block;\r\n        position: absolute;\r\n        left: 20px;\r\n        bottom: 7px;\r\n        float: right;\r\n        width: 15px;\r\n        height: 15px;\r\n        background: url(" + __webpack_require__(21) + ") no-repeat -17px 0; }\r\n        .collection-details > ul li i.active, .collection-details > ul li i:hover {\r\n          cursor: pointer;\r\n          background-position: 0 0; }\r\n      .collection-details > ul li u {\r\n        text-decoration: none; }\r\n      .collection-details > ul li button {\r\n        outline: none;\r\n        border: none;\r\n        margin-left: 10px;\r\n        padding: 0; }\r\n        .collection-details > ul li button a {\r\n          display: block;\r\n          color: #fff;\r\n          width: 55px;\r\n          height: 28px;\r\n          background: #008582;\r\n          border-radius: 2px;\r\n          line-height: 28px; }\r\n          .collection-details > ul li button a:hover, .collection-details > ul li button a.active {\r\n            background: #ea703a; }\r\n  .collection-details .collection-details-img {\r\n    width: 640px;\r\n    height: 426px;\r\n    display: inline-block; }\r\n  .collection-details .collection-details-msg {\r\n    display: inline-block;\r\n    width: 425px;\r\n    height: 426px; }\r\n    .collection-details .collection-details-msg > p {\r\n      font-size: 18px;\r\n      color: #008582;\r\n      padding: 16px 0 0 30px; }\r\n    .collection-details .collection-details-msg table {\r\n      margin-left: 50px;\r\n      margin-top: 30px; }\r\n      .collection-details .collection-details-msg table tr td {\r\n        font-size: 14px;\r\n        line-height: 23px; }\r\n        .collection-details .collection-details-msg table tr td:first-child {\r\n          color: #008582; }\r\n  .collection-details .collection-details-infor {\r\n    margin-left: 50px;\r\n    margin-top: 30px;\r\n    line-height: 20px; }\r\n    .collection-details .collection-details-infor .content_1 {\r\n      width: 375px;\r\n      height: 190px;\r\n      overflow: auto;\r\n      text-indent: 24px;\r\n      font-size: 12px; }\r\n  .collection-details .collection-details-correlation {\r\n    position: relative; }\r\n    .collection-details .collection-details-correlation > p {\r\n      padding: 20px 0;\r\n      font-size: 18px;\r\n      color: #008582;\r\n      border-bottom: 1px solid #e3e3e3; }\r\n    .collection-details .collection-details-correlation ol {\r\n      position: absolute;\r\n      right: 0;\r\n      top: 24px; }\r\n      .collection-details .collection-details-correlation ol li {\r\n        float: left;\r\n        width: 8px;\r\n        height: 12px;\r\n        background: url(" + __webpack_require__(23) + ") -10px 0px no-repeat; }\r\n        .collection-details .collection-details-correlation ol li:last-child {\r\n          background-position: 0px 0px; }\r\n        .collection-details .collection-details-correlation ol li.hasmore {\r\n          background-position-y: -14px; }\r\n    .collection-details .collection-details-correlation ul {\r\n      margin-top: 15px;\r\n      width: 1070px;\r\n      height: 177px; }\r\n      .collection-details .collection-details-correlation ul:after {\r\n        display: block;\r\n        content: \"\";\r\n        clear: both; }\r\n      .collection-details .collection-details-correlation ul li {\r\n        float: left;\r\n        margin-right: 28px;\r\n        width: 191px; }\r\n        .collection-details .collection-details-correlation ul li p {\r\n          text-align: center;\r\n          line-height: 20px;\r\n          font-size: 14px;\r\n          padding: 14px 0;\r\n          white-space: nowrap;\r\n          overflow: hidden;\r\n          text-overflow: ellipsis;\r\n          text-align: center; }\r\n        .collection-details .collection-details-correlation ul li:last-child {\r\n          margin: 0; }\r\n\r\n.btnactive {\r\n  color: red; }\r\n\r\n.btn.btnshow {\r\n  display: block; }\r\n\r\n.btn {\r\n  display: none; }\r\n\r\n.video-content {\r\n  width: 100%;\r\n  height: 100%; }\r\n\r\n/*# sourceMappingURL=collection.css.map */\r\n", ""]);
+	exports.push([module.id, "@charset \"UTF-8\";\r\n/* http://meyerweb.com/eric/tools/css/reset/\r\n   v2.0 | 20110126\r\n   License: none (public domain)\r\n*/\r\nhtml, body, div, span, applet, object, iframe,\r\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\r\na, abbr, acronym, address, big, cite, code,\r\ndel, dfn, em, img, ins, kbd, q, s, samp,\r\nsmall, strike, strong, sub, sup, tt, var,\r\nb, u, i, center,\r\ndl, dt, dd, ol, ul, li,\r\nfieldset, form, label, legend,\r\ntable, caption, tbody, tfoot, thead, tr, th, td,\r\narticle, aside, canvas, details, embed,\r\nfigure, figcaption, footer, header, hgroup,\r\nmenu, nav, output, ruby, section, summary,\r\ntime, mark, audio, video {\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0;\r\n  font-family: \"Microsoft YaHei UI\";\r\n  font-size: 16px;\r\n  vertical-align: bottom; }\r\n\r\n/* HTML5 display-role reset for older browsers */\r\narticle, aside, details, figcaption, figure,\r\nfooter, header, hgroup, menu, nav, section {\r\n  display: block; }\r\n\r\nbody {\r\n  line-height: 1;\r\n  background: #eee; }\r\n\r\nol, ul {\r\n  list-style: none; }\r\n\r\nblockquote, q {\r\n  quotes: none; }\r\n\r\nblockquote:before, blockquote:after,\r\nq:before, q:after {\r\n  content: '';\r\n  content: none; }\r\n\r\ntable {\r\n  border-collapse: collapse;\r\n  border-spacing: 0; }\r\n\r\ninput {\r\n  outline: none; }\r\n\r\nbutton {\r\n  font-family: \"Microsoft YaHei UI\";\r\n  outline: none; }\r\n\r\n.wrapper {\r\n  width: 1200px;\r\n  margin: auto;\r\n  background: #fff;\r\n  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.8); }\r\n\r\na {\r\n  text-decoration: none;\r\n  color: #008582; }\r\n  a:hover, a.active {\r\n    color: #ea703a; }\r\n\r\nheader {\r\n  width: 1100px;\r\n  height: 107px;\r\n  padding: 27px 70px 0 30px; }\r\n  header .header-top {\r\n    width: 100%;\r\n    overflow: hidden;\r\n    position: relative; }\r\n    header .header-top .header-top-left {\r\n      float: left; }\r\n      header .header-top .header-top-left ul {\r\n        overflow: hidden; }\r\n        header .header-top .header-top-left ul li {\r\n          float: left;\r\n          border-right: 1px solid #008582; }\r\n          header .header-top .header-top-left ul li a {\r\n            padding-left: 12px;\r\n            padding-right: 12px; }\r\n          header .header-top .header-top-left ul li:first-child a {\r\n            padding-left: 0; }\r\n          header .header-top .header-top-left ul li:last-child {\r\n            border: none; }\r\n    header .header-top .header-top-right {\r\n      float: right;\r\n      position: relative;\r\n      width: 317px;\r\n      height: 36px;\r\n      margin-right: 112px; }\r\n      header .header-top .header-top-right #search {\r\n        width: 305px;\r\n        height: 24px;\r\n        border-radius: 6px;\r\n        border: 1px solid #008582;\r\n        padding: 5px; }\r\n      header .header-top .header-top-right ul {\r\n        position: absolute;\r\n        overflow: hidden;\r\n        right: 11px;\r\n        top: 8px; }\r\n        header .header-top .header-top-right ul li {\r\n          float: left;\r\n          width: 21px;\r\n          height: 21px; }\r\n          header .header-top .header-top-right ul li:first-child {\r\n            padding-right: 10px;\r\n            border-right: 1px solid #008582;\r\n            background: url(" + __webpack_require__(9) + ") no-repeat; }\r\n          header .header-top .header-top-right ul li:last-child {\r\n            margin-left: 10px;\r\n            background: url(" + __webpack_require__(10) + ") no-repeat; }\r\n    header .header-top button {\r\n      position: absolute;\r\n      right: 0px;\r\n      top: 2px;\r\n      outline: none;\r\n      display: block;\r\n      background: #008582;\r\n      border: none;\r\n      width: 93px;\r\n      height: 32px; }\r\n      header .header-top button a {\r\n        font-size: 12px;\r\n        line-height: 32px;\r\n        color: #fff;\r\n        padding: 5px 0; }\r\n      header .header-top button:hover {\r\n        background: #ea703a; }\r\n  header .header-bottom {\r\n    margin-top: 23px; }\r\n    header .header-bottom a {\r\n      float: left; }\r\n    header .header-bottom nav {\r\n      float: right;\r\n      padding-top: 13px; }\r\n      header .header-bottom nav ul li {\r\n        float: left;\r\n        padding: 0 20px; }\r\n        header .header-bottom nav ul li a.mainactive {\r\n          color: #008582;\r\n          padding-bottom: 10px;\r\n          border-bottom: 2px solid #ea703a; }\r\n\r\nfooter {\r\n  width: 100%;\r\n  height: 212px;\r\n  background: #fff;\r\n  border-top: 2px solid #008582; }\r\n  footer p {\r\n    margin: auto;\r\n    font-size: 14px;\r\n    text-align: center;\r\n    padding-top: 36px; }\r\n    footer p span {\r\n      line-height: 25px; }\r\n  footer ul {\r\n    overflow: hidden;\r\n    margin: auto;\r\n    width: 786px;\r\n    margin-top: 20px; }\r\n    footer ul li {\r\n      float: left;\r\n      border-right: 1px solid #000; }\r\n      footer ul li:last-child {\r\n        border: none; }\r\n      footer ul li a {\r\n        color: #000;\r\n        font-size: 12px;\r\n        padding: 0 20px; }\r\n\r\n/*面包屑*/\r\n.breadcrumb {\r\n  font-size: 18px;\r\n  color: #008582;\r\n  padding: 20px 83px 0px 83px; }\r\n  .breadcrumb u {\r\n    text-decoration: none;\r\n    line-height: 30px; }\r\n  .breadcrumb a {\r\n    line-height: 30px; }\r\n  .breadcrumb span {\r\n    line-height: 30px; }\r\n  .breadcrumb .tab-items {\r\n    float: right; }\r\n    .breadcrumb .tab-items button {\r\n      border: none;\r\n      color: #666;\r\n      background: #f2f2f2;\r\n      padding: 5px 20px;\r\n      font-size: 14px;\r\n      font-weight: bold;\r\n      border-bottom: 2px solid #fff; }\r\n      .breadcrumb .tab-items button:hover {\r\n        color: #fff;\r\n        background: #666;\r\n        border-bottom: 2px solid #ea703a; }\r\n      .breadcrumb .tab-items button.active {\r\n        color: #fff;\r\n        background: #666;\r\n        border-bottom: 2px solid #ea703a; }\r\n\r\n.PagePlugs {\r\n  text-align: center; }\r\n\r\n/* 设置滚动条的样式 */\r\n::-webkit-scrollbar {\r\n  width: 2px;\r\n  height: 2px; }\r\n\r\n/* 滚动槽 */\r\n::-webkit-scrollbar-track {\r\n  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\r\n  border-radius: 2px; }\r\n\r\n/* 滚动条滑块 */\r\n::-webkit-scrollbar-thumb {\r\n  border-radius: 2px;\r\n  background: rgba(0, 0, 0, 0.1);\r\n  -webkit-box-shadow: inset 0 0 6px #008582; }\r\n\r\n::-webkit-scrollbar-thumb:window-inactive {\r\n  background: #008582; }\r\n\r\n.collection-wraper {\r\n  padding: 0 20px 0;\r\n  /*筛选条件*/\r\n  /*排序状态*/ }\r\n  .collection-wraper .slected-condition:after {\r\n    display: block;\r\n    content: \"\";\r\n    clear: both; }\r\n  .collection-wraper .slected-condition ul {\r\n    float: left;\r\n    overflow: hidden; }\r\n    .collection-wraper .slected-condition ul li {\r\n      float: left;\r\n      height: 24px;\r\n      background: #f3f3f3;\r\n      border: 1px solid #ddd;\r\n      text-align: center;\r\n      margin-left: 10px; }\r\n      .collection-wraper .slected-condition ul li small {\r\n        font-size: 12px;\r\n        line-height: 24px;\r\n        padding-left: 10px; }\r\n      .collection-wraper .slected-condition ul li u {\r\n        font-size: 12px;\r\n        text-decoration: none;\r\n        line-height: 24px;\r\n        color: #ea703a; }\r\n      .collection-wraper .slected-condition ul li i {\r\n        font-size: 16px;\r\n        font-style: normal;\r\n        line-height: 24px;\r\n        padding-left: 10px;\r\n        padding-right: 10px; }\r\n        .collection-wraper .slected-condition ul li i:hover {\r\n          color: #ea703a;\r\n          cursor: pointer; }\r\n      .collection-wraper .slected-condition ul li:first-child {\r\n        width: 80px;\r\n        border: none;\r\n        background: transparent;\r\n        margin: 0; }\r\n        .collection-wraper .slected-condition ul li:first-child span {\r\n          line-height: 24px; }\r\n  .collection-wraper .slected-condition .key-words-value {\r\n    float: left;\r\n    color: #666;\r\n    line-height: 26px; }\r\n    .collection-wraper .slected-condition .key-words-value span {\r\n      font-size: 12px;\r\n      line-height: 26px; }\r\n  .collection-wraper .key-words {\r\n    position: relative;\r\n    height: 36px;\r\n    margin-top: 15px;\r\n    /*关键字搜索*/ }\r\n    .collection-wraper .key-words .collection-search {\r\n      width: 305px;\r\n      height: 15px;\r\n      border: 1px solid #008582;\r\n      padding: 5px;\r\n      padding-right: 80px;\r\n      margin-bottom: 5px; }\r\n      .collection-wraper .key-words .collection-search:focus {\r\n        border-color: #ea703a; }\r\n    .collection-wraper .key-words ul {\r\n      position: absolute;\r\n      overflow: hidden;\r\n      left: 385px;\r\n      top: 7px; }\r\n      .collection-wraper .key-words ul li {\r\n        float: left;\r\n        width: 21px;\r\n        height: 21px; }\r\n        .collection-wraper .key-words ul li:first-child {\r\n          padding-right: 10px;\r\n          border-right: 1px solid #008582;\r\n          background: url(" + __webpack_require__(9) + ") no-repeat; }\r\n        .collection-wraper .key-words ul li:last-child {\r\n          margin-left: 10px;\r\n          background: url(" + __webpack_require__(10) + ") no-repeat; }\r\n    .collection-wraper .key-words .hot-keywords {\r\n      position: absolute;\r\n      left: 321px;\r\n      top: 8px; }\r\n      .collection-wraper .key-words .hot-keywords span, .collection-wraper .key-words .hot-keywords a {\r\n        font-size: 14px;\r\n        color: rgba(0, 0, 0, 0.4); }\r\n      .collection-wraper .key-words .hot-keywords a:hover {\r\n        color: #ea703a; }\r\n  .collection-wraper .condition {\r\n    margin-top: 15px; }\r\n    .collection-wraper .condition .condition-item {\r\n      overflow: hidden;\r\n      border-top: 1px solid #e5e5e5; }\r\n      .collection-wraper .condition .condition-item .condition-title {\r\n        float: left;\r\n        display: block;\r\n        line-height: 40px;\r\n        background: #f3f3f3;\r\n        padding: 0 10px; }\r\n        .collection-wraper .condition .condition-item .condition-title.slidedown {\r\n          height: auto; }\r\n      .collection-wraper .condition .condition-item .condition-content {\r\n        float: left;\r\n        overflow: hidden;\r\n        height: 40px;\r\n        padding-left: 15px;\r\n        width: 850px; }\r\n        .collection-wraper .condition .condition-item .condition-content.slidedown {\r\n          height: auto; }\r\n        .collection-wraper .condition .condition-item .condition-content li {\r\n          float: left;\r\n          margin: 0 15px; }\r\n          .collection-wraper .condition .condition-item .condition-content li span {\r\n            cursor: pointer;\r\n            line-height: 40px;\r\n            font-size: 12px;\r\n            color: #008582; }\r\n            .collection-wraper .condition .condition-item .condition-content li span:hover {\r\n              color: #ea703a; }\r\n      .collection-wraper .condition .condition-item .condition-more {\r\n        float: left;\r\n        cursor: pointer;\r\n        font-size: 12px;\r\n        line-height: 40px;\r\n        color: #ea703a; }\r\n        .collection-wraper .condition .condition-item .condition-more span {\r\n          line-height: 40px; }\r\n  .collection-wraper .sort-state ul:after {\r\n    content: '';\r\n    display: block;\r\n    clear: both; }\r\n  .collection-wraper .sort-state ul li {\r\n    float: left; }\r\n    .collection-wraper .sort-state ul li ul li button {\r\n      margin-top: 10px;\r\n      padding: 0 15px;\r\n      line-height: 35px;\r\n      border: 1px solid #ea703a;\r\n      outline: none;\r\n      color: #ea703a;\r\n      background: #fff; }\r\n      .collection-wraper .sort-state ul li ul li button:hover, .collection-wraper .sort-state ul li ul li button.active {\r\n        color: #fff;\r\n        background: #ea703a; }\r\n\r\n/*字体加粗*/\r\n.fontB {\r\n  font-weight: bold;\r\n  color: #666;\r\n  font-size: 14px; }\r\n\r\n#ul1, #ul2 {\r\n  width: 1160px;\r\n  margin-top: 20px;\r\n  position: relative;\r\n  left: -18px; }\r\n  #ul1:after, #ul2:after {\r\n    content: '';\r\n    display: block;\r\n    clear: both; }\r\n  #ul1 li, #ul2 li {\r\n    width: 278px;\r\n    list-style: none;\r\n    float: left;\r\n    margin-right: 16px; }\r\n    #ul1 li:last-child, #ul2 li:last-child {\r\n      margin-right: 0px; }\r\n    #ul1 li div, #ul2 li div {\r\n      margin-bottom: 20px;\r\n      position: relative;\r\n      border-radius: 4px;\r\n      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); }\r\n      #ul1 li div a, #ul2 li div a {\r\n        position: relative;\r\n        display: block; }\r\n        #ul1 li div a img, #ul2 li div a img {\r\n          width: 225px;\r\n          display: block; }\r\n      #ul1 li div p, #ul2 li div p {\r\n        margin: auto;\r\n        text-align: center;\r\n        padding: 10px 0;\r\n        width: 240px; }\r\n        #ul1 li div p:after, #ul2 li div p:after {\r\n          content: '';\r\n          display: block;\r\n          clear: both; }\r\n        #ul1 li div p span, #ul2 li div p span {\r\n          float: left;\r\n          width: 100%;\r\n          display: block;\r\n          white-space: nowrap;\r\n          overflow: hidden;\r\n          text-overflow: ellipsis;\r\n          text-align: center;\r\n          font-size: 12px;\r\n          color: rgba(0, 0, 0, 0.7); }\r\n      #ul1 li div i, #ul2 li div i {\r\n        display: inline-block;\r\n        position: absolute;\r\n        right: 3px;\r\n        bottom: 9px;\r\n        float: right;\r\n        width: 15px;\r\n        height: 15px;\r\n        background: url(" + __webpack_require__(21) + ") no-repeat -17px 0; }\r\n        #ul1 li div i.active, #ul1 li div i:hover, #ul2 li div i.active, #ul2 li div i:hover {\r\n          cursor: pointer;\r\n          background-position: 0 0; }\r\n      #ul1 li div u, #ul2 li div u {\r\n        position: absolute;\r\n        display: none;\r\n        left: 0px;\r\n        top: 0px;\r\n        float: right;\r\n        width: 37px;\r\n        height: 30px;\r\n        background: url(" + __webpack_require__(22) + ") no-repeat; }\r\n        #ul1 li div u.is3d, #ul2 li div u.is3d {\r\n          display: inline-block; }\r\n\r\n/*藏品详情页*/\r\n.collection-details {\r\n  padding: 0 65px; }\r\n  .collection-details > ul {\r\n    line-height: 28px;\r\n    height: 28px;\r\n    margin-bottom: 22px; }\r\n    .collection-details > ul:after {\r\n      display: block;\r\n      content: \"\";\r\n      clear: both; }\r\n    .collection-details > ul li {\r\n      float: left;\r\n      position: relative; }\r\n      .collection-details > ul li span {\r\n        font-size: 24px; }\r\n      .collection-details > ul li i {\r\n        display: inline-block;\r\n        position: absolute;\r\n        left: 20px;\r\n        bottom: 7px;\r\n        float: right;\r\n        width: 15px;\r\n        height: 15px;\r\n        background: url(" + __webpack_require__(21) + ") no-repeat -17px 0; }\r\n        .collection-details > ul li i.active, .collection-details > ul li i:hover {\r\n          cursor: pointer;\r\n          background-position: 0 0; }\r\n      .collection-details > ul li u {\r\n        text-decoration: none; }\r\n      .collection-details > ul li button {\r\n        outline: none;\r\n        border: none;\r\n        margin-left: 10px;\r\n        padding: 0; }\r\n        .collection-details > ul li button a {\r\n          display: block;\r\n          color: #fff;\r\n          width: 55px;\r\n          height: 28px;\r\n          background: #008582;\r\n          border-radius: 2px;\r\n          line-height: 28px; }\r\n          .collection-details > ul li button a:hover, .collection-details > ul li button a.active {\r\n            background: #ea703a; }\r\n  .collection-details .collection-details-img {\r\n    width: 640px;\r\n    height: 426px;\r\n    display: inline-block; }\r\n  .collection-details .collection-details-msg {\r\n    display: inline-block;\r\n    width: 425px;\r\n    height: 426px; }\r\n    .collection-details .collection-details-msg > p {\r\n      font-size: 18px;\r\n      color: #008582;\r\n      padding: 16px 0 0 30px; }\r\n    .collection-details .collection-details-msg table {\r\n      margin-left: 50px;\r\n      margin-top: 30px; }\r\n      .collection-details .collection-details-msg table tr td {\r\n        font-size: 14px;\r\n        line-height: 23px; }\r\n        .collection-details .collection-details-msg table tr td:first-child {\r\n          color: #008582; }\r\n  .collection-details .collection-details-infor {\r\n    margin-left: 50px;\r\n    margin-top: 30px;\r\n    line-height: 20px; }\r\n    .collection-details .collection-details-infor .content_1 {\r\n      width: 375px;\r\n      height: 190px;\r\n      overflow: auto;\r\n      text-indent: 24px;\r\n      font-size: 12px; }\r\n  .collection-details .collection-details-correlation {\r\n    position: relative; }\r\n    .collection-details .collection-details-correlation > p {\r\n      padding: 20px 0;\r\n      font-size: 18px;\r\n      color: #008582;\r\n      border-bottom: 1px solid #e3e3e3; }\r\n    .collection-details .collection-details-correlation ol {\r\n      position: absolute;\r\n      right: 0;\r\n      top: 24px; }\r\n      .collection-details .collection-details-correlation ol li {\r\n        float: left;\r\n        width: 8px;\r\n        height: 12px;\r\n        background: url(" + __webpack_require__(23) + ") -10px 0px no-repeat; }\r\n        .collection-details .collection-details-correlation ol li:last-child {\r\n          background-position: 0px 0px; }\r\n        .collection-details .collection-details-correlation ol li.hasmore {\r\n          background-position-y: -14px; }\r\n    .collection-details .collection-details-correlation ul {\r\n      margin-top: 15px;\r\n      width: 1070px;\r\n      height: 177px; }\r\n      .collection-details .collection-details-correlation ul:after {\r\n        display: block;\r\n        content: \"\";\r\n        clear: both; }\r\n      .collection-details .collection-details-correlation ul li {\r\n        float: left;\r\n        margin-right: 28px;\r\n        width: 191px; }\r\n        .collection-details .collection-details-correlation ul li p {\r\n          text-align: center;\r\n          line-height: 20px;\r\n          font-size: 14px;\r\n          padding: 14px 0;\r\n          white-space: nowrap;\r\n          overflow: hidden;\r\n          text-overflow: ellipsis;\r\n          text-align: center; }\r\n        .collection-details .collection-details-correlation ul li:last-child {\r\n          margin: 0; }\r\n\r\n.btnactive {\r\n  color: red; }\r\n\r\n.btn.btnshow {\r\n  display: block; }\r\n\r\n.btn {\r\n  display: none; }\r\n\r\n.video-content {\r\n  width: 100%;\r\n  height: 100%; }\r\n\r\n/*# sourceMappingURL=collection.css.map */\r\n", ""]);
 
 	// exports
 
@@ -1038,7 +1038,7 @@
 
 	/* Controllers */
 	angular.module('myApp.controllers', [])
-	    .controller('ParentControl', ['$scope', '$rootScope','$state','$http', 'ipCookie','$animate',function ($scope, $rootScope,$state,$http,ipCookie,$animate) {
+	    .controller('ParentControl', ['$scope', '$rootScope','$state','$http', 'ipCookie','$animate','$window',function ($scope, $rootScope,$state,$http,ipCookie,$animate,$window) {
 	        $rootScope.showIndex = true;
 	        $rootScope.userinfor=ipCookie('userinfor');
 	        $scope.logout=function(e){
@@ -1053,6 +1053,10 @@
 	                    console.log('登出成功！');
 	                })
 	        }
+	        $scope.goback=function(e){
+	            e.preventDefault();
+	            $window.open('../toLogin.do');
+	        }
 	    }])
 	    //登录
 	    .controller('login', ['$scope', '$rootScope', '$http', '$state','locals','ipCookie','$window', function ($scope, $rootScope, $http, $state,locals,ipCookie,$window) {
@@ -1060,6 +1064,10 @@
 	        var height = $(window).height();
 	        $('.login').css('height', height);
 	        $scope.error=ipCookie('error');
+	        if(ipCookie('userinfor')){
+	            layer.msg('请先退出当前登录');
+	            $state.go('home');
+	        }
 	        // console.log( $scope.error);
 	        $scope.showForm = function () {
 	            $http({
@@ -1272,8 +1280,8 @@
 	        $rootScope.showIndex = true;
 	        $http({
 	            method:'GET',
-	            // url:'../homePage/getHomePage.do',
-	            url:'data/index.json'
+	            url:'../homePage/getHomePage.do',
+	            // url:'data/index.json'
 	        })
 	            .success(function(response){
 	                $scope.data=response.data;
@@ -1289,17 +1297,18 @@
 	                animation: 'fade'
 	            });
 	        }
-	        var mySwiper = new Swiper('.swiper-container', {
-	            loop: true,
-	            nextButton: '.swiper-button-next',
-	            prevButton: '.swiper-button-prev',
-	            slidesPerView: 4,
-	            paginationClickable: true,
-	            freeMode: true,
-	            observer: true,
-	            observeParents: true
-
-	        })
+	        $scope.swiper=function(){
+	            var mySwiper = new Swiper('.swiper-container', {
+	                // loop: true,
+	                nextButton: '.swiper-button-next',
+	                prevButton: '.swiper-button-prev',
+	                slidesPerView: 4,
+	                paginationClickable: true,
+	                // freeMode: true,
+	                observer: true,
+	                observeParents: true
+	            })
+	        }
 	        $scope.slides = [
 	            {ur: 'img/banner.png'},
 	            {ur: 'img/banner.png'},
@@ -1311,18 +1320,7 @@
 	            {ur: 'img/banner.png'},
 	            {ur: 'img/banner.png'}
 	        ];
-	        $scope.slidess = [
-	            {ur: 'img/pic5.png'},
-	            {ur: 'img/pic5.png'},
-	            {ur: 'img/pic5.png'},
-	            {ur: 'img/pic5.png'},
-	            {ur: 'img/pic5.png'},
-	            {ur: 'img/pic5.png'},
-	            {ur: 'img/pic5.png'}
-	        ];
 	        $scope.myInterval = 5000;
-	        // console.log($scope.slides);
-
 	    }])
 	    //藏品主控制器
 	    .controller('Collection', ['$scope', '$stateParams', '$rootScope', function ($scope, $stateParams, $rootScope) {
@@ -1387,55 +1385,58 @@
 	        //初始化数据处理
 	        getList();
 	        function getList() {
-	            $http.get("../front/OCCollection/info.do?yearType="
-	            // $http.get("data/collection_data1.json?yearType="
-	                + $scope.selectedcondition.year +
-	                '&collectionUnit=' + $scope.selectedcondition.unit +
-	                '&collectionsCategory=' + $scope.selectedcondition.classify +
-	                '&order=' + $scope.selectedcondition.sort +
-	                '&key=' + $scope.selectedcondition.keyword +
-	                '&currentPage=' + $scope.selectedcondition.iPage)
-	                .success(function (response) {
-	                    var data = response.data.mociList;
-	                    if ($scope.iPage == 6) {
-	                        //后续没有数据了
-	                        return;
-	                    }
-	                    for (var i = 0; i < data.length; i++) {
-	                        //获取高度最短的li
-	                        var _index = getShort();
-	                        var oDiv = document.createElement('div');
-	                        var oImg = document.createElement('img');
-	                        var ou = document.createElement('u');
-	                        var oi = document.createElement('i');
-	                        (data[i].isCollected) ?
-	                            ($(oi).addClass('active')) : ($(oi).removeClass('active'));
-	                        (data[i].mipOpenCulturalrelicInfo.threeDimensionalCollection) ?
-	                            ($(ou).addClass("is3d")) : ($(ou).removeClass("is3d"))
-	                        var ospan = document.createElement('span');
-	                        var oa = document.createElement('a');
-	                        $(oa).attr({
-	                            'href': "#/collectiondetails/Relic/" + data[i].mipOpenCulturalrelicInfo.id,
-	                            'target': "_blank"
-	                        });
-	                        oImg.src =data[i].picture.thumb2;
-	                        oImg.style.width = '278px';
-	                        oImg.style.height = data[i].picture.thumb2Height*(278/data[i].picture.thumb2Width) + 'px';
-	                        oa.appendChild(oImg);
-	                        var oP = document.createElement('p');
-	                        ospan.innerHTML = data[i].mipOpenCulturalrelicInfo.name;
-	                        oDiv.appendChild(oa);
-	                        oDiv.appendChild(oP);
-	                        oP.appendChild(ospan);
-	                        oDiv.appendChild(ou);
-	                        oDiv.appendChild(oi);
-	                        aLi[_index].appendChild(oDiv);
-	                    }
-	                    b = true;
-	                });
+	            if($scope.iPage <= 5){
+	                $http.get("../front/OCCollection/info.do?yearType="
+	                    // $http.get("data/collection_data1.json?yearType="
+	                    + $scope.selectedcondition.year +
+	                    '&collectionUnit=' + $scope.selectedcondition.unit +
+	                    '&collectionsCategory=' + $scope.selectedcondition.classify +
+	                    '&order=' + $scope.selectedcondition.sort +
+	                    '&key=' + $scope.selectedcondition.keyword +
+	                    '&currentPage=' + $scope.selectedcondition.iPage)
+	                    .success(function (response) {
+	                        var data = response.data.mociList;
+	                        if ($scope.iPage > 6) {
+	                            //后续没有数据了
+	                            return;
+	                        }
+	                        for (var i = 0; i < data.length; i++) {
+	                            //获取高度最短的li
+	                            var _index = getShort();
+	                            var oDiv = document.createElement('div');
+	                            var oImg = document.createElement('img');
+	                            var ou = document.createElement('u');
+	                            var oi = document.createElement('i');
+	                            (data[i].isCollected) ?
+	                                ($(oi).addClass('active')) : ($(oi).removeClass('active'));
+	                            (data[i].mipOpenCulturalrelicInfo.threeDimensionalCollection) ?
+	                                ($(ou).addClass("is3d")) : ($(ou).removeClass("is3d"))
+	                            var ospan = document.createElement('span');
+	                            var oa = document.createElement('a');
+	                            $(oa).attr({
+	                                'href': "#/collectiondetails/Relic/" + data[i].mipOpenCulturalrelicInfo.id,
+	                                'target': "_blank"
+	                            });
+	                            oImg.src =data[i].picture.thumb2;
+	                            oImg.style.width = '278px';
+	                            oImg.style.height = data[i].picture.thumb2Height*(278/data[i].picture.thumb2Width) + 'px';
+	                            oa.appendChild(oImg);
+	                            var oP = document.createElement('p');
+	                            ospan.innerHTML = data[i].mipOpenCulturalrelicInfo.name;
+	                            oDiv.appendChild(oa);
+	                            oDiv.appendChild(oP);
+	                            oP.appendChild(ospan);
+	                            oDiv.appendChild(ou);
+	                            oDiv.appendChild(oi);
+	                            aLi[_index].appendChild(oDiv);
+	                        }
+	                        b = true;
+	                    });
 
+	            }else{
+	                return
+	            }
 	        }
-
 	        $window.onscroll = function () {
 
 	            var _index = getShort();
@@ -1657,53 +1658,58 @@
 	        //初始化数据处理
 	        getList();
 	        function getList() {
-	            $http.get("../front/OCFossil/info.do?yearType="
-	            // $http.get("data/collection_data2.json?yearType="
-	                + $scope.selectedcondition.year +
-	                '&collectionUnit=' + $scope.selectedcondition.unit +
-	                '&collectionsCategory=' + $scope.selectedcondition.classify +
-	                '&order=' + $scope.selectedcondition.sort +
-	                '&key=' + $scope.selectedcondition.keyword +
-	                '&currentPage=' + $scope.selectedcondition.iPage)
-	                .success(function (response) {
-	                    var data = response.data.mociList;
-	                    console.log(data);
-	                    if ($scope.iPage == 6) {
-	                        //后续没有数据了
-	                        return;
-	                    }
-	                    for (var i = 0; i < data.length; i++) {
-	                        //获取高度最短的li
-	                        var _index = getShort();
-	                        var oDiv = document.createElement('div');
-	                        var oImg = document.createElement('img');
-	                        var ou = document.createElement('u');
-	                        var oi = document.createElement('i');
-	                        (data[i].isCollected) ?
-	                            ($(oi).addClass('active')) : ($(oi).removeClass('active'));
-	                        (data[i].mipOpenFossilInfo.threeDimensionalCollection) ?
-	                            ($(ou).addClass("is3d")) : ($(ou).removeClass("is3d"))
-	                        var ospan = document.createElement('span');
-	                        var oa = document.createElement('a');
-	                        $(oa).attr({
-	                            'href': "#/collectiondetails/Specimen/" + data[i].mipOpenFossilInfo.id,
-	                            'target': "_blank"
-	                        });
-	                        oImg.src = data[i].picture.thumb2;
-	                        oImg.style.width = '278px';
-	                        oImg.style.height = data[i].picture.thumb2Height*(278/data[i].picture.thumb2Width) + 'px';
-	                        oa.appendChild(oImg);
-	                        var oP = document.createElement('p');
-	                        ospan.innerHTML = data[i].mipOpenFossilInfo.name;
-	                        oDiv.appendChild(oa);
-	                        oDiv.appendChild(oP);
-	                        oP.appendChild(ospan);
-	                        oDiv.appendChild(ou);
-	                        oDiv.appendChild(oi);
-	                        aLi[_index].appendChild(oDiv);
-	                    }
-	                    b = true;
-	                });
+	            if($scope.iPage<=5){
+	                $http.get("../front/OCFossil/info.do?yearType="
+	                    // $http.get("data/collection_data2.json?yearType="
+	                    + $scope.selectedcondition.year +
+	                    '&collectionUnit=' + $scope.selectedcondition.unit +
+	                    '&collectionsCategory=' + $scope.selectedcondition.classify +
+	                    '&order=' + $scope.selectedcondition.sort +
+	                    '&key=' + $scope.selectedcondition.keyword +
+	                    '&currentPage=' + $scope.selectedcondition.iPage)
+	                    .success(function (response) {
+	                        var data = response.data.mociList;
+	                        console.log(data);
+	                        if ($scope.iPage > 6) {
+	                            //后续没有数据了
+	                            return;
+	                        }
+	                        for (var i = 0; i < data.length; i++) {
+	                            //获取高度最短的li
+	                            var _index = getShort();
+	                            var oDiv = document.createElement('div');
+	                            var oImg = document.createElement('img');
+	                            var ou = document.createElement('u');
+	                            var oi = document.createElement('i');
+	                            (data[i].isCollected) ?
+	                                ($(oi).addClass('active')) : ($(oi).removeClass('active'));
+	                            (data[i].mipOpenFossilInfo.threeDimensionalCollection) ?
+	                                ($(ou).addClass("is3d")) : ($(ou).removeClass("is3d"))
+	                            var ospan = document.createElement('span');
+	                            var oa = document.createElement('a');
+	                            $(oa).attr({
+	                                'href': "#/collectiondetails/Specimen/" + data[i].mipOpenFossilInfo.id,
+	                                'target': "_blank"
+	                            });
+	                            oImg.src = data[i].picture.thumb2;
+	                            oImg.style.width = '278px';
+	                            oImg.style.height = data[i].picture.thumb2Height*(278/data[i].picture.thumb2Width) + 'px';
+	                            oa.appendChild(oImg);
+	                            var oP = document.createElement('p');
+	                            ospan.innerHTML = data[i].mipOpenFossilInfo.name;
+	                            oDiv.appendChild(oa);
+	                            oDiv.appendChild(oP);
+	                            oP.appendChild(ospan);
+	                            oDiv.appendChild(ou);
+	                            oDiv.appendChild(oi);
+	                            aLi[_index].appendChild(oDiv);
+	                        }
+	                        b = true;
+	                    });
+
+	            }else {
+	                return
+	            }
 
 	        }
 
@@ -1887,7 +1893,7 @@
 
 	    }])
 	    //藏品详情页
-	    .controller('CollectionDetails', ['$scope', '$http', '$stateParams', '$window', '$rootScope', '$state', function ($scope, $http, $stateParams, $window, $rootScope, $state) {
+	    .controller('CollectionDetails', ['$scope', '$http', '$stateParams', '$window', '$rootScope', '$state', 'ipCookie',function ($scope, $http, $stateParams, $window, $rootScope, $state,ipCookie) {
 	        $rootScope.showIndex = true;
 	        $scope.$parent.showbtn = false;
 	        $scope.num = 0;
@@ -1898,21 +1904,28 @@
 	        $scope.hasmoreright1 = true;
 	        $scope.num2 = 0;
 	        $scope.addCollection = function (e) {
-	            var a = angular.element(e.target).hasClass('active');
-	            if (!a) {
-	                $scope.num2 += 1;
-	                angular.element(e.target).addClass('active');
-	                $http.get("../front/Collected/doCollect.do?collectionType="
-	                // $http.get("data/collection_details.json?collectionType="
-	                    + ($stateParams.type == 'Relic' ? 1 : 2) +
-	                    '&id=' + $stateParams.id)
-	                    .success(function (response) {
-	                        console.log(response);
-	                        // $scope.showMorecondition();
-	                    });
-	            } else {
-	                return
+	            if(ipCookie('userinfor')){
+	                var a = angular.element(e.target).hasClass('active');
+	                if (!a) {
+	                    $scope.num2 += 1;
+	                    angular.element(e.target).addClass('active');
+	                    $http.get("../front/Collected/doCollect.do?collectionType="
+	                        // $http.get("data/collection_details.json?collectionType="
+	                        + ($stateParams.type == 'Relic' ? 1 : 2) +
+	                        '&id=' + $stateParams.id)
+	                        .success(function (response) {
+	                            console.log(response);
+	                            layer.msg('收藏成功');
+	                            // $scope.showMorecondition();
+	                        });
+	                } else {
+	                    return
+	                }
 	            }
+	            else{
+	                layer.msg('请先登录');
+	            }
+
 	        }
 	        $scope.getDetail = function () {
 	            $stateParams.type == 'Relic' ? $scope.url= "../front/OCCollection/detail.do?id=":$scope.url='../front/OCFossil/detail.do?id='
@@ -1921,8 +1934,7 @@
 	            // $http.get("data/collection_details.json?id="
 	                + $stateParams.id)
 	                .success(function (response) {
-	                    $scope.data = response.data.mocid;
-	                    // $scope.showMorecondition();
+	                    $scope.data = response.data.mocid||response.data.mofid;
 	                    $scope.correlation = response.data.relations
 	                        .slice(0, 5);
 	                    $scope.corother = response.data.otherMofiList.slice(0, 5);
@@ -1982,18 +1994,19 @@
 	                        }
 
 	                    }
-
+	                    $scope.goVideo = function () {
+	                        var a={url:$scope.data.mipOpenCulturalrelicInfo.fVideo}
+	                        $state.go('collectinodetailsvideo',{url:a});
+	                    }
 	                });
 	        }
-	        $scope.goVideo = function (e) {
-	            var url = angular.element(e.target).attr('data-url');
-	            $state.go('collectinodetailsvideo');
-	        }
+
 	        $scope.getDetail();
 	    }])
 	    //藏品视频
 	    .controller('CollectionDetailsVideo', ['$scope', '$http', '$stateParams', '$window', '$rootScope', function ($scope, $http, $stateParams, $window, $rootScope) {
 	        $rootScope.showIndex = false;
+	        $scope.url=$stateParams.url.url
 	        $scope.video = function () {
 	            var myPlayer = videojs('my-player');
 	            videojs("my-player").ready(function () {
@@ -2367,6 +2380,24 @@
 	    //博物馆详情页
 	    .controller('MuseumDetails', ['$scope', '$rootScope','$http','$stateParams', function ($scope, $rootScope,$http,$stateParams) {
 	        console.log($stateParams.id);
+	        $http({
+	            method:"GET",
+	            url:'data/museumslider.json',
+	            // url:'data/museumDetails.json',
+	            params:{orgId:$stateParams.id}
+	        })
+	            .success(function(response){
+	                $scope.sliders=response;
+	                console.log($scope.sliders);
+	            })
+	        $scope.slider6 = function () {
+	            $('.museum-details-img').unslider({
+	                autoplay: true,
+	                delay: 3000,
+	                animation: 'fade',
+	                arrows:false
+	            });
+	        }
 	        $http({
 	            method:"GET",
 	            url:'../museuminfo/getMuseum.do',

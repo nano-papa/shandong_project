@@ -34,7 +34,7 @@
             <div class="comment">
                 <div class="com_form">
                     <!--<div id="show" contenteditable="true" ng-bind-html="saytext|filterQQface"></div>-->
-                    <textarea class="input" id="saytext" name="saytext" ng-change="check()" ng-model="msg" ng-maxlength="1000" ng-minlength="0" required></textarea>
+                    <textarea class="input" id="saytext" name="saytext" ng-change="check()" ng-model="msg" ng-maxlength="1000" ng-minlength="0" required ng-trim="true"></textarea>
                     <p>
                         <input type="button" class="sub_btn" ng-click="showComment()" value="添加评论" >
                         <span class="emotion ablum-details-emoji-state"></span>

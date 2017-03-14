@@ -23,7 +23,7 @@
                         <a ui-sref="displaydetails({id:d.id})" ng-bind="d.headline"><strong></strong></a>
                         <p>
                             <small ng-bind="d.musExhibition"></small>
-                            <span ng-bind="'['+d.staTime+']-['+d.overTime+']'"></span></p>
+                            <span ng-show="d.staTime" ng-bind="'['+d.staTime+']-['+d.overTime+']'"></span></p>
                         <h6 ng-bind="d.content">
                         </h6>
                     </div>
@@ -100,6 +100,7 @@
         <div class="section-title" style="width:409px;margin-bottom:55px;">
             <h3>我要册展 <p>Virtual Exhibition</p></h3>
             <p style="margin:0"><a ui-sref="ablum">更多>></a></p>
+            <button class="goAlbum" >开始！</button>
         </div>
         <img src="img/line.png" alt="" style="left:-70px">
         <div class="section-content2">
@@ -128,15 +129,15 @@
 <div class="section">
     <div class="section-title">
         <h3 style="line-height: 40px;">精品藏品 <span>Virtual Exhibition</span></h3>
-        <p style="margin:0"><a href="">更多>></a></p>
+        <p style="margin:0"><a ui-sref="collection">更多>></a></p>
     </div>
 </div>
 <div style="position:relative">
-    <div class="collection swiper-container">
+    <div class="collection swiper-container" style="height:128px;">
         <ul class="swiper-wrapper">
-            <li class="swiper-slide" ng-repeat="i in slidess">
-                <a href="">
-                    <img ng-src="{{i.ur}}" width="192" height="128" alt="">
+            <li class="swiper-slide" ng-repeat="i in data.culList" repeat-done="swiper()">
+                <a ui-sref="collectiondetails({id:i.mipOpenCulturalrelicInfo.id})">
+                    <img ng-src="{{i.picture.thumb3}}" width="192" height="128" alt="">
                 </a>
             </li>
         </ul>

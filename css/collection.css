@@ -284,17 +284,18 @@ footer {
     margin-top: 15px;
     /*关键字搜索*/ }
     .collection-wraper .key-words .collection-search {
-      width: 218px;
+      width: 305px;
       height: 15px;
       border: 1px solid #008582;
       padding: 5px;
+      padding-right: 80px;
       margin-bottom: 5px; }
       .collection-wraper .key-words .collection-search:focus {
         border-color: #ea703a; }
     .collection-wraper .key-words ul {
       position: absolute;
       overflow: hidden;
-      left: 223px;
+      left: 385px;
       top: 7px; }
       .collection-wraper .key-words ul li {
         float: left;

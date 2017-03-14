@@ -10,7 +10,7 @@
         </ul>
     </div>
     <div class="header-top-right">
-        <input type="text" id="search">
+        <input type="text" id="search" ng-trim="true">
         <ul>
             <li>
                 <input type="file" style="width:21px;height:21px;opacity: 0;overflow: hidden;">
@@ -18,7 +18,7 @@
             <li></li>
         </ul>
     </div>
-    <button><a href="../toLogin.do">信息管理平台</a></button >
+    <button ng-click="goback($event)"><a>信息管理平台</a></button >
 </div>
 <div class="header-bottom">
     <a href="">
@@ -34,7 +34,8 @@
             <li><a ui-sref="display({museum:''})" ui-sref-active="mainactive">展览</a></li>
             <li><a ui-sref="digitization({museum:'',id:''})" ui-sref-active="mainactive">数字展厅</a></li>
             <li><a ui-sref="collection({museum:'',type:''})" ui-sref-active="mainactive">藏品</a></li>
-            <li><a ui-sref="Wiki" ui-sref-active="mainactive">文物百科</a></li>
+            <!--<li><a ui-sref="Wiki" ui-sref-active="mainactive">文物百科</a></li>-->
+            <li><a>文物百科</a></li>
         </ul>
     </nav>
 </div>

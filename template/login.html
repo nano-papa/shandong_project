@@ -10,20 +10,20 @@
             <p>使用手机号登录</p>
             <div class="login_user">
                 <label for="username"></label>
-                <input type="text" name="username" ng-model="username" id="username" placeholder="请输入手机号码">
-                <span>
-                    <i></i><u>正确消息</u>
-                </span>
+                <input ng-trim="true" type="text" name="username" ng-model="username" id="username" placeholder="请输入手机号码">
+                <!--<span>-->
+                    <!--<i></i><u>正确消息</u>-->
+                <!--</span>-->
             </div>
             <div class="login_user">
                 <label for="userpwd" class="userpwdicon"></label>
-                <input type="text" name="userpwd" ng-model="userpwd" id="userpwd" placeholder="请输入密码">
-                <span>
-                    <i class="error"></i><u>错误消息</u>
-                </span>
+                <input ng-trim="true" type="text" name="userpwd" ng-model="userpwd" id="userpwd" placeholder="请输入密码">
+                <!--<span>-->
+                    <!--<i class="error"></i><u>错误消息</u>-->
+                <!--</span>-->
             </div>
             <div class="login_code" ng-show="error>0">
-                <input type="text" ng-model="verificationcode">
+                <input ng-trim="true" type="text" ng-model="verificationcode">
                 <img src="../getImgCode.do" width="80" height="30" ng-click="changeimg($event)" alt="">
             </div>
             <div class="login_msg" ng-show="errormsg">

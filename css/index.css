@@ -386,4 +386,12 @@ footer {
   .swiper-button-next:hover {
     background-position: -42px -42px; }
 
+.goAlbum {
+  width: 63px;
+  height: 21px;
+  background: #ea703a;
+  border-radius: 11.5px;
+  color: #fff;
+  border: none; }
+
 /*# sourceMappingURL=index.css.map */

@@ -5,7 +5,7 @@
 
 /* Controllers */
 angular.module('myApp.controllers', [])
-    .controller('ParentControl', ['$scope', '$rootScope','$state','$http', 'ipCookie','$animate',function ($scope, $rootScope,$state,$http,ipCookie,$animate) {
+    .controller('ParentControl', ['$scope', '$rootScope','$state','$http', 'ipCookie','$animate','$window',function ($scope, $rootScope,$state,$http,ipCookie,$animate,$window) {
         $rootScope.showIndex = true;
         $rootScope.userinfor=ipCookie('userinfor');
         $scope.logout=function(e){
@@ -20,6 +20,10 @@ angular.module('myApp.controllers', [])
                     console.log('登出成功！');
                 })
         }
+        $scope.goback=function(e){
+            e.preventDefault();
+            $window.open('../toLogin.do');
+        }
     }])
     //登录
     .controller('login', ['$scope', '$rootScope', '$http', '$state','locals','ipCookie','$window', function ($scope, $rootScope, $http, $state,locals,ipCookie,$window) {
@@ -27,6 +31,10 @@ angular.module('myApp.controllers', [])
         var height = $(window).height();
         $('.login').css('height', height);
         $scope.error=ipCookie('error');
+        if(ipCookie('userinfor')){
+            layer.msg('请先退出当前登录');
+            $state.go('home');
+        }
         // console.log( $scope.error);
         $scope.showForm = function () {
             $http({
@@ -239,8 +247,8 @@ angular.module('myApp.controllers', [])
         $rootScope.showIndex = true;
         $http({
             method:'GET',
-            // url:'../homePage/getHomePage.do',
-            url:'data/index.json'
+            url:'../homePage/getHomePage.do',
+            // url:'data/index.json'
         })
             .success(function(response){
                 $scope.data=response.data;
@@ -256,17 +264,18 @@ angular.module('myApp.controllers', [])
                 animation: 'fade'
             });
         }
-        var mySwiper = new Swiper('.swiper-container', {
-            loop: true,
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            slidesPerView: 4,
-            paginationClickable: true,
-            freeMode: true,
-            observer: true,
-            observeParents: true
-
-        })
+        $scope.swiper=function(){
+            var mySwiper = new Swiper('.swiper-container', {
+                // loop: true,
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                slidesPerView: 4,
+                paginationClickable: true,
+                // freeMode: true,
+                observer: true,
+                observeParents: true
+            })
+        }
         $scope.slides = [
             {ur: 'img/banner.png'},
             {ur: 'img/banner.png'},
@@ -278,18 +287,7 @@ angular.module('myApp.controllers', [])
             {ur: 'img/banner.png'},
             {ur: 'img/banner.png'}
         ];
-        $scope.slidess = [
-            {ur: 'img/pic5.png'},
-            {ur: 'img/pic5.png'},
-            {ur: 'img/pic5.png'},
-            {ur: 'img/pic5.png'},
-            {ur: 'img/pic5.png'},
-            {ur: 'img/pic5.png'},
-            {ur: 'img/pic5.png'}
-        ];
         $scope.myInterval = 5000;
-        // console.log($scope.slides);
-
     }])
     //藏品主控制器
     .controller('Collection', ['$scope', '$stateParams', '$rootScope', function ($scope, $stateParams, $rootScope) {
@@ -354,55 +352,58 @@ angular.module('myApp.controllers', [])
         //初始化数据处理
         getList();
         function getList() {
-            $http.get("../front/OCCollection/info.do?yearType="
-            // $http.get("data/collection_data1.json?yearType="
-                + $scope.selectedcondition.year +
-                '&collectionUnit=' + $scope.selectedcondition.unit +
-                '&collectionsCategory=' + $scope.selectedcondition.classify +
-                '&order=' + $scope.selectedcondition.sort +
-                '&key=' + $scope.selectedcondition.keyword +
-                '&currentPage=' + $scope.selectedcondition.iPage)
-                .success(function (response) {
-                    var data = response.data.mociList;
-                    if ($scope.iPage == 6) {
-                        //后续没有数据了
-                        return;
-                    }
-                    for (var i = 0; i < data.length; i++) {
-                        //获取高度最短的li
-                        var _index = getShort();
-                        var oDiv = document.createElement('div');
-                        var oImg = document.createElement('img');
-                        var ou = document.createElement('u');
-                        var oi = document.createElement('i');
-                        (data[i].isCollected) ?
-                            ($(oi).addClass('active')) : ($(oi).removeClass('active'));
-                        (data[i].mipOpenCulturalrelicInfo.threeDimensionalCollection) ?
-                            ($(ou).addClass("is3d")) : ($(ou).removeClass("is3d"))
-                        var ospan = document.createElement('span');
-                        var oa = document.createElement('a');
-                        $(oa).attr({
-                            'href': "#/collectiondetails/Relic/" + data[i].mipOpenCulturalrelicInfo.id,
-                            'target': "_blank"
-                        });
-                        oImg.src =data[i].picture.thumb2;
-                        oImg.style.width = '278px';
-                        oImg.style.height = data[i].picture.thumb2Height*(278/data[i].picture.thumb2Width) + 'px';
-                        oa.appendChild(oImg);
-                        var oP = document.createElement('p');
-                        ospan.innerHTML = data[i].mipOpenCulturalrelicInfo.name;
-                        oDiv.appendChild(oa);
-                        oDiv.appendChild(oP);
-                        oP.appendChild(ospan);
-                        oDiv.appendChild(ou);
-                        oDiv.appendChild(oi);
-                        aLi[_index].appendChild(oDiv);
-                    }
-                    b = true;
-                });
+            if($scope.iPage <= 5){
+                $http.get("../front/OCCollection/info.do?yearType="
+                    // $http.get("data/collection_data1.json?yearType="
+                    + $scope.selectedcondition.year +
+                    '&collectionUnit=' + $scope.selectedcondition.unit +
+                    '&collectionsCategory=' + $scope.selectedcondition.classify +
+                    '&order=' + $scope.selectedcondition.sort +
+                    '&key=' + $scope.selectedcondition.keyword +
+                    '&currentPage=' + $scope.selectedcondition.iPage)
+                    .success(function (response) {
+                        var data = response.data.mociList;
+                        if ($scope.iPage > 6) {
+                            //后续没有数据了
+                            return;
+                        }
+                        for (var i = 0; i < data.length; i++) {
+                            //获取高度最短的li
+                            var _index = getShort();
+                            var oDiv = document.createElement('div');
+                            var oImg = document.createElement('img');
+                            var ou = document.createElement('u');
+                            var oi = document.createElement('i');
+                            (data[i].isCollected) ?
+                                ($(oi).addClass('active')) : ($(oi).removeClass('active'));
+                            (data[i].mipOpenCulturalrelicInfo.threeDimensionalCollection) ?
+                                ($(ou).addClass("is3d")) : ($(ou).removeClass("is3d"))
+                            var ospan = document.createElement('span');
+                            var oa = document.createElement('a');
+                            $(oa).attr({
+                                'href': "#/collectiondetails/Relic/" + data[i].mipOpenCulturalrelicInfo.id,
+                                'target': "_blank"
+                            });
+                            oImg.src =data[i].picture.thumb2;
+                            oImg.style.width = '278px';
+                            oImg.style.height = data[i].picture.thumb2Height*(278/data[i].picture.thumb2Width) + 'px';
+                            oa.appendChild(oImg);
+                            var oP = document.createElement('p');
+                            ospan.innerHTML = data[i].mipOpenCulturalrelicInfo.name;
+                            oDiv.appendChild(oa);
+                            oDiv.appendChild(oP);
+                            oP.appendChild(ospan);
+                            oDiv.appendChild(ou);
+                            oDiv.appendChild(oi);
+                            aLi[_index].appendChild(oDiv);
+                        }
+                        b = true;
+                    });
 
+            }else{
+                return
+            }
         }
-
         $window.onscroll = function () {
 
             var _index = getShort();
@@ -624,53 +625,58 @@ angular.module('myApp.controllers', [])
         //初始化数据处理
         getList();
         function getList() {
-            $http.get("../front/OCFossil/info.do?yearType="
-            // $http.get("data/collection_data2.json?yearType="
-                + $scope.selectedcondition.year +
-                '&collectionUnit=' + $scope.selectedcondition.unit +
-                '&collectionsCategory=' + $scope.selectedcondition.classify +
-                '&order=' + $scope.selectedcondition.sort +
-                '&key=' + $scope.selectedcondition.keyword +
-                '&currentPage=' + $scope.selectedcondition.iPage)
-                .success(function (response) {
-                    var data = response.data.mociList;
-                    console.log(data);
-                    if ($scope.iPage == 6) {
-                        //后续没有数据了
-                        return;
-                    }
-                    for (var i = 0; i < data.length; i++) {
-                        //获取高度最短的li
-                        var _index = getShort();
-                        var oDiv = document.createElement('div');
-                        var oImg = document.createElement('img');
-                        var ou = document.createElement('u');
-                        var oi = document.createElement('i');
-                        (data[i].isCollected) ?
-                            ($(oi).addClass('active')) : ($(oi).removeClass('active'));
-                        (data[i].mipOpenFossilInfo.threeDimensionalCollection) ?
-                            ($(ou).addClass("is3d")) : ($(ou).removeClass("is3d"))
-                        var ospan = document.createElement('span');
-                        var oa = document.createElement('a');
-                        $(oa).attr({
-                            'href': "#/collectiondetails/Specimen/" + data[i].mipOpenFossilInfo.id,
-                            'target': "_blank"
-                        });
-                        oImg.src = data[i].picture.thumb2;
-                        oImg.style.width = '278px';
-                        oImg.style.height = data[i].picture.thumb2Height*(278/data[i].picture.thumb2Width) + 'px';
-                        oa.appendChild(oImg);
-                        var oP = document.createElement('p');
-                        ospan.innerHTML = data[i].mipOpenFossilInfo.name;
-                        oDiv.appendChild(oa);
-                        oDiv.appendChild(oP);
-                        oP.appendChild(ospan);
-                        oDiv.appendChild(ou);
-                        oDiv.appendChild(oi);
-                        aLi[_index].appendChild(oDiv);
-                    }
-                    b = true;
-                });
+            if($scope.iPage<=5){
+                $http.get("../front/OCFossil/info.do?yearType="
+                    // $http.get("data/collection_data2.json?yearType="
+                    + $scope.selectedcondition.year +
+                    '&collectionUnit=' + $scope.selectedcondition.unit +
+                    '&collectionsCategory=' + $scope.selectedcondition.classify +
+                    '&order=' + $scope.selectedcondition.sort +
+                    '&key=' + $scope.selectedcondition.keyword +
+                    '&currentPage=' + $scope.selectedcondition.iPage)
+                    .success(function (response) {
+                        var data = response.data.mociList;
+                        console.log(data);
+                        if ($scope.iPage > 6) {
+                            //后续没有数据了
+                            return;
+                        }
+                        for (var i = 0; i < data.length; i++) {
+                            //获取高度最短的li
+                            var _index = getShort();
+                            var oDiv = document.createElement('div');
+                            var oImg = document.createElement('img');
+                            var ou = document.createElement('u');
+                            var oi = document.createElement('i');
+                            (data[i].isCollected) ?
+                                ($(oi).addClass('active')) : ($(oi).removeClass('active'));
+                            (data[i].mipOpenFossilInfo.threeDimensionalCollection) ?
+                                ($(ou).addClass("is3d")) : ($(ou).removeClass("is3d"))
+                            var ospan = document.createElement('span');
+                            var oa = document.createElement('a');
+                            $(oa).attr({
+                                'href': "#/collectiondetails/Specimen/" + data[i].mipOpenFossilInfo.id,
+                                'target': "_blank"
+                            });
+                            oImg.src = data[i].picture.thumb2;
+                            oImg.style.width = '278px';
+                            oImg.style.height = data[i].picture.thumb2Height*(278/data[i].picture.thumb2Width) + 'px';
+                            oa.appendChild(oImg);
+                            var oP = document.createElement('p');
+                            ospan.innerHTML = data[i].mipOpenFossilInfo.name;
+                            oDiv.appendChild(oa);
+                            oDiv.appendChild(oP);
+                            oP.appendChild(ospan);
+                            oDiv.appendChild(ou);
+                            oDiv.appendChild(oi);
+                            aLi[_index].appendChild(oDiv);
+                        }
+                        b = true;
+                    });
+
+            }else {
+                return
+            }
 
         }
 
@@ -854,7 +860,7 @@ angular.module('myApp.controllers', [])
 
     }])
     //藏品详情页
-    .controller('CollectionDetails', ['$scope', '$http', '$stateParams', '$window', '$rootScope', '$state', function ($scope, $http, $stateParams, $window, $rootScope, $state) {
+    .controller('CollectionDetails', ['$scope', '$http', '$stateParams', '$window', '$rootScope', '$state', 'ipCookie',function ($scope, $http, $stateParams, $window, $rootScope, $state,ipCookie) {
         $rootScope.showIndex = true;
         $scope.$parent.showbtn = false;
         $scope.num = 0;
@@ -865,21 +871,28 @@ angular.module('myApp.controllers', [])
         $scope.hasmoreright1 = true;
         $scope.num2 = 0;
         $scope.addCollection = function (e) {
-            var a = angular.element(e.target).hasClass('active');
-            if (!a) {
-                $scope.num2 += 1;
-                angular.element(e.target).addClass('active');
-                $http.get("../front/Collected/doCollect.do?collectionType="
-                // $http.get("data/collection_details.json?collectionType="
-                    + ($stateParams.type == 'Relic' ? 1 : 2) +
-                    '&id=' + $stateParams.id)
-                    .success(function (response) {
-                        console.log(response);
-                        // $scope.showMorecondition();
-                    });
-            } else {
-                return
+            if(ipCookie('userinfor')){
+                var a = angular.element(e.target).hasClass('active');
+                if (!a) {
+                    $scope.num2 += 1;
+                    angular.element(e.target).addClass('active');
+                    $http.get("../front/Collected/doCollect.do?collectionType="
+                        // $http.get("data/collection_details.json?collectionType="
+                        + ($stateParams.type == 'Relic' ? 1 : 2) +
+                        '&id=' + $stateParams.id)
+                        .success(function (response) {
+                            console.log(response);
+                            layer.msg('收藏成功');
+                            // $scope.showMorecondition();
+                        });
+                } else {
+                    return
+                }
             }
+            else{
+                layer.msg('请先登录');
+            }
+
         }
         $scope.getDetail = function () {
             $stateParams.type == 'Relic' ? $scope.url= "../front/OCCollection/detail.do?id=":$scope.url='../front/OCFossil/detail.do?id='
@@ -888,8 +901,7 @@ angular.module('myApp.controllers', [])
             // $http.get("data/collection_details.json?id="
                 + $stateParams.id)
                 .success(function (response) {
-                    $scope.data = response.data.mocid;
-                    // $scope.showMorecondition();
+                    $scope.data = response.data.mocid||response.data.mofid;
                     $scope.correlation = response.data.relations
                         .slice(0, 5);
                     $scope.corother = response.data.otherMofiList.slice(0, 5);
@@ -949,18 +961,19 @@ angular.module('myApp.controllers', [])
                         }
 
                     }
-
+                    $scope.goVideo = function () {
+                        var a={url:$scope.data.mipOpenCulturalrelicInfo.fVideo}
+                        $state.go('collectinodetailsvideo',{url:a});
+                    }
                 });
         }
-        $scope.goVideo = function (e) {
-            var url = angular.element(e.target).attr('data-url');
-            $state.go('collectinodetailsvideo');
-        }
+
         $scope.getDetail();
     }])
     //藏品视频
     .controller('CollectionDetailsVideo', ['$scope', '$http', '$stateParams', '$window', '$rootScope', function ($scope, $http, $stateParams, $window, $rootScope) {
         $rootScope.showIndex = false;
+        $scope.url=$stateParams.url.url
         $scope.video = function () {
             var myPlayer = videojs('my-player');
             videojs("my-player").ready(function () {
@@ -1334,6 +1347,24 @@ angular.module('myApp.controllers', [])
     //博物馆详情页
     .controller('MuseumDetails', ['$scope', '$rootScope','$http','$stateParams', function ($scope, $rootScope,$http,$stateParams) {
         console.log($stateParams.id);
+        $http({
+            method:"GET",
+            url:'data/museumslider.json',
+            // url:'data/museumDetails.json',
+            params:{orgId:$stateParams.id}
+        })
+            .success(function(response){
+                $scope.sliders=response;
+                console.log($scope.sliders);
+            })
+        $scope.slider6 = function () {
+            $('.museum-details-img').unslider({
+                autoplay: true,
+                delay: 3000,
+                animation: 'fade',
+                arrows:false
+            });
+        }
         $http({
             method:"GET",
             url:'../museuminfo/getMuseum.do',

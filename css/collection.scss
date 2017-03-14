@@ -67,10 +67,11 @@
     height: 36px;
     margin-top: 15px;
     .collection-search {
-      width: 218px;
+      width: 305px;
       height: 15px;
       border: 1px solid $theme-color;
       padding: 5px;
+      padding-right:80px;
       margin-bottom: 5px;
       &:focus {
         border-color: $theme-color-active;
@@ -79,7 +80,7 @@
     ul {
       position: absolute;
       overflow: hidden;
-      left: 223px;
+      left: 385px;
       top: 7px;
       li {
         float: left;
