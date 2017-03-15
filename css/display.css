@@ -363,6 +363,7 @@ footer {
           color: #008582; }
   .display-content .display-list-content-inner ul {
     width: 1034px;
+    height: 675px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

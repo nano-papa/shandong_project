@@ -10,6 +10,17 @@ $theme-color-active:#ea703a;
 }
 .swiper-slide{
   text-align: center;
+  a{
+    display: block;
+    width:192px;
+    height:128px;
+    img{
+      width: 100%;/*宽高设置100%*/
+      height: 100%;
+      object-fit: contain;
+      background:#e4e4e4;/*图片不够尺寸后背景色填充*/
+    }
+  }
 }
 .section-title{
   color:$theme-color;
@@ -68,6 +79,7 @@ $theme-color-active:#ea703a;
                 }
               }
               h6{
+                height:34px;
                 margin-top:10px;
                 font-weight: normal;
                 font-size:12px;

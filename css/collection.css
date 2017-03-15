@@ -499,9 +499,16 @@ footer {
     width: 640px;
     height: 426px;
     display: inline-block; }
+    .collection-details .collection-details-img img {
+      width: 100%;
+      /*宽高设置100%*/
+      height: 100%;
+      object-fit: contain;
+      background: #e4e4e4;
+      /*图片不够尺寸后背景色填充*/ }
   .collection-details .collection-details-msg {
     display: inline-block;
-    width: 425px;
+    width: 420px;
     height: 426px; }
     .collection-details .collection-details-msg > p {
       font-size: 18px;
@@ -557,6 +564,17 @@ footer {
         float: left;
         margin-right: 28px;
         width: 191px; }
+        .collection-details .collection-details-correlation ul li a {
+          display: block;
+          width: 191px;
+          height: 129px; }
+          .collection-details .collection-details-correlation ul li a img {
+            width: 100%;
+            /*宽高设置100%*/
+            height: 100%;
+            object-fit: contain;
+            background: #e4e4e4;
+            /*图片不够尺寸后背景色填充*/ }
         .collection-details .collection-details-correlation ul li p {
           text-align: center;
           line-height: 20px;

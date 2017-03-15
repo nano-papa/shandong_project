@@ -39,7 +39,7 @@
                 <td ng-bind="data.mipOpenCulturalrelicInfo.collectionsCategory||data.mipOpenFossilInfo.collectionsCategory"></td>
             </tr>
             <tr>
-                <td>朝&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;代：</td>
+                <td>年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;代：</td>
                 <td ng-bind="data.mipOpenCulturalrelicInfo.yearType||data.mipOpenFossilInfo.yearType"></td>
             </tr>
             </tbody>
@@ -58,7 +58,7 @@
         </ol>
         <ul>
             <li ng-repeat="relation in correlation | limitTo:5">
-                <a ui-sref="collectiondetails({id:relation.mipOpenCulturalrelicInfo.id||relation.mipOpenFossilInfo.id})" target="_blank">
+                <a ui-sref="collectiondetails({type:other.mipOpenCulturalrelicInfo.collectionType?'Relic':'specimen'||other.mipOpenFossilInfo?'Relic':'specimen',id:relation.mipOpenCulturalrelicInfo.id||relation.mipOpenFossilInfo.id})" target="_blank">
                     <img ng-src="{{relation.picture.thumb3}}" width="191" height="129" alt="{{relation.mipOpenCulturalrelicInfo.name||relation.mipOpenFossilInfo.name}}">
                 </a>
                 <p ng-bind="relation.mipOpenCulturalrelicInfo.name||relation.mipOpenFossilInfo.name"></p>
@@ -73,7 +73,7 @@
         </ol>
         <ul>
             <li ng-repeat="other in corother | limitTo:5">
-                <a ui-sref="collectiondetails({id:other.mipOpenCulturalrelicInfo.id||other.mipOpenFossilInfo.id})" target="_blank">
+                <a ui-sref="collectiondetails({type:other.mipOpenCulturalrelicInfo.collectionType?'Relic':'specimen'||other.mipOpenFossilInfo?'Relic':'specimen',id:other.mipOpenCulturalrelicInfo.id||other.mipOpenFossilInfo.id})" target="_blank">
                     <img ng-src="{{other.picture.thumb3}}" width="191" height="129" alt="{{other.mipOpenCulturalrelicInfo.name||other.mipOpenFossilInfo.name}}">
                 </a>
                 <p ng-bind="other.mipOpenCulturalrelicInfo.name||other.mipOpenFossilInfo.name"></p>

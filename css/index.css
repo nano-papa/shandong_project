@@ -236,6 +236,17 @@ footer {
 
 .swiper-slide {
   text-align: center; }
+  .swiper-slide a {
+    display: block;
+    width: 192px;
+    height: 128px; }
+    .swiper-slide a img {
+      width: 100%;
+      /*宽高设置100%*/
+      height: 100%;
+      object-fit: contain;
+      background: #e4e4e4;
+      /*图片不够尺寸后背景色填充*/ }
 
 .section-title {
   color: #008582;
@@ -284,6 +295,7 @@ footer {
             .section .section-layout-left .section-content1 ul li div p small {
               padding: 0 15px 0 0; }
           .section .section-layout-left .section-content1 ul li div h6 {
+            height: 34px;
             margin-top: 10px;
             font-weight: normal;
             font-size: 12px;

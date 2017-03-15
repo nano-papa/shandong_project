@@ -1012,7 +1012,7 @@ angular.module('myApp.controllers', [])
             currentPage: $scope.curr,
             spreType: $scope.tabsubpage,
             cityId: $scope.area,
-            content: $scope.keyword
+            keys: $scope.keyword
         }
         $scope.arr = [];
         $scope.isClassify = true;
@@ -1096,16 +1096,16 @@ angular.module('myApp.controllers', [])
         $scope.showKeyword = function () {
             $scope.value = $('#search_box').val().trim();
             console.log($scope.value);
-            if ($scope.value && $scope.value != $scope.conditions.content) {
+            if ($scope.value && $scope.value != $scope.conditions.keys) {
                 console.log($scope.arr);
                 if ($scope.isK) {
-                    $scope.conditions.content = $scope.value;
+                    $scope.conditions.keys = $scope.value;
                     $scope.conditions.currentPage = 1;
                     $scope.laypage();
                     $scope.checkCondition();
                 } else {
                     $scope.isK = true;
-                    $scope.conditions.content = $scope.value;
+                    $scope.conditions.keys = $scope.value;
                     $scope.conditions.currentPage = 1;
                     $scope.laypage();
                     $scope.arr.push(1);
@@ -1119,7 +1119,7 @@ angular.module('myApp.controllers', [])
         //隐藏关键字
         $scope.hideKeyword = function () {
             $scope.isK = false;
-            $scope.conditions.content = '';
+            $scope.conditions.keys = '';
             $scope.conditions.currentPage = 1;
             $scope.arr.pop();
             $scope.laypage();
@@ -1264,16 +1264,19 @@ angular.module('myApp.controllers', [])
         $scope.curr = 1;
         $scope.pages = 5;
         if ($stateParams.type == 'inner') {
-            $http({
-                method: 'GET',
-                // url: 'data/display-details.json',
-                url: '../spreadtrum/getOneSpreadtrum.do',
-                params: {id: $stateParams.id}
-            })
-                .success(function (response) {
-                    $scope.detailsData = response.data;
-                })
+            $scope.url='../spreadtrum/getOneSpreadtrum.do'
+        }else{
+            $scope.url='../otherSpreadtrum/getOneData.do'
         }
+        $http({
+            method: 'GET',
+            // url: 'data/display-details.json',
+            url: $scope.url,
+            params: {id: $stateParams.id}
+        })
+            .success(function (response) {
+                $scope.detailsData = response.data;
+            })
     }])
     //博物馆主控制器
     .controller('Museum', ['$scope', '$scope', '$rootScope', '$stateParams', function ($scope, $stateParams, $rootScope) {
@@ -1381,7 +1384,13 @@ angular.module('myApp.controllers', [])
                 $scope.data=response.data;
                 console.log(response.data);
                 var map=''+response.data.museumInfo.geography;
-                angular.element('#map').attr("src",map);
+                var width=308;
+                var height=314;
+                var reg1=/(width=\"?\d*\"?)/g;
+                var reg2=/(height=\"?\d*\"?)/g;
+                var map1=map.replace(reg1,'width='+width);
+                var map2=map1.replace(reg2,'height='+height);
+                angular.element('#map').attr('src',map2);
             })
         $scope.changeTab = function (e) {
             angular.element(e.target).addClass("active").siblings().removeClass("active");

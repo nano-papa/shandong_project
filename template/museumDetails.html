@@ -82,10 +82,10 @@
         </p>
         <ul>
             <li ng-repeat="x in data.culList">
-                <a ui-sref="collectiondetails({id:x.mipOpenCulturalrelicInfo.id})" target="_blank">
-                    <img ng-src="{{'../'+x.picture.thumb3}}" width="192" height="128" alt="">
-                    <p ng-bind="x.mipOpenCulturalrelicInfo.name"></p>
+                <a ui-sref="collectiondetails({type:(x.mipOpenCulturalrelicInfo.collectionType?'Relic':'specimen'),id:x.mipOpenCulturalrelicInfo.id})" target="_blank">
+                    <img ng-src="{{x.picture.thumb3}}" width="192" height="128" alt="">
                 </a>
+                <p ng-bind="x.mipOpenCulturalrelicInfo.name"></p>
             </li>
         </ul>
     </div>

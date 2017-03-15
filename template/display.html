@@ -87,8 +87,8 @@
             <div class="display-list-content-inner">
                 <ul>
                     <li ng-repeat='x in nDatalist'>
-                        <a ui-sref="displaydetails({type:'inner',id:x.id})" target="_blank">
-                            <img ng-src="{{x.picture}}" width="298" height="165" alt="{{x.headline}}">
+                        <a ui-sref="displaydetails({type:'outer',id:x.id})" target="_blank">
+                            <img ng-src="{{x.pictureThumb}}" width="298" height="165" alt="{{x.headline}}">
                         </a>
                         <h1 ng-bind="x.headline"></h1>
                         <h5 ng-if="x.staTime"><i ng-class="{displaypermanent:!x.staTime}"></i><span ng-show="x.staTime"><s ng-bind="x.staTime"></s>--<s ng-bind="x.overTime"></s></span><span ng-show="!x.staTime">常设展览</span></h5>
@@ -107,8 +107,8 @@
             <div class="display-list-content-inner">
                 <ul>
                     <li ng-repeat='x in nDatalist'>
-                        <a ui-sref="displaydetails({type:'inner',id:x.id})" target="_blank">
-                            <img ng-src="{{x.picture}}" width="297" height="167" alt="{{x.headline}}">
+                        <a ui-sref="displaydetails({type:'outer',id:x.id})" target="_blank">
+                            <img ng-src="{{x.pictureThumb}}" width="297" height="167" alt="{{x.headline}}">
                         </a>
                         <h1 ng-bind="x.headline"></h1>
                         <h5 ng-if="x.staTime"><i ng-class="{displaypermanent:!x.staTime}"></i><span ng-show="x.staTime"><s ng-bind="x.staTime"></s>--<s ng-bind="x.overTime"></s></span><span ng-show="!x.staTime">常设展览</span></h5>

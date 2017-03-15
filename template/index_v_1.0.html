@@ -17,7 +17,7 @@
             <ul>
                 <li ng-repeat="d in data.spreList">
                     <div class="new-img-content">
-                        <a ui-sref="displaydetails({id:d.id})"><img ng-src="{{d.pictureThumb}}" width="136" height="76" alt=""></a>
+                        <a ui-sref="displaydetails({id:d.id,type:'inner'})" target="_blank"><img ng-src="{{d.pictureThumb}}" width="136" height="76" alt=""></a>
                     </div>
                     <div style="padding-left:34px;width:436px">
                         <a ui-sref="displaydetails({id:d.id})" ng-bind="d.headline"><strong></strong></a>
@@ -83,14 +83,14 @@
             <ul>
                 <li ng-repeat="r in data.virtualList|limitTo:2">
                     <div>
-                        <a href="{{r.viAddress}}"><img ng-src="{{}}" width="297" height="167" alt=""></a>
+                        <img ng-src="{{r.pictureThumb}}" width="297" height="167" alt="">
                     </div>
                     <div style="padding-left:34px;width:259px;margin-top:15px;">
-                        <a href="" ><strong style="font-size: 16px;font-style:italic;font-weight: normal" ng-bind="r.viName"></strong></a>
+                        <strong style="font-size: 16px;font-style:italic;font-weight: normal" ng-bind="r.viName"></strong>
                         <p style="color:#008582;font-size:12px;font-style: normal;font-weight: normal" ng-bind="r.musExhibition">
-                            </p>
+                        </p>
                         <h5 ng-bind="r.viIntro"></h5>
-                        <a class="virtual-enter">点击进入</a>
+                        <a class="virtual-enter" href="{{r.viPCUrl}}" target="_blank">点击进入</a>
                     </div>
                 </li>
             </ul>
@@ -136,13 +136,13 @@
     <div class="collection swiper-container" style="height:128px;">
         <ul class="swiper-wrapper">
             <li class="swiper-slide" ng-repeat="i in data.culList" repeat-done="swiper()">
-                <a ui-sref="collectiondetails({id:i.mipOpenCulturalrelicInfo.id})">
+                <a ui-sref="collectiondetails({type:(i.mipOpenCulturalrelicInfo.collectionType?'Relic':'specimen'),id:i.mipOpenCulturalrelicInfo.id})">
                     <img ng-src="{{i.picture.thumb3}}" width="192" height="128" alt="">
                 </a>
             </li>
         </ul>
     </div>
     <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+    <div class="swiper-button-next" style="right:50px;"></div>
 </div>
 

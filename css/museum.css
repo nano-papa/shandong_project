@@ -329,7 +329,18 @@ footer {
         margin-right: 23px; }
         .museum-details .museum-details-collection ul li:nth-child(3), .museum-details .museum-details-collection ul li:last-child {
           margin: 0; }
-        .museum-details .museum-details-collection ul li a p {
+        .museum-details .museum-details-collection ul li a {
+          display: block;
+          width: 192px;
+          height: 128px; }
+          .museum-details .museum-details-collection ul li a img {
+            width: 100%;
+            /*宽高设置100%*/
+            height: 100%;
+            object-fit: contain;
+            background: #e4e4e4;
+            /*图片不够尺寸后背景色填充*/ }
+        .museum-details .museum-details-collection ul li p {
           width: 100%;
           text-align: center;
           color: #666;

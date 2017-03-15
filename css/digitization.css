@@ -258,7 +258,8 @@ footer {
       margin-left: 45px; }
 .digization .digization-list {
   padding: 20px 0px 0 83px;
-  margin-top: 10px; }
+  margin-top: 10px;
+  height: 680px; }
   .digization .digization-list:after {
     display: block;
     content: '';

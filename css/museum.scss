@@ -129,18 +129,27 @@
         &:nth-child(3), &:last-child {
           margin: 0;
         }
-        a {
-          p {
-            width:100%;
-            text-align: center;
-            color: #666;
-            font-size: 14px;
-            line-height:40px;
-            height:40px;
-            overflow: hidden;
-            @include limitLine(1);
+        a{
+          display: block;
+          width:192px;
+          height:128px;
+          img{
+            width: 100%;/*宽高设置100%*/
+            height: 100%;
+            object-fit: contain;
+            background:#e4e4e4;/*图片不够尺寸后背景色填充*/
           }
         }
+        p {
+           width:100%;
+           text-align: center;
+           color: #666;
+           font-size: 14px;
+           line-height:40px;
+           height:40px;
+           overflow: hidden;
+           @include limitLine(1);
+         }
       }
     }
   }

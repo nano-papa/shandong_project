@@ -350,10 +350,16 @@
     width: 640px;
     height: 426px;
     display: inline-block;
+    img{
+      width: 100%;/*宽高设置100%*/
+      height: 100%;
+      object-fit: contain;
+      background:#e4e4e4;/*图片不够尺寸后背景色填充*/
+    }
   }
   .collection-details-msg {
     display: inline-block;
-    width: 425px;
+    width: 420px;
     height: 426px;
     > p {
       font-size: 18px;
@@ -425,7 +431,16 @@
         float: left;
         margin-right: 28px;
         width: 191px;
-        img {
+        a{
+          display:block;
+          width:191px;
+          height:129px;
+          img {
+            width: 100%;/*宽高设置100%*/
+            height: 100%;
+            object-fit: contain;
+            background:#e4e4e4;/*图片不够尺寸后背景色填充*/
+          }
         }
         p {
           text-align: center;
