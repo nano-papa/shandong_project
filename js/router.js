@@ -81,7 +81,7 @@ angular.module("myApp.router", ["ui.router"])
                 }
             })
             .state('collectinodetailsvideo',{
-                url:'/collectinodetailsvideo/:url',
+                url:'/collectinodetailsvideo/:type/:id',
                 views: {
                     '': {
                         templateUrl: 'template/collectionDetailsVideo.html',

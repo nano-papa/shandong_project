@@ -134,9 +134,17 @@ header {
       header .header-top button:hover {
         background: #ea703a; }
   header .header-bottom {
+    position: relative;
     margin-top: 23px; }
-    header .header-bottom a {
-      float: left; }
+    header .header-bottom:after {
+      content: '';
+      display: block;
+      clear: both; }
+    header .header-bottom .heaer-logo {
+      display: inline-block;
+      position: absolute;
+      left: 5px;
+      top: -32px; }
     header .header-bottom nav {
       float: right;
       padding-top: 13px; }
@@ -455,7 +463,7 @@ footer {
     .museum-map .museum-items ul {
       padding: 10px 0;
       background: #e6e6e6;
-      width: 285px;
+      width: 315px;
       height: 300px;
       overflow: auto; }
       .museum-map .museum-items ul li a {

@@ -99,9 +99,18 @@ header {
     }
   }
   .header-bottom {
+    position: relative;
     margin-top: 23px;
-    a {
-      float: left;
+    &:after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .heaer-logo {
+      display: inline-block;
+      position:absolute;
+      left:5px;
+      top:-32px;
     }
     nav {
       float: right;

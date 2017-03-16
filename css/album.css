@@ -134,9 +134,17 @@ header {
       header .header-top button:hover {
         background: #ea703a; }
   header .header-bottom {
+    position: relative;
     margin-top: 23px; }
-    header .header-bottom a {
-      float: left; }
+    header .header-bottom:after {
+      content: '';
+      display: block;
+      clear: both; }
+    header .header-bottom .heaer-logo {
+      display: inline-block;
+      position: absolute;
+      left: 5px;
+      top: -32px; }
     header .header-bottom nav {
       float: right;
       padding-top: 13px; }

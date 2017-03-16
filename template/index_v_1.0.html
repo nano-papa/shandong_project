@@ -10,7 +10,7 @@
 <div class="section">
     <div class="section-layout-left">
         <div class="section-title">
-            <h3>最新展览 <p>New</p></h3>
+            <h3>最新展览 <p>New Exhibitions</p></h3>
             <p><a ui-sref="display">更多>></a></p>
         </div>
         <div class="section-content1">
@@ -34,7 +34,7 @@
     <div class="section-layout-right">
         <div class="section-title"
              style="background:url('img/icon_heye.png') no-repeat;background-position: 76px 15px;">
-            <h3>文物百科 <p>New</p></h3>
+            <h3>文物百科 <p>Relics-Wiki</p></h3>
             <p style="margin:0"><a href="">更多>></a></p>
         </div>
         <img src="img/line.png" alt="">
@@ -76,12 +76,12 @@
 <div class="section">
     <div class="section-layout-left">
         <div class="section-title">
-            <h3>虚拟展厅 <p>Virtual Exhibition</p></h3>
+            <h3>虚拟展厅 <p>Virtual Exhibition Hall</p></h3>
             <p><a ui-sref="digitization">更多>></a></p>
         </div>
         <div class="section-content1">
             <ul>
-                <li ng-repeat="r in data.virtualList|limitTo:2">
+                <li ng-repeat="r in data.virtualList|limitTo:2" style="margin-bottom:30px">
                     <div>
                         <img ng-src="{{r.pictureThumb}}" width="297" height="167" alt="">
                     </div>
@@ -90,7 +90,7 @@
                         <p style="color:#008582;font-size:12px;font-style: normal;font-weight: normal" ng-bind="r.musExhibition">
                         </p>
                         <h5 ng-bind="r.viIntro"></h5>
-                        <a class="virtual-enter" href="{{r.viPCUrl}}" target="_blank">点击进入</a>
+                        <a class="virtual-enter" href="{{r.viPCUrl}}" target="_blank" style="padding:6px;">点击进入</a>
                     </div>
                 </li>
             </ul>
@@ -98,7 +98,7 @@
     </div>
     <div class="section-layout-right" style="width:435px;">
         <div class="section-title" style="width:409px;margin-bottom:55px;">
-            <h3>我要册展 <p>Virtual Exhibition</p></h3>
+            <h3>我要册展 <p>Curating</p></h3>
             <p style="margin:0"><a ui-sref="ablum">更多>></a></p>
             <button class="goAlbum" >开始！</button>
         </div>
@@ -109,11 +109,13 @@
                     <div>
                         <a href=""><img src="img/pic4.png" width="162" height="110" alt=""></a>
                     </div>
-                </li><li>
+                </li>
+                <li>
                     <div>
                         <a href=""><img src="img/pic4.png" width="162" height="110" alt=""></a>
                     </div>
-                </li><li>
+                </li>
+                <li>
                     <div>
                         <a href=""><img src="img/pic4.png" width="162" height="110" alt=""></a>
                     </div>
@@ -128,7 +130,7 @@
 </div>
 <div class="section">
     <div class="section-title">
-        <h3 style="line-height: 40px;">精品藏品 <span>Virtual Exhibition</span></h3>
+        <h3 style="line-height: 40px;">精品藏品 <span>Precious Collections</span></h3>
         <p style="margin:0"><a ui-sref="collection">更多>></a></p>
     </div>
 </div>

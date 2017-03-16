@@ -78,7 +78,7 @@
     <div class="museum-details-collection">
         <p class="museum-details-title">
             馆内藏品 <a
-                ui-sref="collection({museum:data.museumInfo.museumName,type:'文物藏品',id:data.museumInfo.id})">更多 &Gt;</a>
+                ui-sref="collection({museum:data.museumInfo.museumName,type:'文物藏品',id:id})">更多 &Gt;</a>
         </p>
         <ul>
             <li ng-repeat="x in data.culList">
@@ -103,13 +103,13 @@
     </div>
     <div class="museum-details-display" ng-if="data.spreList">
         <p class="museum-details-title">
-            展览 <a ui-sref="display({museum:data.museumInfo.museumName,id:data.museumInfo.id})">更多 &Gt;</a>
+            展览 <a ui-sref="display({museum:data.museumInfo.museumName,id:id})">更多 &Gt;</a>
         </p>
         <div class="museum-details-display-content">
-            <a ui-sref="displaydetails({id:data.spreList.id})"><img ng-src="{{'../'+data.spreList.pictureThumb}}"
+            <a ui-sref="displaydetails({id:data.spreList.id,type:'inner'})"><img ng-src="{{data.spreList.pictureThumb}}"
                                                                     width="297" height="167px" alt=""></a>
             <div>
-                <h6><a ui-sref="displaydetails({id:data.spreList.id})" ng-bind="data.spreList.headline"></a></h6>
+                <h6><a ui-sref="displaydetails({id:data.spreList.id,type:'inner'})" ng-bind="data.spreList.headline"></a></h6>
                 <h5 ng-show="data.spreList.staTime">展期：<span
                         ng-bind="data.spreList.staTime+'-'+data.spreList.overTime"></span></h5>
                 <p ng-bind="data.spreList.content">
@@ -119,17 +119,17 @@
 
     </div>
     <div class="museum-details-digization" ng-if="data.virList">
-        <img src="img/83.png" alt="" class="line-clip">
+        <img ng-show="data.spreList" src="img/83.png" alt="" class="line-clip">
         <p class="museum-details-title">
             虚拟展厅
         </p>
         <div class="museum-details-digization-content">
-            <a href="" target="_blank"><img ng-src="{{'../'+data.virList.pictureThumb}}" width="297" height="167px"
+            <a href="" target="_blank"><img ng-src="{{data.virList.pictureThumb}}" width="297" height="167px"
                                             alt=""></a>
             <div>
                 <h6 ng-bind="data.virList.viName">
                 </h6>
-                <a ui-sref="digitization({museum:data.museumInfo.museumName,id:data.museumInfo.id})">更多 &Gt;</a>
+                <a ui-sref="digitization({museum:data.museumInfo.museumName,id:id})">更多 &Gt;</a>
             </div>
         </div>
     </div>

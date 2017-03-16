@@ -134,9 +134,17 @@ header {
       header .header-top button:hover {
         background: #ea703a; }
   header .header-bottom {
+    position: relative;
     margin-top: 23px; }
-    header .header-bottom a {
-      float: left; }
+    header .header-bottom:after {
+      content: '';
+      display: block;
+      clear: both; }
+    header .header-bottom .heaer-logo {
+      display: inline-block;
+      position: absolute;
+      left: 0px;
+      top: -32px; }
     header .header-bottom nav {
       float: right;
       padding-top: 13px; }
@@ -495,6 +503,15 @@ footer {
           line-height: 28px; }
           .collection-details > ul li button a:hover, .collection-details > ul li button a.active {
             background: #ea703a; }
+          .collection-details > ul li button a s {
+            display: inline-block;
+            vertical-align: middle;
+            width: 16px;
+            height: 16px;
+            background: url("../img/play.png") no-repeat;
+            background-position: 0px -1px; }
+            .collection-details > ul li button a s.pplay {
+              background-position: -17px -1px; }
   .collection-details .collection-details-img {
     width: 640px;
     height: 426px;

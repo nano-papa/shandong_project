@@ -330,7 +330,7 @@
         margin-left: 10px;
         padding:0;
         a{
-          display: block;
+          display:block;
           color: #fff;
           width: 55px;
           height: 28px;
@@ -340,8 +340,18 @@
           &:hover, &.active {
             background: $theme-color-active;
           }
+          s{
+            display: inline-block;
+            vertical-align: middle;
+            width:16px;
+            height:16px;
+            background:url('../img/play.png') no-repeat;
+            background-position:0px -1px;
+            &.pplay{
+              background-position:-17px -1px;
+            }
+          }
         }
-
       }
     }
 

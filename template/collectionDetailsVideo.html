@@ -3,12 +3,13 @@
            class="video-js"
            controls
            preload="auto"
-           poster="//vjs.zencdn.net/v/oceans.png"
+           poster=""
            data-setup='{}'
+           ng-src="{{sce(data.mipOpenCulturalrelicInfo.fVideo)}}"
     >
-        <source ng-src="{{url}}" type="video/mp4"></source>
-        <source ng-src="{{url}}" type="video/webm"></source>
-        <source ng-src="{{url}}" type="video/ogg"></source>
+        <source ng-src="{{sce(data.mipOpenCulturalrelicInfo.fVideo)}}" type="video/mp4"></source>
+        <source ng-src="{{sce(data.mipOpenCulturalrelicInfo.fVideo)}}" type="video/webm"></source>
+        <source ng-src="{{sce(data.mipOpenCulturalrelicInfo.fVideo)}}" type="video/ogg"></source>
         <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading to a
             web browser that

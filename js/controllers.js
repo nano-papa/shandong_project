@@ -10,14 +10,15 @@ angular.module('myApp.controllers', [])
         $rootScope.userinfor=ipCookie('userinfor');
         $scope.logout=function(e){
             e.preventDefault();
-            ipCookie('userinfor','');
-            $rootScope.userinfor='';
             $http({
                 method:'GET',
                 url:'../front/loginOut.do'
             })
                 .success(function(){
                     console.log('登出成功！');
+                    $window.location.reload();
+                    ipCookie('userinfor','');
+                    $rootScope.userinfor='';
                 })
         }
         $scope.goback=function(e){
@@ -328,6 +329,9 @@ angular.module('myApp.controllers', [])
         $scope.selectedcondition = {year: '', unit: '', classify: '', sort: 1, keyword: '', iPage: 1};
         $scope.selected = {year: '', unit: '', classify: '', keyword: ''};
         $scope.arr = [];
+        $scope.addCollection=function(){
+
+        }
         //检测是否存在筛选条件
         $scope.checkCondition = function () {
             $scope.isSelected = ($scope.arr.length == 0) ? false : true;
@@ -376,9 +380,9 @@ angular.module('myApp.controllers', [])
                             var ou = document.createElement('u');
                             var oi = document.createElement('i');
                             (data[i].isCollected) ?
-                                ($(oi).addClass('active')) : ($(oi).removeClass('active'));
+                                ($(oi).addClass('active')) : ($(oi).removeClass('active'));//判断有无收藏
                             (data[i].mipOpenCulturalrelicInfo.threeDimensionalCollection) ?
-                                ($(ou).addClass("is3d")) : ($(ou).removeClass("is3d"))
+                                ($(ou).addClass("is3d")) : ($(ou).removeClass("is3d"))//判断是否3d
                             var ospan = document.createElement('span');
                             var oa = document.createElement('a');
                             $(oa).attr({
@@ -771,12 +775,13 @@ angular.module('myApp.controllers', [])
         }
         //显示关键字
         $scope.showKeyword = function (condition, val, e) {
-            $scope.value = $("#collection-search").val();
+            debugger
+            $scope.value = $("#collection-search1").val();
             if ($scope.value && $scope.value != $scope.selectedcondition.keyword) {
-                console.log($scope.arr);
                 if ($scope.isKey) {
                     $scope[condition] = true;
                     $scope.selectedcondition.keyword = $scope.value;
+                    debugger
                     $scope.selectedcondition.iPage = 1;
                     $scope.iPage = 1;
                     $('#ul2 li').html(" ");
@@ -866,7 +871,7 @@ angular.module('myApp.controllers', [])
 
     }])
     //藏品详情页
-    .controller('CollectionDetails', ['$scope', '$http', '$stateParams', '$window', '$rootScope', '$state', 'ipCookie',function ($scope, $http, $stateParams, $window, $rootScope, $state,ipCookie) {
+    .controller('CollectionDetails', ['$scope', '$http', '$stateParams', '$window', '$rootScope', '$state', 'ipCookie','$sce',function ($scope, $http, $stateParams, $window, $rootScope, $state,ipCookie,$sce) {
         $rootScope.showIndex = true;
         $scope.$parent.showbtn = false;
         $scope.num = 0;
@@ -876,6 +881,20 @@ angular.module('myApp.controllers', [])
         $scope.hasmoreleft1 = false;
         $scope.hasmoreright1 = true;
         $scope.num2 = 0;
+        $scope.pplay=false;
+        $scope.sce=$sce.trustAsResourceUrl;
+        $scope.open3D=function(url){
+            $window.open(url);
+        };
+        $scope
+        $scope.playAudio=function(){
+            $scope.pplay=!$scope.pplay;
+            if($scope.pplay){
+                document.getElementById('paudio').play();
+            }else{
+                document.getElementById('paudio').pause();
+            }
+        };
         $scope.addCollection = function (e) {
             if(ipCookie('userinfor')){
                 var a = angular.element(e.target).hasClass('active');
@@ -968,8 +987,7 @@ angular.module('myApp.controllers', [])
 
                     }
                     $scope.goVideo = function () {
-                        var a={url:$scope.data.mipOpenCulturalrelicInfo.fVideo}
-                        $state.go('collectinodetailsvideo',{url:a});
+                        $state.go('collectinodetailsvideo',{id:$stateParams.id,type:$stateParams.type});
                     }
                 });
         }
@@ -977,15 +995,24 @@ angular.module('myApp.controllers', [])
         $scope.getDetail();
     }])
     //藏品视频
-    .controller('CollectionDetailsVideo', ['$scope', '$http', '$stateParams', '$window', '$rootScope', function ($scope, $http, $stateParams, $window, $rootScope) {
+    .controller('CollectionDetailsVideo', ['$scope', '$http', '$stateParams', '$window', '$rootScope', '$sce',function ($scope, $http, $stateParams, $window, $rootScope,$sce) {
         $rootScope.showIndex = false;
-        $scope.url=$stateParams.url.url
+        $scope.id=$stateParams.id;
         $scope.video = function () {
-            var myPlayer = videojs('my-player');
-            videojs("my-player").ready(function () {
-                $('#my-player').css('width', $(document).width());
-                $('#my-player').css('height', $(document).height());
-            });
+            $stateParams.type == 'Relic' ? $scope.url= "../front/OCCollection/detail.do?id=":$scope.url='../front/OCFossil/detail.do?id='
+            $http.get($scope.url
+                // $http.get("data/collection_details.json?id="
+                + $stateParams.id)
+                .success(function (response) {
+                    $scope.sce=$sce.trustAsResourceUrl;
+                    $scope.data = response.data.mocid||response.data.mofid;
+                    var myPlayer = videojs('my-player');
+                    videojs("my-player").ready(function () {
+                        $('#my-player').css('width', $(document).width());
+                        $('#my-player').css('height', $(document).height());
+                    });
+
+                });
         }
         $scope.video();
     }])
@@ -1382,6 +1409,7 @@ angular.module('myApp.controllers', [])
         })
             .success(function(response){
                 $scope.data=response.data;
+                $scope.id=$stateParams.id;
                 console.log(response.data);
                 var map=''+response.data.museumInfo.geography;
                 var width=308;
