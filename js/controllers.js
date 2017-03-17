@@ -329,8 +329,45 @@ angular.module('myApp.controllers', [])
         $scope.selectedcondition = {year: '', unit: '', classify: '', sort: 1, keyword: '', iPage: 1};
         $scope.selected = {year: '', unit: '', classify: '', keyword: ''};
         $scope.arr = [];
-        $scope.addCollection=function(){
-
+        //点击收藏
+        var addCollection = function (e,id,type) {
+            // $scope.num3=3;
+            // var interval=$interval(function(){
+            //     $scope.num3-=1;
+            //     $scope.canClick=false;
+            //     console.log($scope.num3);
+            //     console.log($scope.canClick);
+            //     if($scope.num3<=0){
+            //         $scope.canClick=true;
+            //         $interval.cancel(interval);
+            //     }
+            // },3000)
+            // if($scope.canClick){
+            if(ipCookie('userinfor')){
+                var a = angular.element(e.target).hasClass('active');
+                if (!a) {
+                    angular.element(e.target).addClass('active');
+                    $http.get("../front/Collected/doCollect.do?collectionType="
+                        + (type == 'Relic' ? 0 : 1) +
+                        '&id=' +id)
+                        .success(function (response) {
+                            layer.msg('收藏成功');
+                            // $scope.showMorecondition();
+                        });
+                } else {
+                    angular.element(e.target).removeClass('active');
+                    $http.get("../front/Collected/notCollect.do?collectionType="
+                        + (type == 'Relic' ? 0 : 1) +
+                        '&id=' + id)
+                        .success(function (response) {
+                            layer.msg('取消成功');
+                            // $scope.showMorecondition();
+                        });
+                }
+            }
+            else{
+                layer.msg('请先登录');
+            }
         }
         //检测是否存在筛选条件
         $scope.checkCondition = function () {
@@ -379,10 +416,46 @@ angular.module('myApp.controllers', [])
                             var oImg = document.createElement('img');
                             var ou = document.createElement('u');
                             var oi = document.createElement('i');
+                            $(oi).attr({
+                                "data-ccid":data[i].mipOpenCulturalrelicInfo.id
+                            })
+                            oi.onclick=function(){
+                                var id=$(this).attr('data-ccid');
+                                var that=this;
+                                var a=$(this).hasClass('active');
+                                if(!a){
+                                    $.ajax({
+                                        type:'GET',
+                                        url:"../front/Collected/doCollect.do?collectionType=0&id="+id,
+                                        dataType:"text",
+                                        success:function(json){
+                                            var datas=eval("("+json+")");
+                                            $(that).addClass('active')
+                                            console.log(this);
+                                            layer.msg('收藏成功');
+                                        }
+                                    })
+                                }
+                                else{
+                                    $.ajax({
+                                        type:'GET',
+                                        url:"../front/Collected/notCollect.do?collectionType=0&id="+id,
+                                        dataType:"text",
+                                        success:function(json){
+                                            var datas=eval("("+json+")");
+                                            $(that).removeClass('active')
+                                            console.log(this);
+                                            layer.msg('取消成功');
+                                        }
+                                    })
+                                }
+
+                            };
                             (data[i].isCollected) ?
                                 ($(oi).addClass('active')) : ($(oi).removeClass('active'));//判断有无收藏
                             (data[i].mipOpenCulturalrelicInfo.threeDimensionalCollection) ?
                                 ($(ou).addClass("is3d")) : ($(ou).removeClass("is3d"))//判断是否3d
+
                             var ospan = document.createElement('span');
                             var oa = document.createElement('a');
                             $(oa).attr({
@@ -774,14 +847,14 @@ angular.module('myApp.controllers', [])
             $scope.checkCondition();
         }
         //显示关键字
-        $scope.showKeyword = function (condition, val, e) {
-            debugger
+        $scope.showKeywords = function (condition, val, e) {
             $scope.value = $("#collection-search1").val();
+            console.log($scope.value);
             if ($scope.value && $scope.value != $scope.selectedcondition.keyword) {
                 if ($scope.isKey) {
                     $scope[condition] = true;
                     $scope.selectedcondition.keyword = $scope.value;
-                    debugger
+                    $scope.selected.keyword=$scope.value;
                     $scope.selectedcondition.iPage = 1;
                     $scope.iPage = 1;
                     $('#ul2 li').html(" ");
@@ -790,6 +863,7 @@ angular.module('myApp.controllers', [])
                 } else {
                     $scope[condition] = true;
                     $scope.selectedcondition.keyword = $scope.value;
+                    $scope.selected.keyword = $scope.value;
                     $scope.selectedcondition.iPage = 1;
                     $scope.iPage = 1;
                     $scope.arr.push(1);
@@ -871,7 +945,7 @@ angular.module('myApp.controllers', [])
 
     }])
     //藏品详情页
-    .controller('CollectionDetails', ['$scope', '$http', '$stateParams', '$window', '$rootScope', '$state', 'ipCookie','$sce',function ($scope, $http, $stateParams, $window, $rootScope, $state,ipCookie,$sce) {
+    .controller('CollectionDetails', ['$scope', '$http', '$stateParams', '$window', '$rootScope', '$state', 'ipCookie','$sce','$interval',function ($scope, $http, $stateParams, $window, $rootScope, $state,ipCookie,$sce,$interval) {
         $rootScope.showIndex = true;
         $scope.$parent.showbtn = false;
         $scope.num = 0;
@@ -895,29 +969,54 @@ angular.module('myApp.controllers', [])
                 document.getElementById('paudio').pause();
             }
         };
+        $scope.canClick=true;
         $scope.addCollection = function (e) {
-            if(ipCookie('userinfor')){
-                var a = angular.element(e.target).hasClass('active');
-                if (!a) {
-                    $scope.num2 += 1;
-                    angular.element(e.target).addClass('active');
-                    $http.get("../front/Collected/doCollect.do?collectionType="
-                        // $http.get("data/collection_details.json?collectionType="
-                        + ($stateParams.type == 'Relic' ? 1 : 2) +
-                        '&id=' + $stateParams.id)
-                        .success(function (response) {
-                            console.log(response);
-                            layer.msg('收藏成功');
-                            // $scope.showMorecondition();
-                        });
-                } else {
-                    return
+            // $scope.num3=3;
+            // var interval=$interval(function(){
+            //     $scope.num3-=1;
+            //     $scope.canClick=false;
+            //     console.log($scope.num3);
+            //     console.log($scope.canClick);
+            //     if($scope.num3<=0){
+            //         $scope.canClick=true;
+            //         $interval.cancel(interval);
+            //     }
+            // },3000)
+            // if($scope.canClick){
+                if(ipCookie('userinfor')){
+                    var a = angular.element(e.target).hasClass('active');
+                    if (!a) {
+                        $scope.num2 += 1;
+                        angular.element(e.target).addClass('active');
+                        $http.get("../front/Collected/doCollect.do?collectionType="
+                            + ($stateParams.type == 'Relic' ? 0 : 1) +
+                            '&id=' + $stateParams.id)
+                            .success(function (response) {
+                                layer.msg('收藏成功');
+                                // $scope.showMorecondition();
+                            });
+                    } else {
+                        $scope.num2 -= 1;
+                        angular.element(e.target).removeClass('active');
+                        $http.get("../front/Collected/notCollect.do?collectionType="
+                            + ($stateParams.type == 'Relic' ? 0 : 1) +
+                            '&id=' + $stateParams.id)
+                            .success(function (response) {
+                                layer.msg('取消成功');
+                                // $scope.showMorecondition();
+                            });
+                    }
                 }
-            }
-            else{
-                layer.msg('请先登录');
-            }
-
+                else{
+                    layer.msg('请先登录');
+                }
+            // }
+            // else{
+            //     console.log($scope.num3);
+            //     console.log($scope.canClick);
+            //     layer.msg('您的操作太频繁！');
+            //     return;
+            // }
         }
         $scope.getDetail = function () {
             $stateParams.type == 'Relic' ? $scope.url= "../front/OCCollection/detail.do?id=":$scope.url='../front/OCFossil/detail.do?id='
@@ -986,9 +1085,8 @@ angular.module('myApp.controllers', [])
                         }
 
                     }
-                    $scope.goVideo = function () {
-                        $state.go('collectinodetailsvideo',{id:$stateParams.id,type:$stateParams.type});
-                    }
+                    $scope.videoid=$stateParams.id;
+                    $scope.videotype=$stateParams.type;
                 });
         }
 
@@ -1450,7 +1548,7 @@ angular.module('myApp.controllers', [])
         $scope.conditions = {
             currentPage: $scope.page,
             flag: $scope.tabpage,
-            museum: $scope.museum,
+            orgId: $scope.museum,
             size: '3'
         }
         $scope.changeTab = function (page) {
@@ -1485,6 +1583,17 @@ angular.module('myApp.controllers', [])
                             $scope.getDataList();
                         }
                     });
+                    $scope.addClick=function(id){
+                        console.log(123);
+                        $http({
+                            method:'GET',
+                            url:'../virtual/addOnclick.do',
+                            params:{id:id}
+                        })
+                            .success(function(respsonse){
+
+                            })
+                    }
                 });
         }
         $scope.laypage();
@@ -1501,7 +1610,7 @@ angular.module('myApp.controllers', [])
         }
         if ($stateParams.museum) {
             $scope.showTab = false;
-            $scope.conditions.museum = $stateParams.id;
+            $scope.conditions.orgId = $stateParams.id;
             $scope.museum = $stateParams.museum;
             $scope.getDataList();
         }

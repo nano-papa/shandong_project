@@ -24,7 +24,7 @@
                         <p>
                             <small ng-bind="d.musExhibition"></small>
                             <span ng-show="d.staTime" ng-bind="'['+d.staTime+']-['+d.overTime+']'"></span></p>
-                        <h6 ng-bind="d.content">
+                        <h6 ng-bind-html="d.content">
                         </h6>
                     </div>
                 </li>

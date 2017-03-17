@@ -1,7 +1,7 @@
 <div class="digization">
     <img src="img/collection.png" alt="">
     <p class="breadcrumb">
-        <a ui-sref="home">首页</a><u>&gt;&gt;</u><a ui-sref="digitization">数字展厅</a><u ng-show="conditions.museum">&gt;&gt;</u><span ng-show="conditions.museum" ng-bind="museum"></span>
+        <a ui-sref="home">首页</a><u>&gt;&gt;</u><a ui-sref="digitization">数字展厅</a><u ng-show="conditions.orgId">&gt;&gt;</u><span ng-show="conditions.orgId" ng-bind="museum"></span>
     </p>
     <div class="digization-tab">
         <ul ng-show="showTab">
@@ -13,7 +13,7 @@
         <li class="digization-list-item" ng-repeat="item in data |limitTo: 3">
             <ul>
                 <li class="digization-list-item-img">
-                    <a ng-href="{{item.viPCUrl}}" target="_blank">
+                    <a ng-href="{{item.viPCUrl}}" ng-click="addClick(item.id)" target="_blank">
                         <img ng-src="{{item.viAddress}}" width="297" height="167" alt="{{item.viName}}">
                     </a>
                 </li>

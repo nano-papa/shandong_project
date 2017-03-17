@@ -11,7 +11,7 @@
             <button ng-click="open3D(data.mipOpenCulturalrelicInfo.threeDimensionalCollection||data.mipOpenFossilInfo.threeDimensionalCollection)"><a>3D</a></button>
         </li>
         <li ng-if="data.mipOpenCulturalrelicInfo.fVideo||data.mipOpenFossilInfo.fVideo">
-            <button ng-click="goVideo()"><a>视频</a></button>
+            <button ><a ui-sref="collectinodetailsvideo({id:videoid,type:videotype})" target="_blank">视频</a></button>
         </li>
         <li>
             <button><a>百科</a></button>
@@ -20,7 +20,7 @@
             <button><a href="" style="padding:0 5px;" ng-click="playAudio()">音频<s style="margin-left: 5px;" ng-class="{pplay:pplay}"></s></a></button>
         </li>
         <li style="padding-left:40px;">
-            <i ng-class="{active:data.isCollected}" ng-click="addCollection($event)"></i><u ng-bind="'收藏('+(data.mipOpenCulturalrelicInfo.selectCounts||data.mipOpenFossilInfo.selectCounts+num2)+')'"></u>
+            <i ng-class="{active:data.isCollected}" ng-click="addCollection($event)"></i><u ng-bind="'收藏('+(data.mipOpenCulturalrelicInfo.collectedCounts+num2||data.mipOpenFossilInfo.collectedCounts+num2)+')'"></u>
         </li>
         <audio style="visibility: hidden;display:inline-block" id="paudio" ng-if="data.mipOpenCulturalrelicInfo.fAudio||data.mipOpenFossilInfo.fAudio" ng-src="{{sce(data.mipOpenCulturalrelicInfo.fAudio)||sce(data.mipOpenFossilInfo.fAudio)}}" controls></audio>
     </ul>

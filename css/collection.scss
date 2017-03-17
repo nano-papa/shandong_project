@@ -265,7 +265,7 @@
           width: 15px;
           height: 15px;
           background: url("../img/icon-heart.png") no-repeat -17px 0;
-          &.active, &:hover {
+          &.active{
             cursor: pointer;
             background-position: 0 0;
           }
@@ -316,7 +316,7 @@
         width: 15px;
         height: 15px;
         background: url("../img/icon-heart.png") no-repeat -17px 0;
-        &.active, &:hover {
+        &.active{
           cursor: pointer;
           background-position: 0 0;
         }
