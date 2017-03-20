@@ -35,7 +35,7 @@
                     <li ng-if="isKey">
                         <small>关键词：</small>
                         <u ng-bind="selectedcondition.keyword"></u>
-                        <i ng-click="hideKeyword('isKey','keyword')">×</i>
+                        <i ng-click="hideKeyword('isKey','keyword')" ng-if="removekey">×</i>
                     </li>
                 </ul>
             </div>
@@ -114,6 +114,7 @@
                 <li></li>
                 <li></li>
             </ul>
+            <nohavemore nheight="500" nwidth="1160" ng-if="showData"></nohavemore>
         </div>
         <div class="collection-wraper" ng-if="isSelectedSpecimen" ng-controller="CollectionSpecimen">
             <div class="slected-condition" ng-if="isSelected">
@@ -220,6 +221,7 @@
                 <li></li>
                 <li></li>
             </ul>
+            <nohavemore nheight="500" nwidth="1160" ng-if="showData"></nohavemore>
         </div>
     </div>
 </div>

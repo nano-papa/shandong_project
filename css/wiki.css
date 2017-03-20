@@ -1,0 +1,24 @@
+.waiting {
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column; }
+  .waiting ul {
+    display: flex;
+    flex-flow: row;
+    margin-top: 55px; }
+    .waiting ul li {
+      margin-right: 60px; }
+      .waiting ul li button {
+        cursor: pointer;
+        width: 140px;
+        height: 40px;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: #008582; }
+        .waiting ul li button:hover {
+          background: #ea703a; }
+
+/*# sourceMappingURL=wiki.css.map */

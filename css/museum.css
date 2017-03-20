@@ -80,12 +80,15 @@ header {
         overflow: hidden; }
         header .header-top .header-top-left ul li {
           float: left;
-          border-right: 1px solid #008582; }
+          border-right: 1px solid #008582;
+          line-height: 20px; }
           header .header-top .header-top-left ul li a {
             padding-left: 12px;
-            padding-right: 12px; }
+            padding-right: 12px;
+            line-height: 20px; }
           header .header-top .header-top-left ul li:first-child a {
-            padding-left: 0; }
+            padding-left: 0;
+            line-height: 20px; }
           header .header-top .header-top-left ul li:last-child {
             border: none; }
     header .header-top .header-top-right {
@@ -110,10 +113,12 @@ header {
           width: 21px;
           height: 21px; }
           header .header-top .header-top-right ul li:first-child {
+            cursor: pointer;
             padding-right: 10px;
             border-right: 1px solid #008582;
             background: url("../img/xj.png") no-repeat; }
           header .header-top .header-top-right ul li:last-child {
+            cursor: pointer;
             margin-left: 10px;
             background: url("../img/fdj.png") no-repeat; }
     header .header-top button {
@@ -171,7 +176,7 @@ footer {
   footer ul {
     overflow: hidden;
     margin: auto;
-    width: 786px;
+    width: 625px;
     margin-top: 20px; }
     footer ul li {
       float: left;
@@ -235,6 +240,12 @@ footer {
 
 ::-webkit-scrollbar-thumb:window-inactive {
   background: #008582; }
+
+.nomore {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center; }
 
 .museum-details {
   padding: 10px 83px 0;
@@ -406,6 +417,14 @@ footer {
           font-size: 14px;
           font-weight: normal;
           line-height: 32px; }
+          .museum-details .museum-details-display .museum-details-display-content div h6 a {
+            display: block;
+            width: 200px;
+            line-height: 18px;
+            height: 18px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap; }
         .museum-details .museum-details-display .museum-details-display-content div p {
           width: 206px;
           font-size: 12px;
@@ -413,7 +432,7 @@ footer {
           line-height: 17px;
           display: -webkit-box;
           -webkit-box-orient: vertical;
-          -webkit-line-clamp: 5;
+          -webkit-line-clamp: 4;
           overflow: hidden; }
   .museum-details .museum-details-digization {
     padding-left: 50px;

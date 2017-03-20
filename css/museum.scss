@@ -204,13 +204,22 @@
           font-size:14px;
           font-weight:normal;
           line-height:32px;
+          a{
+            display: block;
+            width:200px;
+            line-height:18px;
+            height:18px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space:nowrap;
+          }
         }
         p{
           width:206px;
           font-size:12px;
           color:#666;
           line-height:17px;
-          @include limitLine(5);
+          @include limitLine(4);
         }
       }
     }

@@ -28,5 +28,19 @@ angular.module('myApp.services', [])
             }
 
         }
-    }]);
+    }])
+    .factory('Getcookie',function(){
+        return function getCookie(name){
+            /* 获取浏览器所有cookie将其拆分成数组 */
+            var arr=document.cookie.split('; ');
+            for(var i=0;i<arr.length;i++)    {
+                /* 将cookie名称和值拆分进行判断 */
+                var arr2=arr[i].split('=');
+                if(arr2[0]==name){
+                    return arr2[1];
+                }
+            }
+            return '';
+        }
+    })
 ;

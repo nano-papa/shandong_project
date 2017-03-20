@@ -80,12 +80,15 @@ header {
         overflow: hidden; }
         header .header-top .header-top-left ul li {
           float: left;
-          border-right: 1px solid #008582; }
+          border-right: 1px solid #008582;
+          line-height: 20px; }
           header .header-top .header-top-left ul li a {
             padding-left: 12px;
-            padding-right: 12px; }
+            padding-right: 12px;
+            line-height: 20px; }
           header .header-top .header-top-left ul li:first-child a {
-            padding-left: 0; }
+            padding-left: 0;
+            line-height: 20px; }
           header .header-top .header-top-left ul li:last-child {
             border: none; }
     header .header-top .header-top-right {
@@ -110,10 +113,12 @@ header {
           width: 21px;
           height: 21px; }
           header .header-top .header-top-right ul li:first-child {
+            cursor: pointer;
             padding-right: 10px;
             border-right: 1px solid #008582;
             background: url("../img/xj.png") no-repeat; }
           header .header-top .header-top-right ul li:last-child {
+            cursor: pointer;
             margin-left: 10px;
             background: url("../img/fdj.png") no-repeat; }
     header .header-top button {
@@ -171,7 +176,7 @@ footer {
   footer ul {
     overflow: hidden;
     margin: auto;
-    width: 786px;
+    width: 625px;
     margin-top: 20px; }
     footer ul li {
       float: left;
@@ -236,6 +241,12 @@ footer {
 ::-webkit-scrollbar-thumb:window-inactive {
   background: #008582; }
 
+.nomore {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center; }
+
 .collection-wraper {
   padding: 0 20px 0;
   /*筛选条件*/
@@ -253,11 +264,11 @@ footer {
       background: #f3f3f3;
       border: 1px solid #ddd;
       text-align: center;
-      margin-left: 10px; }
+      margin-left: 10px;
+      padding: 0 10px; }
       .collection-wraper .slected-condition ul li small {
         font-size: 12px;
-        line-height: 24px;
-        padding-left: 10px; }
+        line-height: 24px; }
       .collection-wraper .slected-condition ul li u {
         font-size: 12px;
         text-decoration: none;
@@ -267,8 +278,7 @@ footer {
         font-size: 16px;
         font-style: normal;
         line-height: 24px;
-        padding-left: 10px;
-        padding-right: 10px; }
+        padding-left: 10px; }
         .collection-wraper .slected-condition ul li i:hover {
           color: #ea703a;
           cursor: pointer; }
@@ -310,10 +320,12 @@ footer {
         width: 21px;
         height: 21px; }
         .collection-wraper .key-words ul li:first-child {
+          cursor: pointer;
           padding-right: 10px;
           border-right: 1px solid #008582;
           background: url("../img/xj.png") no-repeat; }
         .collection-wraper .key-words ul li:last-child {
+          cursor: pointer;
           margin-left: 10px;
           background: url("../img/fdj.png") no-repeat; }
     .collection-wraper .key-words .hot-keywords {
@@ -438,7 +450,7 @@ footer {
         display: inline-block;
         position: absolute;
         right: 3px;
-        bottom: 9px;
+        bottom: 17px;
         float: right;
         width: 15px;
         height: 15px;

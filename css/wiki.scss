@@ -1,0 +1,27 @@
+.waiting{
+  height:800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  ul{
+    display: flex;
+    flex-flow: row;
+    margin-top:55px;
+    li{
+      margin-right:60px;
+      button{
+        cursor: pointer;
+        width:140px;
+        height:40px;
+        border:none;
+        outline:none;
+        color:#fff;
+        background:#008582;
+        &:hover{
+        background:#ea703a;
+        }
+      }
+    }
+  }
+}

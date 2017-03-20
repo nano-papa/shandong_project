@@ -80,12 +80,15 @@ header {
         overflow: hidden; }
         header .header-top .header-top-left ul li {
           float: left;
-          border-right: 1px solid #008582; }
+          border-right: 1px solid #008582;
+          line-height: 20px; }
           header .header-top .header-top-left ul li a {
             padding-left: 12px;
-            padding-right: 12px; }
+            padding-right: 12px;
+            line-height: 20px; }
           header .header-top .header-top-left ul li:first-child a {
-            padding-left: 0; }
+            padding-left: 0;
+            line-height: 20px; }
           header .header-top .header-top-left ul li:last-child {
             border: none; }
     header .header-top .header-top-right {
@@ -110,10 +113,12 @@ header {
           width: 21px;
           height: 21px; }
           header .header-top .header-top-right ul li:first-child {
+            cursor: pointer;
             padding-right: 10px;
             border-right: 1px solid #008582;
             background: url("../img/xj.png") no-repeat; }
           header .header-top .header-top-right ul li:last-child {
+            cursor: pointer;
             margin-left: 10px;
             background: url("../img/fdj.png") no-repeat; }
     header .header-top button {
@@ -171,7 +176,7 @@ footer {
   footer ul {
     overflow: hidden;
     margin: auto;
-    width: 786px;
+    width: 625px;
     margin-top: 20px; }
     footer ul li {
       float: left;
@@ -235,6 +240,12 @@ footer {
 
 ::-webkit-scrollbar-thumb:window-inactive {
   background: #008582; }
+
+.nomore {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center; }
 
 .register {
   position: relative;
@@ -301,6 +312,7 @@ footer {
           .register .register-form table tbody tr td:nth-child(1) {
             text-align: right; }
     .register .register-form .register-submit {
+      cursor: pointer;
       width: 254px;
       height: 38px;
       background: #aaa;

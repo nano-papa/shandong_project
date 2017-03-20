@@ -73,9 +73,10 @@
                         <h1 ng-bind="x.headline"></h1>
                         <h5 ng-if="x.staTime"><i ng-class="{displaypermanent:!x.staTime}"></i><span ng-show="x.staTime"><s ng-bind="x.staTime"></s>--<s ng-bind="x.overTime"></s></span><span ng-show="!x.staTime">常设展览</span></h5>
                         <h6><i class="displaytime"></i><span ng-bind="x.musExhibition"></span></h6>
-                        <p ng-bind="x.content">
+                        <p ng-bind="x.content | filterhtml">
                         </p>
                     </li>
+                    <nohavemore nheight="500" nwidth="1034" ng-if="showData"></nohavemore>
                 </ul>
                 <div class="PagePlugs" style="margin-top:15px"></div>
             </div>
@@ -93,9 +94,10 @@
                         <h1 ng-bind="x.headline"></h1>
                         <h5 ng-if="x.staTime"><i ng-class="{displaypermanent:!x.staTime}"></i><span ng-show="x.staTime"><s ng-bind="x.staTime"></s>--<s ng-bind="x.overTime"></s></span><span ng-show="!x.staTime">常设展览</span></h5>
                         <h6><i class="displaytime"></i><span ng-bind="x.musExhibition"></span></h6>
-                        <p ng-bind="x.content">
+                        <p ng-bind="x.content | filterhtml">
                         </p>
                     </li>
+                    <nohavemore nheight="500" nwidth="1034" ng-if="showData"></nohavemore>
                 </ul>
                 <div class="PagePlugs" style="margin-top:15px"></div>
             </div>
@@ -113,9 +115,10 @@
                         <h1 ng-bind="x.headline"></h1>
                         <h5 ng-if="x.staTime"><i ng-class="{displaypermanent:!x.staTime}"></i><span ng-show="x.staTime"><s ng-bind="x.staTime"></s>--<s ng-bind="x.overTime"></s></span><span ng-show="!x.staTime">常设展览</span></h5>
                         <h6><i class="displaytime"></i><span ng-bind="x.musExhibition"></span></h6>
-                        <p ng-bind="x.content">
+                        <p ng-bind="x.content | filterhtml">
                         </p>
                     </li>
+                    <nohavemore nheight="500" nwidth="1034" ng-if="showData"></nohavemore>
                 </ul>
                 <div class="PagePlugs" style="margin-top:15px"></div>
             </div>

@@ -18,10 +18,10 @@
         border: 1px solid #ddd;
         text-align: center;
         margin-left: 10px;
+        padding:0 10px;
         small {
           font-size: 12px;
           line-height: 24px;
-          padding-left: 10px;
         }
         u {
           font-size: 12px;
@@ -34,7 +34,6 @@
           font-style: normal;
           line-height: 24px;
           padding-left: 10px;
-          padding-right: 10px;
           &:hover {
             color: $theme-color-active;
             cursor: pointer;
@@ -135,6 +134,7 @@
       width:52px;
       height:28px;
       border:none;
+      cursor:pointer;
       padding:0;
       background:url('../img/search_btn.png') no-repeat;
       background-position:50% 50%;
@@ -168,7 +168,7 @@
   .display-list-content-inner{
     ul{
       width:1034px;
-      height:675px;
+      min-height:675px;
       display:-webkit-box;
       display:-ms-flexbox;
       display:flex;
@@ -185,13 +185,21 @@
           margin-right:70px;
         }
         h1{
-          line-height:30px;
+          line-height:40px;
+          font-weight: normal;
+          text-overflow:ellipsis;
+          width:100%;
+          overflow: hidden;
+          height:40px;
+          @include limitLine(1);
+        }
+        h5{
+          margin-bottom:8px;
         }
         h6,h5{
           font-weight: normal;
           font-size:14px;
           color:$theme-color;
-          margin-top:8px;
           i{
             display: inline-block;
             width:15px;
@@ -201,6 +209,7 @@
           }
           s{
             text-decoration: none;
+            font-size: 14px;
           }
           .displaytime{
             background-position:-17px 0;
@@ -208,6 +217,9 @@
           .displaypermanent{
             background-position:-36px 0;
           }
+          span{
+            font-size:14px;
+                     }
         }
         p{
           margin-top:8px;

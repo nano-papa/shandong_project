@@ -24,7 +24,8 @@
             </tr>
             <tr>
                 <td>门票：</td>
-                <td ng-bind="data.museumInfo.ticketPrice"></td>
+                <td ng-if="data.museumInfo.ticketPrice" ng-bind="data.museumInfo.ticketPrice"></td>
+                <td ng-if="!data.museumInfo.ticketPrice">免费</td>
             </tr>
             </tbody>
         </table>
@@ -121,15 +122,14 @@
     <div class="museum-details-digization" ng-if="data.virList">
         <img ng-show="data.spreList" src="img/83.png" alt="" class="line-clip">
         <p class="museum-details-title">
-            虚拟展厅
+            虚拟展厅<a ui-sref="digitization({museum:data.museumInfo.museumName,id:id})">更多 &Gt;</a>
         </p>
         <div class="museum-details-digization-content">
-            <a href="" target="_blank"><img ng-src="{{data.virList.pictureThumb}}" width="297" height="167px"
+            <a href="{{data.virList.viPCUrl}}" target="_blank"><img ng-src="{{data.virList.pictureThumb}}" width="297" height="167px"
                                             alt=""></a>
             <div>
-                <h6 ng-bind="data.virList.viName">
-                </h6>
-                <a ui-sref="digitization({museum:data.museumInfo.museumName,id:id})">更多 &Gt;</a>
+                <a href="{{data.virList.viPCUrl}}" target="_blank"><h6 ng-bind="data.virList.viName">
+                </h6></a>
             </div>
         </div>
     </div>

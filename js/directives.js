@@ -82,6 +82,20 @@ angular.module('myApp.directives', [])
             }
         }
     })
+    .directive('nohavemore',function(){
+        return{
+            restrict:"EAMC",
+            templateUrl:'directive/nomore.html',
+            scope:true,
+            replace:true,
+            link:function(scope,elment,attrs){
+                elment.css({
+                    width:attrs.nwidth+'px',
+                    height:attrs.nheight+'px'
+                })
+            }
+        }
+    })
 ;
 
     // .directive('scrollbar',function(){

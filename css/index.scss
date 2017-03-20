@@ -41,7 +41,7 @@ $theme-color-active:#ea703a;
     float:right;
     font-size:12px;
     margin-right:27px;
-    line-height: 40px;
+    line-height: 15px;
   }
 }
 .section{
@@ -55,32 +55,51 @@ $theme-color-active:#ea703a;
           li{
             overflow: hidden;
             margin-bottom: 14px;
+            .index_display_url{
+              display:block;
+              width:100%;
+              height:18px;
+              line-height:18px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space:nowrap;
+            }
             .new-img-content{
-              margin-top:7px;
             }
             div{
               float:left;
+              .index_display_url{
+                color:rgba(0,0,0,0.8);
+                &:hover{
+                  text-decoration: underline;
+                }
+              }
+              //a{
+              //  color:#000;
+              //  &:hover{
+              //    color:#000;
+              //    text-decoration: underline;
+              //  }
+              //}
               strong{
                 font-weight:normal;
                 font-size:14px;
-                a{
-                  color:rgba(0,0,0,0.8);
-                  &:hover{
-                    text-decoration: underline;
-                  }
-                }
               }
               p{
-                margin-top:15px;
-                font-style: italic;
+                margin-top:8px;
                 color:$theme-color;
+                font-size:12px;
                 small{
                   padding:0 15px 0 0;
+                  font-size:12px;
+                }
+                span{
+                  font-size:12px;
                 }
               }
               h6{
                 height:34px;
-                margin-top:10px;
+                margin-top:5px;
                 font-weight: normal;
                 font-size:12px;
                 @include limitLine(2);
@@ -122,6 +141,11 @@ $theme-color-active:#ea703a;
           margin:0 40px 38px 0;
           div{
             float:left;
+            .ablum-title{
+              margin:0px;
+              width:162px;
+              text-align: center;
+            }
             h3{
               font-weight:normal;
               font-size:14px;
@@ -162,11 +186,13 @@ $theme-color-active:#ea703a;
   }
 }
 .virtual-enter{
-  font-family: "Microsoft YaHei UI";
+  display: inline-block;
+  line-height: 20px;
   outline: none;
   width:60px;
   height:20px;
-  font-size:12px;
+  text-align: center;
+  font-size:14px;
   margin-top:10px;
   border:1px solid $theme-color-active;
   border-radius:4px;
@@ -179,7 +205,7 @@ $theme-color-active:#ea703a;
   }
 }
 .swiper-container{
-  width:1020px;
+  width:995px;
   height:auto;
 }
 .swiper-button-prev{

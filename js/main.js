@@ -11,6 +11,7 @@ require("../css/display.css");
 require("../css/login.css");
 require('../css/album.css');
 require('../css/register.css');
+require("../css/wiki.css");
 var app=require("./app");
 var controllr=require("./controllers");
 var directive=require("./directives");

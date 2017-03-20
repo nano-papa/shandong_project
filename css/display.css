@@ -80,12 +80,15 @@ header {
         overflow: hidden; }
         header .header-top .header-top-left ul li {
           float: left;
-          border-right: 1px solid #008582; }
+          border-right: 1px solid #008582;
+          line-height: 20px; }
           header .header-top .header-top-left ul li a {
             padding-left: 12px;
-            padding-right: 12px; }
+            padding-right: 12px;
+            line-height: 20px; }
           header .header-top .header-top-left ul li:first-child a {
-            padding-left: 0; }
+            padding-left: 0;
+            line-height: 20px; }
           header .header-top .header-top-left ul li:last-child {
             border: none; }
     header .header-top .header-top-right {
@@ -110,10 +113,12 @@ header {
           width: 21px;
           height: 21px; }
           header .header-top .header-top-right ul li:first-child {
+            cursor: pointer;
             padding-right: 10px;
             border-right: 1px solid #008582;
             background: url("../img/xj.png") no-repeat; }
           header .header-top .header-top-right ul li:last-child {
+            cursor: pointer;
             margin-left: 10px;
             background: url("../img/fdj.png") no-repeat; }
     header .header-top button {
@@ -171,7 +176,7 @@ footer {
   footer ul {
     overflow: hidden;
     margin: auto;
-    width: 786px;
+    width: 625px;
     margin-top: 20px; }
     footer ul li {
       float: left;
@@ -236,6 +241,12 @@ footer {
 ::-webkit-scrollbar-thumb:window-inactive {
   background: #008582; }
 
+.nomore {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center; }
+
 .display-content {
   padding: 20px 83px; }
   .display-content .slected-condition:after {
@@ -251,11 +262,11 @@ footer {
       background: #f3f3f3;
       border: 1px solid #ddd;
       text-align: center;
-      margin-left: 10px; }
+      margin-left: 10px;
+      padding: 0 10px; }
       .display-content .slected-condition ul li small {
         font-size: 12px;
-        line-height: 24px;
-        padding-left: 10px; }
+        line-height: 24px; }
       .display-content .slected-condition ul li u {
         font-size: 12px;
         text-decoration: none;
@@ -265,8 +276,7 @@ footer {
         font-size: 16px;
         font-style: normal;
         line-height: 24px;
-        padding-left: 10px;
-        padding-right: 10px; }
+        padding-left: 10px; }
         .display-content .slected-condition ul li i:hover {
           color: #ea703a;
           cursor: pointer; }
@@ -345,6 +355,7 @@ footer {
       width: 52px;
       height: 28px;
       border: none;
+      cursor: pointer;
       padding: 0;
       background: url("../img/search_btn.png") no-repeat;
       background-position: 50% 50%;
@@ -371,7 +382,7 @@ footer {
           color: #008582; }
   .display-content .display-list-content-inner ul {
     width: 1034px;
-    height: 675px;
+    min-height: 675px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -387,12 +398,22 @@ footer {
       .display-content .display-list-content-inner ul li:not(:nth-child(3n)) {
         margin-right: 70px; }
       .display-content .display-list-content-inner ul li h1 {
-        line-height: 30px; }
+        line-height: 40px;
+        font-weight: normal;
+        text-overflow: ellipsis;
+        width: 100%;
+        overflow: hidden;
+        height: 40px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden; }
+      .display-content .display-list-content-inner ul li h5 {
+        margin-bottom: 8px; }
       .display-content .display-list-content-inner ul li h6, .display-content .display-list-content-inner ul li h5 {
         font-weight: normal;
         font-size: 14px;
-        color: #008582;
-        margin-top: 8px; }
+        color: #008582; }
         .display-content .display-list-content-inner ul li h6 i, .display-content .display-list-content-inner ul li h5 i {
           display: inline-block;
           width: 15px;
@@ -400,11 +421,14 @@ footer {
           margin-right: 5px;
           background: url("../img/zhanlan-btn.png") no-repeat; }
         .display-content .display-list-content-inner ul li h6 s, .display-content .display-list-content-inner ul li h5 s {
-          text-decoration: none; }
+          text-decoration: none;
+          font-size: 14px; }
         .display-content .display-list-content-inner ul li h6 .displaytime, .display-content .display-list-content-inner ul li h5 .displaytime {
           background-position: -17px 0; }
         .display-content .display-list-content-inner ul li h6 .displaypermanent, .display-content .display-list-content-inner ul li h5 .displaypermanent {
           background-position: -36px 0; }
+        .display-content .display-list-content-inner ul li h6 span, .display-content .display-list-content-inner ul li h5 span {
+          font-size: 14px; }
       .display-content .display-list-content-inner ul li p {
         margin-top: 8px;
         font-size: 12px;

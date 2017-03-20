@@ -17,10 +17,12 @@
             <ul>
                 <li ng-repeat="d in data.spreList">
                     <div class="new-img-content">
-                        <a ui-sref="displaydetails({id:d.id,type:'inner'})" target="_blank"><img ng-src="{{d.pictureThumb}}" width="136" height="76" alt=""></a>
+                        <a ui-sref="displaydetails({id:d.id,type:'inner'})" target="_blank"><img
+                                ng-src="{{d.pictureThumb}}" width="136" height="76" alt=""></a>
                     </div>
-                    <div style="padding-left:34px;width:436px">
-                        <a ui-sref="displaydetails({id:d.id})" ng-bind="d.headline"><strong></strong></a>
+                    <div style="padding-left:34px;width:368px">
+                        <a class="index_display_url" ui-sref="displaydetails({id:d.id,type:'inner'})"
+                           ng-bind="d.headline"><strong></strong></a>
                         <p>
                             <small ng-bind="d.musExhibition"></small>
                             <span ng-show="d.staTime" ng-bind="'['+d.staTime+']-['+d.overTime+']'"></span></p>
@@ -35,7 +37,7 @@
         <div class="section-title"
              style="background:url('img/icon_heye.png') no-repeat;background-position: 76px 15px;">
             <h3>文物百科 <p>Relics-Wiki</p></h3>
-            <p style="margin:0"><a href="">更多>></a></p>
+            <p style="margin:0"><a ui-sref="Wiki">更多>></a></p>
         </div>
         <img src="img/line.png" alt="">
         <div class="section-content2">
@@ -85,9 +87,10 @@
                     <div>
                         <img ng-src="{{r.pictureThumb}}" width="297" height="167" alt="">
                     </div>
-                    <div style="padding-left:34px;width:259px;margin-top:15px;">
-                        <strong style="font-size: 16px;font-style:italic;font-weight: normal" ng-bind="r.viName"></strong>
-                        <p style="color:#008582;font-size:12px;font-style: normal;font-weight: normal" ng-bind="r.musExhibition">
+                    <div style="padding-left:25px;width:259px;margin-top:15px;">
+                        <strong style="font-size: 16px;" ng-bind="r.viName"></strong>
+                        <p style="color:#008582;font-size:12px;font-style: normal;font-weight: normal"
+                           ng-bind="r.musExhibition">
                         </p>
                         <h5 ng-bind="r.viIntro"></h5>
                         <a class="virtual-enter" href="{{r.viPCUrl}}" target="_blank" style="padding:6px;">点击进入</a>
@@ -99,29 +102,40 @@
     <div class="section-layout-right" style="width:435px;">
         <div class="section-title" style="width:409px;margin-bottom:55px;">
             <h3>我要册展 <p>Curating</p></h3>
-            <p style="margin:0"><a ui-sref="ablum">更多>></a></p>
-            <button class="goAlbum" >开始！</button>
+            <p style="margin:0"><a ui-sref="Wiki">更多>></a></p>
+            <button class="goAlbum">开始！</button>
         </div>
         <img src="img/line.png" alt="" style="left:-70px">
         <div class="section-content2">
             <ul>
                 <li>
                     <div>
-                        <a href=""><img src="img/pic4.png" width="162" height="110" alt=""></a>
+                        <a href="../cezhan_qingtong/index.html" target="_blank">
+                            <img src="img/qingtong.jpg" width="162"  height="110" alt="">
+                        </a>
+                        <p class="ablum-title">山东青铜展</p>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <a href=""><img src="img/pic4.png" width="162" height="110" alt=""></a>
+                        <a href="../cezhan_ciqi/index.html" target="_blank">
+                            <img src="img/ciqi.jpg" width="162" height="110" alt="">
+                        </a>
+                        <p class="ablum-title">山东瓷器展</p>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <a href=""><img src="img/pic4.png" width="162" height="110" alt=""></a>
+                        <a href="../cezhan_shuhua/index.html" target="_blank"><img src="img/shuhua.jpg" width="162"
+                                                                                   height="110" alt=""></a>
+                        <p class="ablum-title">山东书画展</p>
                     </div>
-                </li><li>
+                </li>
+                <li>
                     <div>
-                        <a href=""><img src="img/pic4.png" width="162" height="110" alt=""></a>
+                        <a href="../cezhan_yushi/index.html" target="_blank"><img src="img/yushi.jpg" width="162"
+                                                                                  height="110" alt=""></a>
+                        <p class="ablum-title">山东玉石展</p>
                     </div>
                 </li>
             </ul>
