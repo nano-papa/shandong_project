@@ -70,7 +70,7 @@
       li {
         display: none;
         padding: 15px;
-        p {
+        .museum-details-service-content-msg {
           font-size: 12px;
           color: #666;
           line-height: 24px;
@@ -252,6 +252,10 @@
           font-size:18px;
           color:#666;
           line-height:50px;
+          width:130px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space:nowrap;
         }
       }
     }
@@ -417,7 +421,6 @@
         display:table;
         margin:40px 0px 15px 10px;
         p {
-          display:table-cell;
           vertical-align: middle;
           font-size: 14px;
           line-height: 22px;

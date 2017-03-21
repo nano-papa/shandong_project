@@ -378,7 +378,8 @@ footer {
             margin-top: 7px;
             font-size: 12px;
             line-height: 1.42;
-            color: rgba(0, 0, 0, 0.6); }
+            color: rgba(0, 0, 0, 0.6);
+            width: 180px; }
           .section .section-layout-right .section-content2 ul li div button {
             font-family: "Microsoft YaHei UI";
             outline: none;

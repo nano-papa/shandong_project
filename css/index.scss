@@ -1,6 +1,5 @@
 @import "common";
 $theme-color:#008582;
-
 $theme-color-active:#ea703a;
 .wrapper{
   padding-bottom:14px;
@@ -161,6 +160,7 @@ $theme-color-active:#ea703a;
               font-size:12px;
               line-height:1.42;
               color:rgba(0,0,0,.6);
+              width:180px;
             }
             button{
               font-family: "Microsoft YaHei UI";

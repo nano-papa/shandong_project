@@ -209,19 +209,16 @@ footer {
       }
     }
   }
-
 }
 .PagePlugs {
   text-align: center;
 }
-
 @mixin limitLine($line) {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: $line;
   overflow: hidden;
 }
-
 /* 设置滚动条的样式 */
 ::-webkit-scrollbar {
   width: 2px;
@@ -250,5 +247,4 @@ footer {
   flex-flow: column;
   align-items: center;
   justify-content: center;
-
 }

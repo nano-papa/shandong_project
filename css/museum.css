@@ -303,7 +303,7 @@ footer {
     .museum-details .museum-details-service .museum-details-service-content li {
       display: none;
       padding: 15px; }
-      .museum-details .museum-details-service .museum-details-service-content li p {
+      .museum-details .museum-details-service .museum-details-service-content li .museum-details-service-content-msg {
         font-size: 12px;
         color: #666;
         line-height: 24px;
@@ -311,7 +311,7 @@ footer {
         overflow: hidden;
         -webkit-transition: height 1s;
         transition: height 1s; }
-        .museum-details .museum-details-service .museum-details-service-content li p.auto-height {
+        .museum-details .museum-details-service .museum-details-service-content li .museum-details-service-content-msg.auto-height {
           height: auto; }
       .museum-details .museum-details-service .museum-details-service-content li.active {
         display: block; }
@@ -460,7 +460,11 @@ footer {
           font-weight: normal;
           font-size: 18px;
           color: #666;
-          line-height: 50px; }
+          line-height: 50px;
+          width: 130px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
 
 .museum-map {
   margin: 0 82px;
@@ -592,7 +596,6 @@ footer {
       display: table;
       margin: 40px 0px 15px 10px; }
       .museum-details-moreDigization-list .digization-list-item ul .digization-list-item-infor p {
-        display: table-cell;
         vertical-align: middle;
         font-size: 14px;
         line-height: 22px; }

@@ -289,11 +289,11 @@ angular.module('myApp.controllers', [])
             })
         }
         $scope.slides = [
-            {ur: 'img/banner.png'},
-            {ur: 'img/103.png'},
-            {ur: 'img/104.png'},
-            {ur: 'img/105.png'},
-            {ur: 'img/106.png'}
+            {ur: 'img/banner.jpg'},
+            {ur: 'img/103.jpg'},
+            {ur: 'img/104.jpg'},
+            {ur: 'img/105.jpg'},
+            {ur: 'img/106.jpg'}
         ];
         $scope.myInterval = 5000;
     }])
@@ -1501,8 +1501,7 @@ angular.module('myApp.controllers', [])
         }
     }])
     //博物馆详情页
-    .controller('MuseumDetails', ['$scope', '$rootScope','$http','$stateParams', function ($scope, $rootScope,$http,$stateParams) {
-        console.log($stateParams.id);
+    .controller('MuseumDetails', ['$scope', '$rootScope','$http','$stateParams', '$sce',function ($scope, $rootScope,$http,$stateParams,$sce) {
         $http({
             method:"GET",
             url:'data/museumslider.json',
@@ -1550,7 +1549,7 @@ angular.module('myApp.controllers', [])
         $scope.btn = "查看全部";
         $scope.lookAll = function (e) {
             angular.element(e.target).parent().prev().toggleClass("auto-height");
-
+            // angular.element(e.target).parent().prev().css("height",0);
             $scope.btn = ($scope.btn === "查看全部") ? '收起' : "查看全部";
         }
     }])

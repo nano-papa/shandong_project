@@ -10,6 +10,13 @@ module.exports = {
             {test: /.(png)|(jpg)|(gif)$/, loader: 'url?limit=1000000', exclude: './node_modules/'}
         ]
     },
+    // plugins: [
+    //     new webpack.optimize.UglifyJsPlugin({
+    //         compress: {
+    //             warnings: false
+    //         }
+    //     })
+    // ],
     postcss:[
         require('autoprefixer')({
             broswers:['last 5 versions']

@@ -44,32 +44,32 @@
         </ul>
         <ol class="museum-details-service-content">
             <li class="active">
-                <p ng-bind="data.museumInfo.introduce">
-                </p>
+                <div ng-bind-html="data.museumInfo.introduce|filterhtml" class="museum-details-service-content-msg">
+                </div>
                 <div>
                     <button ng-click="lookAll($event)">{{btn}}</button>
                 </div>
             </li>
             <li>
-                <p ng-bind="data.museumInfo.buyTicket">
+                <div ng-bind-html="data.museumInfo.buyTicket|filterhtml" class="museum-details-service-content-msg"></div>
                 <div>
                     <button ng-click="lookAll($event)">{{btn}}</button>
                 </div>
             </li>
             <li>
-                <p ng-bind="data.museumInfo.nearby">
+                <div ng-bind-html="data.museumInfo.nearby|filterhtml" class="museum-details-service-content-msg"></div>
                 <div>
                     <button ng-click="lookAll($event)">{{btn}}</button>
                 </div>
             </li>
             <li>
-                <p ng-bind="data.museumInfo.visitNotes">
+                <div ng-bind="data.museumInfo.visitNotes|filterhtml" class="museum-details-service-content-msg"></div>
                 <div>
                     <button ng-click="lookAll($event)">{{btn}}</button>
                 </div>
             </li>
             <li>
-                <p ng-bind="data.museumInfo.serviceInformation">
+                <div ng-bind-html="data.museumInfo.serviceInformation|filterhtml" class="museum-details-service-content-msg"></div>
                 <div>
                     <button ng-click="lookAll($event)">{{btn}}</button>
                 </div>
@@ -113,7 +113,7 @@
                 <h6><a ui-sref="displaydetails({id:data.spreList.id,type:'inner'})" ng-bind="data.spreList.headline"></a></h6>
                 <h5 ng-show="data.spreList.staTime">展期：<span
                         ng-bind="data.spreList.staTime+'-'+data.spreList.overTime"></span></h5>
-                <p ng-bind="data.spreList.content">
+                <p ng-bind-html="data.spreList.content|filterhtml">
                 </p>
             </div>
         </div>
