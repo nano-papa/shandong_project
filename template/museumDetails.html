@@ -5,8 +5,8 @@
 <div class="museum-details">
     <div class="museum-details-img">
         <ul>
-            <li ng-repeat="sl in sliders" repeat-done="slider6()">
-                <img ng-src="{{sl.url}}" width="640" height="360"/>
+            <li ng-repeat="sl in data.carouselList" repeat-done="slider6()">
+                <img ng-src="{{sl.backUrl}}" width="640" height="360"/>
             </li>
         </ul>
     </div>
@@ -15,8 +15,8 @@
         <table>
             <tbody>
             <tr>
-                <td>类别：</td>
-                <td ng-bind="data.museumInfo.category"></td>
+                <td>级别：</td>
+                <td ng-bind="Rating(data.museumInfo.level)"></td>
             </tr>
             <tr>
                 <td>地区：</td>
@@ -44,32 +44,32 @@
         </ul>
         <ol class="museum-details-service-content">
             <li class="active">
-                <div ng-bind-html="data.museumInfo.introduce|filterhtml" class="museum-details-service-content-msg">
+                <div ng-bind-html="data.museumInfo.introduce" class="museum-details-service-content-msg">
                 </div>
                 <div>
                     <button ng-click="lookAll($event)">{{btn}}</button>
                 </div>
             </li>
             <li>
-                <div ng-bind-html="data.museumInfo.buyTicket|filterhtml" class="museum-details-service-content-msg"></div>
+                <div ng-bind-html="data.museumInfo.buyTicket" class="museum-details-service-content-msg"></div>
                 <div>
                     <button ng-click="lookAll($event)">{{btn}}</button>
                 </div>
             </li>
             <li>
-                <div ng-bind-html="data.museumInfo.nearby|filterhtml" class="museum-details-service-content-msg"></div>
+                <div ng-bind-html="data.museumInfo.nearby" class="museum-details-service-content-msg"></div>
                 <div>
                     <button ng-click="lookAll($event)">{{btn}}</button>
                 </div>
             </li>
             <li>
-                <div ng-bind="data.museumInfo.visitNotes|filterhtml" class="museum-details-service-content-msg"></div>
+                <div ng-bind-html="data.museumInfo.visitNotes" class="museum-details-service-content-msg"></div>
                 <div>
                     <button ng-click="lookAll($event)">{{btn}}</button>
                 </div>
             </li>
             <li>
-                <div ng-bind-html="data.museumInfo.serviceInformation|filterhtml" class="museum-details-service-content-msg"></div>
+                <div ng-bind-html="data.museumInfo.serviceInformation" class="museum-details-service-content-msg"></div>
                 <div>
                     <button ng-click="lookAll($event)">{{btn}}</button>
                 </div>

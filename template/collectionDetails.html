@@ -1,4 +1,4 @@
-<img src="img/collection.png" alt="">
+<img ng-src="{{imgUrlarr[4].carList[0].pic.backUrl}}" width="1200" height="120">
 <p class="breadcrumb" style="padding-left:18px;padding-bottom: 20px;">
     <a ui-sref="home">首页</a><u>&gt;&gt;</u><a ui-sref="collection">藏品</a><u>&gt;&gt;</u><span ng-bind="data.mipOpenCulturalrelicInfo.name||data.mipOpenFossilInfo.name"></span>
 </p>
@@ -36,11 +36,11 @@
                 <td ng-bind="data.mipOpenCulturalrelicInfo.collectionUnit||data.mipOpenFossilInfo.collectionUnit"></td>
             </tr>
             <tr>
-                <td>类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</td>
+                <td>类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</td>
                 <td ng-bind="data.mipOpenCulturalrelicInfo.collectionsCategory||data.mipOpenFossilInfo.collectionsCategory"></td>
             </tr>
             <tr>
-                <td>年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;代：</td>
+                <td>年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;代：</td>
                 <td ng-bind="data.mipOpenCulturalrelicInfo.yearType||data.mipOpenFossilInfo.yearType"></td>
             </tr>
             </tbody>
@@ -59,7 +59,7 @@
         </ol>
         <ul>
             <li ng-repeat="relation in corother | limitTo:5">
-                <a ui-sref="collectiondetails({type:other.mipOpenCulturalrelicInfo.collectionType?'Relic':'specimen'||other.mipOpenFossilInfo?'Relic':'specimen',id:relation.mipOpenCulturalrelicInfo.id||relation.mipOpenFossilInfo.id})" target="_blank">
+                <a ui-sref="collectiondetails({type:(relation.mipOpenCulturalrelicInfo.collectionType?'Relic':'specimen')||(relation.mipOpenFossilInfo?'Relic':'specimen'),id:relation.mipOpenCulturalrelicInfo.id||relation.mipOpenFossilInfo.id})">
                     <img ng-src="{{relation.picture.thumb3}}" width="191" height="129" alt="{{relation.mipOpenCulturalrelicInfo.name||relation.mipOpenFossilInfo.name}}">
                 </a>
                 <p ng-bind="relation.mipOpenCulturalrelicInfo.name||relation.mipOpenFossilInfo.name"></p>
@@ -74,7 +74,7 @@
         </ol>
         <ul>
             <li ng-repeat="other in correlation | limitTo:5">
-                <a ui-sref="collectiondetails({type:other.mipOpenCulturalrelicInfo.collectionType?'Relic':'specimen'||other.mipOpenFossilInfo?'Relic':'specimen',id:other.mipOpenCulturalrelicInfo.id||other.mipOpenFossilInfo.id})" target="_blank">
+                <a ui-sref="collectiondetails({type:(other.mipOpenCulturalrelicInfo.collectionType?'Relic':'specimen')||(other.mipOpenFossilInfo?'Relic':'specimen'),id:other.mipOpenCulturalrelicInfo.id||other.mipOpenFossilInfo.id})">
                     <img ng-src="{{other.picture.thumb3}}" width="191" height="129" alt="{{other.mipOpenCulturalrelicInfo.name||other.mipOpenFossilInfo.name}}">
                 </a>
                 <p ng-bind="other.mipOpenCulturalrelicInfo.name||other.mipOpenFossilInfo.name"></p>

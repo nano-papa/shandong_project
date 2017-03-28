@@ -13,4 +13,13 @@ angular.module('myApp', [
     'myApp.controllers',
     'myApp.router'
 ])
+    .run(['$rootScope','$http',function($rootScope,$http){
+        $http({
+            method:"GET",
+            url:'../turnimghome/getmuseumList.do',
+        })
+            .success(function(response){
+                $rootScope.imgUrlarr=response.data;
+            })
+}])
 ;

@@ -38,17 +38,17 @@
             </tr>
             <tr>
                 <td><label for="">短信验证码：</label></td>
-                <td><input ng-trim="true" type="text" style="width:182px;margin-right:20px;" ng-model="secretCode" ng-required="true" name="secretCode">
+                <td><input ng-trim="true" type="text" style="width:182px;margin-right:20px;" ng-model="secretCode" ng-required="true" name="secretCode" ng-minlength="6">
                     <button class="register-msn" ng-click="countdown()" ng-bind="status" ng-class="{send:!send}" ng-disabled="!send"></button>
                 </td>
             </tr>
             <tr>
                 <td><label for="">登录密码：</label></td>
-                <td><input ng-trim="true" type="password" ng-required="true" ng-model="password" name="password" ng-pattern="/^[0-9A-Za-z_]*$/" ng-minlength="8" ng-maxlength="18"></td>
+                <td><input type="password" ng-required="true" ng-model="password" name="password" ng-pattern="/^[0-9A-Za-z_]*$/" ng-minlength="8" ng-maxlength="18"></td>
             </tr>
             <tr>
                 <td><label for="">确认密码：</label></td>
-                <td><input ng-trim="true" type="password" ng-model="rpassword" name="rpassword" ng-required="true"></td>
+                <td><input type="password" ng-model="rpassword" name="rpassword" ng-required="true"></td>
             </tr>
             <tr>
                 <td></td>
@@ -116,6 +116,7 @@
                  <i class="error"></i><u>验证码不为空</u>
             </span>
         </div>
+
         <div class="register-tips register-tips-piccode">
             <span>
                  <u>获取短信验证码前请先填写图形验证码</u>
@@ -129,7 +130,7 @@
             </span>
         </div>
         <div class="register-tips register-tips-msg"
-             ng-if="myform.secretCode.$dirty && !myform.secretCode.$error.required">
+             ng-if="myform.secretCode.$dirty && !myform.secretCode.$error.required&&!myform.secretCode.$error.minlength">
             <span>
                  <i></i><u></u>
             </span>

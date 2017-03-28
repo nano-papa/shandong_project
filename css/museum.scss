@@ -1,5 +1,4 @@
 @import "common";
-
 @charset "utf-8";
 .museum-details {
   padding: 10px 83px 0;
@@ -75,9 +74,14 @@
           color: #666;
           line-height: 24px;
           height: 72px;
+
           overflow: hidden;
           -webkit-transition: height 1s;
           transition: height 1s;
+          text-align: left;
+          p{
+            font-size:12px;
+          }
           &.auto-height {
             height: auto;
           }

@@ -19,7 +19,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: "Microsoft YaHei UI";
+  font-family: "Microsoft YaHei UI","微软雅黑",Arial, Helvetica, sans-serif;
   font-size: 16px;
   vertical-align: bottom; }
 
@@ -310,7 +310,10 @@ footer {
         height: 72px;
         overflow: hidden;
         -webkit-transition: height 1s;
-        transition: height 1s; }
+        transition: height 1s;
+        text-align: left; }
+        .museum-details .museum-details-service .museum-details-service-content li .museum-details-service-content-msg p {
+          font-size: 12px; }
         .museum-details .museum-details-service .museum-details-service-content li .museum-details-service-content-msg.auto-height {
           height: auto; }
       .museum-details .museum-details-service .museum-details-service-content li.active {

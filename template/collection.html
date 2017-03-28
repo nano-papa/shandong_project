@@ -1,4 +1,4 @@
-<img src="img/collection.png" alt="">
+<img  ng-src="{{imgUrlarr[4].carList[0].pic.backUrl}}" width="1200" height="120" alt="">
 <div ui-view="">
     <div class="breadcrumb" style="padding-left:18px;padding-bottom: 20px;">
         <a ui-sref="home">首页</a><u>&gt;&gt;</u><a ui-sref="collection">藏品</a><u>&gt;&gt;</u><span ng-bind="tab"></span>
@@ -99,10 +99,10 @@
                     <li style="margin-left:45px;">
                         <ul>
                             <li>
-                                <button ng-class="{active:isActive}" ng-click="changeBtn($event)" data-status="1">最新</button>
+                                <button ng-class="{active:!isActive}" ng-click="changeBtn($event)" data-status="1">最新</button>
                             </li>
                             <li style="margin-left:20px;">
-                                <button ng-class="{active:!isActive}" ng-click="changeBtn($event)" data-status="2">最热</button>
+                                <button ng-class="{active:isActive}" ng-click="changeBtn($event)" data-status="2">最热</button>
                             </li>
                         </ul>
                     </li>
@@ -206,10 +206,10 @@
                     <li style="margin-left:45px;">
                         <ul>
                             <li>
-                                <button ng-class="{active:isActive}" ng-click="changeBtn($event)" data-status="1">最新</button>
+                                <button ng-class="{active:!isActive}" ng-click="changeBtn($event)" data-status="1">最新</button>
                             </li>
                             <li style="margin-left:20px;">
-                                <button ng-class="{active:!isActive}" ng-click="changeBtn($event)" data-status="2">最热</button>
+                                <button ng-class="{active:isActive}" ng-click="changeBtn($event)" data-status="2">最热</button>
                             </li>
                         </ul>
                     </li>
